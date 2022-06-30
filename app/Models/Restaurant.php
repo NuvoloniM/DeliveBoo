@@ -4,10 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Restauran extends Model
+class Restaurant extends Model
 {
-    //
-
     public function user(){
         return $this->belongsTo('App\User');
     }

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Restaurant;
+use App\User;
 use Faker\Generator as Faker;
 class RestaurantSeeder extends Seeder
 {
@@ -12,10 +13,11 @@ class RestaurantSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $restaurant = new Restaurant();
-        $restaurant->nome_attivita=$faker->word();
-        $restaurant->indirizzo=$faker->streetAddress();
-        $restaurant->imagine=$faker->imageUrl(640, 480, 'animals', true);
-        $restaurant->save();
+        $new_restaurant = new Restaurant();
+        $new_restaurant->user_id=1;
+        $new_restaurant->nome_attivita=$faker->word();
+        $new_restaurant->indirizzo=$faker->streetAddress();
+        $new_restaurant->immagine=$faker->imageUrl(640, 480, 'animals', true);
+        $new_restaurant->save();
     }
 }
