@@ -14,7 +14,9 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
+            $table->unsignedBigInteger('restaurant_id')->nullable();
             $table->id();
+            $table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('set null');
             $table->string('indirizzo');
             $table->dateTime('data_ordine');
             $table->string('nome');

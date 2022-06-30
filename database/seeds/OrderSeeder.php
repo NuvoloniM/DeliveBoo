@@ -14,6 +14,7 @@ class OrderSeeder extends Seeder
     public function run(Faker $faker)
     {
         $order = new Order;
+        $order->restaurant_id = 1;
         $order->indirizzo = $faker->streetAddress();
         $order->data_ordine = $faker->dateTime();
         $order->nome = $faker->firstName();
