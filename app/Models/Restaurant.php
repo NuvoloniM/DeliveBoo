@@ -12,7 +12,10 @@ class Restauran extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function restaurantMenu(){
-        return $this->hasOne('App\Models\Menu');
+    public function restaurantDish(){
+        return $this->hasOne('App\Models\Dish');
+    }
+    public function restaurantType(){
+        return $this->belongsToMany('App\Models\RestaurantType');
     }
 }
