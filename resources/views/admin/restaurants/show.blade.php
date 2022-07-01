@@ -10,6 +10,8 @@
                 <h5 class="card-title"> {{ $restaurant->nome_attivita }} </h5>
                 <p class="card-text"> {{ $restaurant->indirizzo }} </p>
             </div>
+            {{-- bottone per eliminare l'attività --}}
+            @include('includes.deleteRestaurant')
         </div>
 
         {{-- lista dei piatti --}}

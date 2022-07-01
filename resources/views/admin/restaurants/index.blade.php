@@ -40,6 +40,8 @@
                         <a href="{{route('admin.restaurants.show', $restaurant->id)}}" class="btn btn-primary">View</a>
                         {{-- bottone della edit modifica attivita --}}
                         <a href="{{route('admin.restaurants.edit', $restaurant->id)}}" class="btn btn-primary">Edit</a>
+                        {{-- bottone per eliminare l'attività --}}
+                        @include('includes.deleteRestaurant')
                     </td>
                 </tr>
                 @empty
