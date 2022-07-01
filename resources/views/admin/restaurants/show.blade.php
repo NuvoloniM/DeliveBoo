@@ -10,12 +10,16 @@
                 <h5 class="card-title"> {{ $restaurant->nome_attivita }} </h5>
                 <p class="card-text"> {{ $restaurant->indirizzo }} </p>
             </div>
+
             {{-- bottone per eliminare l'attività --}}
             @include('includes.deleteRestaurant')
+
+            {{-- bottone per mostrare il menu dei piatti --}}
+            <a href="{{route('admin.restaurants.dishes.index', $restaurant->id)}}" class="btn btn-primary">View</a>
+
         </div>
 
         {{-- lista dei piatti --}}
-
 
     </div>
 @endsection
