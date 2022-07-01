@@ -52,6 +52,8 @@ class RestaurantController extends Controller
         $restaurant->user_id = Auth::user()->pluck('id')->first();
         $restaurant->save();
 
+        if ( array_key_exists( 'categories', $data ) )  $restaurant->RestaurantType()->attach($data['categories']);
+
         return redirect()->route('admin.restaurants.index')->with('message', "Hai creato la nuova attività $restaurant->nome_attivita");
     }
 
@@ -72,9 +74,10 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit( Restaurant $restaurant )
     {
-        //
+        $categories = RestaurantType::All();
+        return view( 'admin.restaurants.edit', compact('restaurant', 'categories') );
     }
 
     /**
