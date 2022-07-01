@@ -44,7 +44,7 @@
                     id="category-{{ $category->id }}"
                     value=" {{ $category->id }} "
                     name="categories[]"
-                    @if ( in_array($category->id, old('categories', $restaurant_categories_id ) ) ) checked @endif
+                    @if ( in_array($category->id, old('categories', $restaurant_restaurant_type_id ) ) ) checked @endif
                 >
                 <label class="form-check-label" for="category-{{ $category->id }}"> {{ $category->tipologia }} </label>
             </div>
@@ -64,7 +64,7 @@
         </div>
 
         <div>
-            <button type="submit" class="btn btn-success">Crea</button>
+            <button type="submit" class="btn btn-success">Modifica</button>
         </div>
 
     </form>

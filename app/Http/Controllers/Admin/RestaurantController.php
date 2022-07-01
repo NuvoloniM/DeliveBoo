@@ -47,7 +47,7 @@ class RestaurantController extends Controller
     {
         $data = $request->All();
 
-        $restaurant = new restaurant();
+        $restaurant = new Restaurant();
         $restaurant->fill($data);
         $restaurant->user_id = Auth::user()->pluck('id')->first();
         $restaurant->save();
@@ -77,7 +77,10 @@ class RestaurantController extends Controller
     public function edit( Restaurant $restaurant )
     {
         $categories = RestaurantType::All();
-        return view( 'admin.restaurants.edit', compact('restaurant', 'categories') );
+
+        $restaurant_restaurant_type_id =  $restaurant->restaurantType->pluck('id')->toArray();
+
+        return view( 'admin.restaurants.edit', compact('restaurant', 'categories', 'restaurant_restaurant_type_id') );
     }
 
     /**
@@ -87,9 +90,15 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Restaurant $restaurant)
     {
-        //
+        $data = $request->all();
+
+        $restaurant->update($data);
+
+        if ( array_key_exists( 'categories', $data ) )  $restaurant->RestaurantType()->sync($data['categories']);
+
+        return redirect()->route('admin.restaurants.index', $restaurant );
     }
 
     /**

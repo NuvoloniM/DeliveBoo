@@ -13,13 +13,13 @@ class CreateRestaurantsRestaurantsTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('restaurants_restaurants_types', function (Blueprint $table) {
-            $table->unsignedBigInteger('restaurants_id');
-            $table->unsignedBigInteger('restaurants_types_id');
+        Schema::create('restaurant_restaurant_type', function (Blueprint $table) {
+            $table->unsignedBigInteger('restaurant_id');
+            $table->unsignedBigInteger('restaurant_type_id');
 
             $table->id();
-            $table->foreign('restaurants_id')->references('id')->on('restaurants')->onDelete('cascade');
-            $table->foreign('restaurants_types_id')->references('id')->on('restaurant_types')->onDelete('cascade');
+            $table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
+            $table->foreign('restaurant_type_id')->references('id')->on('restaurant_types')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class CreateRestaurantsRestaurantsTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('restaurants_restaurants_types');
+        Schema::dropIfExists('restaurant_restaurant_type');
     }
 }
