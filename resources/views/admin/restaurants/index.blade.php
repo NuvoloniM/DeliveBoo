@@ -5,6 +5,14 @@
 @section('content')
     <div class="container">
 
+        @if (session('message'))
+            <div class="alert alert-danger">
+                {{ session('message') }}
+            </div>
+        @endif
+
+        <a href=" {{route('admin.restaurants.create')}} " class="btn btn-success">Inserisci Nuova Attività</a>
+
         <h1>Le tue attività:</h1>
         <table class="table table-dark">
             <thead>

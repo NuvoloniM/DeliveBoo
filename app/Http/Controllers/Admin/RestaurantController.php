@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
 use App\User;
+use App\Models\RestaurantType;
 use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
@@ -32,7 +33,8 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+        $categories = RestaurantType::All();
+        return view('admin.restaurants.create', compact ('categories') );
     }
 
     /**
@@ -43,7 +45,14 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->All();
+
+        $restaurant = new restaurant();
+        $restaurant->fill($data);
+        $restaurant->user_id = Auth::user()->pluck('id')->first();
+        $restaurant->save();
+
+        return redirect()->route('admin.restaurants.index')->with('message', "Hai creato la nuova attività $restaurant->nome_attivita");
     }
 
     /**
