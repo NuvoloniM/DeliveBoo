@@ -50,6 +50,8 @@
 
             </tbody>
         </table>
-
     </div>
+@endsection
+@section('scripts')
+    <script src="{{asset('js/delete-msg.js')}}"></script>
 @endsection

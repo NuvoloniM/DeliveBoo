@@ -12,4 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    //file js per aller delete message 
+    .js('resources/js/delete-msg.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
+    .options({processCssUrls: false});
