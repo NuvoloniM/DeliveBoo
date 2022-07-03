@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
 use App\Models\Dish;
+use App\Models\KitchenType;
 
 class DishController extends Controller
 {
@@ -18,9 +19,9 @@ class DishController extends Controller
     {
         $data = $restaurant->id;
 
-        $dish = Dish::where('restaurants_id', $data)->get();
+        $dishes = Dish::where('restaurants_id', $data)->get();
 
-        return view( 'admin.dishes.index', compact('dish') );
+        return view( 'admin.dishes.index', compact('dishes', 'data') );
     }
 
     /**
@@ -50,9 +51,9 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($restaurant, Dish $dish)
     {
-        //
+        return view ('admin.dishes.show', compact('dish', 'restaurant'));
     }
 
     /**

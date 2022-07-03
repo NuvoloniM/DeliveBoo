@@ -5,8 +5,8 @@
 @section('content')
     <div class="container">
 
-        @if (session('message'))
-            <div class="alert alert-danger">
+        @if ( session('message') )
+            <div class="alert alert-info">
                 {{ session('message') }}
             </div>
         @endif

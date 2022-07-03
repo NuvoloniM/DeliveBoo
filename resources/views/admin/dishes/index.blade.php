@@ -13,32 +13,39 @@
                     <th scope="col">Glutine</th>
                     <th scope="col">Immage</th>
                     <th scope="col">Description</th>
+                    <th scope="col">azioni</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($dish as $item)
+                @forelse ($dishes as $dish)
                 <tr>
                     <td>
-                        {{ $item->nome_prodotto }}
+                        {{ $dish->nome_prodotto }}
                     </td>
                     <td>
-                        {{ $item->prezzo }}
+                        {{ $dish->prezzo }}
                     </td>
                     <td>
-                        {{ $item->vegetariano }}
+                        {{ $dish->vegetariano }}
                     </td>
                     <td>
-                        {{ $item->glutine }}
+                        {{ $dish->glutine }}
                     </td>
                     <td>
-                        <img src="{{ $item->immage }}" alt="{{ $item->immage }}" width="50">
+                        <img src="{{ $dish->immage }}" alt="{{ $dish->immage }}" width="50">
                     </td>
                     <td>
-                        {{ $item->description }}
+                        {{ $dish->description }}
+                    </td>
+                    <td class="d-flex">
+                        {{-- bottone della show --}}
+                        <a href="{{route('admin.restaurants.dishes.show',['restaurant'=> $data, $dish->id])}}" class="btn btn-primary">View</a>
+                        {{-- bottone della edit modifica attivita --}}
+                        {{-- <a href="{{route('admin.restaurants.dishes.edit', $dish->id)}}" class="btn btn-primary">Edit</a> --}}
                     </td>
                 </tr>                    
                 @empty
-                    <h2> non ci sono post</h2>
+                    <h2> non ci sono piatti</h2>
                 @endforelse
             </tbody>
         </table>
