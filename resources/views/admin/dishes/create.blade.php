@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <form action=" {{route('admin.restaurants.dishes.store',['restaurant'=> $restaurant])}}" method="POST">
+    <form action=" {{route('admin.restaurants.dishes.store',['restaurant'=> $restaurant])}}" method="POST" enctype="multipart/form-data">
         @csrf
         {{-- inserimento nome attività --}}
         <div class="form-group">
@@ -24,7 +24,7 @@
         </div>
         <div class="form-group">
             <label for="title">url immagine</label>
-            <input type="text" class="form-control" id="immage" placeholder="immage" name="immage">
+            <input type="file" class="form-control-file" id="immage" placeholder="immage" name="immage">
         </div>
         {{-- selezione del tipo di ristorante --}}
         <hr>

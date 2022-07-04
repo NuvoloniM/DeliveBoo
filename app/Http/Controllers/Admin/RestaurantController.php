@@ -8,6 +8,7 @@ use App\Models\Restaurant;
 use App\User;
 use App\Models\RestaurantType;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
 {
@@ -48,9 +49,15 @@ class RestaurantController extends Controller
         $data = $request->All();
 
         $restaurant = new Restaurant();
+        if(array_key_exists('immagine', $data)){
+            $image_url = Storage::put('restaurant_immagine', $data['immagine'] );
+            $data['immagine'] = $image_url;
+        }
         $restaurant->fill($data);
         $restaurant->user_id = Auth::user()->pluck('id')->first();
         $restaurant->save();
+
+        
 
         if ( array_key_exists( 'categories', $data ) )  $restaurant->RestaurantType()->attach($data['categories']);
 
@@ -79,7 +86,6 @@ class RestaurantController extends Controller
         $categories = RestaurantType::All();
 
         $restaurant_restaurant_type_id =  $restaurant->restaurantType->pluck('id')->toArray();
-
         return view( 'admin.restaurants.edit', compact('restaurant', 'categories', 'restaurant_restaurant_type_id') );
     }
 
@@ -93,6 +99,12 @@ class RestaurantController extends Controller
     public function update(Request $request, Restaurant $restaurant)
     {
         $data = $request->all();
+        if(array_key_exists('immagine', $data)){
+            if( $restaurant->immagine) Storage::delete($restaurant->immagine);
+        
+            $image_url = Storage::put('immagine', $data['immagine'] );
+            $data['immagine'] = $image_url;
+        }
 
         $restaurant->update($data);
 

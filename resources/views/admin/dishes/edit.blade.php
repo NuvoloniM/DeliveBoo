@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <form action=" {{route('admin.restaurants.dishes.update',[$restaurant, $dish->id])}}" method="POST">
+    <form action=" {{route('admin.restaurants.dishes.update',[$restaurant, $dish->id])}}" method="POST"  enctype="multipart/form-data">
         @method('PUT')
         @csrf
         
@@ -27,24 +27,25 @@
         </div>
         <div class="form-group">
             <label for="title">url immagine</label>
-            <input type="text" class="form-control" id="immage" placeholder="immage" name="immage" value="{{ old( 'immage', $dish->immage) }}">
+            <input type="file" class="form-control-file" id="immage" placeholder="immage" name="immage" value="{{ old( 'immage', $dish->immage) }}">
         </div>
         {{-- selezione del tipo di ristorante --}}
         <hr>
         <h3>Seleziona le tipologie di attività:</h3>
         <div class="form-group">
             <label for="glutine">glutine</label>
-            <input type="checkbox" id="glutine" name="glutine"
-            @if (old('$dish->glutine', $dish->glutine) == 1) cheked @endif>
+            <input type="checkbox" id="glutine" name="glutine" value="1"
+                @if ( old('$dish->glutine') == 'on' ? 'checked' : '' )  @endif 
+            >
         </div>
         <div class="form-group">
             <label for="vegetariano">vegetariano</label>
-            <input type="checkbox" id="vegetariano" name="vegetariano" value="1">
+            <input type="checkbox" id="vegetariano" name="vegetariano" value="1"
             @if (old('$dish->vegetariano', $dish->vegetariano) == 1) cheked @endif>
         </div>
         <div class="form-group">
             <label for="view">visibilità</label>
-            <input type="checkbox" id="view" name="view" value="1">
+            <input type="checkbox" id="view" name="view" value="1"
             @if (old('$dish->view', $dish->view) == 1) cheked @endif>
         </div>
 

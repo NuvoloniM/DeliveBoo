@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <form action=" {{route('admin.restaurants.store')}}" method="POST">
+    <form action=" {{route('admin.restaurants.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
         {{-- inserimento nome attività --}}
@@ -38,7 +38,7 @@
         {{-- inserimento url immagine --}}
         <div class="form-group">
             <label for="image">Logo Attività</label>
-            <input type="text" class="form-control-file" id="immagine" placeholder="url dell'immagine" name="immagine">
+            <input type="file" class="form-control-file" id="immagine" placeholder="url dell'immagine" name="immagine">
         </div>
 
         <div>

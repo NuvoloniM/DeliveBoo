@@ -37,7 +37,7 @@
                         {{ $dish->glutine }}
                     </td>
                     <td>
-                        <img src="{{ $dish->immage }}" alt="{{ $dish->immage }}" width="50">
+                        <img  src="{{asset("storage/$dish->immage")}}" alt="{{ $dish->immage }}" width="50">
                     </td>
                     <td>
                         {{ $dish->description }}

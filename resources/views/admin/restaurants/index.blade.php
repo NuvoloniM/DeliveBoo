@@ -33,7 +33,7 @@
                         {{ $restaurant->indirizzo }}
                     </td>
                     <td>
-                        <img src="{{ $restaurant->immagine }}" alt="{{ $restaurant->immagine }}" width="50">
+                        <img src="{{asset("storage/$restaurant->immagine")}}" alt="{{ $restaurant->immagine }}" width="50">
                     </td>
                     <td class="d-flex">
                         {{-- bottone della show --}}

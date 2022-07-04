@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Restaurant;
 use App\Models\Dish;
 use App\Models\KitchenType;
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -55,9 +56,19 @@ class DishController extends Controller
     // }
     public function store($restaurant, Request $request)
     {   
+        $data=$request->All();
+        $dish=new Dish();
+        if(array_key_exists('immage', $data)){
+             $image_url = Storage::put('dish_immage', $data['immage'] );
+             $data['immage'] = $image_url;
+         }
 
-        Dish::create($request->all() + ['restaurants_id' => $restaurant]);
+        $dish->fill($data);
+        $dish->restaurants_id=$restaurant;
+
+        $dish->save();
         return redirect()->route('admin.restaurants.dishes.index', $restaurant);
+
     }
 
     /**
@@ -91,7 +102,14 @@ class DishController extends Controller
      */
     public function update($restaurant, Request $request, Dish $dish)
     {
-        $dish->update($request->all());
+        $data=$request->All();
+        if(array_key_exists('image', $data)){
+            if( $dish->immage ) Storage::delete($dish->immage);
+        
+            $image_url = Storage::put('dish_image', $data['image'] );
+            $data['immage'] = $image_url;
+        }
+         $dish->update($data);
         return redirect()->route('admin.restaurants.dishes.index', $restaurant);
     }
     /**
