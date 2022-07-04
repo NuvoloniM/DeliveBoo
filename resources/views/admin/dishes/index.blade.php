@@ -45,6 +45,7 @@
                     <td class="d-flex">
                         {{-- bottone della show --}}
                         <a href="{{route('admin.restaurants.dishes.show',['restaurant'=> $data, $dish->id])}}" class="btn btn-primary">View</a>
+                        <a href="{{route('admin.restaurants.dishes.edit',['restaurant'=> $data, $dish->id])}}" class="btn btn-primary">Edit</a>
                        <form action="{{route('admin.restaurants.dishes.destroy', ['restaurant'=> $data, $dish->id])}}" method="POST" class="delete-form">
                             @method('DELETE')
                             @csrf

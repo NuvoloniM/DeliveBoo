@@ -77,9 +77,9 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($restaurant, Dish $dish)
     {
-        //
+        return view('admin.dishes.edit', compact('restaurant','dish'));
     }
 
     /**
@@ -89,11 +89,11 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($restaurant, Request $request, Dish $dish)
     {
-        //
+        $dish->update($request->all());
+        return redirect()->route('admin.restaurants.dishes.index', $restaurant);
     }
-
     /**
      * Remove the specified resource from storage.
      *
