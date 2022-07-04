@@ -29,9 +29,9 @@ class DishController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($restaurant)
     {
-        //
+        return view('admin.dishes.create', compact('restaurant'));
     }
 
     /**
@@ -40,9 +40,24 @@ class DishController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    // public function store($restaurant, Request $request)
+    // {
+    //     $data = $request->All();
+
+    //     $dish = new Dish();
+    //     $dish->fill($data);
+    //     $dish->restaurant_id = Auth::user()->pluck('id')->first();
+    //     $dish->save();
+
+    //     if ( array_key_exists( 'categories', $data ) )  $restaurant->RestaurantType()->attach($data['categories']);
+
+    //     return redirect()->route('admin.restaurants.index')->with('message', "Hai creato la nuova attività $restaurant->nome_attivita");
+    // }
+    public function store($restaurant, Request $request)
+    {   
+
+        Dish::create($request->all() + ['restaurants_id' => $restaurant]);
+        return redirect()->route('admin.restaurants.dishes.index', $restaurant);
     }
 
     /**

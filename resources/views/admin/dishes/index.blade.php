@@ -9,6 +9,7 @@
         @endif
         <h1>Le tue attività:</h1>
         <table class="table table-dark">
+            <a href=" {{route('admin.restaurants.dishes.create',['restaurant'=> $data])}} " class="btn btn-success">Inserisci Nuovo Piatto</a>
             <thead>
                 <tr>
                     <th scope="col">Nome Prodotto</th>
