@@ -2,7 +2,11 @@
 
 @section('content')
     <div class="container">
-
+        @if ( session('message') )
+            <div class="alert alert-info">
+                {{ session('message') }}
+        </div>
+        @endif
         <h1>Le tue attività:</h1>
         <table class="table table-dark">
             <thead>
@@ -40,6 +44,11 @@
                     <td class="d-flex">
                         {{-- bottone della show --}}
                         <a href="{{route('admin.restaurants.dishes.show',['restaurant'=> $data, $dish->id])}}" class="btn btn-primary">View</a>
+                       <form action="{{route('admin.restaurants.dishes.destroy', ['restaurant'=> $data, $dish->id])}}" method="POST" class="delete-form">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                         {{-- bottone della edit modifica attivita --}}
                         {{-- <a href="{{route('admin.restaurants.dishes.edit', $dish->id)}}" class="btn btn-primary">Edit</a> --}}
                     </td>
