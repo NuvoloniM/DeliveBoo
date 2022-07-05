@@ -64,6 +64,7 @@
             <input type="hidden" name="view" value="0">
             <input type="checkbox" id="view" name="view"
             @if(old('view', $dish->view) == 1) checked @endif 
+            value="1"
             >
         </div>
 
