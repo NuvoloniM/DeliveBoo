@@ -19,4 +19,6 @@ mix.js('resources/js/app.js', 'public/js')
     //file js per aller delete message 
     .js('resources/js/delete-msg.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
+    // file stile per viste back
+    .sass('resources/sass/backStyle.scss', 'public/css')
     .options({processCssUrls: false});

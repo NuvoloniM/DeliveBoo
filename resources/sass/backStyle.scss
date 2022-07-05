@@ -1,0 +1,48 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+.bg_primary{
+    background-color: #d8f9ff;
+}
+
+.index_side{
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 20px; 
+    &:hover{
+        box-shadow: 5px 5px #888888;
+    }
+    .card{
+        border-radius: 20px;
+        .card-img-top{
+            border-radius:20px;
+        }
+    }
+    
+}
+
+.dashboard{
+    list-style-type: none;
+    li{
+        font-size: 1.3em;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    &:hover{
+        text-decoration:none;
+        color:black;
+    }
+}
