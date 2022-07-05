@@ -1,4 +1,3 @@
-
 <template>
     <header>
         <!-- importo una navbar di bootstrap -->
@@ -6,34 +5,53 @@
             <!-- non uso più il tag a per i link della navbar ma direttamente router-link -->
             <!-- => per gestire rotte front end uso :to="{name: ' nome dato in routes.vue'}" -->
             <!-- => per gestire rotte backend continuo ad usare il tag a e l'href" -->
-            <router-link class="navbar-brand" :to="{ name: 'home' }">DeliveBoo</router-link>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <router-link class="navbar-brand" :to="{ name: 'home' }">
+                <img
+                    :src="require('../../../public/img/magnapp-logo.png')"
+                    width="50"
+                    alt=""
+                />
+                <img
+                    :src="require('../../../public/img/magnapp-pitto.png')"
+                    width="100"
+                    alt=""
+                />
+            </router-link>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <router-link class="nav-link" :to="{ name: 'home' }">Home</router-link>
+                        <router-link class="nav-link" :to="{ name: 'home' }"
+                            >Home</router-link
+                        >
                     </li>
                     <li class="nav-item">
-                         <a class="nav-link" href="/admin">Admin</a>
+                        <a class="nav-link" href="/admin">Admin</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/login" class="nav-link">login</a>
+                        <a href="/login" class="nav-link">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/register" class="nav-link">registrati</a>
+                        <a href="/register" class="nav-link">Registrati</a>
                     </li>
                 </ul>
             </div>
-            
         </nav>
     </header>
 </template>
 
 <script>
-export default{
-    name: "Header"
-}
+export default {
+    name: "Header",
+};
 </script>

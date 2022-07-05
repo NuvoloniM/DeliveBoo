@@ -1974,6 +1974,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Header"
 });
@@ -2583,7 +2601,23 @@ var render = function () {
         _c(
           "router-link",
           { staticClass: "navbar-brand", attrs: { to: { name: "home" } } },
-          [_vm._v("DeliveBoo")]
+          [
+            _c("img", {
+              attrs: {
+                src: __webpack_require__(/*! ../../../public/img/magnapp-logo.png */ "./public/img/magnapp-logo.png"),
+                width: "50",
+                alt: "",
+              },
+            }),
+            _vm._v(" "),
+            _c("img", {
+              attrs: {
+                src: __webpack_require__(/*! ../../../public/img/magnapp-pitto.png */ "./public/img/magnapp-pitto.png"),
+                width: "100",
+                alt: "",
+              },
+            }),
+          ]
         ),
         _vm._v(" "),
         _vm._m(0),
@@ -2662,7 +2696,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "nav-item" }, [
       _c("a", { staticClass: "nav-link", attrs: { href: "/login" } }, [
-        _vm._v("login"),
+        _vm._v("Login"),
       ]),
     ])
   },
@@ -2672,7 +2706,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "nav-item" }, [
       _c("a", { staticClass: "nav-link", attrs: { href: "/register" } }, [
-        _vm._v("registrati"),
+        _vm._v("Registrati"),
       ]),
     ])
   },
@@ -18106,6 +18140,28 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./public/img/magnapp-logo.png":
+/*!*************************************!*\
+  !*** ./public/img/magnapp-logo.png ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/magnapp-logo.png?498bbd67f86eaef4e90988d0adbe939d";
+
+/***/ }),
+
+/***/ "./public/img/magnapp-pitto.png":
+/*!**************************************!*\
+  !*** ./public/img/magnapp-pitto.png ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/magnapp-pitto.png?ec28facd96df4e39132284089362693d";
+
+/***/ }),
+
 /***/ "./resources/js/components/App.vue":
 /*!*****************************************!*\
   !*** ./resources/js/components/App.vue ***!
@@ -18455,7 +18511,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Vincenzo\Desktop\6 - Mega Esercizio\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
