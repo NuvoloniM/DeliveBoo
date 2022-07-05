@@ -34,19 +34,32 @@
         <h3>Seleziona le tipologie di attività:</h3>
         <div class="form-group">
             <label for="glutine">glutine</label>
-            <input type="checkbox" id="glutine" name="glutine" value="1"
-                @if ( old('$dish->glutine') == 'on' ? 'checked' : '' )  @endif 
+            <input type="checkbox" id="glutine" name="glutine" 
+            value="1"
+            {{ (! empty(old('glutine')) ? 'checked' : '') }}
+            {{-- value={{@if(($dish->glutine == 'checked')? 1 : 0) @endif}}  --}}
+            {{-- value="1" --}}
+                {{-- @if ( old('$dish->glutine') == 'on' ? 'checked' : '' )  @endif  --}}
+                {{-- @if( old( 'glutine', $dish->glutine ) == $dish->glutine )  @endif --}}
+                @if ($dish->glutine == 1) checked @endif
             >
         </div>
         <div class="form-group">
             <label for="vegetariano">vegetariano</label>
-            <input type="checkbox" id="vegetariano" name="vegetariano" value="1"
-            @if (old('$dish->vegetariano', $dish->vegetariano) == 1) cheked @endif>
+            <input type="checkbox" id="vegetariano" name="vegetariano" 
+            {{-- value="1" --}}
+            {{-- @if (old('$dish->vegetariano', $dish->vegetariano) == 1) cheked @endif --}}
+            @if( old( 'vegetariano', $dish->vegetariano ) == $dish->vegetariano )  @endif
+            @if ($dish->vegetariano == 1) checked @endif
+            >
         </div>
         <div class="form-group">
             <label for="view">visibilità</label>
-            <input type="checkbox" id="view" name="view" value="1"
-            @if (old('$dish->view', $dish->view) == 1) cheked @endif>
+            <input type="checkbox" id="view" name="view" 
+            {{-- value="1" --}}
+            {{-- @if (old('$dish->view', $dish->view) == 1) cheked @endif --}}
+            @if( old( 'view', $dish->view ) == $dish->view )  @endif
+            >
         </div>
 
         <div>

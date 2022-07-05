@@ -12,6 +12,10 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    // file nuovo in cui separo front end js
+    .js('resources/js/front.js', 'public/js')
+    // importo file per gestire le rotte frontend
+    .js('resources/js/routes.js', 'public/js')
     //file js per aller delete message 
     .js('resources/js/delete-msg.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')

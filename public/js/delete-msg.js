@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -104,7 +104,7 @@ deleteForms.forEach(function (form) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 3:
 /*!******************************************!*\
   !*** multi ./resources/js/delete-msg.js ***!
   \******************************************/
