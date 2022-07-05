@@ -1,9 +1,7 @@
 <template>
     <header>
         <!-- importo una navbar di bootstrap -->
-        <nav
-            class="navbar navbar-expand-lg navbar-light bg-light justify-content-between fixed-top"
-        >
+        <nav class="navbar navbar-expand-lg navbar justify-content-between fixed-top">
             <!-- non uso più il tag a per i link della navbar ma direttamente router-link -->
             <!-- => per gestire rotte front end uso :to="{name: ' nome dato in routes.vue'}" -->
             <!-- => per gestire rotte backend continuo ad usare il tag a e l'href" -->
@@ -64,8 +62,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 header {
-    height: 75px;
+    height: 75px;    
+}
+a{
+    color: white;
+}
+/* scritte nere quando ci passo sopra */
+a:hover{
+    color: black;
 }
 </style>

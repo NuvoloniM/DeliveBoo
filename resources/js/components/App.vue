@@ -21,3 +21,8 @@ export default {
     },
 };
 </script>
+<style scoped>
+    *{
+        background-color: aquamarine;
+    }
+</style>
