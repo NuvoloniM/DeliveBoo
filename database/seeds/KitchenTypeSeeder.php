@@ -12,7 +12,7 @@ class KitchenTypeSeeder extends Seeder
     public function run()
     {
         $kitchen_type = [
-            'primo', 'secondo', 'contorno',
+            'primo', 'secondo', 'contorno', 'kebab', 'antipasto'
         ];
 
         foreach($kitchen_type as $type){
