@@ -19,5 +19,6 @@ class RestaurantSeeder extends Seeder
         $new_restaurant->indirizzo=$faker->streetAddress();
         $new_restaurant->immagine=$faker->imageUrl(640, 480, 'animals', true);
         $new_restaurant->save();
+        $new_restaurant->restaurantType()->sync([3,2]);
     }
 }

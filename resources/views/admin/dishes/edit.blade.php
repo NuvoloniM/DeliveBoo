@@ -2,6 +2,17 @@
 
 @section('content')
 <div class="container">
+    {{-- catch errors --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    
     <form action=" {{route('admin.restaurants.dishes.update',[$restaurant, $dish->id])}}" method="POST"  enctype="multipart/form-data">
         @method('PUT')
         @csrf
@@ -20,9 +31,9 @@
         </div>
 
         <div class="form-group">
-            <label for="descrizione">Inserisci Descrizione</label>
+            <label for="description">Inserisci Descrizione</label>
            <textarea name="description" id="description" cols="30" rows="10" placeholder="descrizione">
-                {{ old('descrizione', $dish->descrizione)}}
+                {{ old('description', $dish->description)}}
            </textarea>
         </div>
         <div class="form-group">
@@ -43,31 +54,26 @@
         </select>
         <div class="form-group">
             <label for="glutine">glutine</label>
+            <input type="hidden" name="glutine" value="0">
             <input type="checkbox" id="glutine" name="glutine" 
+            @if(old('glutine', $dish->glutine) == 1) checked @endif
             value="1"
-            {{ (! empty(old('glutine')) ? 'checked' : '') }}
-            {{-- value={{@if(($dish->glutine == 'checked')? 1 : 0) @endif}}  --}}
-            {{-- value="1" --}}
-                {{-- @if ( old('$dish->glutine') == 'on' ? 'checked' : '' )  @endif  --}}
-                {{-- @if( old( 'glutine', $dish->glutine ) == $dish->glutine )  @endif --}}
-                @if ($dish->glutine == 1) checked @endif
             >
         </div>
         <div class="form-group">
             <label for="vegetariano">vegetariano</label>
-            <input type="checkbox" id="vegetariano" name="vegetariano" 
-            {{-- value="1" --}}
-            {{-- @if (old('$dish->vegetariano', $dish->vegetariano) == 1) cheked @endif --}}
-            @if( old( 'vegetariano', $dish->vegetariano ) == $dish->vegetariano )  @endif
-            @if ($dish->vegetariano == 1) checked @endif
+            <input type="hidden" name="vegetariano" value="0">
+            <input type="checkbox" id="vegetariano" name="vegetariano"             
+            @if(old('vegetariano', $dish->vegetariano) == 1) checked @endif
+            value="1"
             >
         </div>
         <div class="form-group">
             <label for="view">visibilità</label>
-            <input type="checkbox" id="view" name="view" 
-            {{-- value="1" --}}
-            {{-- @if (old('$dish->view', $dish->view) == 1) cheked @endif --}}
-            @if( old( 'view', $dish->view ) == $dish->view )  @endif
+            <input type="hidden" name="view" value="0">
+            <input type="checkbox" id="view" name="view"
+            @if(old('view', $dish->view) == 1) checked @endif 
+            value="1"
             >
         </div>
 

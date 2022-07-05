@@ -2,8 +2,23 @@
 
 @section('content')
 <div class="container">
+<<<<<<< HEAD
     <form action=" {{route('admin.restaurants.dishes.store',['restaurant'=> $restaurant])}}" method="POST"
         enctype="multipart/form-data">
+=======
+    {{-- catch errors --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    
+    <form action=" {{route('admin.restaurants.dishes.store',['restaurant'=> $restaurant])}}" method="POST" enctype="multipart/form-data">
+>>>>>>> 8327bcb97ad261c94139f8cd841bf5bb17600dbe
         @csrf
         {{-- inserimento nome attività --}}
         <div class="form-group">

@@ -57,7 +57,20 @@ class DishController extends Controller
     // }
     public function store($restaurant, Request $request)
     {   
+        // validation
+        $validated = $request->validate(
+            [
+                'nome_prodotto' => 'required',
+                'prezzo' => 'required|numeric',
+            ],
+            [
+                'nome_prodotto.required' => 'Attenzione, il campo "nome prodotto" non è stato compilato correttamente',
+                'prezzo.required' => 'Attenzione, il campo "prezzo" non è stato compilato correttamente',
+            ],
+        );
+
         $data=$request->All();
+
         $dish=new Dish();
         if(array_key_exists('immage', $data)){
              $image_url = Storage::put('dish_immage', $data['immage'] );
@@ -105,6 +118,18 @@ class DishController extends Controller
      */
     public function update($restaurant, Request $request, Dish $dish)
     {
+        // validation
+        $validated = $request->validate(
+            [
+                'nome_prodotto' => 'required',
+                'prezzo' => 'required|numeric',
+            ],
+            [
+                'nome_prodotto.required' => 'Attenzione, il campo "nome prodotto" non è stato compilato correttamente',
+                'prezzo.required' => 'Attenzione, il campo "prezzo" non è stato compilato correttamente',
+            ],
+        );
+
         $data=$request->All();
         if(array_key_exists('image', $data)){
             if( $dish->immage ) Storage::delete($dish->immage);
