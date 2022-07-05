@@ -3,7 +3,7 @@
 {{-- {{ dd($user_id) }}
 {{ dd($restaurants) }} --}}
 @section('content')
-    <div class="container">
+    <div class="">
 
         @if ( session('message') )
             <div class="alert alert-info">
@@ -12,8 +12,36 @@
         @endif
 
         <a href=" {{route('admin.restaurants.create')}} " class="btn btn-success">Inserisci Nuova Attività</a>
-
         <h1>Le tue attività:</h1>
+
+        
+            <div class="row justify-content-around mx-5 text-center">
+                <div class="col-4">
+                    colonna sinistra
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        @forelse ($restaurants as $restaurant)
+                            <div class="col-6">
+                                <a href="{{route('admin.restaurants.show', $restaurant->id)}}">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="{{asset("storage/$restaurant->immagine")}}" class="card-img-top" alt="{{ $restaurant->nome_attivita }}">
+                                        <div class="card-body">
+                                        <h5 class="card-title">{{ $restaurant->nome_attivita }}</h5>
+                                        <p class="card-text">{{ $restaurant->indirizzo }}</p>
+                                        </div>
+                                    </div>
+                                </a>    
+                            </div>
+                        @empty
+                        <h2> non ci sono post</h2>
+                        @endforelse
+                    </div>
+                </div>
+            </div>
+
+
+
         <table class="table table-dark">
             <thead>
                 <tr>
