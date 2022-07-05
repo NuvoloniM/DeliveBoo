@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header />
-        <Jumbo />
+        <Jumbo />        
         <main>
             <router-view></router-view>
             <!-- <RestaurantList/> -->
@@ -16,7 +16,7 @@ export default {
     name: "App",
     components: {
         Header,
-        Jumbo,
+        Jumbo,        
         RestaurantList,
     },
 };

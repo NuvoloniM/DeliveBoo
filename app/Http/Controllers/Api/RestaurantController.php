@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
+use App\Models\RestaurantType;
 
 class RestaurantController extends Controller
 {
@@ -16,8 +17,11 @@ class RestaurantController extends Controller
     public function index()
     {
         $restaurants = Restaurant::all();
+        $restaurants_types = RestaurantType::all();
 
-        return response()->json(compact('restaurants'));
+
+        return response()->json(compact('restaurants', 'restaurants_types'));
+       
     }
 
     /**
