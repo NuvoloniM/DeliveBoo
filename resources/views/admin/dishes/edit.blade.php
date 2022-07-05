@@ -32,6 +32,15 @@
         {{-- selezione del tipo di ristorante --}}
         <hr>
         <h3>Seleziona le tipologie di attività:</h3>
+        <select name="kitchen_types_id" id="kitchen_types_id">
+            <option value="">Nessuna Categoria</option>
+            @foreach ($categories as $category )
+                <option
+                    @if( old( 'kitchen_types_id', $dish->kitchen_types_id ) == $category->id ) selected @endif
+                    value=" {{ $category->id }} "
+                    >{{ $category->label }}</option>
+            @endforeach
+        </select>
         <div class="form-group">
             <label for="glutine">glutine</label>
             <input type="checkbox" id="glutine" name="glutine" 

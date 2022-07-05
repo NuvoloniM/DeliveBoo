@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="container">
-    <form action=" {{route('admin.restaurants.dishes.store',['restaurant'=> $restaurant])}}" method="POST" enctype="multipart/form-data">
+    <form action=" {{route('admin.restaurants.dishes.store',['restaurant'=> $restaurant])}}" method="POST"
+        enctype="multipart/form-data">
         @csrf
         {{-- inserimento nome attività --}}
         <div class="form-group">
@@ -18,7 +19,7 @@
 
         <div class="form-group">
             <label for="descrizione">Inserisci Descrizione</label>
-           <textarea name="description" id="description" cols="30" rows="10" placeholder="descrizione">
+            <textarea name="description" id="description" cols="30" rows="10" placeholder="descrizione">
 
            </textarea>
         </div>
@@ -28,21 +29,18 @@
         </div>
         {{-- selezione del tipo di ristorante --}}
         <hr>
-        <h3>Seleziona le tipologie di attività:</h3>
+        <h3>Seleziona le tipologie del piatto:</h3>
 
-        {{-- @foreach ( $categories as $category )
-            <div class="form-check form-check-inline">
-                <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="category-{{ $category->id }}"
-                    value=" {{ $category->id }} "
-                    name="categories[]"
-                    @if ( in_array($category->id, old('categories', []) ) ) checked @endif
-                >
-                <label class="form-check-label" for="category-{{ $category->id }}"> {{ $category->tipologia }} </label>
-            </div>
-        @endforeach --}}
+        <div class="form-check form-check-inline">
+            <select name="kitchen_types_id" id="kitchen_types_id">
+                <option value="">Nessuna Categoria</option>
+                @foreach ($categories as $category )
+                <option @if( old( 'kitchen_types_id' )==$category->id ) selected @endif
+                    value=" {{ $category->id }} ">{{ $category->label }}</option>
+                @endforeach
+            </select> 
+        </div>
+       
         <div class="form-group">
             <label for="glutine">glutine</label>
             <input type="checkbox" id="glutine" name="glutine" value="1" checked>
