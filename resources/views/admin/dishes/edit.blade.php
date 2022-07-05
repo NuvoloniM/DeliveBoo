@@ -31,9 +31,9 @@
         </div>
 
         <div class="form-group">
-            <label for="descrizione">Inserisci Descrizione</label>
+            <label for="description">Inserisci Descrizione</label>
            <textarea name="description" id="description" cols="30" rows="10" placeholder="descrizione">
-                {{ old('descrizione', $dish->descrizione)}}
+                {{ old('description', $dish->description)}}
            </textarea>
         </div>
         <div class="form-group">
