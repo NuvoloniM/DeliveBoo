@@ -16,6 +16,7 @@
                     <p>
                         {{ restaurant.tipologia}}
                     </p>
+                    
                 </div>
             </div>        
         </div>
