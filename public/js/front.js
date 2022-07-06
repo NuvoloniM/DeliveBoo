@@ -2284,7 +2284,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nheader {\n    height: 75px;\n}\n", ""]);
+exports.push([module.i, "\nheader {\r\n    height: 75px;\n}\r\n", ""]);
 
 // exports
 
@@ -2304,7 +2304,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nsection[data-v-37c76d18] {\n    /* background-color: brown; */\n    background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/jumbo-boo.jpg */ "./public/img/jumbo-boo.jpg")) + ");\n    background-repeat: no-repeat;\n    background-position: center;\n    background-size: cover;\n    height: 500px;\n    width: 100%;\n}\n/* section::before {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.3);\n} */\nh2[data-v-37c76d18] {\n    color: white;\n}\n", ""]);
+exports.push([module.i, "\nsection[data-v-37c76d18] {\r\n    /* background-color: brown; */\r\n    background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/jumbo-boo.jpg */ "./public/img/jumbo-boo.jpg")) + ");\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: cover;\r\n    height: 500px;\r\n    width: 100%;\n}\r\n/* section::before {\r\n    content: \"\";\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: rgba(0, 0, 0, 0.3);\r\n} */\nh2[data-v-37c76d18] {\r\n    color: white;\n}\r\n", ""]);
 
 // exports
 
@@ -19828,7 +19828,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
