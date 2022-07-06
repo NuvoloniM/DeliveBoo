@@ -1,7 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/backStyle.css": "/css/backStyle.css",
     "/js/delete-msg.js": "/js/delete-msg.js",
     "/js/front.js": "/js/front.js",
     "/js/routes.js": "/js/routes.js"
