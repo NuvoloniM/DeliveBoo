@@ -11,7 +11,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{dish.nome_prodotto}}</h5>
                                 <p class="card-text"> {{dish.prezzo}}</p>
-                                <a @click="addToCart(dish)" class="btn btn-primary">Aggiungi al carrello </a>
+                                <a @click="addToCart(dish), getPrice(dish)" class="btn btn-primary">Aggiungi al carrello </a>
                             </div>
                         </div>
                     </div>
@@ -20,8 +20,19 @@
                 <div class="col-4">
                     <!-- <div v-if="this.carrello.length=0">Non ci sono prodotti nel carrello</div> -->
                     <div>
-                        <ul>
-                            <li v-for="dish in carrello" :key="dish.id"><span class="mx-5">{{dish.data.nome_prodotto}}</span><span>{{dish.quantità}}</span></li>
+                        <ul class="list-group">
+                            <div class="w-100 bg-primary"> <h2 class="text-white text-center">Carrello</h2> </div>
+                            <li class="list-group-item" v-if="carrello.length == 0">
+                                <h4 class="text-center">il carrello è vuoto</h4>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between" v-for="dish in carrello" :key="dish.id">
+                                <span class="me-2">{{dish.data.nome_prodotto}}</span>
+                                <span>{{dish.data.prezzo}}</span>
+                                <span> quantità {{dish.quantità}}</span>
+                            </li>
+                            <li class="list-group-item text-center pt-2" v-if="carrello.length > 0">
+                                <h3 class="text-black fw-5"> Prezzo totale: <span>{{totalPrice}}</span></h3>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -43,6 +54,7 @@ export default {
             count: 0,
             menu: [],
             carrello:[],
+            totalPrice: 0,
         }
     },
     methods: {
@@ -106,6 +118,14 @@ export default {
             //    this.carrello.push(item); 
             // }
             // return this.carrello;
+        },
+        getPrice(){
+            let somma = 0
+            this.carrello.forEach(elm => {                
+                somma += parseInt(elm.data.prezzo*elm.quantità)
+                console.log(typeof(somma))
+            }); 
+            return this.totalPrice = somma           
         }
     },
     mounted(){

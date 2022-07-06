@@ -1937,6 +1937,19 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1978,7 +1991,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       count: 0,
       menu: [],
-      carrello: []
+      carrello: [],
+      totalPrice: 0
     };
   },
   methods: {
@@ -2049,6 +2063,14 @@ __webpack_require__.r(__webpack_exports__);
       // }
       // return this.carrello;
 
+    },
+    getPrice: function getPrice() {
+      var somma = 0;
+      this.carrello.forEach(function (elm) {
+        somma += parseInt(elm.data.prezzo * elm.quantità);
+        console.log(_typeof(somma));
+      });
+      return this.totalPrice = somma;
     }
   },
   mounted: function mounted() {
@@ -2660,7 +2682,7 @@ var render = function () {
                           staticClass: "btn btn-primary",
                           on: {
                             click: function ($event) {
-                              return _vm.addToCart(dish)
+                              _vm.addToCart(dish), _vm.getPrice(dish)
                             },
                           },
                         },
@@ -2679,15 +2701,54 @@ var render = function () {
           _c("div", [
             _c(
               "ul",
-              _vm._l(_vm.carrello, function (dish) {
-                return _c("li", { key: dish.id }, [
-                  _c("span", { staticClass: "mx-5" }, [
-                    _vm._v(_vm._s(dish.data.nome_prodotto)),
-                  ]),
-                  _c("span", [_vm._v(_vm._s(dish.quantità))]),
-                ])
-              }),
-              0
+              { staticClass: "list-group" },
+              [
+                _vm._m(0),
+                _vm._v(" "),
+                _vm.carrello.length == 0
+                  ? _c("li", { staticClass: "list-group-item" }, [
+                      _c("h4", { staticClass: "text-center" }, [
+                        _vm._v("il carrello è vuoto"),
+                      ]),
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm._l(_vm.carrello, function (dish) {
+                  return _c(
+                    "li",
+                    {
+                      key: dish.id,
+                      staticClass:
+                        "list-group-item d-flex justify-content-between",
+                    },
+                    [
+                      _c("span", { staticClass: "me-2" }, [
+                        _vm._v(_vm._s(dish.data.nome_prodotto)),
+                      ]),
+                      _vm._v(" "),
+                      _c("span", [_vm._v(_vm._s(dish.data.prezzo))]),
+                      _vm._v(" "),
+                      _c("span", [
+                        _vm._v(" quantità " + _vm._s(dish.quantità)),
+                      ]),
+                    ]
+                  )
+                }),
+                _vm._v(" "),
+                _vm.carrello.length > 0
+                  ? _c(
+                      "li",
+                      { staticClass: "list-group-item text-center pt-2" },
+                      [
+                        _c("h3", { staticClass: "text-black fw-5" }, [
+                          _vm._v(" Prezzo totale: "),
+                          _c("span", [_vm._v(_vm._s(_vm.totalPrice))]),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+              ],
+              2
             ),
           ]),
         ]),
@@ -2695,7 +2756,16 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-100 bg-primary" }, [
+      _c("h2", { staticClass: "text-white text-center" }, [_vm._v("Carrello")]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -18373,7 +18443,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/routes.js */"./resources/js/routes.js");
+module.exports = __webpack_require__(/*! C:\Users\andre\Desktop\final-proj\DeliveBoo\resources\js\routes.js */"./resources/js/routes.js");
 
 
 /***/ })
