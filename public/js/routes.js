@@ -1976,11 +1976,9 @@ __webpack_require__.r(__webpack_exports__);
   name: 'RestaurantShow',
   data: function data() {
     return {
+      count: 0,
       menu: [],
-      carrello: [{
-        'quantità': 0,
-        'data': ''
-      }]
+      carrello: []
     };
   },
   methods: {
@@ -2000,20 +1998,37 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       console.log(elem);
-      this.carrello.forEach(function (element) {
-        if (element.data != elem) {
-          var item = {
+      this.count = 0;
+
+      if (this.carrello.length == 0) {
+        var item = {
+          'quantità': 1,
+          'data': elem
+        };
+        this.carrello.push(item);
+      } else {
+        this.carrello.forEach(function (element) {
+          if (element.data == elem) {
+            return _this2.count += 1;
+          }
+        });
+
+        if (this.count == 0) {
+          var _item = {
             'quantità': 1,
             'data': elem
           };
-
-          _this2.carrello.push(item);
+          this.carrello.push(_item);
         } else {
-          prompt("c'è gia");
+          var index = this.carrello.findIndex(function (x) {
+            return x.data == elem;
+          });
+          this.carrello[index].quantità += 1;
+          console.log(this.carrello);
         }
 
-        debugger;
-      }); // if (!this.carrello.includes(elem)) {
+        ;
+      } // if (!this.carrello.includes(elem)) {
       //     const item = {
       //         'quantità':1,
       //         'data': elem,
@@ -2033,6 +2048,7 @@ __webpack_require__.r(__webpack_exports__);
       //    this.carrello.push(item); 
       // }
       // return this.carrello;
+
     }
   },
   mounted: function mounted() {
@@ -2665,7 +2681,10 @@ var render = function () {
               "ul",
               _vm._l(_vm.carrello, function (dish) {
                 return _c("li", { key: dish.id }, [
-                  _vm._v(_vm._s(dish.data.nome_prodotto)),
+                  _c("span", { staticClass: "mx-5" }, [
+                    _vm._v(_vm._s(dish.data.nome_prodotto)),
+                  ]),
+                  _c("span", [_vm._v(_vm._s(dish.quantità))]),
                 ])
               }),
               0

@@ -21,7 +21,7 @@
                     <!-- <div v-if="this.carrello.length=0">Non ci sono prodotti nel carrello</div> -->
                     <div>
                         <ul>
-                            <li v-for="dish in carrello" :key="dish.id">{{dish.data.nome_prodotto}}</li>
+                            <li v-for="dish in carrello" :key="dish.id"><span class="mx-5">{{dish.data.nome_prodotto}}</span><span>{{dish.quantità}}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -40,13 +40,9 @@ export default {
     name: 'RestaurantShow',
     data(){
         return{
+            count: 0,
             menu: [],
-            carrello:[
-                {
-                    'quantità': 0,
-                    'data': '',
-                }
-            ],
+            carrello:[],
         }
     },
     methods: {
@@ -63,20 +59,32 @@ export default {
         },
         addToCart(elem){
             console.log(elem);
-
-            this.carrello.forEach(element => {
-                if (element.data != elem) {
-                    const item = {
-                       'quantità':1,
-                       'data': elem,
-                      } 
-                     this.carrello.push(item); 
+            this.count = 0;
+            if (this.carrello.length == 0) {
+                let item = {
+                'quantità': 1,
+                'data': elem,
+               }
+                this.carrello.push(item);
+            } else {
+                 this.carrello.forEach(element => {
+                    if (element.data == elem) {
+                        return this.count += 1;
+                    }
+                });
+                if (this.count == 0) {
+                    let item = {
+                        'quantità': 1,
+                        'data': elem,
+                    }
+                    this.carrello.push(item);
                 } else {
-                    prompt("c'è gia");
-                }
-                debugger
-            });
-
+                    let index = this.carrello.findIndex(x => x.data == elem);
+                    this.carrello[index].quantità +=1;
+                    console.log(this.carrello);
+                };
+            }
+           
                 // if (!this.carrello.includes(elem)) {
                 //     const item = {
                 //         'quantità':1,
