@@ -4281,8 +4281,6 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", [_vm._v("Dimmi che funzioni")]),
-    _vm._v(" "),
     _c("div", { staticClass: "p-3" }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-8" }, [
@@ -4507,23 +4505,39 @@ var render = function () {
             ),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("p", { staticClass: "card-title" }, [
-              _vm._v(
-                "\n                    " +
-                  _vm._s(restaurant.indirizzo) +
-                  "                        \n                "
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            [
+              _c("p", { staticClass: "card-title" }, [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(restaurant.indirizzo) +
+                    "                        \n                "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(restaurant.tipologia) +
+                    "\n                "
+                ),
+              ]),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: {
+                    to: { name: "menu", params: { id: restaurant.id } },
+                  },
+                },
+                [_vm._v("View")]
               ),
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n                    " +
-                  _vm._s(restaurant.tipologia) +
-                  "\n                "
-              ),
-            ]),
-          ]),
+            ],
+            1
+          ),
         ])
       }),
       0

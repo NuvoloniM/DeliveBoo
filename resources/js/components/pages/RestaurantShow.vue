@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Dimmi che funzioni</h1>
+        
         <div class="p-3">
             <div class="row">
                 <div class="col-8">
