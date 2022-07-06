@@ -11,7 +11,7 @@
                     <p class="card-title">
                         {{ restaurant.indirizzo}}
                     </p>
-
+                    <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary">View</router-link>
                 </div>
             </div>
     </div>

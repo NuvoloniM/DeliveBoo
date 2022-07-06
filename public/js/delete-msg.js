@@ -111,7 +111,7 @@ deleteForms.forEach(function (form) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Vincenzo\Desktop\6 - Mega Esercizio\DeliveBoo\resources\js\delete-msg.js */"./resources/js/delete-msg.js");
+module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/delete-msg.js */"./resources/js/delete-msg.js");
 
 
 /***/ })

@@ -7,6 +7,7 @@ Vue.use(VueRouter)
 
 // importo i componenti delle pagine a cui farò riferimento sotto nelle rotte
 import HomePage from './components/pages/HomePage.vue';
+import RestaurantShow from './components/pages/RestaurantShow.vue';
 
 
 // inizializzo il router
@@ -18,6 +19,7 @@ const router = new VueRouter({
     // creo la gestione delle rotte come un array di oggetti -> uri -> componente da visualizzare-> nome da richiamare
     routes: [
         {path:'/', component: HomePage, name:'home'},
+        {path:'/restaurant/:id', component: RestaurantShow, name:'menu'},
     ]
 })
 // lo esporto per poterlo richiamare in front.js e in #root
