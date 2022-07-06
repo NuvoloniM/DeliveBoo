@@ -1,8 +1,9 @@
 <template>
-    <div class="d-flex personal container">
-        <div class="row d-flex flex-wrap justify-content-start">
+    
+    <div class="d-flex  container">
+        <div class="row personal d-flex flex-wrap justify-content-start">
             <!-- ciclo i dati dell'array posts !!ricordarsi :key -->
-            <div class="card" v-for="restaurant in restaurants" :key="restaurant.id">
+            <div class="card" v-for="restaurant in filtraggio" :key="restaurant.id">
                 <img :src="`${restaurant.immagine}`" class="card-img-top" :alt="`${restaurant.nome_attivita}`">
                 <div class="card-header">
                     <!-- essendomi passato anche i dati di categoria posso rihiamarli -->
@@ -16,10 +17,9 @@
                         {{ restaurant.tipologia}}
                     </p>
                 </div>
-            </div>            
-            
-                     
+            </div>        
         </div>
+        
     </div>
 </template>
 
@@ -33,6 +33,7 @@ export default {
    data(){
     return {
         restaurants: [],
+        inputRestaurant: ''
     }
    },
    methods: {
@@ -47,6 +48,17 @@ export default {
    },
    mounted(){
     this.getRestaurants()
+    console.log(this.filtro)
+   },
+   computed:{
+    filtraggio(){        
+        return this.restaurants.filter(element=>{
+            return element.nome_attivita.includes(this.filtro)
+        })
+    }
+   },
+   props:{
+    filtro: String
    }
 }
 </script>
@@ -55,10 +67,15 @@ export default {
    .personal{        
     width: 80%;
     margin: 0 auto;
+    text-align: center;
    }
    .card{
-    margin: 25px;
-    width: 30%;
-    margin: 2vh auto;
+    margin: 45px;
+    width: calc((100% / 4) - 25px);
+    margin: 2vh auto;    
+   }
+   .card:hover{
+    transform: scale(1.2);
+    transition-duration: 0.5s;
    }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header />
-        <Jumbo />        
+                
         <main>
             <router-view></router-view>
             <!-- <RestaurantList/> -->
@@ -10,19 +10,25 @@
 </template>
 <script>
 import Header from "./Header.vue";
-import Jumbo from "./Jumbo.vue";
 import RestaurantList from "./restaurant/RestaurantsList.vue";
 export default {
     name: "App",
     components: {
-        Header,
-        Jumbo,        
+        Header,                
         RestaurantList,
     },
+    //MODIFICA per FILTRAGGIO
+    data(){
+        return{
+            inputResult:'',
+            restaurantArray:[],
+        }
+    },
+    
 };
 </script>
 <style scoped>
     *{
-        background-color: aquamarine;
+        background-color: rgb(25, 159, 214)
     }
 </style>

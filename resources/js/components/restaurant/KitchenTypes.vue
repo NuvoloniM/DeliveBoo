@@ -1,12 +1,15 @@
 <template>
     <div class="container-fluid body">
         <div class="container-fluid">
-            <h2>
-                Le categorie piu' amate
-            </h2>
-            <h3>
-                Trova i ristoranti piu' amati della tua citta'
-            </h3>    
+            <div class="title">
+                <h2>
+                    Le categorie piu' amate
+                </h2>
+                <h3>
+                    Trova i ristoranti piu' apprezzati della bella Napoli!
+                </h3>      
+            </div>
+              
         </div>
         
         <div class="d-flex categories container-fluid justify-content-center" >
@@ -58,11 +61,19 @@
     }
     .link{
         text-decoration: none;
-        color: black;
+        color: white;
     }
     h4:hover{
         transform: scale(1.5); 
         transition-duration: 0.5s;
         
+    }
+    .title{
+        width: 50%;
+        margin: 5vh auto;
+        text-align: center;
+    }
+    *{
+        color: white;
     }
 </style>
