@@ -2433,10 +2433,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 // importo axios per poter gestire i dati che gli passo tramite controller come se fosse una chiamata ad un api
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4504,46 +4500,29 @@ var render = function () {
           _vm._v(" "),
           _c("div", { staticClass: "card-header" }, [
             _vm._v(
-              "\n                    " +
+              "\n                " +
                 _vm._s(restaurant.nome_attivita) +
-                "\n                "
+                "\n            "
             ),
           ]),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "card-body" },
-            [
-              _c("p", { staticClass: "card-title" }, [
-                _vm._v(
-                  "\n                        " +
-                    _vm._s(restaurant.indirizzo) +
-                    "                        \n                    "
-                ),
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "\n                        " +
-                    _vm._s(restaurant.tipologia) +
-                    "\n                    "
-                ),
-              ]),
-              _vm._v("\n<<<<<<< HEAD\n=======\n                    "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: {
-                    to: { name: "menu", params: { id: restaurant.id } },
-                  },
-                },
-                [_vm._v("View")]
+          _c("div", { staticClass: "card-body" }, [
+            _c("p", { staticClass: "card-title" }, [
+              _vm._v(
+                "\n                    " +
+                  _vm._s(restaurant.indirizzo) +
+                  "                        \n                "
               ),
-              _vm._v("\n>>>>>>> Carrello\n                "),
-            ],
-            1
-          ),
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n                    " +
+                  _vm._s(restaurant.tipologia) +
+                  "\n                "
+              ),
+            ]),
+          ]),
         ])
       }),
       0
