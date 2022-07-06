@@ -4,7 +4,7 @@
         <div class="row personal d-flex flex-wrap justify-content-start">
             <!-- ciclo i dati dell'array posts !!ricordarsi :key -->
             <div class="card" v-for="restaurant in filtraggio" :key="restaurant.id">
-                <img :src="`${restaurant.immagine}`" class="card-img-top" :alt="`${restaurant.nome_attivita}`">
+                <img :src="`/storage/${restaurant.immagine}`" class="card-img-top" :alt="`${restaurant.nome_attivita}`">
                 <div class="card-header">
                     <!-- essendomi passato anche i dati di categoria posso rihiamarli -->
                     {{ restaurant.nome_attivita }}

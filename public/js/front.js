@@ -4492,7 +4492,7 @@ var render = function () {
           _c("img", {
             staticClass: "card-img-top",
             attrs: {
-              src: "" + restaurant.immagine,
+              src: "/storage/" + restaurant.immagine,
               alt: "" + restaurant.nome_attivita,
             },
           }),
