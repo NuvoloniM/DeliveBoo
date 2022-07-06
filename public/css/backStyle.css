@@ -9271,7 +9271,7 @@ h3 {
   border-radius: 20px;
 }
 .index_side:hover {
-  box-shadow: 5px 5px #888888;
+  box-shadow: 5px 5px 10px #888888;
 }
 .index_side .card {
   border-radius: 20px;

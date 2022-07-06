@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-4 py-5 px-3">
+        <div class="col-3 py-5 px-3">
             <h2>Questa è la Dashboard</h2> 
             <ul class="dashboard">
                 <li class="nav-item"> 
@@ -33,7 +33,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-8 bg_primary py-5">
+        <div class="col-9 bg_primary py-5">
              @if ( session('message') )
                 <div class="alert alert-info">
                     {{ session('message') }}
@@ -65,19 +65,19 @@
                 @endforelse
             </div>
 
-            <div class="row justify-content-around">
+            <div class="row justify-content-around align-items-center">
                 @forelse ($restaurants as $restaurant)
-                    <div class="col-5 my-3 index_side p-0 rounded-pill>
+                    <div class="col-5 my-3 index_side p-0 rounded-pill">
                         <a href="{{route('admin.restaurants.show', $restaurant->id)}}">
                             <div class="d-flex align-items-center">
-                                <div class="col-6">
+                                <div class="col-6 px-0">
                                     <img 
                                     {{-- src="{{asset("storage/$restaurant->immagine")}}"  --}}
                                     src="{{$restaurant->immagine}}"
-                                    class="rounded-circle img-fluid" alt="{{ $restaurant->nome_attivita }}"
+                                    class="rounded-pill img-fluid" alt="{{ $restaurant->nome_attivita }}"
                                     >
                                 </div>
-                                <div class="col-6 text-center">
+                                <div class="col-6 text-center align-items-center">
                                     <h5 class="">{{ $restaurant->nome_attivita }}</h5>
                                     <p class="">{{ $restaurant->indirizzo }}</p>
                                 </div>
