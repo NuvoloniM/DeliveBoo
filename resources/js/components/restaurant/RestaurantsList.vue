@@ -1,15 +1,15 @@
 <template>
     
-    <div class="d-flex  container">
-        <div class="row personal d-flex flex-wrap justify-content-start">
+    <div class="d-flex container">
+        <div class="row personal d-flex flex-wrap justify-content-start ">
             <!-- ciclo i dati dell'array posts !!ricordarsi :key -->
-            <div class="card" v-for="restaurant in filtraggio" :key="restaurant.id">
+            <div class="card " v-for="restaurant in filtraggio" :key="restaurant.id">
                 <img :src="`/storage/${restaurant.immagine}`" class="card-img-top" :alt="`${restaurant.nome_attivita}`">
-                <div class="card-header">
+                <div class="card-header ">
                     <!-- essendomi passato anche i dati di categoria posso rihiamarli -->
                     {{ restaurant.nome_attivita }}
                 </div>
-                <div class="card-body">
+                <div class="card-body ">
                     <p class="card-title">
                         {{ restaurant.indirizzo}}                        
                     </p>
@@ -101,7 +101,8 @@ export default {
    .card{
     margin: 45px;
     width: calc((100% / 4) - 25px);
-    margin: 2vh auto;    
+    margin: 2vh auto;   
+    // height: 40vh; 
    }
    .card:hover{
     transform: scale(1.2);

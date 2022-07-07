@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid body">
         <div class="container-fluid">
-            <div class="title">
+            <div class="title container-fluid">
                 <h2>
                     Le categorie piu' amate
                 </h2>
