@@ -2651,9 +2651,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "nav-item" }, [
-      _c("a", { staticClass: "nav-link", attrs: { href: "/admin" } }, [
-        _vm._v("Admin"),
-      ]),
+      _c(
+        "a",
+        { staticClass: "nav-link", attrs: { href: "/admin/restaurants" } },
+        [_vm._v("Admin")]
+      ),
     ])
   },
   function () {
@@ -18455,7 +18457,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
