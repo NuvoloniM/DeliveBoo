@@ -3,7 +3,7 @@
     <div class="d-flex container">
         <div class="row personal d-flex flex-wrap justify-content-start ">
             <!-- ciclo i dati dell'array posts !!ricordarsi :key -->
-            <div class="card " v-for="restaurant in filtraggio" :key="restaurant.id">
+            <div class="card " v-for="restaurant in filtraggio" :key="restaurant.id" >
                 <img :src="`/storage/${restaurant.immagine}`" class="card-img-top" :alt="`${restaurant.nome_attivita}`">
                 <div class="card-header ">
                     <!-- essendomi passato anche i dati di categoria posso rihiamarli -->
@@ -25,7 +25,7 @@
                 </div>
             </div>        
         </div>
-        <button @click="categoryFilter()">ciao bell</button>
+        <button @click="compare()">ciao bell</button>
     </div>
 </template>
 
@@ -39,7 +39,8 @@ export default {
    data(){
     return {
         restaurants: [],
-        inputRestaurant: ''
+        inputRestaurant: '',
+        prova:[],
     }
    },
    methods: {
@@ -51,25 +52,34 @@ export default {
                  this.restaurants = res.data.restaurants;
                 })
         },
-        categoryFilter(){
+        restaurantFilter(){
+            
+        },
+        compare(){
+            this.prova = [];
+            let res = [];
             this.restaurants.forEach((elm, index) => {
-                let count = 0
                 elm.restaurant_type.forEach(obj => {
-
+                    console.log(obj);
                     let typeId = 0
                     typeId = obj.id
                     console.log(typeId)
                      if(this.array.includes(typeId)){
-                         count = count + 1
-                         console.log("e incluso")
+                        //  count = count + 1
+                        //  console.log("e incluso")
+                        this.prova.push(elm)
                      } else{
                          console.log("NOOOOOOOOOOOO")
                      }
                 });
-                if(count == 0){
-                    this.restaurants.splice(index, 1)
-                }
+                
             });
+             res = this.restaurants.filter(item => this.prova.includes(item));
+                console.log(res)
+                this.restaurants = [];
+                res.forEach(elem =>
+                this.restaurants.push(elem));
+                console.log(this.restaurants);
         }
    },
    mounted(){
@@ -83,7 +93,7 @@ export default {
         return this.restaurants.filter(element=>{
             return element.nome_attivita.includes(this.filtro)
         })
-    }
+    },
    },
    props:{
     filtro: String,

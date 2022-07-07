@@ -2349,7 +2349,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       restaurants: [],
-      inputRestaurant: ''
+      inputRestaurant: '',
+      prova: []
     };
   },
   methods: {
@@ -2362,28 +2363,37 @@ __webpack_require__.r(__webpack_exports__);
         _this.restaurants = res.data.restaurants;
       });
     },
-    categoryFilter: function categoryFilter() {
+    restaurantFilter: function restaurantFilter() {},
+    compare: function compare() {
       var _this2 = this;
 
+      this.prova = [];
+      var res = [];
       this.restaurants.forEach(function (elm, index) {
-        var count = 0;
         elm.restaurant_type.forEach(function (obj) {
+          console.log(obj);
           var typeId = 0;
           typeId = obj.id;
           console.log(typeId);
 
           if (_this2.array.includes(typeId)) {
-            count = count + 1;
-            console.log("e incluso");
+            //  count = count + 1
+            //  console.log("e incluso")
+            _this2.prova.push(elm);
           } else {
             console.log("NOOOOOOOOOOOO");
           }
         });
-
-        if (count == 0) {
-          _this2.restaurants.splice(index, 1);
-        }
       });
+      res = this.restaurants.filter(function (item) {
+        return _this2.prova.includes(item);
+      });
+      console.log(res);
+      this.restaurants = [];
+      res.forEach(function (elem) {
+        return _this2.restaurants.push(elem);
+      });
+      console.log(this.restaurants);
     }
   },
   mounted: function mounted() {
@@ -4231,7 +4241,7 @@ var render = function () {
       {
         on: {
           click: function ($event) {
-            return _vm.categoryFilter()
+            return _vm.compare()
           },
         },
       },
@@ -20170,7 +20180,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\andre\Desktop\final-proj\DeliveBoo\resources\js\routes.js */"./resources/js/routes.js");
+module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/routes.js */"./resources/js/routes.js");
 
 
 /***/ })

@@ -14,7 +14,7 @@
         
         <div class="d-flex categories container-fluid justify-content-center" >
             <h4 class="category" v-for="type in types" :key="type.id">
-                <a class="link" @click="selectedTypes(type), $emit('TypesArray', selectedTypesArray)" style="cursor: pointer;">
+                <a class="link" @click="selectedTypes(type), $emit('TypesArray', selectedTypesArray) " style="cursor: pointer;">
                     {{type.tipologia}}  
                 </a>     
             </h4>
