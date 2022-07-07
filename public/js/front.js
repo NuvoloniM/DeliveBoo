@@ -2000,6 +2000,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Footer'
 });
@@ -2482,12 +2484,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__(/*! ../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, ".container[data-v-61a7c374] {\n  width: 80%;\n  margin: 5vh auto;\n}\n.container .row .col[data-v-61a7c374] {\n  text-align: center;\n}\n.container .row .col ul[data-v-61a7c374] {\n  list-style-type: none;\n}\n.container .row .col ul li a[data-v-61a7c374] {\n  text-decoration: none;\n  color: white;\n}\n*[data-v-61a7c374] {\n  color: white;\n}", ""]);
+exports.push([module.i, ".container[data-v-61a7c374] {\n  width: 100%;\n  margin: 5vh auto;\n}\n.container .row .col1[data-v-61a7c374] {\n  background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/magnapp-logo.png */ "./public/img/magnapp-logo.png")) + ");\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n}\n.container .row .col[data-v-61a7c374] {\n  text-align: center;\n}\n.container .row .col ul[data-v-61a7c374] {\n  list-style-type: none;\n}\n.container .row .col ul li a[data-v-61a7c374] {\n  text-decoration: none;\n  color: white;\n}\n*[data-v-61a7c374] {\n  color: white;\n}", ""]);
 
 // exports
 
@@ -3914,29 +3917,16 @@ var staticRenderFns = [
     return _c("footer", [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col" }, [
-            _c("a", { attrs: { href: "" } }, [
-              _c("img", {
-                staticClass: "img-fluid",
-                attrs: {
-                  width: "100",
-                  src: __webpack_require__(/*! ../../../public/img/magnapp-logo.png */ "./public/img/magnapp-logo.png"),
-                  alt: "",
-                },
-              }),
-            ]),
+          _c("div", { staticClass: "col col1" }, [
+            _c("a", { attrs: { href: "" } }),
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col" }, [
-            _c("p", [
-              _vm._v("\n                    Scopri MagnApp\n                "),
-            ]),
-            _vm._v(" "),
             _c("ul", [
               _c("li", [
                 _c("a", { attrs: { href: "" } }, [
                   _vm._v(
-                    "\n                            La nostra storia\n                        "
+                    "\n                                Scopri MagnApp    \n                            "
                   ),
                 ]),
               ]),
@@ -3944,7 +3934,7 @@ var staticRenderFns = [
               _c("li", [
                 _c("a", { attrs: { href: "" } }, [
                   _vm._v(
-                    "\n                            I nostri partner\n                        "
+                    "\n                                La nostra storia\n                            "
                   ),
                 ]),
               ]),
@@ -3952,7 +3942,15 @@ var staticRenderFns = [
               _c("li", [
                 _c("a", { attrs: { href: "" } }, [
                   _vm._v(
-                    "\n                            Contattaci\n                        "
+                    "\n                                I nostri partner\n                            "
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "" } }, [
+                  _vm._v(
+                    "\n                                Contattaci\n                            "
                   ),
                 ]),
               ]),
@@ -4448,7 +4446,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "title" }, [
+      _c("div", { staticClass: "title container-fluid" }, [
         _c("h2", [
           _vm._v("\n                Le categorie piu' amate\n            "),
         ]),
@@ -4483,12 +4481,12 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "d-flex  container" }, [
+  return _c("div", { staticClass: "d-flex container" }, [
     _c(
       "div",
-      { staticClass: "row personal d-flex flex-wrap justify-content-start" },
+      { staticClass: "row personal d-flex flex-wrap justify-content-start " },
       _vm._l(_vm.filtraggio, function (restaurant) {
-        return _c("div", { key: restaurant.id, staticClass: "card" }, [
+        return _c("div", { key: restaurant.id, staticClass: "card " }, [
           _c("img", {
             staticClass: "card-img-top",
             attrs: {
@@ -4497,7 +4495,7 @@ var render = function () {
             },
           }),
           _vm._v(" "),
-          _c("div", { staticClass: "card-header" }, [
+          _c("div", { staticClass: "card-header " }, [
             _vm._v(
               "\n                " +
                 _vm._s(restaurant.nome_attivita) +
@@ -4507,7 +4505,7 @@ var render = function () {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "card-body" },
+            { staticClass: "card-body " },
             [
               _c("p", { staticClass: "card-title" }, [
                 _vm._v(

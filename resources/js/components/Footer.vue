@@ -2,32 +2,34 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col col1">
                     <a href="">
-                        <img class="img-fluid" width="100" src="../../../public/img/magnapp-logo.png" alt="">
+                        <!-- <img class="img-fluid" width="100" src="../../../public/img/magnapp-logo.png" alt=""> -->
                     </a>
                 </div>
-                <div class="col">
-                    <p>
-                        Scopri MagnApp
-                    </p>
-                    <ul>
-                        <li>
-                            <a href="">
-                                La nostra storia
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                I nostri partner
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                Contattaci
-                            </a>
-                        </li>
-                    </ul>
+                <div class="col">                                        
+                        <ul>
+                            <li>
+                                <a href="">
+                                    Scopri MagnApp    
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    La nostra storia
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    I nostri partner
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Contattaci
+                                </a>
+                            </li>
+                        </ul> 
                 </div>
                 <div class="col">
                     <p>
@@ -58,11 +60,17 @@
 </script>
 <style lang="scss" scoped>
     .container{
-        width: 80%;
-        margin: 5vh auto;
-        // background-color: azure;
+        width: 100%;
+        margin: 5vh auto;        
 
         .row{
+
+            .col1{
+                background-image: url("../../../public/img/magnapp-logo.png");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
 
             .col{
                 text-align: center;
