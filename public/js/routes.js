@@ -2041,6 +2041,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2055,13 +2056,16 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      input: ''
+      input: '',
+      selectedTypes: []
     };
   },
   methods: {
     inputFunction: function inputFunction(testo) {
-      console.log(testo);
       return this.input = testo;
+    },
+    getTypes: function getTypes(elm) {
+      this.selectedTypes = elm;
     }
   }
 });
@@ -2263,7 +2267,8 @@ __webpack_require__.r(__webpack_exports__);
   name: 'KitchenTypes',
   data: function data() {
     return {
-      types: []
+      types: [],
+      selectedTypesArray: []
     };
   },
   methods: {
@@ -2275,6 +2280,15 @@ __webpack_require__.r(__webpack_exports__);
         console.log(res.data.restaurants_types);
         _this.types = res.data.restaurants_types;
       });
+    },
+    selectedTypes: function selectedTypes(elm) {
+      if (this.selectedTypesArray.includes(elm.id)) {
+        alert('hai già selezionato questa categoria');
+      } else if (this.selectedTypesArray.length >= 3) {
+        alert('non puoi selezionare più di 3 categorie');
+      } else {
+        this.selectedTypesArray.push(elm.id);
+      }
     }
   },
   mounted: function mounted() {
@@ -2321,6 +2335,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 // importo axios per poter gestire i dati che gli passo tramite controller come se fosse una chiamata ad un api
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2340,23 +2359,49 @@ __webpack_require__.r(__webpack_exports__);
         console.log(res.data);
         _this.restaurants = res.data.restaurants;
       });
+    },
+    categoryFilter: function categoryFilter() {
+      var _this2 = this;
+
+      this.restaurants.forEach(function (elm, index) {
+        var count = 0;
+        elm.restaurant_type.forEach(function (obj) {
+          var typeId = 0;
+          typeId = obj.id;
+          console.log(typeId);
+
+          if (_this2.array.includes(typeId)) {
+            count = count + 1;
+            console.log("e incluso");
+          } else {
+            console.log("NOOOOOOOOOOOO");
+          }
+        });
+
+        if (count == 0) {
+          _this2.restaurants.splice(index, 1);
+        }
+      });
     }
   },
   mounted: function mounted() {
     this.getRestaurants();
     console.log(this.filtro);
+    console.log();
+    console.log(this.restaurants);
   },
   computed: {
     filtraggio: function filtraggio() {
-      var _this2 = this;
+      var _this3 = this;
 
       return this.restaurants.filter(function (element) {
-        return element.nome_attivita.includes(_this2.filtro);
+        return element.nome_attivita.includes(_this3.filtro);
       });
     }
   },
   props: {
-    filtro: String
+    filtro: String,
+    array: Array
   }
 });
 
@@ -3861,9 +3906,11 @@ var render = function () {
     [
       _c("Jumbo", { on: { "input-result": _vm.inputFunction } }),
       _vm._v(" "),
-      _c("KitchenTypes"),
+      _c("KitchenTypes", { on: { TypesArray: _vm.getTypes } }),
       _vm._v(" "),
-      _c("RestaurantsList", { attrs: { filtro: this.input } }),
+      _c("RestaurantsList", {
+        attrs: { filtro: this.input, array: this.selectedTypes },
+      }),
       _vm._v(" "),
       _c("Footer"),
     ],
@@ -4043,11 +4090,26 @@ var render = function () {
       },
       _vm._l(_vm.types, function (type) {
         return _c("h4", { key: type.id, staticClass: "category" }, [
-          _c("a", { staticClass: "link", attrs: { href: "http://" } }, [
-            _vm._v(
-              "\n                " + _vm._s(type.tipologia) + "  \n            "
-            ),
-          ]),
+          _c(
+            "a",
+            {
+              staticClass: "link",
+              staticStyle: { cursor: "pointer" },
+              on: {
+                click: function ($event) {
+                  _vm.selectedTypes(type),
+                    _vm.$emit("TypesArray", _vm.selectedTypesArray)
+                },
+              },
+            },
+            [
+              _vm._v(
+                "\n                " +
+                  _vm._s(type.tipologia) +
+                  "  \n            "
+              ),
+            ]
+          ),
         ])
       }),
       0
@@ -4129,13 +4191,24 @@ var render = function () {
                 ),
               ]),
               _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(restaurant.tipologia) +
-                    "\n                "
-                ),
-              ]),
+              _c(
+                "ul",
+                { staticClass: "list-group" },
+                _vm._l(restaurant.restaurant_type, function (categorie) {
+                  return _c(
+                    "li",
+                    { key: categorie.id, staticClass: "list-group-item" },
+                    [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(categorie.tipologia) +
+                          "\n                    "
+                      ),
+                    ]
+                  )
+                }),
+                0
+              ),
               _vm._v(" "),
               _c(
                 "router-link",
@@ -4153,6 +4226,18 @@ var render = function () {
         ])
       }),
       0
+    ),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        on: {
+          click: function ($event) {
+            return _vm.categoryFilter()
+          },
+        },
+      },
+      [_vm._v("ciao bell")]
     ),
   ])
 }
@@ -20087,7 +20172,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\js\routes.js */"./resources/js/routes.js");
+module.exports = __webpack_require__(/*! C:\Users\andre\Desktop\final-proj\DeliveBoo\resources\js\routes.js */"./resources/js/routes.js");
 
 
 /***/ })

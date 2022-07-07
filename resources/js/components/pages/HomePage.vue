@@ -1,10 +1,11 @@
 <template>
     <div>
         <Jumbo @input-result="inputFunction" />
-        <KitchenTypes/>
+        <KitchenTypes @TypesArray="getTypes" />
         <!-- importo l'index dei post, sarà questa ora la nostra home page -->
         <RestaurantsList 
         :filtro="this.input"
+        :array="this.selectedTypes"
         />
         <Footer/>
     </div>
@@ -25,14 +26,17 @@ export default{
     },
     data(){
         return{
-            input:''
+            input:'',
+            selectedTypes: [],
         }
     },    
     methods:{
         inputFunction(testo){
-            console.log(testo);
             return this.input = testo;
             
+        },
+        getTypes(elm){
+            this.selectedTypes = elm
         }
     }
 }

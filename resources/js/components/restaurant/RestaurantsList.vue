@@ -13,14 +13,19 @@
                     <p class="card-title">
                         {{ restaurant.indirizzo}}                        
                     </p>
-                    <p>
-                        {{ restaurant.tipologia}}
-                    </p>
+                    <!-- <p>
+                        {{restaurant.restaurant_type[0].tipologia}}
+                    </p> -->
+                    <ul class="list-group">
+                        <li class="list-group-item" v-for="categorie in restaurant.restaurant_type" :key="categorie.id">
+                            {{categorie.tipologia}}
+                        </li>
+                    </ul>
                     <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary">View</router-link>
                 </div>
             </div>        
         </div>
-        
+        <button @click="categoryFilter()">ciao bell</button>
     </div>
 </template>
 
@@ -45,11 +50,33 @@ export default {
                 console.log(res.data);
                  this.restaurants = res.data.restaurants;
                 })
+        },
+        categoryFilter(){
+            this.restaurants.forEach((elm, index) => {
+                let count = 0
+                elm.restaurant_type.forEach(obj => {
+
+                    let typeId = 0
+                    typeId = obj.id
+                    console.log(typeId)
+                     if(this.array.includes(typeId)){
+                         count = count + 1
+                         console.log("e incluso")
+                     } else{
+                         console.log("NOOOOOOOOOOOO")
+                     }
+                });
+                if(count == 0){
+                    this.restaurants.splice(index, 1)
+                }
+            });
         }
    },
    mounted(){
     this.getRestaurants()
     console.log(this.filtro)
+    console.log()
+    console.log( this.restaurants)
    },
    computed:{
     filtraggio(){        
@@ -59,7 +86,8 @@ export default {
     }
    },
    props:{
-    filtro: String
+    filtro: String,
+    array: Array,
    }
 }
 </script>
