@@ -27,7 +27,7 @@
         {{-- inserimento indirizzo attività --}}
         <div class="prezzo">
             <label for="content">Prezzo</label>
-            <input type="number" class="form-control" id="prezzo" placeholder="prezzo" name="prezzo" value="{{ old( 'prezzo', $dish->prezzo) }}">
+            <input type="text" class="form-control" id="prezzo" placeholder="prezzo" name="prezzo" value="{{ old( 'prezzo', $dish->prezzo) }}">
         </div>
 
         <div class="form-group">
