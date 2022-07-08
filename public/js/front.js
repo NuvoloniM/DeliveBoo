@@ -2245,6 +2245,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantShow',
@@ -2303,27 +2306,28 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         }
 
         ;
-      } // if (!this.carrello.includes(elem)) {
-      //     const item = {
-      //         'quantità':1,
-      //         'data': elem,
-      //      } 
-      //     this.carrello.push(item); 
-      //     console.log(this.carrello);
-      // } else {
-      //     prompt("c'è gia");
-      // };
-      // if (this.carrello.includes(elem)) {
-      //     prompt("c'è già");
-      // } else {
-      //     const item = {
-      //         'quantità':1,
-      //         'data': elem,
-      //     } 
-      //    this.carrello.push(item); 
-      // }
-      // return this.carrello;
+      }
+    },
+    // isInCart(elem){
+    //     this.carrello.forEach(element=>{
+    //         if (element.data == elem) {
+    //             return true;
+    //         }
+    //     })
+    // },
+    removeAllFromCart: function removeAllFromCart(elem, index) {
+      this.totalPrice -= elem.prezzo * elem.quantità;
+      this.carrello.splice(index, 1);
+    },
+    removeFromCart: function removeFromCart(elem, index) {
+      if (elem.quantità > 0) {
+        elem.quantità -= 1;
+        this.totalPrice -= elem.prezzo;
 
+        if (elem.quantità == 0) {
+          this.carrello.splice(index, 1);
+        }
+      }
     },
     getPrice: function getPrice() {
       var somma = 0;
@@ -4403,11 +4407,11 @@ var render = function () {
                     ])
                   : _vm._e(),
                 _vm._v(" "),
-                _vm._l(_vm.carrello, function (dish) {
+                _vm._l(_vm.carrello, function (dish, index) {
                   return _c(
                     "li",
                     {
-                      key: dish.id,
+                      key: index,
                       staticClass:
                         "list-group-item d-flex justify-content-between",
                     },
@@ -4417,6 +4421,33 @@ var render = function () {
                       ]),
                       _vm._v(" "),
                       _c("span", [_vm._v(_vm._s(dish.data.prezzo))]),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass: "text-danger",
+                          on: {
+                            click: function ($event) {
+                              _vm.removeAllFromCart(index), _vm.getPrice(dish)
+                            },
+                          },
+                        },
+                        [_vm._v(" rimuovi tutto  ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass: "text-warning",
+                          on: {
+                            click: function ($event) {
+                              _vm.removeFromCart(dish, index),
+                                _vm.getPrice(dish)
+                            },
+                          },
+                        },
+                        [_vm._v(" - ")]
+                      ),
                       _vm._v(" "),
                       _c("span", [
                         _vm._v(" quantità " + _vm._s(dish.quantità)),
