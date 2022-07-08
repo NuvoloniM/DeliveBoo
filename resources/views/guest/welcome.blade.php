@@ -32,7 +32,9 @@
             @endif --}}
 
             <div class="content">
-                <div id="root"></div>
+                <div id="root">
+                    
+                </div>
             </div>
         </div>
         {{-- richiamo javascript vue  --}}
