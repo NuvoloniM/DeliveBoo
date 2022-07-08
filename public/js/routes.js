@@ -2331,9 +2331,103 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/restaurant/RestaurantsList.vue?vue&type=script&lang=js& ***!
   \*************************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\resources\\js\\components\\restaurant\\RestaurantsList.vue: Unexpected token (83:0)\n\n\u001b[0m \u001b[90m 81 |\u001b[39m     \u001b[36mimport\u001b[39m axios \u001b[36mfrom\u001b[39m \u001b[32m'axios'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 82 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 83 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 84 |\u001b[39m     \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 85 |\u001b[39m         name\u001b[33m:\u001b[39m \u001b[32m'RestaurantsList'\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 86 |\u001b[39m         data() {\u001b[0m\n    at instantiate (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:72:32)\n    at constructor (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:359:12)\n    at Parser.raise (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:3339:19)\n    at Parser.unexpected (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:3377:16)\n    at Parser.parseExprAtom (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:13123:22)\n    at Parser.parseExprSubscripts (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:12648:23)\n    at Parser.parseUpdate (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:12627:21)\n    at Parser.parseMaybeUnary (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:12598:23)\n    at Parser.parseMaybeUnaryOrPrivate (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:12392:61)\n    at Parser.parseExprOps (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:12399:23)\n    at Parser.parseMaybeConditional (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:12369:23)\n    at Parser.parseMaybeAssign (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:12321:21)\n    at Parser.parseExpressionBase (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:12257:23)\n    at C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:12251:39\n    at Parser.allowInAnd (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:14346:16)\n    at Parser.parseExpression (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:12251:17)\n    at Parser.parseStatementContent (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:14786:23)\n    at Parser.parseStatement (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:14643:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:15286:25)\n    at Parser.parseBlockBody (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:15277:10)\n    at Parser.parseProgram (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:14561:10)\n    at Parser.parseTopLevel (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:14548:25)\n    at Parser.parse (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:16556:10)\n    at parse (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\parser\\lib\\index.js:16608:38)\n    at parser (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\core\\lib\\parser\\index.js:52:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:87:38)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\core\\lib\\transformation\\index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\@babel\\core\\lib\\transform.js:25:41)\n    at transform.next (<anonymous>)\n    at step (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\gensync\\index.js:261:32)\n    at C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\gensync\\index.js:273:13\n    at async.call.result.err.err (C:\\Users\\alber\\Desktop\\progetto-finale\\DeliveBoo\\node_modules\\gensync\\index.js:223:11)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// importo axios per poter gestire i dati che gli passo tramite controller come se fosse una chiamata ad un api
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'RestaurantsList',
+  data: function data() {
+    return {
+      restaurants: [],
+      inputRestaurant: ''
+    };
+  },
+  methods: {
+    getRestaurants: function getRestaurants() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://127.0.0.1:8000/api/restaurants').then(function (res) {
+        // riempio l'array vuoto in data con gli elementi presi con axios
+        console.log(res.data);
+        _this.restaurants = res.data.restaurants;
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getRestaurants();
+    console.log(this.filtro);
+  },
+  computed: {
+    filtraggio: function filtraggio() {
+      var _this2 = this;
+
+      return this.restaurants.filter(function (element) {
+        return element.nome_attivita.includes(_this2.filtro);
+      });
+    }
+  },
+  props: {
+    filtro: String
+  }
+});
 
 /***/ }),
 
@@ -4150,8 +4244,76 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "d-flex container" }, [
+    _c(
+      "div",
+      { staticClass: "row personal d-flex flex-wrap justify-content-start " },
+      _vm._l(_vm.filtraggio, function (restaurant) {
+        return _c(
+          "div",
+          {
+            key: restaurant.id,
+            staticClass: "card d-flex flex-column justify-content-between",
+          },
+          [
+            _c("div", { staticClass: "d-flex img" }, [
+              _c("img", {
+                staticClass: "card-img-top",
+                attrs: {
+                  src: "/storage/" + restaurant.immagine,
+                  alt: "" + restaurant.nome_attivita,
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-header name font-grande" }, [
+              _vm._v(
+                "\n                \n                " +
+                  _vm._s(restaurant.nome_attivita) +
+                  "\n            "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body address container-fluid" }, [
+              _c("p", { staticClass: "card-title font-piccolo" }, [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(restaurant.indirizzo) +
+                    "                        \n                "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "link margin" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-primary blue",
+                    attrs: {
+                      to: { name: "menu", params: { id: restaurant.id } },
+                    },
+                  },
+                  [_vm._v("View")]
+                ),
+              ],
+              1
+            ),
+          ]
+        )
+      }),
+      0
+    ),
+  ])
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 
