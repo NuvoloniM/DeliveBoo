@@ -2135,6 +2135,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantShow',
@@ -2223,6 +2224,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         console.log(_typeof(somma));
       });
       return this.totalPrice = somma;
+    },
+    deleteCart: function deleteCart() {
+      this.carrello = [];
     }
   },
   mounted: function mounted() {
@@ -4044,7 +4048,7 @@ var render = function () {
                             },
                           },
                         },
-                        [_vm._v(" rimuovi tutto  ")]
+                        [_vm._v(" rimuovi tutto ")]
                       ),
                       _vm._v(" "),
                       _c(
@@ -4077,6 +4081,19 @@ var render = function () {
                           _vm._v(" Prezzo totale: "),
                           _c("span", [_vm._v(_vm._s(_vm.totalPrice))]),
                         ]),
+                        _vm._v(" "),
+                        _c(
+                          "h5",
+                          {
+                            staticClass: "btn btn-danger",
+                            on: {
+                              click: function ($event) {
+                                return _vm.deleteCart()
+                              },
+                            },
+                          },
+                          [_vm._v("Svuota carrello ")]
+                        ),
                       ]
                     )
                   : _vm._e(),

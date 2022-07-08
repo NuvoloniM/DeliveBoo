@@ -29,12 +29,13 @@
                             <li class="list-group-item d-flex justify-content-between" v-for="(dish, index) in carrello" :key="index">
                                 <span class="me-2">{{dish.data.nome_prodotto}}</span>
                                 <span>{{dish.data.prezzo}}</span>
-                                <span class="text-danger" @click="removeAllFromCart(index),getPrice(dish)"> rimuovi tutto  </span>
+                                <span class="text-danger" @click="removeAllFromCart(index),getPrice(dish)"> rimuovi tutto </span>
                                 <span class="text-warning" @click="removeFromCart(dish,index), getPrice(dish)"> - </span>
                                 <span> quantità {{dish.quantità}}</span>
                             </li>
                             <li class="list-group-item text-center pt-2" v-if="carrello.length > 0">
                                 <h3 class="text-black fw-5"> Prezzo totale: <span>{{totalPrice}}</span></h3>
+                                <h5 class="btn btn-danger" @click="deleteCart()">Svuota carrello </h5>
                             </li>
                         </ul>
                     </div>
@@ -127,6 +128,9 @@ export default {
                 console.log(typeof(somma))
             }); 
             return this.totalPrice = somma           
+        },
+        deleteCart(){
+            this.carrello = [];
         }
     },
     mounted(){
