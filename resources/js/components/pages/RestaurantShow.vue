@@ -38,6 +38,7 @@
                                 <h3 class="text-black fw-5"> Prezzo totale: <span>{{totalPrice}}</span></h3>
                                 <h5 class="btn btn-danger" @click="deleteCart()">Svuota carrello </h5>
                             </li>
+                            <router-link :to="{name:'form'}" class="btn btn-info">Completa il tuo ordine</router-link>
                         </ul>
                     </div>
                 </div>
