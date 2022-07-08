@@ -2069,7 +2069,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: {
-        name: '',
+        nome: '',
         indirizzo: '',
         cognome: ''
       }
@@ -2080,7 +2080,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('http://127.0.0.1:8000/api/messages', this.form).then(function (res) {
-        _this.form.name = '';
+        _this.form.nome = '';
         _this.form.indirizzo = '';
         _this.form.cognome = '';
       });
@@ -27331,8 +27331,8 @@ var render = function () {
         {
           name: "model",
           rawName: "v-model",
-          value: _vm.form.name,
-          expression: "form.name",
+          value: _vm.form.nome,
+          expression: "form.nome",
         },
       ],
       staticClass: "form-control",
@@ -27342,13 +27342,13 @@ var render = function () {
         placeholder: "inserisci nome",
         name: "nome",
       },
-      domProps: { value: _vm.form.name },
+      domProps: { value: _vm.form.nome },
       on: {
         input: function ($event) {
           if ($event.target.composing) {
             return
           }
-          _vm.$set(_vm.form, "name", $event.target.value)
+          _vm.$set(_vm.form, "nome", $event.target.value)
         },
       },
     }),

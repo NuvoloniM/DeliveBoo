@@ -7,7 +7,7 @@
                 class="form-control"
                 id="nome"
                 placeholder="inserisci nome"
-                v-model="form.name"
+                v-model="form.nome"
                 name="nome"
             >
             <input
@@ -39,7 +39,7 @@ export default {
     data(){
         return{
             form: {
-                name: '',
+                nome: '',
                 indirizzo: '',
                 cognome: '',
             }
@@ -49,7 +49,7 @@ export default {
         sendForm(){
             axios.post('http://127.0.0.1:8000/api/messages', this.form)
                 .then((res)=>{
-                    this.form.name = '';
+                    this.form.nome = '';
                     this.form.indirizzo = '';
                     this.form.cognome = '';
                 })

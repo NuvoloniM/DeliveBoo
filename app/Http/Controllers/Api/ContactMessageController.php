@@ -36,16 +36,17 @@ class ContactMessageController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();               
-        $product = new Product($data);
-        $product->save();
+        $new_order = new Order($data);
+        $new_order->save();
     
         return [
-                'id' => $product->id,
-                'name' => $product->name,
-                'sku' => $product->sku,
-                'price' => $product->price,
-                'category_id' => $product->category->id,
-            ],
+            'orders' =>[
+                'nome' => $new_order->name,
+                'cognome' => $new_order->cognome,
+                'indirizzo' => $new_order->indirizzo,
+            ]
+            
+        ];
     }
 
     /**
