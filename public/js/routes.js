@@ -2385,6 +2385,7 @@ __webpack_require__.r(__webpack_exports__);
           }
         });
       });
+      console.log(this.prova);
       res = this.restaurants.filter(function (item) {
         return _this2.prova.includes(item);
       });

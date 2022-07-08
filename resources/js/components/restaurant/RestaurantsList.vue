@@ -74,6 +74,7 @@ export default {
                 });
                 
             });
+            console.log(this.prova)
              res = this.restaurants.filter(item => this.prova.includes(item));
                 console.log(res)
                 this.restaurants = [];
