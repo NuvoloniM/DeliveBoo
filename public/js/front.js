@@ -2188,7 +2188,8 @@ __webpack_require__.r(__webpack_exports__);
         nome: '',
         indirizzo: '',
         cognome: '',
-        data_ordine: ''
+        data_ordine: '',
+        restaurant_id: this.$route.params.id
       }
     };
   },
@@ -2196,11 +2197,12 @@ __webpack_require__.r(__webpack_exports__);
     sendForm: function sendForm() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('http://127.0.0.1:8000/api/messages', this.form).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("http://127.0.0.1:8000/api/messages/".concat(this.$route.params.id), this.form).then(function (res) {
         _this.form.nome = '';
         _this.form.indirizzo = '';
         _this.form.cognome = '';
         _this.form.data_ordine = '';
+        _this.form.restaurant_id = '';
       });
     }
   }
@@ -2383,6 +2385,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     return {
       count: 0,
       menu: [],
+      restaurant_id: '',
       carrello: [],
       totalPrice: 0,
       hostedFieldInstance: false,
@@ -2401,6 +2404,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         console.log(res.data); // console.log(data);
 
         _this.menu = res.data;
+        _this.restaurant_id = _this.$route.params.id;
       });
     },
     addToCart: function addToCart(elem) {
@@ -28040,7 +28044,9 @@ var render = function () {
                   "router-link",
                   {
                     staticClass: "btn btn-info",
-                    attrs: { to: { name: "form" } },
+                    attrs: {
+                      to: { name: "form", params: { id: this.restaurant_id } },
+                    },
                   },
                   [_vm._v("Completa il tuo ordine")]
                 ),
@@ -44548,7 +44554,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     component: _components_pages_RestaurantShow_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     name: 'menu'
   }, {
-    path: '/messages',
+    path: '/messages/:id',
     component: _components_pages_ContactForm_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
     name: 'form'
   }]

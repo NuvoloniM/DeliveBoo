@@ -21,7 +21,7 @@ const router = new VueRouter({
     routes: [
         {path:'/', component: HomePage, name:'home'},
         {path:'/restaurant/:id', component: RestaurantShow, name:'menu'},
-        {path:'/messages', component: ContactForm, name:'form'},
+        {path:'/messages/:id', component: ContactForm, name:'form'},
     ]
 })
 // lo esporto per poterlo richiamare in front.js e in #root

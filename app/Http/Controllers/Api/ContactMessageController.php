@@ -47,6 +47,7 @@ class ContactMessageController extends Controller
                 'cognome' => $new_order->cognome,
                 'indirizzo' => $new_order->indirizzo,
                 'data_ordine' => $new_order->data_ordine,
+                'restaurant_id' => $new_order->restaurant_id,
             ]
             
         ];

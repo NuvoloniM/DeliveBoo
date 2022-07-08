@@ -46,17 +46,21 @@ export default {
                 indirizzo: '',
                 cognome: '',
                 data_ordine:'',
-            }
+                restaurant_id: this.$route.params.id,
+
+            },
+            
         }
     },
     methods:{
         sendForm(){
-            axios.post('http://127.0.0.1:8000/api/messages', this.form)
+            axios.post(`http://127.0.0.1:8000/api/messages/${ this.$route.params.id }`, this.form)
                 .then((res)=>{
                     this.form.nome = '';
                     this.form.indirizzo = '';
                     this.form.cognome = '';
                     this.form.data_ordine = '';
+                    this.form.restaurant_id = '';
                 })
         }
     }
