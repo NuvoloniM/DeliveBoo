@@ -2136,6 +2136,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantShow',
@@ -2164,7 +2165,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       var _this2 = this;
 
       console.log(elem);
-      this.count = 0;
 
       if (this.carrello.length == 0) {
         var item = {
@@ -2194,7 +2194,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         }
 
         ;
+        this.count = 0;
       }
+    },
+    addInCart: function addInCart(elem) {
+      elem.quantità += 1;
     },
     // isInCart(elem){
     //     this.carrello.forEach(element=>{
@@ -4063,6 +4067,19 @@ var render = function () {
                           },
                         },
                         [_vm._v(" - ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass: "text-primary",
+                          on: {
+                            click: function ($event) {
+                              _vm.addInCart(dish), _vm.getPrice(dish)
+                            },
+                          },
+                        },
+                        [_vm._v(" + ")]
                       ),
                       _vm._v(" "),
                       _c("span", [

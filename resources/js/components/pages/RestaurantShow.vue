@@ -31,6 +31,7 @@
                                 <span>{{dish.data.prezzo}}</span>
                                 <span class="text-danger" @click="removeAllFromCart(index),getPrice(dish)"> rimuovi tutto </span>
                                 <span class="text-warning" @click="removeFromCart(dish,index), getPrice(dish)"> - </span>
+                                <span class="text-primary" @click="addInCart(dish), getPrice(dish)"> + </span>
                                 <span> quantità {{dish.quantità}}</span>
                             </li>
                             <li class="list-group-item text-center pt-2" v-if="carrello.length > 0">
@@ -75,7 +76,6 @@ export default {
         },
         addToCart(elem){
             console.log(elem);
-            this.count = 0;
             if (this.carrello.length == 0) {
                 let item = {
                 'quantità': 1,
@@ -99,7 +99,11 @@ export default {
                     this.carrello[index].quantità +=1;
                     console.log(this.carrello);
                 };
+                this.count = 0;
             }
+        },
+        addInCart(elem){
+            elem.quantità += 1;
         },
         // isInCart(elem){
         //     this.carrello.forEach(element=>{
