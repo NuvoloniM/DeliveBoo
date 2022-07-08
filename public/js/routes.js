@@ -2063,6 +2063,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ContactForm',
@@ -2071,7 +2074,8 @@ __webpack_require__.r(__webpack_exports__);
       form: {
         nome: '',
         indirizzo: '',
-        cognome: ''
+        cognome: '',
+        data_ordine: ''
       }
     };
   },
@@ -2083,6 +2087,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.form.nome = '';
         _this.form.indirizzo = '';
         _this.form.cognome = '';
+        _this.form.data_ordine = '';
       });
     }
   }
@@ -27406,6 +27411,8 @@ var render = function () {
       }),
     ]),
     _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
     _c(
       "button",
       {
@@ -27417,7 +27424,16 @@ var render = function () {
     ),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("input", { attrs: { type: "hidden", name: "data_ordine" } }),
+    ])
+  },
+]
 render._withStripped = true
 
 

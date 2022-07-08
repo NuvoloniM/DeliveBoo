@@ -27,6 +27,9 @@
                     v-model="form.indirizzo"
                 >
             </div>
+            <div class="form-group">
+                <input type="hidden" name="data_ordine">
+            </div>
             <button class="btn btn-primary" @click="sendForm" type="button">Invia</button>
 
         </form>
@@ -42,6 +45,7 @@ export default {
                 nome: '',
                 indirizzo: '',
                 cognome: '',
+                data_ordine:'',
             }
         }
     },
@@ -52,6 +56,7 @@ export default {
                     this.form.nome = '';
                     this.form.indirizzo = '';
                     this.form.cognome = '';
+                    this.form.data_ordine = '';
                 })
         }
     }

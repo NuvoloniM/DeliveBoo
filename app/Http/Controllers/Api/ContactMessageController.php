@@ -34,8 +34,10 @@ class ContactMessageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $data = $request->all();               
+    {           
+        $today =  date("Y-m-d h:i:s");
+        $request->merge(['data_ordine' => $today]);
+        $data = $request->all();  
         $new_order = new Order($data);
         $new_order->save();
     
@@ -44,6 +46,7 @@ class ContactMessageController extends Controller
                 'nome' => $new_order->name,
                 'cognome' => $new_order->cognome,
                 'indirizzo' => $new_order->indirizzo,
+                'data_ordine' => $new_order->data_ordine,
             ]
             
         ];
