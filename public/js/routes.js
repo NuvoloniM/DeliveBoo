@@ -2260,6 +2260,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'KitchenTypes',
@@ -2297,6 +2311,33 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2377,7 +2418,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container[data-v-61a7c374] {\n  width: 100%;\n  margin: 5vh auto;\n}\n.container .row .col1[data-v-61a7c374] {\n  background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/magnapp-logo.png */ "./public/img/magnapp-logo.png")) + ");\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n}\n.container .row .col[data-v-61a7c374] {\n  text-align: center;\n}\n.container .row .col ul[data-v-61a7c374] {\n  list-style-type: none;\n}\n.container .row .col ul li a[data-v-61a7c374] {\n  text-decoration: none;\n  color: white;\n}\n*[data-v-61a7c374] {\n  color: white;\n}", ""]);
+exports.push([module.i, ".a1[data-v-61a7c374] {\n  width: 100%;\n  margin: 5vh auto;\n}\n.a1 .row .col1[data-v-61a7c374] {\n  background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/magnapp-logo.png */ "./public/img/magnapp-logo.png")) + ");\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n}\n.a1 .row .col[data-v-61a7c374] {\n  text-align: center;\n  width: 33.3333333333%;\n}\n.a1 .row .col ul[data-v-61a7c374] {\n  list-style-type: none;\n}\n.a1 .row .col ul li a[data-v-61a7c374] {\n  text-decoration: none;\n  color: white;\n}\n@media (max-width: 770px) {\n.col[data-v-61a7c374] {\n    width: 50%;\n}\n}\n*[data-v-61a7c374] {\n  color: white;\n}", ""]);
 
 // exports
 
@@ -2396,7 +2437,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".personal[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  text-align: center;\n}\n.card[data-v-09ccf5a6] {\n  margin: 45px;\n  width: calc(25% - 25px);\n  margin: 2vh auto;\n}\n.card[data-v-09ccf5a6]:hover {\n  transform: scale(1.2);\n  transition-duration: 0.5s;\n}", ""]);
+exports.push([module.i, ".personal[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  text-align: center;\n}\n.card[data-v-09ccf5a6]:hover {\n  transform: scale(1.1);\n  transition-duration: 0.5s;\n}\n.img[data-v-09ccf5a6] {\n  height: 40%;\n}\n.name[data-v-09ccf5a6] {\n  height: 20%;\n  background-color: white;\n}\n.margin[data-v-09ccf5a6] {\n  padding: 10px 0 20px 0;\n}\n.font-piccolo[data-v-09ccf5a6] {\n  font-size: 15px;\n}\n.font-grande[data-v-09ccf5a6] {\n  font-size: 25px;\n}\n.blue[data-v-09ccf5a6] {\n  background-color: rgb(25, 159, 214);\n}\n@media (max-width: 8000px) {\n.card[data-v-09ccf5a6] {\n    width: calc(25% - 25px);\n    margin: 2vh auto;\n}\n}\n@media (max-width: 1100px) {\n.card[data-v-09ccf5a6] {\n    width: calc(33.3333333333% - 25px);\n    margin: 2vh auto;\n}\n}\n@media (max-width: 900px) {\n.card[data-v-09ccf5a6] {\n    width: calc(50% - 25px);\n    margin: 2vh auto;\n}\n}\n@media (max-width: 388px) {\n.card[data-v-09ccf5a6] {\n    width: calc(100% - 25px);\n    margin: 2vh auto;\n}\n}", ""]);
 
 // exports
 
@@ -2435,7 +2476,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.categories[data-v-095e18ec]{\n    width: 80%;\n    margin: 0 auto;  \n    overflow-x: auto;\n}\n.category[data-v-095e18ec]{\n    /* width: auto; */\n    margin: 4vh 3vh;\n}\n.link[data-v-095e18ec]{\n    text-decoration: none;\n    color: white;\n}\nh4[data-v-095e18ec]:hover{\n    transform: scale(1.5); \n    transition-duration: 0.5s;\n}\n.title[data-v-095e18ec]{\n    width: 50%;\n    margin: 5vh auto;\n    text-align: center;\n}\n*[data-v-095e18ec]{\n    color: white;\n}\n", ""]);
+exports.push([module.i, "\n.inline[data-v-095e18ec]{\n    display: inline-block;\n}\n@media( max-width: 380px ){\n.a1[data-v-095e18ec]{\n        display: block;\n}\n.a2[data-v-095e18ec]{\n        display: block;\n}\n.a3[data-v-095e18ec]{\n        display: block;\n}\n.a4[data-v-095e18ec]{\n        display: block;\n}\n}\n.categories[data-v-095e18ec]{\n    width: 80%;\n    margin: 0 auto;  \n    overflow-x: auto;\n}\n.category[data-v-095e18ec]{\n    /* width: auto; */\n    margin: 4vh 3vh;\n}\n.link[data-v-095e18ec]{\n    text-decoration: none;\n    color: white;\n}\nh4[data-v-095e18ec]:hover{\n    transform: scale(1.5); \n    transition-duration: 0.5s;\n}\n.title[data-v-095e18ec]{\n    width: 77%;\n    margin: 3vh auto;\n    text-align: center;\n}\n*[data-v-095e18ec]{\n    color: white;\n}   \n", ""]);
 
 // exports
 
@@ -3676,82 +3717,86 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("footer", [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col col1" }, [
-            _c("a", { attrs: { href: "" } }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col" }, [
-            _c("ul", [
-              _c("li", [
-                _c("a", { attrs: { href: "" } }, [
-                  _vm._v(
-                    "\n                                Scopri MagnApp    \n                            "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "" } }, [
-                  _vm._v(
-                    "\n                                La nostra storia\n                            "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "" } }, [
-                  _vm._v(
-                    "\n                                I nostri partner\n                            "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "" } }, [
-                  _vm._v(
-                    "\n                                Contattaci\n                            "
-                  ),
-                ]),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col" }, [
-            _c("p", [
-              _vm._v(
-                "\n                    Scarica MagnApp sul tuo cellulare!\n                "
-              ),
+      _c("div", { staticClass: "container a1" }, [
+        _c(
+          "div",
+          { staticClass: "row d-flex flex-wrap justify-content-center" },
+          [
+            _c("div", { staticClass: "col col1" }, [
+              _c("a", { attrs: { href: "" } }),
             ]),
             _vm._v(" "),
-            _c("div", [
-              _c("a", { attrs: { href: "" } }, [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: {
-                    width: "150",
-                    src: __webpack_require__(/*! ../../../public/img/logo-android.png */ "./public/img/logo-android.png"),
-                    alt: "",
-                  },
-                }),
+            _c("div", { staticClass: "col" }, [
+              _c("ul", [
+                _c("li", [
+                  _c("a", { attrs: { href: "" } }, [
+                    _vm._v(
+                      "\n                                Scopri MagnApp    \n                            "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "" } }, [
+                    _vm._v(
+                      "\n                                La nostra storia\n                            "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "" } }, [
+                    _vm._v(
+                      "\n                                I nostri partner\n                            "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "" } }, [
+                    _vm._v(
+                      "\n                                Contattaci\n                            "
+                    ),
+                  ]),
+                ]),
               ]),
             ]),
             _vm._v(" "),
-            _c("div", [
-              _c("a", { attrs: { href: "" } }, [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: {
-                    width: "150",
-                    src: __webpack_require__(/*! ../../../public/img/logo-apple.png */ "./public/img/logo-apple.png"),
-                    alt: "",
-                  },
-                }),
+            _c("div", { staticClass: "col" }, [
+              _c("p", [
+                _vm._v(
+                  "\n                    Scarica MagnApp sul tuo cellulare!\n                "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("a", { attrs: { href: "" } }, [
+                  _c("img", {
+                    staticClass: "img-fluid",
+                    attrs: {
+                      width: "150",
+                      src: __webpack_require__(/*! ../../../public/img/logo-android.png */ "./public/img/logo-android.png"),
+                      alt: "",
+                    },
+                  }),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("a", { attrs: { href: "" } }, [
+                  _c("img", {
+                    staticClass: "img-fluid",
+                    attrs: {
+                      width: "150",
+                      src: __webpack_require__(/*! ../../../public/img/logo-apple.png */ "./public/img/logo-apple.png"),
+                      alt: "",
+                    },
+                  }),
+                ]),
               ]),
             ]),
-          ]),
-        ]),
+          ]
+        ),
       ]),
     ])
   },
@@ -4060,13 +4105,27 @@ var staticRenderFns = [
     return _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "title container-fluid" }, [
         _c("h2", [
-          _vm._v("\n                Le categorie piu' amate\n            "),
-        ]),
-        _vm._v(" "),
-        _c("h3", [
-          _vm._v(
-            "\n                Trova i ristoranti piu' apprezzati della bella Napoli!\n            "
-          ),
+          _c("div", { staticClass: "inline" }, [
+            _c("div", { staticClass: "inline a1" }, [
+              _vm._v("\n                        Le \n                    "),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "inline a2" }, [
+              _vm._v(
+                "\n                        categorie\n                    "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "inline" }, [
+            _c("div", { staticClass: "inline a3" }, [
+              _vm._v("\n                        piu'\n                    "),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "inline a4" }, [
+              _vm._v("\n                        amate\n                    "),
+            ]),
+          ]),
         ]),
       ]),
     ])
@@ -4098,57 +4157,60 @@ var render = function () {
       "div",
       { staticClass: "row personal d-flex flex-wrap justify-content-start " },
       _vm._l(_vm.filtraggio, function (restaurant) {
-        return _c("div", { key: restaurant.id, staticClass: "card " }, [
-          _c("img", {
-            staticClass: "card-img-top",
-            attrs: {
-              src: "/storage/" + restaurant.immagine,
-              alt: "" + restaurant.nome_attivita,
-            },
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-header " }, [
-            _vm._v(
-              "\n                " +
-                _vm._s(restaurant.nome_attivita) +
-                "\n            "
-            ),
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "card-body " },
-            [
-              _c("p", { staticClass: "card-title" }, [
+        return _c(
+          "div",
+          {
+            key: restaurant.id,
+            staticClass: "card d-flex flex-column justify-content-between",
+          },
+          [
+            _c("div", { staticClass: "d-flex img" }, [
+              _c("img", {
+                staticClass: "card-img-top",
+                attrs: {
+                  src: "/storage/" + restaurant.immagine,
+                  alt: "" + restaurant.nome_attivita,
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-header name font-grande" }, [
+              _vm._v(
+                "\n                \n                " +
+                  _vm._s(restaurant.nome_attivita) +
+                  "\n            "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body address container-fluid" }, [
+              _c("p", { staticClass: "card-title font-piccolo" }, [
                 _vm._v(
                   "\n                    " +
                     _vm._s(restaurant.indirizzo) +
                     "                        \n                "
                 ),
               ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(restaurant.tipologia) +
-                    "\n                "
-                ),
-              ]),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: {
-                    to: { name: "menu", params: { id: restaurant.id } },
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "link margin" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-primary blue",
+                    attrs: {
+                      to: { name: "menu", params: { id: restaurant.id } },
+                    },
                   },
-                },
-                [_vm._v("View")]
-              ),
-            ],
-            1
-          ),
-        ])
+                  [_vm._v("View")]
+                ),
+              ],
+              1
+            ),
+          ]
+        )
       }),
       0
     ),

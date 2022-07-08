@@ -1,7 +1,7 @@
 <template>
     <header>
         <!-- importo una navbar di bootstrap -->
-        <nav class="navbar navbar-expand-lg navbar justify-content-between fixed-top">
+        <nav class="navbar navbar-expand-lg navbar justify-content-between fixed-top  ">
             <!-- non uso più il tag a per i link della navbar ma direttamente router-link -->
             <!-- => per gestire rotte front end uso :to="{name: ' nome dato in routes.vue'}" -->
             <!-- => per gestire rotte backend continuo ad usare il tag a e l'href" -->
@@ -9,7 +9,7 @@
                 <router-link class="navbar-brand" :to="{ name: 'home' }">
                     <img
                         :src="require('../../../public/img/magnapp-logo.png')"
-                        width="50"
+                        width="45"
                         alt=""
                     />
                     <img
@@ -34,7 +34,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
                             <router-link class="nav-link" :to="{ name: 'home' }"
                                 >Home</router-link
@@ -57,20 +57,20 @@
 </template>
 
 <script>
-export default {
-    name: "Header",
-};
+    export default {
+        name: "Header",
+    };
 </script>
 
 <style scoped>
-header {
-    height: 75px;    
-}
-a{
-    color: white;
-}
-/* scritte nere quando ci passo sopra */
-a:hover{
-    color: black;
-}
+    header {
+        height: 75px;    
+    }
+    a{
+        color: white;
+    }
+    /* scritte nere quando ci passo sopra */
+    a:hover{
+        color: black;
+    }
 </style>

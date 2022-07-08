@@ -1,7 +1,7 @@
 <template>
     <footer>
-        <div class="container">
-            <div class="row">
+        <div class="container a1">
+            <div class="row d-flex flex-wrap justify-content-center">
                 <div class="col col1">
                     <a href="">
                         <!-- <img class="img-fluid" width="100" src="../../../public/img/magnapp-logo.png" alt=""> -->
@@ -59,7 +59,7 @@
 
 </script>
 <style lang="scss" scoped>
-    .container{
+    .a1{
         width: 100%;
         margin: 5vh auto;        
 
@@ -74,6 +74,7 @@
 
             .col{
                 text-align: center;
+                width: calc(100% / 3);
 
                 ul{
                     list-style-type: none;
@@ -89,6 +90,12 @@
             }
         }
         
+    }
+
+    @media (max-width:770px) {
+        .col{
+            width: calc(100% / 2);
+        }
     }
     *{
         color: white;

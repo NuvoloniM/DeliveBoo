@@ -3,11 +3,25 @@
         <div class="container-fluid">
             <div class="title container-fluid">
                 <h2>
-                    Le categorie piu' amate
+                    <div class="inline">
+                        <div class="inline a1">
+                            Le 
+                        </div>
+                        <div class="inline a2">
+                            categorie
+                        </div>    
+                    </div>
+                    <div class="inline">
+                        <div class="inline a3">
+                            piu'
+                        </div>
+                        <div class="inline a4">
+                            amate
+                        </div>    
+                    </div>
+                    
                 </h2>
-                <h3>
-                    Trova i ristoranti piu' apprezzati della bella Napoli!
-                </h3>      
+                      
             </div>
               
         </div>
@@ -50,6 +64,24 @@
 </script>
 
 <style scoped>    
+    .inline{
+        display: inline-block;
+    }
+    @media( max-width: 380px ){
+        .a1{
+            display: block;
+        }
+        .a2{
+            display: block;            
+        }
+        .a3{
+            display: block;            
+        }
+        .a4{
+            display: block;            
+        }
+    }
+    
     .categories{
         width: 80%;
         margin: 0 auto;  
@@ -69,11 +101,11 @@
         
     }
     .title{
-        width: 50%;
-        margin: 5vh auto;
+        width: 77%;
+        margin: 3vh auto;
         text-align: center;
     }
     *{
         color: white;
-    }
+    }   
 </style>
