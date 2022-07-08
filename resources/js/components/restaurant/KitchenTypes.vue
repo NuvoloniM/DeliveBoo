@@ -28,7 +28,7 @@
         
         <div class="d-flex categories container-fluid justify-content-center" >
             <h4 class="category" v-for="type in types" :key="type.id">
-                <a class="link" href="http://">
+                <a class="link" @click="selectedTypes(type), $emit('TypesArray', selectedTypesArray) " style="cursor: pointer;">
                     {{type.tipologia}}  
                 </a>     
             </h4>
@@ -44,6 +44,7 @@
         data() {
             return {
                 types: [],
+                selectedTypesArray: [],
             }
         },
         methods: {
@@ -54,6 +55,17 @@
                         console.log(res.data.restaurants_types);
                         this.types = res.data.restaurants_types;
                     })
+            },
+            selectedTypes(elm) {
+                    if(this.selectedTypesArray.includes(elm.id)){
+                    alert('hai già selezionato questa categoria')
+                    }
+                    else if(this.selectedTypesArray.length >= 3){
+                        alert('non puoi selezionare più di 3 categorie')
+                    }
+                    else{
+                        this.selectedTypesArray.push(elm.id)
+                    }
             }
         },
         mounted() {

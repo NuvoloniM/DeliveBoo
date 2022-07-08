@@ -11,6 +11,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{dish.nome_prodotto}}</h5>
                                 <p class="card-text"> {{dish.prezzo}}</p>
+                                <!-- <a v-if="isIsCart(dish)" class="btn btn-danger">remove from cart</a> -->
                                 <a @click="addToCart(dish), getPrice(dish)" class="btn btn-primary">Aggiungi al carrello </a>
                             </div>
                         </div>
@@ -25,13 +26,17 @@
                             <li class="list-group-item" v-if="carrello.length == 0">
                                 <h4 class="text-center">il carrello è vuoto</h4>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between" v-for="dish in carrello" :key="dish.id">
+                            <li class="list-group-item d-flex justify-content-between" v-for="(dish, index) in carrello" :key="index">
                                 <span class="me-2">{{dish.data.nome_prodotto}}</span>
                                 <span>{{dish.data.prezzo}}</span>
+                                <span class="text-danger" @click="removeAllFromCart(index),getPrice(dish)"> rimuovi tutto </span>
+                                <span class="text-warning" @click="removeFromCart(dish,index), getPrice(dish)"> - </span>
+                                <span class="text-primary" @click="addInCart(dish), getPrice(dish)"> + </span>
                                 <span> quantità {{dish.quantità}}</span>
                             </li>
                             <li class="list-group-item text-center pt-2" v-if="carrello.length > 0">
                                 <h3 class="text-black fw-5"> Prezzo totale: <span>{{totalPrice}}</span></h3>
+                                <h5 class="btn btn-danger" @click="deleteCart()">Svuota carrello </h5>
                             </li>
                         </ul>
                     </div>
@@ -71,7 +76,6 @@ export default {
         },
         addToCart(elem){
             console.log(elem);
-            this.count = 0;
             if (this.carrello.length == 0) {
                 let item = {
                 'quantità': 1,
@@ -95,29 +99,31 @@ export default {
                     this.carrello[index].quantità +=1;
                     console.log(this.carrello);
                 };
+                this.count = 0;
             }
-           
-                // if (!this.carrello.includes(elem)) {
-                //     const item = {
-                //         'quantità':1,
-                //         'data': elem,
-                //      } 
-                //     this.carrello.push(item); 
-                //     console.log(this.carrello);
-                // } else {
-                //     prompt("c'è gia");
-                // };
-                
-            // if (this.carrello.includes(elem)) {
-            //     prompt("c'è già");
-            // } else {
-            //     const item = {
-            //         'quantità':1,
-            //         'data': elem,
-            //     } 
-            //    this.carrello.push(item); 
-            // }
-            // return this.carrello;
+        },
+        addInCart(elem){
+            elem.quantità += 1;
+        },
+        // isInCart(elem){
+        //     this.carrello.forEach(element=>{
+        //         if (element.data == elem) {
+        //             return true;
+        //         }
+        //     })
+        // },
+        removeAllFromCart(elem,index){
+            this.totalPrice -= elem.prezzo*elem.quantità;
+            this.carrello.splice(index,1);
+        },
+        removeFromCart(elem,index){
+            if(elem.quantità > 0){
+                elem.quantità -= 1;
+                this.totalPrice -= elem.prezzo;
+                if(elem.quantità == 0){
+                    this.carrello.splice(index,1);
+                }
+            }
         },
         getPrice(){
             let somma = 0
@@ -126,6 +132,9 @@ export default {
                 console.log(typeof(somma))
             }); 
             return this.totalPrice = somma           
+        },
+        deleteCart(){
+            this.carrello = [];
         }
     },
     mounted(){
