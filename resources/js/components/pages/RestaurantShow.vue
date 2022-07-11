@@ -1,6 +1,6 @@
 <template>
     <div class="p-3">
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-8">
                 <div class="row">
                     <div class="col-4" v-for="dish in menu" :key="dish.id">
@@ -42,10 +42,10 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
 
 
-        <div>
+        <!-- <div>
             <div class="box d-flex">
                 <div class="col1 ">
                     <div class="row">
@@ -93,6 +93,59 @@
                                 <h5 class="btn btn-danger" @click="deleteCart()">Svuota carrello </h5>
                             </li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="d-flex contenitore-generale">
+            <div class="piatti d-flex">
+                <div class="container container-piatti">
+                    <div class="row row-piatti d-flex flex-wrap justify-content-center">
+                        <div class="col-3 d-flex flex-column rounded-lg" v-for="dish in menu" :key="dish.id">
+                            <div class="img">
+                                <img class="img-fluid rounded-lg" :src="`${dish.immage}`" alt="">
+                            </div>
+                            <div class="nome mt-3">
+                                <p>
+                                    {{dish.nome_prodotto}}
+                                    <br>
+                                    {{dish.prezzo}}
+                                    <br>
+                                    <a @click="addToCart(dish), getPrice(dish)" class="pointer">Aggiungi al carrello</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carrello">
+                <div class="container container-carrello">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>
+                                CARRELLO
+                            </p>
+                            <p v-if="carrello.length == 0">
+                                Il carrello e' vuoto
+                            </p>
+                            <p v-for="(dish, index) in carrello" :key="index">
+                                <span class="me-2">{{dish.data.nome_prodotto}}</span>
+                                <span>{{dish.data.prezzo}}</span>
+                                <span class="text-danger pointer blue" @click="removeAllFromCart(index),getPrice(dish)"> 
+                                    rimuovi tutto 
+                                </span>
+                                <span class=" pointer white" @click="removeFromCart(dish,index), getPrice(dish)">  -  </span>
+                                <span class="pointer white" @click="addInCart(dish), getPrice(dish)">  +  </span>
+                                <span> quantità {{dish.quantità}}</span>
+                            </p>
+                            <p v-if="carrello.length > 0">
+                                Prezzo totale: <span>{{totalPrice}}</span>
+                            </p>
+                            <p @click="deleteCart()" v-if="carrello.length > 0" class="pointer text-danger">
+                                Svuota carrello
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -196,29 +249,82 @@
 </script>
 
 <style lang="scss" scoped>
-    .card {
-        text-align: center;
+    *{
+        background-color: rgb(25, 159, 214);
+        color: white;
     }
+    .contenitore-generale{
+        // background-color: red;
+        // height: 300px;
+        margin-top: 5vh;
 
-    .box {
-        // height: 200px;
-
-        .col1 {
-            background-color: yellow;
-            // height: 200px;
+        .piatti{
+            // background-color: yellow;
             width: 70%;
+            .container-piatti{
+                // background-color: orange;
+                // height: 300px;
+                .row-piatti{
+                    // border: 1px solid red;
+                    // height: 300px;
+                    .col-3{
+                        // border: 1px solid black;
+                        margin: 10px;                        
+                        text-align: center;
+                        a{
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
         }
 
-        .col2 {
-            background-color: purple;
-            // height: 200px;
+        .carrello{
+            // background-color: blue;
             width: 30%;
+            .container-carrello{
+                // background-color: blue;
+                // height: 300px;
+                .row{
+                    // background-color: purple;
+                    // height: 40vh;
+                    .col-12{
+                        // background-color: red;
+                        text-align: center;
+                        .white{
+                            color: white;
+                        }
+                    }
+                }
+            }
         }
     }
+    
+    
+    
+    // .card {
+    //     text-align: center;
+    // }
 
-    .col {
-        width: calc(100% / 3);
-    }
+    // .box {
+    //     // height: 200px;
+
+    //     .col1 {
+    //         background-color: yellow;
+    //         // height: 200px;
+    //         width: 70%;
+    //     }
+
+    //     .col2 {
+    //         background-color: purple;
+    //         // height: 200px;
+    //         width: 30%;
+    //     }
+    // }
+
+    // .col {
+    //     width: calc(100% / 3);
+    // }
 
 
 
@@ -231,6 +337,7 @@
 
     .pointer:hover {
         cursor: pointer;
+        color: blue;
     }
 
     .blue {
