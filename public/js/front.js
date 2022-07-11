@@ -2678,7 +2678,8 @@ __webpack_require__.r(__webpack_exports__);
       restaurants: [],
       inputRestaurant: '',
       prova: [],
-      types: []
+      types: [],
+      selectedType: []
     };
   },
   methods: {
@@ -2690,9 +2691,21 @@ __webpack_require__.r(__webpack_exports__);
         console.log(res.data);
         _this.restaurants = res.data.restaurants;
         _this.types = res.data.restaurants_types;
+
+        _this.types.forEach(function (elem) {
+          return elem.active = false;
+        });
       });
     },
-    restaurantFilter: function restaurantFilter() {},
+    // isOk(id){
+    //     if(this.selectedType.length== 0){
+    //         this.compare(id)
+    //     }else if (this.selectedType.includes(id)){
+    //     }
+    //     else if (this.selectedType.length == 3){
+    //         alert('non puoi selezionare più di 3 categorie')
+    //     }
+    // },
     compare: function compare(id) {
       var _this2 = this;
 
@@ -26028,7 +26041,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".personal[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  text-align: center;\n}\n.card[data-v-09ccf5a6] {\n  margin: 45px;\n  width: calc(25% - 25px);\n  margin: 2vh auto;\n}\n.card[data-v-09ccf5a6]:hover {\n  transform: scale(1.2);\n  transition-duration: 0.5s;\n}", ""]);
+exports.push([module.i, ".personal[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  text-align: center;\n}\n.card[data-v-09ccf5a6] {\n  margin: 45px;\n  width: calc(25% - 25px);\n  margin: 2vh auto;\n}\n.card[data-v-09ccf5a6]:hover {\n  transform: scale(1.2);\n  transition-duration: 0.5s;\n}\n.categories[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  overflow-x: auto;\n}\n.category[data-v-09ccf5a6] {\n  /* width: auto; */\n  margin: 4vh 3vh;\n}\n.link[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: white;\n}\nh4[data-v-09ccf5a6]:hover {\n  transform: scale(1.5);\n  transition-duration: 0.5s;\n}\n.title[data-v-09ccf5a6] {\n  width: 50%;\n  margin: 5vh auto;\n  text-align: center;\n}\n.active[data-v-09ccf5a6] {\n  background: #f00;\n  color: #fff;\n  font-size: 30px;\n}", ""]);
 
 // exports
 
@@ -26066,7 +26079,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nheader[data-v-1f42fb90] {\r\n    height: 75px;\n}\na[data-v-1f42fb90]{\r\n    color: white;\n}\r\n/* scritte nere quando ci passo sopra */\na[data-v-1f42fb90]:hover{\r\n    color: black;\n}\r\n", ""]);
+exports.push([module.i, "\nheader[data-v-1f42fb90] {\n    height: 75px;\n}\na[data-v-1f42fb90]{\n    color: white;\n}\n/* scritte nere quando ci passo sopra */\na[data-v-1f42fb90]:hover{\n    color: black;\n}\n", ""]);
 
 // exports
 
@@ -27893,8 +27906,6 @@ var render = function () {
     [
       _c("Jumbo", { on: { "input-result": _vm.inputFunction } }),
       _vm._v(" "),
-      _c("KitchenTypes", { on: { TypesArray: _vm.getTypes } }),
-      _vm._v(" "),
       _c("RestaurantsList", {
         attrs: { filtro: this.input, array: this.selectedTypes },
       }),
@@ -28309,7 +28320,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "d-flex container" }, [
+  return _c("div", [
     _c("div", { staticClass: "container-fluid body" }, [
       _vm._m(0),
       _vm._v(" "),
@@ -28317,17 +28328,18 @@ var render = function () {
         "div",
         {
           staticClass:
-            "d-flex categories container-fluid justify-content-center",
+            "d-flex categories container-fluid justify-content-center text-white",
         },
         _vm._l(_vm.types, function (type, index) {
           return _c("h4", { key: index, staticClass: "category" }, [
             _c(
               "a",
               {
+                class: type.active == true ? "active" : "",
                 staticStyle: { cursor: "pointer" },
                 on: {
                   click: function ($event) {
-                    return _vm.compare(type.id, index)
+                    _vm.compare(type.id), (type.active = !type.active)
                   },
                 },
               },
@@ -28347,7 +28359,10 @@ var render = function () {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row personal d-flex flex-wrap justify-content-start " },
+      {
+        staticClass:
+          "row personal d-flex flex-wrap justify-content-start text-dark",
+      },
       _vm._l(_vm.filtraggio, function (restaurant) {
         return _c("div", { key: restaurant.id, staticClass: "card " }, [
           _c("img", {
@@ -28380,7 +28395,7 @@ var render = function () {
               _vm._v(" "),
               _c(
                 "ul",
-                { staticClass: "list-group" },
+                { staticClass: "list-group text-dark" },
                 _vm._l(restaurant.restaurant_type, function (categorie) {
                   return _c(
                     "li",
@@ -28422,7 +28437,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "title container-fluid" }, [
+      _c("div", { staticClass: "title container-fluid text-white" }, [
         _c("h2", [
           _vm._v("\n                Le categorie piu' amate\n            "),
         ]),
@@ -44654,7 +44669,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\andre\Desktop\final-proj\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
