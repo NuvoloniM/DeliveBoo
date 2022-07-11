@@ -25,6 +25,7 @@ class RestaurantController extends Controller
         return response()->json(compact('restaurants', 'restaurants_types'));
        
     }
+    
 
     /**
      * Show the form for creating a new resource.
