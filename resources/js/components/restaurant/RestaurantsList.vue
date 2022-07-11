@@ -1,6 +1,28 @@
 <template>
     
     <div class="d-flex container">
+        <div class="container-fluid body">
+        <div class="container-fluid">
+            <div class="title container-fluid">
+                <h2>
+                    Le categorie piu' amate
+                </h2>
+                <h3>
+                    Trova i ristoranti piu' apprezzati della bella Napoli!
+                </h3>      
+            </div>
+              
+        </div>
+        
+        <div class="d-flex categories container-fluid justify-content-center" >
+            <h4 class="category" v-for="(type, index) in types" :key="index">
+                <a @click="compare(type.id, index)" style="cursor: pointer;">
+                    {{type.tipologia}}  
+                </a>     
+            </h4>
+            
+        </div>
+    </div>
         <div class="row personal d-flex flex-wrap justify-content-start ">
             <!-- ciclo i dati dell'array posts !!ricordarsi :key -->
             <div class="card " v-for="restaurant in filtraggio" :key="restaurant.id" >
@@ -25,7 +47,6 @@
                 </div>
             </div>        
         </div>
-        <button @click="compare()">ciao bell</button>
     </div>
 </template>
 
@@ -41,6 +62,7 @@ export default {
         restaurants: [],
         inputRestaurant: '',
         prova:[],
+        types:[],
     }
    },
    methods: {
@@ -49,38 +71,58 @@ export default {
                 .then((res)=>{
                 // riempio l'array vuoto in data con gli elementi presi con axios
                 console.log(res.data);
-                 this.restaurants = res.data.restaurants;
+                 this.restaurants = res.data.restaurants
+                 this.types = res.data.restaurants_types;
                 })
         },
         restaurantFilter(){
-            
         },
-        compare(){
-            this.prova = [];
-            let res = [];
-            this.restaurants.forEach((elm, index) => {
-                elm.restaurant_type.forEach(obj => {
-                    console.log(obj);
-                    let typeId = 0
-                    typeId = obj.id
-                    console.log(typeId)
-                     if(this.array.includes(typeId)){
-                        //  count = count + 1
-                        //  console.log("e incluso")
-                        this.prova.push(elm)
-                     } else{
-                         console.log("NOOOOOOOOOOOO")
-                     }
-                });
+        compare(id){
+            console.log(id);
+            this.prova=[];
+            this.restaurants.forEach((element) => {
+                let index = this.restaurants.indexOf(element);
+                console.log(`Questa la posizione di element ${index}`);
+                element.restaurant_type.forEach((obj) =>{
+                    console.log(`questo è obj.id : ${obj.id}` );
+                    if (obj.id == id){
+                        this.prova.push(element);
+                        console.log(this.prova);
+                    } 
+                }
+                )
+                // if(!element.restaurant_type.){
+                //     return this.restaurants.splice(index,1);
+                // }
+            })
+            this.restaurants = []
+            this.prova.forEach((element)=>
+            this.restaurants.push(element));
+            console.log(this.restaurants);            // this.prova = [];
+            // let res = [];
+            // this.restaurants.forEach((elm, index) => {
+            //     elm.restaurant_type.forEach(obj => {
+            //         console.log(obj);
+            //         let typeId = []
+            //         typeId = obj.id
+            //         console.log(typeId)
+            //          if(this.array.includes(typeId)){
+            //             //  count = count + 1
+            //             //  console.log("e incluso")
+            //             this.prova.push(elm)
+            //          } else{
+            //              console.log("NOOOOOOOOOOOO")
+            //          }
+            //     });
                 
-            });
-            console.log(this.prova)
-             res = this.restaurants.filter(item => this.prova.includes(item));
-                console.log(res)
-                this.restaurants = [];
-                res.forEach(elem =>
-                this.restaurants.push(elem));
-                console.log(this.restaurants);
+            // });
+            // console.log(this.prova)
+            //  res = this.restaurants.filter(item => this.prova.includes(item));
+            //     console.log(res)
+            //     this.restaurants = [];
+            //     res.forEach(elem =>
+            //     this.restaurants.push(elem));
+            //     console.log(this.restaurants);
         }
    },
    mounted(){
