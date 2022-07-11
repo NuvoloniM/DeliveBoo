@@ -26066,7 +26066,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nheader[data-v-1f42fb90] {\n    height: 75px;\n}\na[data-v-1f42fb90]{\n    color: white;\n}\n/* scritte nere quando ci passo sopra */\na[data-v-1f42fb90]:hover{\n    color: black;\n}\n", ""]);
+exports.push([module.i, "\nheader[data-v-1f42fb90] {\r\n    height: 75px;\n}\na[data-v-1f42fb90]{\r\n    color: white;\n}\r\n/* scritte nere quando ci passo sopra */\na[data-v-1f42fb90]:hover{\r\n    color: black;\n}\r\n", ""]);
 
 // exports
 
@@ -44654,7 +44654,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\andre\Desktop\final-proj\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
