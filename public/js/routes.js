@@ -2535,6 +2535,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // importo axios per poter gestire i dati che gli passo tramite controller come se fosse una chiamata ad un api
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2543,7 +2564,9 @@ __webpack_require__.r(__webpack_exports__);
     return {
       restaurants: [],
       inputRestaurant: '',
-      prova: []
+      prova: [],
+      types: [],
+      selectedType: []
     };
   },
   methods: {
@@ -2554,40 +2577,71 @@ __webpack_require__.r(__webpack_exports__);
         // riempio l'array vuoto in data con gli elementi presi con axios
         console.log(res.data);
         _this.restaurants = res.data.restaurants;
-      });
-    },
-    restaurantFilter: function restaurantFilter() {},
-    compare: function compare() {
-      var _this2 = this;
+        _this.types = res.data.restaurants_types;
 
-      this.prova = [];
-      var res = [];
-      this.restaurants.forEach(function (elm, index) {
-        elm.restaurant_type.forEach(function (obj) {
-          console.log(obj);
-          var typeId = 0;
-          typeId = obj.id;
-          console.log(typeId);
-
-          if (_this2.array.includes(typeId)) {
-            //  count = count + 1
-            //  console.log("e incluso")
-            _this2.prova.push(elm);
-          } else {
-            console.log("NOOOOOOOOOOOO");
-          }
+        _this.types.forEach(function (elem) {
+          return elem.active = false;
         });
       });
-      console.log(this.prova);
-      res = this.restaurants.filter(function (item) {
-        return _this2.prova.includes(item);
+    },
+    // isOk(id){
+    //     if(this.selectedType.length== 0){
+    //         this.compare(id)
+    //     }else if (this.selectedType.includes(id)){
+    //     }
+    //     else if (this.selectedType.length == 3){
+    //         alert('non puoi selezionare più di 3 categorie')
+    //     }
+    // },
+    compare: function compare(id) {
+      var _this2 = this;
+
+      console.log(id);
+      this.prova = [];
+      this.restaurants.forEach(function (element) {
+        var index = _this2.restaurants.indexOf(element);
+
+        console.log("Questa la posizione di element ".concat(index));
+        element.restaurant_type.forEach(function (obj) {
+          console.log("questo \xE8 obj.id : ".concat(obj.id));
+
+          if (obj.id == id) {
+            _this2.prova.push(element);
+
+            console.log(_this2.prova);
+          }
+        }); // if(!element.restaurant_type.){
+        //     return this.restaurants.splice(index,1);
+        // }
       });
-      console.log(res);
       this.restaurants = [];
-      res.forEach(function (elem) {
-        return _this2.restaurants.push(elem);
+      this.prova.forEach(function (element) {
+        return _this2.restaurants.push(element);
       });
-      console.log(this.restaurants);
+      console.log(this.restaurants); // this.prova = [];
+      // let res = [];
+      // this.restaurants.forEach((elm, index) => {
+      //     elm.restaurant_type.forEach(obj => {
+      //         console.log(obj);
+      //         let typeId = []
+      //         typeId = obj.id
+      //         console.log(typeId)
+      //          if(this.array.includes(typeId)){
+      //             //  count = count + 1
+      //             //  console.log("e incluso")
+      //             this.prova.push(elm)
+      //          } else{
+      //              console.log("NOOOOOOOOOOOO")
+      //          }
+      //     });
+      // });
+      // console.log(this.prova)
+      //  res = this.restaurants.filter(item => this.prova.includes(item));
+      //     console.log(res)
+      //     this.restaurants = [];
+      //     res.forEach(elem =>
+      //     this.restaurants.push(elem));
+      //     console.log(this.restaurants);
     }
   },
   mounted: function mounted() {
@@ -25874,7 +25928,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".personal[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  text-align: center;\n}\n.card[data-v-09ccf5a6] {\n  margin: 45px;\n  width: calc(25% - 25px);\n  margin: 2vh auto;\n}\n.card[data-v-09ccf5a6]:hover {\n  transform: scale(1.2);\n  transition-duration: 0.5s;\n}", ""]);
+exports.push([module.i, ".personal[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  text-align: center;\n}\n.card[data-v-09ccf5a6] {\n  margin: 45px;\n  width: calc(25% - 25px);\n  margin: 2vh auto;\n}\n.card[data-v-09ccf5a6]:hover {\n  transform: scale(1.2);\n  transition-duration: 0.5s;\n}\n.categories[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  overflow-x: auto;\n}\n.category[data-v-09ccf5a6] {\n  /* width: auto; */\n  margin: 4vh 3vh;\n}\n.link[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: white;\n}\nh4[data-v-09ccf5a6]:hover {\n  transform: scale(1.5);\n  transition-duration: 0.5s;\n}\n.title[data-v-09ccf5a6] {\n  width: 50%;\n  margin: 5vh auto;\n  text-align: center;\n}\n.active[data-v-09ccf5a6] {\n  background: #f00;\n  color: #fff;\n  font-size: 30px;\n}", ""]);
 
 // exports
 
@@ -27464,8 +27518,6 @@ var render = function () {
     [
       _c("Jumbo", { on: { "input-result": _vm.inputFunction } }),
       _vm._v(" "),
-      _c("KitchenTypes", { on: { TypesArray: _vm.getTypes } }),
-      _vm._v(" "),
       _c("RestaurantsList", {
         attrs: { filtro: this.input, array: this.selectedTypes },
       }),
@@ -27880,10 +27932,49 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "d-flex container" }, [
+  return _c("div", [
+    _c("div", { staticClass: "container-fluid body" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "d-flex categories container-fluid justify-content-center text-white",
+        },
+        _vm._l(_vm.types, function (type, index) {
+          return _c("h4", { key: index, staticClass: "category" }, [
+            _c(
+              "a",
+              {
+                class: type.active == true ? "active" : "",
+                staticStyle: { cursor: "pointer" },
+                on: {
+                  click: function ($event) {
+                    _vm.compare(type.id), (type.active = !type.active)
+                  },
+                },
+              },
+              [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(type.tipologia) +
+                    "  \n            "
+                ),
+              ]
+            ),
+          ])
+        }),
+        0
+      ),
+    ]),
+    _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row personal d-flex flex-wrap justify-content-start " },
+      {
+        staticClass:
+          "row personal d-flex flex-wrap justify-content-start text-dark",
+      },
       _vm._l(_vm.filtraggio, function (restaurant) {
         return _c("div", { key: restaurant.id, staticClass: "card " }, [
           _c("img", {
@@ -27916,7 +28007,7 @@ var render = function () {
               _vm._v(" "),
               _c(
                 "ul",
-                { staticClass: "list-group" },
+                { staticClass: "list-group text-dark" },
                 _vm._l(restaurant.restaurant_type, function (categorie) {
                   return _c(
                     "li",
@@ -27950,21 +28041,28 @@ var render = function () {
       }),
       0
     ),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        on: {
-          click: function ($event) {
-            return _vm.compare()
-          },
-        },
-      },
-      [_vm._v("ciao bell")]
-    ),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "title container-fluid text-white" }, [
+        _c("h2", [
+          _vm._v("\n                Le categorie piu' amate\n            "),
+        ]),
+        _vm._v(" "),
+        _c("h3", [
+          _vm._v(
+            "\n                Trova i ristoranti piu' apprezzati della bella Napoli!\n            "
+          ),
+        ]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 

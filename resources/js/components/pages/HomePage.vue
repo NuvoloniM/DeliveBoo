@@ -1,7 +1,7 @@
 <template>
     <div>
         <Jumbo @input-result="inputFunction" />
-        <KitchenTypes @TypesArray="getTypes" />
+        <!-- <KitchenTypes @TypesArray="getTypes" /> -->
         <!-- importo l'index dei post, sarà questa ora la nostra home page -->
         <RestaurantsList 
         :filtro="this.input"
