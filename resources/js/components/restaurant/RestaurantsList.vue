@@ -3,7 +3,19 @@
         <div class="row personal d-flex flex-wrap justify-content-start ">
             
             <div class="card d-flex flex-column justify-content-between" v-for="restaurant in filtraggio" :key="restaurant.id">
-                <div class="d-flex img">
+                <div class="img">
+                    <img class="img-fluid rounded-lg" :src="`/storage/${restaurant.immagine}`" alt="">
+                </div>
+                <div class="name mt-3">
+                    {{ restaurant.nome_attivita }}
+                </div>
+                <div class="mt-3" >        
+                    <span class="name">{{ restaurant.indirizzo}}</span>
+                </div>
+                <div class="link margin mt-3">
+                    <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary blue">View</router-link>
+                </div>
+                <!-- <div class="d-flex img">
                     <img :src="`/storage/${restaurant.immagine}`" class="card-img-top" :alt="`${restaurant.nome_attivita}`">    
                 </div>
                 
@@ -18,7 +30,7 @@
                 </div>
                 <div class="link margin">
                     <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary blue">View</router-link>
-                </div>
+                </div> -->
             </div>        
         </div>
     </div>
@@ -92,6 +104,13 @@
 </script>
 
 <style lang="scss" scoped>
+    .btn{
+      border: 1px solid cyan;  
+    }
+    .card{
+        background-color: rgb(25, 159, 214);
+        border: 1px solid cyan;
+    }
     .personal {
         width: 80%;
         margin: 0 auto;
@@ -109,11 +128,12 @@
 
     .name{
         height: 20%;
-        background-color: white;
+        color: white;
     }
 
     .margin{
-        padding: 10px 0 20px 0;
+        padding: 10px 0 10px 0;
+        border-color: cyan;
     }
     .font-piccolo{
         font-size: 15px;

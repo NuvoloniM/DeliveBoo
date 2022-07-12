@@ -98,7 +98,7 @@
             </div>
         </div> -->
 
-        <div class="d-flex contenitore-generale">
+        <div class="d-flex contenitore-generale text-align-center text-center">
             <div class="piatti d-flex">
                 <div class="container container-piatti">
                     <div class="row row-piatti d-flex flex-wrap justify-content-center">
@@ -107,13 +107,13 @@
                                 <img class="img-fluid rounded-lg" :src="`${dish.immage}`" alt="">
                             </div>
                             <div class="nome mt-3">
-                                <p>
-                                    {{dish.nome_prodotto}}
-                                    <br>
-                                    {{dish.prezzo}}
-                                    <br>
-                                    <a @click="addToCart(dish), getPrice(dish)" class="pointer">Aggiungi al carrello</a>
-                                </p>
+                                {{dish.nome_prodotto}}
+                            </div>    
+                            <div class="mt-3">
+                                {{dish.prezzo}}
+                            </div>
+                            <div class="mt-3">
+                                <a @click="addToCart(dish), getPrice(dish)" class="pointer">Aggiungi al carrello</a>
                             </div>
                         </div>
                     </div>
@@ -121,15 +121,32 @@
             </div>
             <div class="carrello">
                 <div class="container container-carrello">
-                    <div class="row">
+                    <div class="row justify-content-center">
                         <div class="col-12">
-                            <p>
+                            <h3>
                                 CARRELLO
-                            </p>
+                            </h3>
                             <p v-if="carrello.length == 0">
                                 Il carrello e' vuoto
                             </p>
-                            <p v-for="(dish, index) in carrello" :key="index">
+                            <div v-for="(dish, index) in carrello" :key="index">
+                                <div class="mt-3 row">
+                                    <div class="col-12 ">
+                                        <span class="text-danger pointer blue mr-3" @click="removeAllFromCart(index),getPrice(dish)">X</span>
+                                        <span>{{dish.data.nome_prodotto}}</span>  
+                                        <span> {{dish.data.prezzo}}</span>  
+                                    </div>
+                                </div>
+                                <div class="mt-3 row"> 
+                                    <div class="col-12 border-p">
+                                        <span class=" pointer white mr-3" @click="removeFromCart(dish,index), getPrice(dish)">-</span>
+                                        <span class="pointer white mr-3" @click="addInCart(dish), getPrice(dish)">+</span>
+                                        <span>{{dish.quantità}}</span>
+                                    </div>
+                                </div>                                
+                                
+                            </div>
+                            <!-- <p v-for="(dish, index) in carrello" :key="index">
                                 <span class="me-2">{{dish.data.nome_prodotto}}</span>
                                 <span>{{dish.data.prezzo}}</span>
                                 <span class="text-danger pointer blue" @click="removeAllFromCart(index),getPrice(dish)"> 
@@ -138,9 +155,9 @@
                                 <span class=" pointer white" @click="removeFromCart(dish,index), getPrice(dish)">  -  </span>
                                 <span class="pointer white" @click="addInCart(dish), getPrice(dish)">  +  </span>
                                 <span> quantità {{dish.quantità}}</span>
-                            </p>
-                            <p v-if="carrello.length > 0">
-                                Prezzo totale: <span>{{totalPrice}}</span>
+                            </p> -->
+                            <p class="mt-4" v-if="carrello.length > 0">
+                                TOTALE: <span>{{totalPrice}}</span>
                             </p>
                             <p @click="deleteCart()" v-if="carrello.length > 0" class="pointer text-danger">
                                 Svuota carrello
@@ -249,6 +266,36 @@
 </script>
 
 <style lang="scss" scoped>
+    .col-3{
+        border: 1px solid cyan;
+    }
+    .border-p{
+        border-bottom: 1px solid blue;
+    }
+    @media(max-width: 900px){
+        .contenitore-generale{
+            flex-direction: column;            
+        }
+        .container-piatti{
+            width: 100%;
+        }              
+    }
+    // @media(max-width: 800px){
+    //     .col-3{
+    //         min-width: 200px;
+    //     }
+    // }
+    @media(max-width: 1000px){
+        .col-3{
+            min-width: 200px;
+        }
+    }
+    
+    // @media(max-width: 800px){
+    //     .col-3{
+    //         min-width: 150px;
+    //     }
+    // }
     *{
         background-color: rgb(25, 159, 214);
         color: white;
@@ -260,7 +307,7 @@
 
         .piatti{
             // background-color: yellow;
-            width: 70%;
+            width: 65%;
             .container-piatti{
                 // background-color: orange;
                 // height: 300px;
@@ -278,10 +325,10 @@
                 }
             }
         }
-
+   
         .carrello{
             // background-color: blue;
-            width: 30%;
+            width: 35%;
             .container-carrello{
                 // background-color: blue;
                 // height: 300px;
