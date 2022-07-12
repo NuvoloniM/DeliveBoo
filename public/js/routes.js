@@ -2593,10 +2593,25 @@ __webpack_require__.r(__webpack_exports__);
     //         alert('non puoi selezionare più di 3 categorie')
     //     }
     // },
-    compare: function compare(id) {
+    compare: function compare(type) {
       var _this2 = this;
 
-      console.log(id);
+      console.log(type.id);
+
+      if (this.selectedType.length == 0) {
+        this.selectedType.push(type.id);
+      } else if (this.selectedType.includes(type.id)) {
+        var x = this.selectedType.indexOf(type.id);
+        console.log(x);
+        this.selectedType.splice(x, 1);
+      } else if (this.selectedType.length > 3) {
+        alert('non puoi selezionare più di 3 categorie');
+      } else {
+        this.selectedType.push(type.id);
+      }
+
+      type.active = !type.active;
+      console.log(this.selectedType);
       this.prova = [];
       this.restaurants.forEach(function (element) {
         var index = _this2.restaurants.indexOf(element);
@@ -2605,7 +2620,7 @@ __webpack_require__.r(__webpack_exports__);
         element.restaurant_type.forEach(function (obj) {
           console.log("questo \xE8 obj.id : ".concat(obj.id));
 
-          if (obj.id == id) {
+          if (obj.id == type.id) {
             _this2.prova.push(element);
 
             console.log(_this2.prova);
@@ -27951,7 +27966,7 @@ var render = function () {
                 staticStyle: { cursor: "pointer" },
                 on: {
                   click: function ($event) {
-                    _vm.compare(type.id), (type.active = !type.active)
+                    return _vm.compare(type)
                   },
                 },
               },
@@ -44068,7 +44083,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Vincenzo\Desktop\6 - Mega Esercizio\DeliveBoo\resources\js\routes.js */"./resources/js/routes.js");
+module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/routes.js */"./resources/js/routes.js");
 
 
 /***/ })
