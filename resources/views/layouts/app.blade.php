@@ -81,7 +81,7 @@
 </body>
 <style>
     body{
-        background-color: 
+        background-color: rgb(25, 159, 214);
     }
 </style>
 </html>

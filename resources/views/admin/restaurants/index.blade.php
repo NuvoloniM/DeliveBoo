@@ -5,16 +5,16 @@
         <div class="personal dashboard">
             <ul class="personal-ul">
                 <li>
-                    <a class="personal-a" href="{{route('admin.restaurants.index')}}">Home</a>
+                    <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Home</a>
                 </li>
                 <li>
-                    <a href="{{route('admin.restaurants.create')}}">Nuova attività</a>
+                    <a class="personal-a white" href="{{route('admin.restaurants.create')}}">Nuova attività</a>
                 </li>
                 <li>
-                    <a href="#">I tuoi ordini</a>
+                    <a class="personal-a white" href="#">I tuoi ordini</a>
                 </li>
                 <li>
-                    <a href="#">Il tuo profilo</a>
+                    <a class="personal-a white" href="#">Il tuo profilo</a>
                 </li>
             </ul>
         </div>
@@ -24,7 +24,7 @@
                 {{ session('message') }}
             </div>
             @endif
-            <div class="text-center">
+            <div class="text-center white">
                 <h2>
                     Le tue attivita'
                 </h2>
@@ -39,11 +39,11 @@
                                     {{-- <img class="img" src="{{asset("storage/$restaurant->immagine")}}"> --}}
                                 </div>
                                 <div class="name mt-3">
-                                    <span>
+                                    <span class="white">
                                         {{ $restaurant->nome_attivita }}
                                     </span>
                                 </div>
-                                <div class="mt-3">
+                                <div class="mt-3 white">
                                     <span>
                                         {{ $restaurant->indirizzo }}
                                     </span>
@@ -205,12 +205,9 @@
         list-style-type: none;
         margin-top: 8vh;
     }
-
-    .personal-a {
-        text-decoration: none;
-        color: black;
+    .personal-a:hover{
+        color: blue;
     }
-
     .personal {
         width: 220px;
     }
@@ -224,5 +221,8 @@
         background-size: cover;
         background-position: center;
         height: 300px;
+    }
+    .white{
+        color: white;
     }
 </style>
