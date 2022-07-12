@@ -79,4 +79,10 @@
     </div>
     @yield('scripts')
 </body>
+<style>
+    body{
+        background-color: 
+    }
+</style>
 </html>
+
