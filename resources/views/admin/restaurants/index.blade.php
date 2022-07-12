@@ -220,8 +220,8 @@
         border: 1px solid cyan;
     }
 
-    .img {
+    /* .img {
         height: 40%;
-    }
+    } */
 
 </style>
