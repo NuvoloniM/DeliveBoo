@@ -38,7 +38,9 @@
                                 <h3 class="text-black fw-5"> Prezzo totale: <span>{{totalPrice}}</span></h3>
                                 <h5 class="btn btn-danger" @click="deleteCart()">Svuota carrello </h5>
                             </li>
-                            <router-link :to="{name:'form' ,params: {id: this.restaurant_id}}" class="btn btn-info">Completa il tuo ordine</router-link>
+                            <button class="btn btn-primary">
+                                <router-link :to="{name:'form' ,params: {cart: this.totalPrice, id: this.restaurant_id}}" class="btn btn-info">Completa il tuo ordine</router-link>
+                            </button>
                         </ul>
                     </div>
                 </div>
@@ -115,6 +117,13 @@ export default {
         }
     },
     methods: {
+        // sendCart(){
+        //     axios.post(`http://127.0.0.1:8000/api/restaurants/${ this.$route.params.id }`, this.totalPrice)
+        //         .then((res)=>{
+        //             console.log(res.config.data);
+        //             return  res.config.data;
+        //         })
+        // },
         getDish(){
             // chiamata ad axios con parametro dinamico, tramite show mi passo il singolo id che mi serve 
             // metodo di route per ottenere il paramentro $route.params -> me lo sonon passato dall'index, dal bottone show

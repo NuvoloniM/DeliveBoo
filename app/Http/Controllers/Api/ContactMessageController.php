@@ -26,6 +26,11 @@ class ContactMessageController extends Controller
     {
         //
     }
+    public function cart(Request $request)
+    {
+        return $price = $request;
+    
+    }
 
     /**
      * Store a newly created resource in storage.

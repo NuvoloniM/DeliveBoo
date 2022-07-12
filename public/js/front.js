@@ -1934,7 +1934,8 @@ __webpack_require__.r(__webpack_exports__);
       inputResult: '',
       restaurantArray: []
     };
-  }
+  },
+  methods: {}
 });
 
 /***/ }),
@@ -2190,7 +2191,8 @@ __webpack_require__.r(__webpack_exports__);
         cognome: '',
         data_ordine: '',
         restaurant_id: this.$route.params.id
-      }
+      },
+      total: this.$route.params.cart
     };
   },
   methods: {
@@ -2202,9 +2204,16 @@ __webpack_require__.r(__webpack_exports__);
         _this.form.indirizzo = '';
         _this.form.cognome = '';
         _this.form.data_ordine = '';
-        _this.form.restaurant_id = '';
       });
-    }
+    } // takeCart(){
+    //      axios.post(`http://127.0.0.1:8000/api/restaurants`, this.carrello)
+    //         .then((res)=>{
+    //             console.log(res.data);
+    //     })
+    // },
+
+  },
+  mounted: function mounted() {// this.takeCart()
   }
 });
 
@@ -2374,6 +2383,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 //
 //
 //
+//
+//
  // import PaymentForm from './PaymentForm.vue';
 
 
@@ -2394,6 +2405,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     };
   },
   methods: {
+    // sendCart(){
+    //     axios.post(`http://127.0.0.1:8000/api/restaurants/${ this.$route.params.id }`, this.totalPrice)
+    //         .then((res)=>{
+    //             console.log(res.config.data);
+    //             return  res.config.data;
+    //         })
+    // },
     getDish: function getDish() {
       var _this = this;
 
@@ -2676,10 +2694,12 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       restaurants: [],
+      allRestaurant: [],
       inputRestaurant: '',
       prova: [],
       types: [],
-      selectedType: []
+      selectedType: [],
+      result: 0
     };
   },
   methods: {
@@ -2690,6 +2710,7 @@ __webpack_require__.r(__webpack_exports__);
         // riempio l'array vuoto in data con gli elementi presi con axios
         console.log(res.data);
         _this.restaurants = res.data.restaurants;
+        _this.allRestaurants = res.data.restaurants;
         _this.types = res.data.restaurants_types;
 
         _this.types.forEach(function (elem) {
@@ -2697,56 +2718,63 @@ __webpack_require__.r(__webpack_exports__);
         });
       });
     },
-    // isOk(id){
-    //     if(this.selectedType.length== 0){
-    //         this.compare(id)
-    //     }else if (this.selectedType.includes(id)){
-    //     }
-    //     else if (this.selectedType.length == 3){
-    //         alert('non puoi selezionare più di 3 categorie')
-    //     }
-    // },
-    compare: function compare(type) {
-      var _this2 = this;
-
-      console.log(type.id);
-
+    idCheck: function idCheck(type) {
       if (this.selectedType.length == 0) {
         this.selectedType.push(type.id);
+        type.active = !type.active;
+        this.compare(type.id);
       } else if (this.selectedType.includes(type.id)) {
         var x = this.selectedType.indexOf(type.id);
-        console.log(x);
         this.selectedType.splice(x, 1);
-      } else if (this.selectedType.length > 3) {
+        type.active = !type.active;
+        this.compare(type.id);
+      } else if (this.selectedType.length >= 3) {
         alert('non puoi selezionare più di 3 categorie');
       } else {
         this.selectedType.push(type.id);
+        type.active = !type.active;
+        this.compare(type.id);
       }
 
-      type.active = !type.active;
       console.log(this.selectedType);
+    },
+    compare: function compare() {
+      var _this2 = this;
+
       this.prova = [];
-      this.restaurants.forEach(function (element) {
-        var index = _this2.restaurants.indexOf(element);
 
-        console.log("Questa la posizione di element ".concat(index));
-        element.restaurant_type.forEach(function (obj) {
-          console.log("questo \xE8 obj.id : ".concat(obj.id));
+      if (this.selectedType.length == 0) {
+        this.getRestaurants();
+      } else {
+        this.allRestaurants.forEach(function (element) {
+          // let index = this.allRestaurants.indexOf(element);
+          element.restaurant_type.forEach(function (obj) {
+            console.log("questo \xE8 obj.id : ".concat(obj.id));
 
-          if (obj.id == type.id) {
-            _this2.prova.push(element);
+            for (var i = 0; i < _this2.selectedType.length; i++) {
+              if (obj.id == _this2.selectedType[i]) {
+                return _this2.result += 1;
+              } else {
+                return _this2.result += 0;
+              }
+            }
 
-            console.log(_this2.prova);
-          }
-        }); // if(!element.restaurant_type.){
-        //     return this.restaurants.splice(index,1);
-        // }
-      });
-      this.restaurants = [];
-      this.prova.forEach(function (element) {
-        return _this2.restaurants.push(element);
-      });
-      console.log(this.restaurants); // this.prova = [];
+            console.log(_this2.result);
+
+            if (_this2.result == _this2.selectedType.length) {
+              _this2.prova.push(element);
+
+              _this2.result = 0;
+            }
+          }); // if(!element.restaurant_type.){
+          //     return this.restaurants.splice(index,1);
+          // }
+        });
+        this.restaurants = [];
+        this.prova.forEach(function (element) {
+          return _this2.restaurants.push(element);
+        });
+      } // this.prova = [];
       // let res = [];
       // this.restaurants.forEach((elm, index) => {
       //     elm.restaurant_type.forEach(obj => {
@@ -2770,6 +2798,7 @@ __webpack_require__.r(__webpack_exports__);
       //     res.forEach(elem =>
       //     this.restaurants.push(elem));
       //     console.log(this.restaurants);
+
     }
   },
   mounted: function mounted() {
@@ -27790,6 +27819,8 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("form", { staticClass: "form-group" }, [
+    _c("h1", { staticClass: "text-dange" }, [_vm._v(_vm._s(_vm.total))]),
+    _vm._v(" "),
     _c("label", { attrs: { for: "nome" } }, [_vm._v("Nome")]),
     _vm._v(" "),
     _c("input", {
@@ -28108,14 +28139,27 @@ var render = function () {
                   : _vm._e(),
                 _vm._v(" "),
                 _c(
-                  "router-link",
-                  {
-                    staticClass: "btn btn-info",
-                    attrs: {
-                      to: { name: "form", params: { id: this.restaurant_id } },
-                    },
-                  },
-                  [_vm._v("Completa il tuo ordine")]
+                  "button",
+                  { staticClass: "btn btn-primary" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "btn btn-info",
+                        attrs: {
+                          to: {
+                            name: "form",
+                            params: {
+                              cart: this.totalPrice,
+                              id: this.restaurant_id,
+                            },
+                          },
+                        },
+                      },
+                      [_vm._v("Completa il tuo ordine")]
+                    ),
+                  ],
+                  1
                 ),
               ],
               2
@@ -28354,7 +28398,7 @@ var render = function () {
                 staticStyle: { cursor: "pointer" },
                 on: {
                   click: function ($event) {
-                    return _vm.compare(type)
+                    return _vm.idCheck(type)
                   },
                 },
               },
@@ -44667,7 +44711,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     component: _components_pages_RestaurantShow_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     name: 'menu'
   }, {
-    path: '/messages/:id',
+    path: '/messages/:id/:cart',
     component: _components_pages_ContactForm_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
     name: 'form'
   }]

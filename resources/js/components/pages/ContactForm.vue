@@ -1,7 +1,7 @@
 <template>
     <form class="form-group">
+        <h1 class="text-dange">{{total}}</h1>
             <label for="nome">Nome</label>
-
             <input
                 type="text"
                 class="form-control"
@@ -49,6 +49,7 @@ export default {
                 restaurant_id: this.$route.params.id,
 
             },
+            total: this.$route.params.cart 
             
         }
     },
@@ -60,9 +61,17 @@ export default {
                     this.form.indirizzo = '';
                     this.form.cognome = '';
                     this.form.data_ordine = '';
-                    this.form.restaurant_id = '';
                 })
-        }
+        },
+        // takeCart(){
+        //      axios.post(`http://127.0.0.1:8000/api/restaurants`, this.carrello)
+        //         .then((res)=>{
+        //             console.log(res.data);
+        //     })
+        // },
+    },
+    mounted(){
+        // this.takeCart()
     }
 }
 </script>

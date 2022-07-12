@@ -16,7 +16,7 @@
         
         <div class="d-flex categories container-fluid justify-content-center text-white" >
             <h4 class="category" v-for="(type, index) in types" :key="index">
-                <a @click="compare(type)" style="cursor: pointer;" :class="(type.active == true)? 'active': ''">
+                <a @click="idCheck(type)" style="cursor: pointer;" :class="(type.active == true)? 'active': ''">
                     {{type.tipologia}}  
                 </a>     
             </h4>
@@ -60,10 +60,12 @@ export default {
    data(){
     return {
         restaurants: [],
+        allRestaurant:[],
         inputRestaurant: '',
         prova:[],
         types:[],
-        selectedType: []
+        selectedType: [],
+        result : 0,
     }
    },
    methods: {
@@ -73,58 +75,67 @@ export default {
                 // riempio l'array vuoto in data con gli elementi presi con axios
                 console.log(res.data);
                  this.restaurants = res.data.restaurants
+                 this.allRestaurants = res.data.restaurants
                  this.types = res.data.restaurants_types;
                  this.types.forEach(elem =>
                  elem.active = false  )
                 })
         },
-        // isOk(id){
-        //     if(this.selectedType.length== 0){
-        //         this.compare(id)
-        //     }else if (this.selectedType.includes(id)){
-
-        //     }
-        //     else if (this.selectedType.length == 3){
-        //         alert('non puoi selezionare più di 3 categorie')
-        //     }
-        // },
-        compare(type){
-            console.log(type.id);
+        idCheck(type){
              if(this.selectedType.length == 0){
 
                 this.selectedType.push(type.id)
+                type.active = !type.active
+                this.compare(type.id);
 
             }else if(this.selectedType.includes(type.id)){
                 let x = this.selectedType.indexOf(type.id);
-                console.log(x);
                 this.selectedType.splice(x,1);
-            }else if(this.selectedType.length > 3){
+                type.active = !type.active
+                this.compare(type.id)
+            }else if(this.selectedType.length >= 3){
                 alert('non puoi selezionare più di 3 categorie');
             } else{
                 this.selectedType.push(type.id);
+                type.active = !type.active
+                this.compare(type.id);
             }
-            type.active = !type.active
+            
             console.log(this.selectedType);
+        },
+        compare(){
             this.prova=[];
-            this.restaurants.forEach((element) => {
-                let index = this.restaurants.indexOf(element);
-                console.log(`Questa la posizione di element ${index}`);
-                element.restaurant_type.forEach((obj) =>{
-                    console.log(`questo è obj.id : ${obj.id}` );
-                    if (obj.id == type.id){
-                        this.prova.push(element);
-                        console.log(this.prova);
-                    } 
-                }
-                )
-                // if(!element.restaurant_type.){
-                //     return this.restaurants.splice(index,1);
-                // }
-            })
-            this.restaurants = []
-            this.prova.forEach((element)=>
-            this.restaurants.push(element));
-            console.log(this.restaurants);            // this.prova = [];
+            if(this.selectedType.length == 0){
+                this.getRestaurants()
+            } else {
+                this.allRestaurants.forEach((element) => {
+                    // let index = this.allRestaurants.indexOf(element);
+                    element.restaurant_type.forEach((obj) =>{
+                        console.log(`questo è obj.id : ${obj.id}` );
+                        for (let i = 0; i < this.selectedType.length; i++) { 
+                            if (obj.id == this.selectedType[i]){
+                                return this.result += 1; 
+                            } else {
+                                return this.result += 0;
+                            }
+                        }
+                        console.log(this.result);
+                        if (this.result == this.selectedType.length) {
+                            this.prova.push(element);
+                            this.result = 0;
+                        }
+                    }
+                    )
+                        
+                    // if(!element.restaurant_type.){
+                    //     return this.restaurants.splice(index,1);
+                    // }
+                })
+                this.restaurants = [];
+                this.prova.forEach((element)=>
+                this.restaurants.push(element));
+            }
+                      // this.prova = [];
             // let res = [];
             // this.restaurants.forEach((elm, index) => {
             //     elm.restaurant_type.forEach(obj => {
