@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-generale d-flex">
+    <div class="container-generale mt-8 d-flex">
         <div class="personal dashboard">
             <ul class="personal-ul">
                 <li>
@@ -30,13 +30,13 @@
                 </h2>
             </div>
             <div class="container">
-                <div class="row d-flex">
+                <div class="row d-flex jusify-content-center">
                     @forelse ($restaurants as $restaurant)
                     <div class="col-6 text-center rounded-lg mt-3">
                         <a href="{{route('admin.restaurants.show', $restaurant->id)}}">
-                            <div class="d-flex flex-column justify-content-between">
-                                <div class="img">
-                                    <img src="{{$restaurant->immagine}}">
+                            <div class="d-flex flex-column justify-content-around">
+                                <div class="img" style="background-image: url({{asset("storage/$restaurant->immagine")}})">
+                                    {{-- <img class="img" src="{{asset("storage/$restaurant->immagine")}}"> --}}
                                 </div>
                                 <div class="name mt-3">
                                     <span>
@@ -189,15 +189,15 @@
 @endsection
 <style scoped lang="scss">
     .container-generale {
-        background-color: red;
+        /* background-color: red; */
     }
 
     .dashboard {
-        background-color: yellow;
+        /* background-color: yellow; */
     }
 
     .activities {
-        background-color: purple;
+        /* background-color: purple; */
         width: calc(100% - 220px);
     }
 
@@ -216,12 +216,13 @@
     }
 
     .col-6 {
-        background-color: rgb(25, 159, 214);
+        /* background-color: rgb(25, 159, 214); */
         border: 1px solid cyan;
     }
-
-    /* .img {
-        height: 40%;
-    } */
-
+    .img{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 300px;
+    }
 </style>
