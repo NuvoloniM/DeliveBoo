@@ -234,7 +234,7 @@ export default {
    .card{
     margin: 45px;
     width: calc((100% / 4) - 25px);
-    margin: 2vh auto;   
+    margin: 2vh auto; 
     // height: 40vh; 
    }
    .card:hover{
@@ -250,6 +250,7 @@ export default {
     .category{
         /* width: auto; */
         margin: 4vh 3vh;
+        cursor: pointer;  
     }
     .link{
         text-decoration: none;
