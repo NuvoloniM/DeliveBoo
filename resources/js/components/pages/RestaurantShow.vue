@@ -218,17 +218,6 @@
 <script>
     import axios from 'axios';
 
-<<<<<<< HEAD
-    export default {
-        name: 'RestaurantShow',
-        data() {
-            return {
-                count: 0,
-                menu: [],
-                carrello: [],
-                totalPrice: 0,
-            }
-=======
 import axios from 'axios';
 // import PaymentForm from './PaymentForm.vue';
 import braintree from 'braintree-web';
@@ -269,7 +258,6 @@ export default {
                     this.menu = res.data;
                     this.restaurant_id = this.$route.params.id;
                 })
->>>>>>> Pagamenti
         },
         methods: {
             getDish() {
@@ -346,13 +334,6 @@ export default {
                 this.carrello = [];
             }
         },
-<<<<<<< HEAD
-        mounted() {
-            this.getDish();
-        }
-    }
-
-=======
         getPrice(){
             let somma = 0
             this.carrello.forEach(elm => {                
@@ -420,7 +401,6 @@ export default {
        });
    }
 }
->>>>>>> Pagamenti
 </script>
 
 <style lang="scss" scoped>

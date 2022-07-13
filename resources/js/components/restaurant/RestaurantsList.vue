@@ -1,18 +1,4 @@
 <template>
-<<<<<<< HEAD
-    <div class="d-flex container">
-        <div class="row personal d-flex flex-wrap justify-content-start ">
-            
-            <div class="card d-flex flex-column justify-content-between" v-for="restaurant in filtraggio" :key="restaurant.id">
-                <div class="img">
-                    <img class="img-fluid rounded-lg" :src="`/storage/${restaurant.immagine}`" alt="">
-                </div>
-                <div class="name mt-3">
-                    {{ restaurant.nome_attivita }}
-                </div>
-                <div class="mt-3" >        
-                    <span class="name">{{ restaurant.indirizzo}}</span>
-=======
     
     <div>
         <div class="container-fluid body">
@@ -58,7 +44,6 @@
                         </li>
                     </ul>
                     <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary">View</router-link>
->>>>>>> Pagamenti
                 </div>
                 <div class="link margin mt-3">
                     <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary blue">View</router-link>
@@ -115,34 +100,6 @@
     // importo axios per poter gestire i dati che gli passo tramite controller come se fosse una chiamata ad un api
     import axios from 'axios';
 
-<<<<<<< HEAD
-    export default {
-        name: 'RestaurantsList',
-        data() {
-            return {
-                restaurants: [],
-                inputRestaurant: ''
-            }
-        },
-        methods: {
-            getRestaurants() {
-                axios.get('http://127.0.0.1:8000/api/restaurants')
-                    .then((res) => {
-                        // riempio l'array vuoto in data con gli elementi presi con axios
-                        console.log(res.data);
-                        this.restaurants = res.data.restaurants;
-                    })
-            }
-        },
-        mounted() {
-            this.getRestaurants()
-            console.log(this.filtro)
-        },
-        computed: {
-            filtraggio() {
-                return this.restaurants.filter(element => {
-                    return element.nome_attivita.includes(this.filtro)
-=======
 // importo axios per poter gestire i dati che gli passo tramite controller come se fosse una chiamata ad un api
 import axios from 'axios';
 
@@ -170,14 +127,9 @@ export default {
                  this.types = res.data.restaurants_types;
                  this.types.forEach(elem =>
                  elem.active = false  )
->>>>>>> Pagamenti
                 })
             }
         },
-<<<<<<< HEAD
-        props: {
-            filtro: String
-=======
         idCheck(type){
              if(this.selectedType.length == 0){
 
@@ -257,88 +209,12 @@ export default {
             //     res.forEach(elem =>
             //     this.restaurants.push(elem));
             //     console.log(this.restaurants);
->>>>>>> Pagamenti
         }
     }
 
 </script>
 
 <style lang="scss" scoped>
-<<<<<<< HEAD
-    .btn{
-      border: 1px solid cyan;  
-    }
-    .card{
-        background-color: rgb(25, 159, 214);
-        border: 1px solid cyan;
-    }
-    .personal {
-        width: 80%;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .card:hover {
-        transform: scale(1.1);
-        transition-duration: 0.5s;
-    }
-
-    .img{
-        height: 40%;
-    }    
-
-    .name{
-        height: 20%;
-        color: white;
-    }
-
-    .margin{
-        padding: 10px 0 10px 0;
-        border-color: cyan;
-    }
-    .font-piccolo{
-        font-size: 15px;
-    }
-    .font-grande{
-        font-size: 25px;
-    }
-    .blue{
-        background-color: rgb(25, 159, 214)
-    }
-    // .link{
-    //     height: 20%;
-    // }
-
-    @media (max-width: 8000px) {
-        .card {
-            width: calc((100% / 4) - 25px);
-            margin: 2vh auto;
-        }
-    }
-
-    @media (max-width: 1100px) {
-        .card {
-            width: calc((100% / 3) - 25px);
-            margin: 2vh auto;
-        }
-    }
-
-    @media (max-width: 900px) {
-        .card {
-            width: calc((100% / 2) - 25px);
-            margin: 2vh auto;
-        }
-    }
-
-    @media (max-width: 388px) {
-        .card {
-            width: calc((100% / 1) - 25px);
-            margin: 2vh auto;
-        }
-    }
-
-</style>
-=======
    .personal{        
     width: 80%;
     margin: 0 auto;
@@ -384,4 +260,3 @@ export default {
   font-size: 30px;
 }
 </style>
->>>>>>> Pagamenti
