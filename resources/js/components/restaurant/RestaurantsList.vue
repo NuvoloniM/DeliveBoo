@@ -43,7 +43,6 @@
                             {{categorie.tipologia}}
                         </li>
                     </ul>
-                    <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary">View</router-link>
                 </div>
                 <div class="link margin mt-3">
                     <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary blue">View</router-link>

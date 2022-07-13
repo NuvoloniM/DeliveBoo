@@ -48,7 +48,11 @@
             <div class="form-group">
                 <input type="hidden" name="data_ordine">
             </div>
-            <button class="btn btn-primary" @click="sendForm" type="button">Invia</button>
+            <button class="btn btn-primary" @click="sendForm" type="button">
+            <router-link :to="{name:'payment', params: {cart: this.total}}">
+                Invia
+            </router-link>
+            </button>
 
         </form>
 
@@ -75,7 +79,7 @@ export default {
     },
     methods:{
         sendForm(){
-            axios.post(`http://127.0.0.1:8000/api/messages/${ this.$route.params.id }`, this.form)
+            axios.post(`http://127.0.0.1:8000/api/messages/${ this.$route.params.id }/${ this.$route.params.cart}`, this.form)
                 .then((res)=>{
                     this.form.nome = '';
                     this.form.indirizzo = '';
@@ -83,6 +87,7 @@ export default {
                     this.form.data_ordine = '';
                     this.form.prezzo_totale = '';
                     this.form.recapito = '';
+                    console.log(res)
                 })
         },
         // takeCart(){

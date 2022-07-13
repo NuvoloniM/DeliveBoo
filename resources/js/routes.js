@@ -10,6 +10,7 @@ import HomePage from './components/pages/HomePage.vue';
 import RestaurantShow from './components/pages/RestaurantShow.vue';
 import ContactForm from './components/pages/ContactForm.vue';
 import PaymentForm from './components/pages/PaymentForm.vue';
+import DeliveryPage from './components/pages/DeliveryPage.vue';
 
 
 // inizializzo il router
@@ -24,6 +25,7 @@ const router = new VueRouter({
         {path:'/restaurant/:id', component: RestaurantShow, name:'menu'},
         {path:'/messages/:id/:cart', component: ContactForm, name:'form'},
         {path: '/payment/:cart', component: PaymentForm, name:'payment'},
+        {path: '/bye', component: DeliveryPage , name:'bye'},
     ]
 })
 // lo esporto per poterlo richiamare in front.js e in #root
