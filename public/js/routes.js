@@ -2075,6 +2075,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ContactForm',
@@ -2086,7 +2095,8 @@ __webpack_require__.r(__webpack_exports__);
         cognome: '',
         data_ordine: '',
         prezzo_totale: this.$route.params.cart,
-        restaurant_id: this.$route.params.id
+        restaurant_id: this.$route.params.id,
+        recapito: ''
       },
       total: this.$route.params.cart
     };
@@ -2101,6 +2111,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.form.cognome = '';
         _this.form.data_ordine = '';
         _this.form.prezzo_totale = '';
+        _this.form.recapito = '';
       });
     } // takeCart(){
     //      axios.post(`http://127.0.0.1:8000/api/restaurants`, this.carrello)
@@ -27570,8 +27581,6 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("form", { staticClass: "form-group" }, [
-    _c("h1", { staticClass: "text-dange" }, [_vm._v(_vm._s(_vm.total))]),
-    _vm._v(" "),
     _c("label", { attrs: { for: "nome" } }, [_vm._v("Nome")]),
     _vm._v(" "),
     _c("input", {
@@ -27662,6 +27671,34 @@ var render = function () {
               return
             }
             _vm.$set(_vm.form, "indirizzo", $event.target.value)
+          },
+        },
+      }),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "recapito" } }, [
+        _vm._v("inserisci un recapito"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.form.recapito,
+            expression: "form.recapito",
+          },
+        ],
+        staticClass: "form-control",
+        attrs: { id: "recapito", name: "recapito", type: "number" },
+        domProps: { value: _vm.form.recapito },
+        on: {
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.$set(_vm.form, "recapito", $event.target.value)
           },
         },
       }),

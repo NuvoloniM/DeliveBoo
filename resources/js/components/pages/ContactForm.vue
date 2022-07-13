@@ -1,6 +1,5 @@
 <template>
     <form class="form-group">
-        <h1 class="text-dange">{{total}}</h1>
             <label for="nome">Nome</label>
             <input
                 type="text"
@@ -37,6 +36,16 @@
                 >
             </div>
             <div class="form-group">
+                <label for="recapito">inserisci un recapito</label>
+                <input
+                    class="form-control"
+                    id="recapito"
+                    name="recapito"
+                    type="number"
+                    v-model="form.recapito"
+                >
+            </div>
+            <div class="form-group">
                 <input type="hidden" name="data_ordine">
             </div>
             <button class="btn btn-primary" @click="sendForm" type="button">Invia</button>
@@ -57,6 +66,7 @@ export default {
                 data_ordine:'',
                 prezzo_totale: this.$route.params.cart,
                 restaurant_id: this.$route.params.id,
+                recapito: '',
 
             },
             total: this.$route.params.cart 
@@ -72,6 +82,7 @@ export default {
                     this.form.cognome = '';
                     this.form.data_ordine = '';
                     this.form.prezzo_totale = '';
+                    this.form.recapito = '';
                 })
         },
         // takeCart(){
