@@ -7,7 +7,7 @@
         {{ session('message') }}
     </div>
     @endif
-    <h1 class="text-center white">Le tue attività:</h1>
+    <h1 class="text-center white">I tuoi piatti:</h1>
     <div class="row">
         @forelse ($dishes as $dish)
         <div class="col-6 mt-3">
@@ -71,7 +71,7 @@
     </div>
     @endforelse
 </div>
-<table class="table table-dark">
+{{-- <table class="table table-dark">
     <a href=" {{route('admin.restaurants.dishes.create',['restaurant'=> $data])}} " class="btn btn-success">Inserisci
         Nuovo Piatto</a>
     <thead>
@@ -107,7 +107,7 @@
                 {{ $dish->description }}
             </td>
             <td class="d-flex">
-                {{-- bottone della show --}}
+               
                 <a href="{{route('admin.restaurants.dishes.show',['restaurant'=> $data, $dish->id])}}"
                     class="btn btn-primary">View</a>
                 <a href="{{route('admin.restaurants.dishes.edit',['restaurant'=> $data, $dish->id])}}"
@@ -118,16 +118,14 @@
                     @csrf
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
-                {{-- bottone della edit modifica attivita --}}
-                {{-- <a href="{{route('admin.restaurants.dishes.edit', $dish->id)}}" class="btn btn-primary">Edit</a>
-                --}}
+                
             </td>
         </tr>
         @empty
         <h2> non ci sono piatti</h2>
         @endforelse
     </tbody>
-</table>
+</table> --}}
 
 
 </div>
