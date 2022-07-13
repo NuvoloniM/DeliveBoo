@@ -24,6 +24,8 @@ export default {
             restaurantArray:[],
         }
     },
+    methods:{
+    }
     
 };
 </script>
