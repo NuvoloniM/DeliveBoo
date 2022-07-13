@@ -1,19 +1,39 @@
 <template>
-    <div>
-        <!-- ciclo i dati dell'array posts !!ricordarsi :key -->
-            <div class="card" v-for="restaurant in restaurants" :key="restaurant.id">
-                <img :src="`${restaurant.immagine}`" class="card-img-top" :alt="`${restaurant.nome_attivita}`">
-                <div class="card-header">
-                    <!-- essendomi passato anche i dati di categoria posso rihiamarli -->
-                    {{ restaurant.nome_attivita }}
-                </div>
-                <div class="card-body">
-                    <p class="card-title">
-                        {{ restaurant.indirizzo}}
-                    </p>
-
+    <div class="sfondo">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-6" v-for="restaurant in restaurants" :key="restaurant.id">
+                    <div class="d-flex flex-column justify-content-around">
+                        <div class="img" :style="`background-image: url(storage/${restaurant.immagine})`">
+                            <img src="" alt="">
+                        </div>
+                        <div class="name mt-3">
+                            <span class="white">
+                                {{ restaurant.nome_attivita }}
+                            </span>
+                        </div>
+                        <div class="mt-3 white">
+                            <span>
+                                {{ restaurant.indirizzo }}
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <!-- <div class="card" v-for="restaurant in restaurants" :key="restaurant.id">
+            <img :src="`${restaurant.immagine}`" class="card-img-top" :alt="`${restaurant.nome_attivita}`">
+            <div class="card-header">
+                
+                {{ restaurant.nome_attivita }}
+            </div>
+            <div class="card-body">
+                <p class="card-title">
+                    {{ restaurant.indirizzo}}
+                </p>
+
+            </div>
+        </div> -->
     </div>
 </template>
 
@@ -46,5 +66,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    .col-6 {
+        border: 1px solid cyan;
+        text-align: center;
+    }
+    .img{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+    }
+    .white{
+        color: white;
+    }
+    .container-restaurant{
+        margin-top: 12vh;
+    }
+    .sfondo{
+        background-color: rgb(25, 159, 214);
+    }
 </style>
