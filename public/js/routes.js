@@ -2730,6 +2730,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 // importo axios per poter gestire i dati che gli passo tramite controller come se fosse una chiamata ad un api
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -26110,7 +26112,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".a1[data-v-61a7c374] {\n  width: 100%;\n  margin: 5vh auto;\n}\n.a1 .row .col1[data-v-61a7c374] {\n  background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/magnapp-logo.png */ "./public/img/magnapp-logo.png")) + ");\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n}\n.a1 .row .col[data-v-61a7c374] {\n  text-align: center;\n  width: 33.3333333333%;\n}\n.a1 .row .col ul[data-v-61a7c374] {\n  list-style-type: none;\n}\n.a1 .row .col ul li a[data-v-61a7c374] {\n  text-decoration: none;\n  color: white;\n}\n@media (max-width: 770px) {\n.col[data-v-61a7c374] {\n    width: 50%;\n}\n}\n*[data-v-61a7c374] {\n  color: white;\n}", ""]);
+exports.push([module.i, ".a1[data-v-61a7c374] {\n  width: 100%;\n  margin-top: 5vh;\n  padding: 10px 0;\n}\n.a1 .row .col1[data-v-61a7c374] {\n  background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/magnapp-logo.png */ "./public/img/magnapp-logo.png")) + ");\n  background-size: contain;\n  background-position: center;\n  background-repeat: no-repeat;\n}\n.a1 .row .col[data-v-61a7c374] {\n  text-align: center;\n  width: 33.3333333333%;\n}\n.a1 .row .col ul[data-v-61a7c374] {\n  list-style-type: none;\n}\n.a1 .row .col ul li a[data-v-61a7c374] {\n  text-decoration: none;\n  color: white;\n}\n@media (max-width: 770px) {\n.col[data-v-61a7c374] {\n    width: 50%;\n}\n}\n*[data-v-61a7c374] {\n  color: white;\n}", ""]);
 
 // exports
 
@@ -26148,7 +26150,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".personal[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  text-align: center;\n}\n.card[data-v-09ccf5a6] {\n  margin: 45px;\n  width: calc(25% - 25px);\n  margin: 2vh auto;\n}\n.card[data-v-09ccf5a6]:hover {\n  transform: scale(1.2);\n  transition-duration: 0.5s;\n}\n.categories[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  overflow-x: auto;\n}\n.category[data-v-09ccf5a6] {\n  /* width: auto; */\n  margin: 4vh 3vh;\n}\n.link[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: white;\n}\nh4[data-v-09ccf5a6]:hover {\n  transform: scale(1.5);\n  transition-duration: 0.5s;\n}\n.title[data-v-09ccf5a6] {\n  width: 50%;\n  margin: 5vh auto;\n  text-align: center;\n}\n.active[data-v-09ccf5a6] {\n  background: #f00;\n  color: #fff;\n  font-size: 30px;\n}", ""]);
+exports.push([module.i, ".personal[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  text-align: center;\n}\n.card[data-v-09ccf5a6] {\n  margin: 45px;\n  width: calc(25% - 25px);\n  margin: 2vh auto;\n}\n.card[data-v-09ccf5a6]:hover {\n  transform: scale(1.2);\n  transition-duration: 0.5s;\n}\n.categories[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  padding-left: 10px;\n  overflow-x: auto;\n}\n.category[data-v-09ccf5a6] {\n  /* width: auto; */\n  margin: 4vh 3vh;\n}\n.link[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: white;\n}\nh4[data-v-09ccf5a6]:hover {\n  transform: scale(1.3);\n  transition-duration: 0.5s;\n}\n.title[data-v-09ccf5a6] {\n  width: 50%;\n  margin: 5vh auto;\n  text-align: center;\n}\n.rest_type[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: #fff;\n  border: 1px solid;\n  border-radius: 50px;\n  padding: 5px 10px;\n}\n.active[data-v-09ccf5a6] {\n  background: #fff;\n  color: rgb(25, 159, 214);\n  box-shadow: 5px 5px 10px rgb(9, 111, 151);\n}", ""]);
 
 // exports
 
@@ -26168,7 +26170,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nsection[data-v-37c76d18] {\n        /* background-color: brown; */\n        background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/jumbo-boo.jpg */ "./public/img/jumbo-boo.jpg")) + ");\n        background-repeat: no-repeat;\n        background-position: center;\n        background-size: cover;\n        height: 500px;\n        width: 100%;\n}\n\n    /* section::before {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.3);\n} */\nh2[data-v-37c76d18] {\n        color: white;\n}\n\n", ""]);
+exports.push([module.i, "\nsection[data-v-37c76d18] {\n        /* background-color: brown; */\n        background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/jumbo-boo.jpg */ "./public/img/jumbo-boo.jpg")) + ");\n        background-repeat: no-repeat;\n        background-position: center;\n        background-size: cover;\n        height: 500px;\n        width: 100%;\n}\nbutton[data-v-37c76d18]{\n        background-color: rgb(25, 159, 214);\n        color: #fff;\n        padding: 5px 10px;\n        font-size: 1.2em;\n}\n\n    /* section::before {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.3);\n} */\nh2[data-v-37c76d18] {\n        color: white;\n}\n\n", ""]);
 
 // exports
 
@@ -27602,7 +27604,7 @@ var render = function () {
           _c(
             "button",
             {
-              staticClass: "btn btn-primary",
+              staticClass: "btn rounded-pill",
               attrs: { type: "submit" },
               on: {
                 click: function ($event) {
@@ -27611,7 +27613,7 @@ var render = function () {
                 },
               },
             },
-            [_vm._v("Submit")]
+            [_vm._v("Cerca")]
           ),
         ]),
       ]),
@@ -28359,8 +28361,8 @@ var render = function () {
             _c(
               "a",
               {
+                staticClass: "rest_type",
                 class: type.active == true ? "active" : "",
-                staticStyle: { cursor: "pointer" },
                 on: {
                   click: function ($event) {
                     return _vm.idCheck(type)
@@ -28406,7 +28408,7 @@ var render = function () {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "card-body " }, [
-            _c("p", { staticClass: "card-title" }, [
+            _c("p", { staticClass: "card-text" }, [
               _vm._v(
                 "\n                    " +
                   _vm._s(restaurant.indirizzo) +
@@ -28414,43 +28416,45 @@ var render = function () {
               ),
             ]),
             _vm._v(" "),
+            _c("div", { staticClass: "overflow-x" }, [
+              _c(
+                "ul",
+                { staticClass: "list-group text-dark" },
+                _vm._l(restaurant.restaurant_type, function (categorie) {
+                  return _c(
+                    "li",
+                    { key: categorie.id, staticClass: "list-group-item" },
+                    [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(categorie.tipologia) +
+                          "\n                        "
+                      ),
+                    ]
+                  )
+                }),
+                0
+              ),
+            ]),
+            _vm._v(" "),
             _c(
-              "ul",
-              { staticClass: "list-group text-dark" },
-              _vm._l(restaurant.restaurant_type, function (categorie) {
-                return _c(
-                  "li",
-                  { key: categorie.id, staticClass: "list-group-item" },
-                  [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(categorie.tipologia) +
-                        "\n                    "
-                    ),
-                  ]
-                )
-              }),
-              0
+              "div",
+              { staticClass: "link py-5" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-primary blue",
+                    attrs: {
+                      to: { name: "menu", params: { id: restaurant.id } },
+                    },
+                  },
+                  [_vm._v("Vedi il Menù")]
+                ),
+              ],
+              1
             ),
           ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "link margin mt-3" },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "btn btn-primary blue",
-                  attrs: {
-                    to: { name: "menu", params: { id: restaurant.id } },
-                  },
-                },
-                [_vm._v("View")]
-              ),
-            ],
-            1
-          ),
         ])
       }),
       0
@@ -44650,7 +44654,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\js\routes.js */"./resources/js/routes.js");
+module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/routes.js */"./resources/js/routes.js");
 
 
 /***/ })

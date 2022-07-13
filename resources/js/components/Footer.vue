@@ -61,7 +61,8 @@
 <style lang="scss" scoped>
     .a1{
         width: 100%;
-        margin: 5vh auto;        
+        margin-top: 5vh;  
+        padding: 10px 0;      
 
         .row{
 

@@ -16,7 +16,7 @@
         
         <div class="d-flex categories container-fluid justify-content-center text-white" >
             <h4 class="category" v-for="(type, index) in types" :key="index">
-                <a @click="idCheck(type)" style="cursor: pointer;" :class="(type.active == true)? 'active': ''">
+                <a @click="idCheck(type)" :class="(type.active == true)? 'active': ''" class="rest_type">
                     {{type.tipologia}}  
                 </a>     
             </h4>
@@ -32,20 +32,22 @@
                     {{ restaurant.nome_attivita }}
                 </div>
                 <div class="card-body ">
-                    <p class="card-title">
+                    <p class="card-text">
                         {{ restaurant.indirizzo}}                        
                     </p>
+                    <div class="overflow-x">
+                        <ul class="list-group text-dark">
+                            <li class="list-group-item" v-for="categorie in restaurant.restaurant_type" :key="categorie.id">
+                                {{categorie.tipologia}}
+                            </li>
+                        </ul>
+                    </div>
                     <!-- <p>
                         {{restaurant.restaurant_type[0].tipologia}}
                     </p> -->
-                    <ul class="list-group text-dark">
-                        <li class="list-group-item" v-for="categorie in restaurant.restaurant_type" :key="categorie.id">
-                            {{categorie.tipologia}}
-                        </li>
-                    </ul>
-                </div>
-                <div class="link margin mt-3">
-                    <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary blue">View</router-link>
+                    <div class="link py-5">
+                        <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary blue">Vedi il Menù</router-link>
+                    </div>
                 </div>
                 <!-- <div class="d-flex img">
                     <img :src="`/storage/${restaurant.immagine}`" class="card-img-top" :alt="`${restaurant.nome_attivita}`">    
@@ -242,6 +244,7 @@ export default {
     .categories{
         width: 80%;
         margin: 0 auto;  
+        padding-left: 10px;
         overflow-x: auto;            
     }
     .category{
@@ -253,7 +256,7 @@ export default {
         color: white;
     }
     h4:hover{
-        transform: scale(1.5); 
+        transform: scale(1.3); 
         transition-duration: 0.5s;
         
     }
@@ -263,9 +266,16 @@ export default {
         text-align: center;
     }
 
+    .rest_type{
+        text-decoration: none;
+        color:#fff;
+         border: 1px solid ;
+        border-radius: 50px;
+        padding: 5px 10px;
+    }
     .active {
-  background: #f00;
-  color: #fff;
-  font-size: 30px;
-}
+    background: #fff;
+    color: rgb(25, 159, 214);
+    box-shadow: 5px 5px 10px rgb(9, 111, 151);;
+    }
 </style>

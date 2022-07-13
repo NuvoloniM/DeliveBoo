@@ -18,9 +18,9 @@
                     aria-describedby="emailHelp"
                     v-model="inputRestaurant">                    
                 </div>                
-                <button type="submit" class="btn btn-primary"
+                <button type="submit" class="btn rounded-pill"
                         @click.prevent="$emit ('input-result', inputRestaurant)"
-                >Submit</button>
+                >Cerca</button>
             </form>
 
         </div>
@@ -49,6 +49,13 @@
         background-size: cover;
         height: 500px;
         width: 100%;
+    }
+
+    button{
+        background-color: rgb(25, 159, 214);
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 1.2em;
     }
 
     /* section::before {
