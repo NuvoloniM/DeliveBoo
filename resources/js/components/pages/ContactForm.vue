@@ -18,6 +18,15 @@
                 v-model="form.cognome"
                 name="cognome"
             >
+            <label for="prezzo_totale">Amount</label>
+            <input
+                type="text"
+                class="form-control"
+                id="prezzo_totale"
+                name="prezzo_totale"
+                :value="`${total}`"
+                disabled
+            >
 
             <div class="form-group">
                 <label for="indirizzo">indirizzo</label>
@@ -46,6 +55,7 @@ export default {
                 indirizzo: '',
                 cognome: '',
                 data_ordine:'',
+                prezzo_totale: this.$route.params.cart,
                 restaurant_id: this.$route.params.id,
 
             },
@@ -61,6 +71,7 @@ export default {
                     this.form.indirizzo = '';
                     this.form.cognome = '';
                     this.form.data_ordine = '';
+                    this.form.prezzo_totale = '';
                 })
         },
         // takeCart(){

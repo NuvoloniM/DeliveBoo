@@ -9,7 +9,7 @@
                 <label for="amount">Amount</label>
                 <div class="input-group">
                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                    <input type="number" id="amount" class="form-control" placeholder="Enter Amount">
+                    <input type="number" id="amount" class="form-control" placeholder="Enter Amount" :value="`${totale}`" disabled>
                 </div>
             </div>
             <hr />
@@ -57,6 +57,7 @@ import braintree from 'braintree-web';
             hostedFieldInstance: false,
             nonce: '',
             error:'',
+            totale: this.$route.params.cart,
             }
         },
         methods: {
