@@ -2076,6 +2076,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Header"
 });
@@ -26302,7 +26304,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nheader[data-v-1f42fb90] {\n    height: 75px;\n}\na[data-v-1f42fb90]{\n    color: white;\n}\n/* scritte nere quando ci passo sopra */\na[data-v-1f42fb90]:hover{\n    color: black;\n}\n", ""]);
+exports.push([module.i, "\nheader[data-v-1f42fb90] {\n    height: 75px;\n}\na[data-v-1f42fb90]{\n    color: white;\n}\n/* scritte nere quando ci passo sopra */\na[data-v-1f42fb90]:hover{\n    color: black;\n}\n.stick_nav[data-v-1f42fb90]{\n    background-color: black;\n    opacity: 0.2;\n    height: 75px;\n}\n", ""]);
 
 // exports
 
@@ -27806,11 +27808,13 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("header", [
+    _c("div", { staticClass: "stick_nav fixed-top" }),
+    _vm._v(" "),
     _c(
       "nav",
       {
         staticClass:
-          "navbar navbar-expand-lg navbar justify-content-between fixed-top  ",
+          "navbar navbar-expand-lg navbar justify-content-between fixed-top",
       },
       [
         _c(
@@ -27847,7 +27851,7 @@ var render = function () {
           _c(
             "div",
             {
-              staticClass: "collapse navbar-collapse",
+              staticClass: "collapse navbar-collapse ",
               attrs: { id: "navbarNav" },
             },
             [
