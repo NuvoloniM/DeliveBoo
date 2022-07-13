@@ -3156,10 +3156,10 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "sfondo" }, [
-    _c("div", { staticClass: "container mt-5" }, [
+    _c("div", { staticClass: "container mt-3" }, [
       _c(
         "div",
-        { staticClass: "row" },
+        { staticClass: "row pt-3 pb-5" },
         _vm._l(_vm.restaurants, function (restaurant) {
           return _c("div", { key: restaurant.id, staticClass: "col-6" }, [
             _c(

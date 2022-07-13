@@ -2,12 +2,16 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-5">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="p1">
+                <div class="p white p-2 text-center">
+                    <h2>
+                        {{ __('Register') }}
+                    </h2>
+                </div>
 
-                <div class="card-body">
+                <div class="card-body white">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -82,3 +86,12 @@
     </div>
 </div>
 @endsection
+<style>
+    .white{
+        color: white;
+    }
+    .p1{
+        border: 1px solid cyan;
+    }
+</style>
+

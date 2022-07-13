@@ -1,7 +1,7 @@
 <template>
     <div class="sfondo">
-        <div class="container mt-5">
-            <div class="row">
+        <div class="container mt-3">
+            <div class="row pt-3 pb-5">
                 <div class="col-6" v-for="restaurant in restaurants" :key="restaurant.id">
                     <div class="d-flex flex-column justify-content-around">
                         <div class="img" :style="`background-image: url(storage/${restaurant.immagine})`">
