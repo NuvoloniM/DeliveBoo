@@ -97,12 +97,8 @@
 </template>
 
 <script>
-    // importo axios per poter gestire i dati che gli passo tramite controller come se fosse una chiamata ad un api
-    import axios from 'axios';
-
 // importo axios per poter gestire i dati che gli passo tramite controller come se fosse una chiamata ad un api
 import axios from 'axios';
-
 export default {
    name: 'RestaurantsList' ,
    data(){
@@ -128,15 +124,12 @@ export default {
                  this.types.forEach(elem =>
                  elem.active = false  )
                 })
-            }
         },
         idCheck(type){
              if(this.selectedType.length == 0){
-
                 this.selectedType.push(type.id)
                 type.active = !type.active
                 this.compare(type.id);
-
             }else if(this.selectedType.includes(type.id)){
                 let x = this.selectedType.indexOf(type.id);
                 this.selectedType.splice(x,1);
@@ -210,8 +203,25 @@ export default {
             //     this.restaurants.push(elem));
             //     console.log(this.restaurants);
         }
-    }
-
+   },
+   mounted(){
+    this.getRestaurants()
+    console.log(this.filtro)
+    console.log()
+    console.log( this.restaurants)
+   },
+   computed:{
+    filtraggio(){        
+        return this.restaurants.filter(element=>{
+            return element.nome_attivita.includes(this.filtro)
+        })
+    },
+   },
+   props:{
+    filtro: String,
+    array: Array,
+   }
+}
 </script>
 
 <style lang="scss" scoped>

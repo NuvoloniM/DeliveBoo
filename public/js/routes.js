@@ -2436,69 +2436,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+ // import PaymentForm from './PaymentForm.vue';
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantShow',
@@ -2826,6 +2765,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // importo axios per poter gestire i dati che gli passo tramite controller come se fosse una chiamata ad un api
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2833,7 +2805,13 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       restaurants: [],
-      inputRestaurant: ''
+      allRestaurant: [],
+      inputRestaurant: '',
+      prova: [],
+      types: [],
+      selectedType: [],
+      count: 0,
+      found: false
     };
   },
   methods: {
@@ -2850,23 +2828,109 @@ __webpack_require__.r(__webpack_exports__);
           return elem.active = false;
         });
       });
+    },
+    idCheck: function idCheck(type) {
+      if (this.selectedType.length == 0) {
+        this.selectedType.push(type.id);
+        type.active = !type.active;
+        this.compare(type.id);
+      } else if (this.selectedType.includes(type.id)) {
+        var x = this.selectedType.indexOf(type.id);
+        this.selectedType.splice(x, 1);
+        type.active = !type.active;
+        this.compare(type.id);
+      } else if (this.selectedType.length >= 3) {
+        alert('non puoi selezionare più di 3 categorie');
+      } else {
+        this.selectedType.push(type.id);
+        type.active = !type.active;
+        this.compare(type.id);
+      }
+    },
+    compare: function compare() {
+      var _this2 = this;
+
+      this.prova = [];
+      this.restaurants = [];
+
+      if (this.selectedType.length == 0) {
+        this.restaurants = this.allRestaurants;
+      } else {
+        this.allRestaurants.forEach(function (element) {
+          // let index = this.allRestaurants.indexOf(element);
+          console.log(element);
+          var restId = [];
+          element.restaurant_type.forEach(function (obj) {
+            restId.push(obj.id);
+          });
+          restId.sort(function (a, b) {
+            return a - b;
+          });
+          console.log("array tipi del ristorante ".concat(restId));
+
+          _this2.selectedType.sort(function (a, b) {
+            return a - b;
+          });
+
+          console.log("array tipi ordinat ".concat(_this2.selectedType));
+          _this2.found = _this2.selectedType.every(function (v) {
+            return restId.includes(v);
+          }); // this.found = this.selectedType.some(r=> restId.includes(r))
+
+          console.log(_this2.found);
+          if (_this2.found) _this2.prova.push(element); // if(!element.restaurant_type.){
+          //     return this.restaurants.splice(index,1);
+          // }
+        });
+        this.restaurants = [];
+        this.prova.forEach(function (element) {
+          return _this2.restaurants.push(element);
+        });
+      } // this.prova = [];
+      // let res = [];
+      // this.restaurants.forEach((elm, index) => {
+      //     elm.restaurant_type.forEach(obj => {
+      //         console.log(obj);
+      //         let typeId = []
+      //         typeId = obj.id
+      //         console.log(typeId)
+      //          if(this.array.includes(typeId)){
+      //             //  count = count + 1
+      //             //  console.log("e incluso")
+      //             this.prova.push(elm)
+      //          } else{
+      //              console.log("NOOOOOOOOOOOO")
+      //          }
+      //     });
+      // });
+      // console.log(this.prova)
+      //  res = this.restaurants.filter(item => this.prova.includes(item));
+      //     console.log(res)
+      //     this.restaurants = [];
+      //     res.forEach(elem =>
+      //     this.restaurants.push(elem));
+      //     console.log(this.restaurants);
+
     }
   },
   mounted: function mounted() {
     this.getRestaurants();
     console.log(this.filtro);
+    console.log();
+    console.log(this.restaurants);
   },
   computed: {
     filtraggio: function filtraggio() {
-      var _this2 = this;
+      var _this3 = this;
 
       return this.restaurants.filter(function (element) {
-        return element.nome_attivita.includes(_this2.filtro);
+        return element.nome_attivita.includes(_this3.filtro);
       });
     }
   },
   props: {
-    filtro: String
+    filtro: String,
+    array: Array
   }
 });
 
@@ -26152,7 +26216,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".btn[data-v-09ccf5a6] {\n  border: 1px solid cyan;\n}\n.card[data-v-09ccf5a6] {\n  background-color: rgb(25, 159, 214);\n  border: 1px solid cyan;\n}\n.personal[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  text-align: center;\n}\n.card[data-v-09ccf5a6]:hover {\n  transform: scale(1.1);\n  transition-duration: 0.5s;\n}\n.img[data-v-09ccf5a6] {\n  height: 40%;\n}\n.name[data-v-09ccf5a6] {\n  height: 20%;\n  color: white;\n}\n.margin[data-v-09ccf5a6] {\n  padding: 10px 0 10px 0;\n  border-color: cyan;\n}\n.font-piccolo[data-v-09ccf5a6] {\n  font-size: 15px;\n}\n.font-grande[data-v-09ccf5a6] {\n  font-size: 25px;\n}\n.blue[data-v-09ccf5a6] {\n  background-color: rgb(25, 159, 214);\n}\n@media (max-width: 8000px) {\n.card[data-v-09ccf5a6] {\n    width: calc(25% - 25px);\n    margin: 2vh auto;\n}\n}\n@media (max-width: 1100px) {\n.card[data-v-09ccf5a6] {\n    width: calc(33.3333333333% - 25px);\n    margin: 2vh auto;\n}\n}\n@media (max-width: 900px) {\n.card[data-v-09ccf5a6] {\n    width: calc(50% - 25px);\n    margin: 2vh auto;\n}\n}\n@media (max-width: 388px) {\n.card[data-v-09ccf5a6] {\n    width: calc(100% - 25px);\n    margin: 2vh auto;\n}\n}", ""]);
+exports.push([module.i, ".personal[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  text-align: center;\n}\n.card[data-v-09ccf5a6] {\n  margin: 45px;\n  width: calc(25% - 25px);\n  margin: 2vh auto;\n}\n.card[data-v-09ccf5a6]:hover {\n  transform: scale(1.2);\n  transition-duration: 0.5s;\n}\n.categories[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  overflow-x: auto;\n}\n.category[data-v-09ccf5a6] {\n  /* width: auto; */\n  margin: 4vh 3vh;\n}\n.link[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: white;\n}\nh4[data-v-09ccf5a6]:hover {\n  transform: scale(1.5);\n  transition-duration: 0.5s;\n}\n.title[data-v-09ccf5a6] {\n  width: 50%;\n  margin: 5vh auto;\n  text-align: center;\n}\n.active[data-v-09ccf5a6] {\n  background: #f00;\n  color: #fff;\n  font-size: 30px;\n}", ""]);
 
 // exports
 
@@ -28154,6 +28218,30 @@ var render = function () {
                         ]
                       )
                     : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    { staticClass: "btn btn-primary" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "btn btn-info",
+                          attrs: {
+                            to: {
+                              name: "form",
+                              params: {
+                                cart: this.totalPrice,
+                                id: this.restaurant_id,
+                              },
+                            },
+                          },
+                        },
+                        [_vm._v("Completa il tuo ordine")]
+                      ),
+                    ],
+                    1
+                  ),
                 ],
                 2
               ),
@@ -28162,9 +28250,111 @@ var render = function () {
         ]),
       ]
     ),
+    _vm._v(" "),
+    _vm.error
+      ? _c("div", { staticClass: "alert alert-danger" }, [
+          _vm._v("\n        " + _vm._s(_vm.error) + "\n    "),
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c("form", [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("hr"),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _vm._m(2),
+      _vm._v(" "),
+      _c("div", { staticClass: "card bg-light" }, [
+        _c("div", { staticClass: "card-header" }, [
+          _vm._v("Payment Information"),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _vm.nonce
+            ? _c("div", { staticClass: "alert alert-success" }, [
+                _vm._v(
+                  "\n                    Successfully generated nonce.\n                "
+                ),
+              ])
+            : _vm._e(),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary btn-block",
+          on: {
+            click: function ($event) {
+              $event.preventDefault()
+              return _vm.payWithCreditCard.apply(null, arguments)
+            },
+          },
+        },
+        [_vm._v("Pay with Credit Card")]
+      ),
+    ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "amount" } }, [_vm._v("Amount")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "input-group" }, [
+        _c("div", { staticClass: "input-group-prepend" }, [
+          _c("span", { staticClass: "input-group-text" }, [_vm._v("$")]),
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form-control",
+          attrs: { type: "number", id: "amount", placeholder: "Enter Amount" },
+        }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Credit Card Number")]),
+      _vm._v(" "),
+      _c("div", {
+        staticClass: "form-control",
+        attrs: { id: "creditCardNumber" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-6" }, [
+          _c("label", [_vm._v("Expire Date")]),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "form-control",
+            attrs: { id: "expireDate" },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-6" }, [
+          _c("label", [_vm._v("CVV")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-control", attrs: { id: "cvv" } }),
+        ]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -28321,53 +28511,86 @@ var render = function () {
           "row personal d-flex flex-wrap justify-content-start text-dark",
       },
       _vm._l(_vm.filtraggio, function (restaurant) {
-        return _c(
-          "div",
-          {
-            key: restaurant.id,
-            staticClass: "card d-flex flex-column justify-content-between",
-          },
-          [
-            _c("div", { staticClass: "img" }, [
-              _c("img", {
-                staticClass: "img-fluid rounded-lg",
-                attrs: { src: "/storage/" + restaurant.immagine, alt: "" },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "name mt-3" }, [
-              _vm._v(
-                "\n                " +
-                  _vm._s(restaurant.nome_attivita) +
-                  "\n            "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-3" }, [
-              _c("span", { staticClass: "name" }, [
-                _vm._v(_vm._s(restaurant.indirizzo)),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "link margin mt-3" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "btn btn-primary blue",
-                    attrs: {
-                      to: { name: "menu", params: { id: restaurant.id } },
-                    },
-                  },
-                  [_vm._v("View")]
-                ),
-              ],
-              1
+        return _c("div", { key: restaurant.id, staticClass: "card " }, [
+          _c("img", {
+            staticClass: "card-img-top",
+            attrs: {
+              src: "/storage/" + restaurant.immagine,
+              alt: "" + restaurant.nome_attivita,
+            },
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-header " }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(restaurant.nome_attivita) +
+                "\n            "
             ),
-          ]
-        )
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "card-body " },
+            [
+              _c("p", { staticClass: "card-title" }, [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(restaurant.indirizzo) +
+                    "                        \n                "
+                ),
+              ]),
+              _vm._v(" "),
+              _c(
+                "ul",
+                { staticClass: "list-group text-dark" },
+                _vm._l(restaurant.restaurant_type, function (categorie) {
+                  return _c(
+                    "li",
+                    { key: categorie.id, staticClass: "list-group-item" },
+                    [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(categorie.tipologia) +
+                          "\n                    "
+                      ),
+                    ]
+                  )
+                }),
+                0
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: {
+                    to: { name: "menu", params: { id: restaurant.id } },
+                  },
+                },
+                [_vm._v("View")]
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "link margin mt-3" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "btn btn-primary blue",
+                  attrs: {
+                    to: { name: "menu", params: { id: restaurant.id } },
+                  },
+                },
+                [_vm._v("View")]
+              ),
+            ],
+            1
+          ),
+        ])
       }),
       0
     ),
@@ -44491,7 +44714,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\js\routes.js */"./resources/js/routes.js");
+module.exports = __webpack_require__(/*! C:\Users\andre\Desktop\final-proj\DeliveBoo\resources\js\routes.js */"./resources/js/routes.js");
 
 
 /***/ })
