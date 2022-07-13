@@ -1,6 +1,5 @@
 <template>
     <form class="form-group">
-        <h1 class="text-dange">{{total}}</h1>
             <label for="nome">Nome</label>
             <input
                 type="text"
@@ -18,6 +17,15 @@
                 v-model="form.cognome"
                 name="cognome"
             >
+            <label for="prezzo_totale">Amount</label>
+            <input
+                type="text"
+                class="form-control"
+                id="prezzo_totale"
+                name="prezzo_totale"
+                :value="`${total}`"
+                disabled
+            >
 
             <div class="form-group">
                 <label for="indirizzo">indirizzo</label>
@@ -25,6 +33,16 @@
                     class="form-control"
                     id="indirizzo"
                     v-model="form.indirizzo"
+                >
+            </div>
+            <div class="form-group">
+                <label for="recapito">inserisci un recapito</label>
+                <input
+                    class="form-control"
+                    id="recapito"
+                    name="recapito"
+                    type="number"
+                    v-model="form.recapito"
                 >
             </div>
             <div class="form-group">
@@ -46,7 +64,9 @@ export default {
                 indirizzo: '',
                 cognome: '',
                 data_ordine:'',
+                prezzo_totale: this.$route.params.cart,
                 restaurant_id: this.$route.params.id,
+                recapito: '',
 
             },
             total: this.$route.params.cart 
@@ -61,6 +81,8 @@ export default {
                     this.form.indirizzo = '';
                     this.form.cognome = '';
                     this.form.data_ordine = '';
+                    this.form.prezzo_totale = '';
+                    this.form.recapito = '';
                 })
         },
         // takeCart(){
