@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -70,7 +70,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
 
         {{-- <main class="py-4"> --}}
         <main>
@@ -81,7 +81,9 @@
 </body>
 <style>
     body{
-        background-color: rgb(25, 159, 214);
+        /* background-color: rgb(25, 159, 214); */
+        background: rgb(11,99,184);
+        background: linear-gradient(0deg, rgba(11,99,184,1) 18%, rgba(75,138,191,1) 45%, rgba(255,255,255,1) 100%);
     }
 </style>
 </html>

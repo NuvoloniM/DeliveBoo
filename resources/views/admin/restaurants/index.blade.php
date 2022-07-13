@@ -5,16 +5,16 @@
         <div class="personal dashboard">
             <ul class="personal-ul">
                 <li>
-                    <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Home</a>
+                    <a class="personal-a" href="{{route('admin.restaurants.index')}}">Home</a>
                 </li>
                 <li>
-                    <a class="personal-a white" href="{{route('admin.restaurants.create')}}">Nuova attività</a>
+                    <a class="personal-a" href="{{route('admin.restaurants.create')}}">Aggiungi attività</a>
                 </li>
                 <li>
-                    <a class="personal-a white" href="#">I tuoi ordini</a>
+                    <a class="personal-a" href="#">I tuoi ordini</a>
                 </li>
                 <li>
-                    <a class="personal-a white" href="#">Il tuo profilo</a>
+                    <a class="personal-a" href="#">Il tuo profilo</a>
                 </li>
             </ul>
         </div>
@@ -32,18 +32,18 @@
             <div class="container">
                 <div class="row d-flex jusify-content-center">
                     @forelse ($restaurants as $restaurant)
-                    <div class="col-6 text-center rounded-lg mt-3">
+                    <div class="col-6 text-center rounded-lg mt-3 p-3">
                         <a href="{{route('admin.restaurants.show', $restaurant->id)}}">
                             <div class="d-flex flex-column justify-content-around">
                                 <div class="img rounded-lg" style="background-image: url({{asset("storage/$restaurant->immagine")}})">
                                     {{-- <img class="img" src="{{asset("storage/$restaurant->immagine")}}"> --}}
                                 </div>
                                 <div class="name mt-3">
-                                    <h3 class="white">
+                                    <h3 class="">
                                         {{ $restaurant->nome_attivita }}
                                     </h3>
                                 </div>
-                                <div class="mt-3 white">
+                                <div class="mt-3">
                                     <span>
                                         {{ $restaurant->indirizzo }}
                                     </span>
@@ -189,7 +189,7 @@
 @endsection
 <style scoped lang="scss">
     .container-generale {
-        /* background-color: red; */
+        
     }
 
     .dashboard {
@@ -212,10 +212,9 @@
         width: 220px;
     }
 
-    .col-6 {
-        /* background-color: rgb(25, 159, 214); */
-        border: 1px solid cyan;
-    }
+    /* .col-6 {
+        border: 1px solid cyan; 
+    } */
     .img{
         background-repeat: no-repeat;
         background-size: cover;
