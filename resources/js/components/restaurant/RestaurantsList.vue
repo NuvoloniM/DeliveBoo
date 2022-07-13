@@ -65,7 +65,8 @@ export default {
         prova:[],
         types:[],
         selectedType: [],
-        result : 0,
+        count: 0,
+        found: false,
     }
    },
    methods: {
@@ -73,7 +74,6 @@ export default {
             axios.get('http://127.0.0.1:8000/api/restaurants')
                 .then((res)=>{
                 // riempio l'array vuoto in data con gli elementi presi con axios
-                console.log(res.data);
                  this.restaurants = res.data.restaurants
                  this.allRestaurants = res.data.restaurants
                  this.types = res.data.restaurants_types;
@@ -100,38 +100,38 @@ export default {
                 type.active = !type.active
                 this.compare(type.id);
             }
-            
-            console.log(this.selectedType);
         },
         compare(){
             this.prova=[];
+            this.restaurants=[];
             if(this.selectedType.length == 0){
-                this.getRestaurants()
+                this.restaurants = this.allRestaurants;
             } else {
                 this.allRestaurants.forEach((element) => {
                     // let index = this.allRestaurants.indexOf(element);
-                    element.restaurant_type.forEach((obj) =>{
-                        console.log(`questo è obj.id : ${obj.id}` );
-                        for (let i = 0; i < this.selectedType.length; i++) { 
-                            if (obj.id == this.selectedType[i]){
-                                return this.result += 1; 
-                            } else {
-                                return this.result += 0;
-                            }
-                        }
-                        console.log(this.result);
-                        if (this.result == this.selectedType.length) {
-                            this.prova.push(element);
-                            this.result = 0;
-                        }
-                    }
-                    )
-                        
+                    console.log(element);
+                    let restId = [];
+                    element.restaurant_type.forEach(obj=>{
+                        restId.push(obj.id);
+                    })
+                    restId.sort((a,b)=>{
+                        return a-b;
+                    })
+                    console.log(`array tipi del ristorante ${restId}`);
+                    this.selectedType.sort((a,b)=>{
+                        return a-b;
+                    })
+                    console.log(`array tipi ordinat ${this.selectedType}`)
+                    this.found = this.selectedType.every(v => restId.includes(v));
+                    // this.found = this.selectedType.some(r=> restId.includes(r))
+                    console.log(this.found);
+                    if(this.found) this.prova.push(element);
+                    
                     // if(!element.restaurant_type.){
                     //     return this.restaurants.splice(index,1);
                     // }
                 })
-                this.restaurants = [];
+                this.restaurants=[];
                 this.prova.forEach((element)=>
                 this.restaurants.push(element));
             }

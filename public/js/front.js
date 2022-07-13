@@ -2699,7 +2699,8 @@ __webpack_require__.r(__webpack_exports__);
       prova: [],
       types: [],
       selectedType: [],
-      result: 0
+      count: 0,
+      found: false
     };
   },
   methods: {
@@ -2708,7 +2709,6 @@ __webpack_require__.r(__webpack_exports__);
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://127.0.0.1:8000/api/restaurants').then(function (res) {
         // riempio l'array vuoto in data con gli elementi presi con axios
-        console.log(res.data);
         _this.restaurants = res.data.restaurants;
         _this.allRestaurants = res.data.restaurants;
         _this.types = res.data.restaurants_types;
@@ -2735,38 +2735,39 @@ __webpack_require__.r(__webpack_exports__);
         type.active = !type.active;
         this.compare(type.id);
       }
-
-      console.log(this.selectedType);
     },
     compare: function compare() {
       var _this2 = this;
 
       this.prova = [];
+      this.restaurants = [];
 
       if (this.selectedType.length == 0) {
-        this.getRestaurants();
+        this.restaurants = this.allRestaurants;
       } else {
         this.allRestaurants.forEach(function (element) {
           // let index = this.allRestaurants.indexOf(element);
+          console.log(element);
+          var restId = [];
           element.restaurant_type.forEach(function (obj) {
-            console.log("questo \xE8 obj.id : ".concat(obj.id));
+            restId.push(obj.id);
+          });
+          restId.sort(function (a, b) {
+            return a - b;
+          });
+          console.log("array tipi del ristorante ".concat(restId));
 
-            for (var i = 0; i < _this2.selectedType.length; i++) {
-              if (obj.id == _this2.selectedType[i]) {
-                return _this2.result += 1;
-              } else {
-                return _this2.result += 0;
-              }
-            }
+          _this2.selectedType.sort(function (a, b) {
+            return a - b;
+          });
 
-            console.log(_this2.result);
+          console.log("array tipi ordinat ".concat(_this2.selectedType));
+          _this2.found = _this2.selectedType.every(function (v) {
+            return restId.includes(v);
+          }); // this.found = this.selectedType.some(r=> restId.includes(r))
 
-            if (_this2.result == _this2.selectedType.length) {
-              _this2.prova.push(element);
-
-              _this2.result = 0;
-            }
-          }); // if(!element.restaurant_type.){
+          console.log(_this2.found);
+          if (_this2.found) _this2.prova.push(element); // if(!element.restaurant_type.){
           //     return this.restaurants.splice(index,1);
           // }
         });
@@ -26123,7 +26124,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nheader[data-v-1f42fb90] {\r\n    height: 75px;\n}\na[data-v-1f42fb90]{\r\n    color: white;\n}\r\n/* scritte nere quando ci passo sopra */\na[data-v-1f42fb90]:hover{\r\n    color: black;\n}\r\n", ""]);
+exports.push([module.i, "\nheader[data-v-1f42fb90] {\n    height: 75px;\n}\na[data-v-1f42fb90]{\n    color: white;\n}\n/* scritte nere quando ci passo sopra */\na[data-v-1f42fb90]:hover{\n    color: black;\n}\n", ""]);
 
 // exports
 
@@ -44728,7 +44729,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Vincenzo\Desktop\6 - Mega Esercizio\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
