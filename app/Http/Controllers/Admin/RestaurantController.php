@@ -46,6 +46,19 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
+        // validation
+        $validated = $request->validate(
+            [
+                'nome_attivita' => 'required', 
+                'indirizzo' => 'required', 
+            ],
+            [
+                'nome_attivita.required' => 'Attenzione, il campo "Nome Attività" non è stato compilato correttamente',
+                'indirizzo.required' => 'Attenzione, il campo "Indirizzo" non è stato compilato correttamente',
+            ]
+        );
+
+
         $data = $request->All();
 
         $restaurant = new Restaurant();
@@ -98,6 +111,18 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, Restaurant $restaurant)
     {
+        // validation
+        $validated = $request->validate(
+            [
+                'nome_attivita' => 'required', 
+                'indirizzo' => 'required', 
+            ],
+            [
+                'nome_attivita.required' => 'Attenzione, il campo "Nome Attività" non è stato compilato correttamente',
+                'indirizzo.required' => 'Attenzione, il campo "Indirizzo" non è stato compilato correttamente',
+            ]
+        );
+        
         $data = $request->all();
         if(array_key_exists('immagine', $data)){
             if( $restaurant->immagine) Storage::delete($restaurant->immagine);
