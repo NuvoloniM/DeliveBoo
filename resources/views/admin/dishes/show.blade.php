@@ -9,13 +9,13 @@
                         {{-- <img class="img" src="{{asset("storage/$restaurant->immagine")}}"> --}}
                     </div>
                     <div class="name mt-3">
-                        <span class="white">
+                        <h3 class="white">
                             {{ $dish->nome_prodotto }}
-                        </span>
+                        </h3>
                     </div>
                     <div class="mt-3 white">
                         <span>
-                            {{ $dish->prezzo }}
+                            {{ $dish->prezzo }}&euro;
                         </span>
                     </div>
                     <div class="mt-3 mb-3 white">
