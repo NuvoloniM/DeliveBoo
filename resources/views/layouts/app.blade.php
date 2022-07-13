@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/backStyle.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -72,10 +72,17 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        {{-- <main class="py-4"> --}}
+        <main>
             @yield('content')
         </main>
     </div>
     @yield('scripts')
 </body>
+<style>
+    body{
+        background-color: rgb(25, 159, 214);
+    }
+</style>
 </html>
+

@@ -32,7 +32,8 @@ class DishController extends Controller
      */
     public function create($restaurant)
     {
-        return view('admin.dishes.create', compact('restaurant'));
+        $categories= KitchenType::All();
+        return view('admin.dishes.create', compact('restaurant', 'categories'));
     }
 
     /**
@@ -56,7 +57,20 @@ class DishController extends Controller
     // }
     public function store($restaurant, Request $request)
     {   
+        // validation
+        $validated = $request->validate(
+            [
+                'nome_prodotto' => 'required',
+                'prezzo' => 'required|numeric',
+            ],
+            [
+                'nome_prodotto.required' => 'Attenzione, il campo "nome prodotto" non è stato compilato correttamente',
+                'prezzo.required' => 'Attenzione, il campo "prezzo" non è stato compilato correttamente',
+            ],
+        );
+
         $data=$request->All();
+
         $dish=new Dish();
         if(array_key_exists('immage', $data)){
              $image_url = Storage::put('dish_immage', $data['immage'] );
@@ -67,6 +81,7 @@ class DishController extends Controller
         $dish->restaurants_id=$restaurant;
 
         $dish->save();
+        if ( array_key_exists( 'categories', $data ) )  $dish->KitchenType()->attach($data['categories']);
         return redirect()->route('admin.restaurants.dishes.index', $restaurant);
 
     }
@@ -90,7 +105,8 @@ class DishController extends Controller
      */
     public function edit($restaurant, Dish $dish)
     {
-        return view('admin.dishes.edit', compact('restaurant','dish'));
+        $categories =KitchenType::all();
+        return view('admin.dishes.edit', compact('restaurant','dish', 'categories'));
     }
 
     /**
@@ -102,6 +118,18 @@ class DishController extends Controller
      */
     public function update($restaurant, Request $request, Dish $dish)
     {
+        // validation
+        $validated = $request->validate(
+            [
+                'nome_prodotto' => 'required',
+                'prezzo' => 'required|numeric',
+            ],
+            [
+                'nome_prodotto.required' => 'Attenzione, il campo "nome prodotto" non è stato compilato correttamente',
+                'prezzo.required' => 'Attenzione, il campo "prezzo" non è stato compilato correttamente',
+            ],
+        );
+
         $data=$request->All();
         if(array_key_exists('image', $data)){
             if( $dish->immage ) Storage::delete($dish->immage);

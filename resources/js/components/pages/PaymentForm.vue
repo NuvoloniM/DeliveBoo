@@ -37,7 +37,9 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary btn-block" @click.prevent="payWithCreditCard">Pay with Credit Card</button>
+            <button class="btn btn-primary btn-block" @click.prevent="payWithCreditCard">
+                <router-link :to="{name: 'bye'}">paga e Bella!</router-link>
+            </button>
         </form>
     </div>
 </template>

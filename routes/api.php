@@ -22,5 +22,6 @@ Route::namespace('Api')->group( function(){
     Route::get('/restaurants', 'RestaurantController@index');
     Route::get('/restaurants/{id}', 'RestaurantController@show');
     Route::post('/messages/{cart}', 'ContactMessageController@store');
-    Route::post('/payment/{cart}');
+    Route::post('/payment/{cart}', 'ContactMessageController@store');
+    Route::post('/bye', 'ContactMessageController@store');
 });
