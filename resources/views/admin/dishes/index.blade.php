@@ -10,9 +10,9 @@
     <h1 class="text-center white">I tuoi piatti:</h1>
     <div class="row">
         @forelse ($dishes as $dish)
-        <div class="col-6 mt-3">
+        <div class="col-6 mt-3 rounded-lg mt-2">
             <div class="d-flex flex-column justify-content-around">
-                <div class="img d-flex justify-content-between align-items-end pb-3" style="background-image: url({{asset("storage/$dish->immage")}})">
+                <div class="img rounded-lg d-flex justify-content-between align-items-end pb-3" style="background-image: url({{asset("storage/$dish->immage")}})">
                     {{-- <img class="img" src="{{asset("storage/$restaurant->immagine")}}"> --}}
                     <span>
                         <a href="{{route('admin.restaurants.dishes.show',['restaurant'=> $data, $dish->id])}}"

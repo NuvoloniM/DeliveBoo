@@ -3,23 +3,23 @@
 @section('content')
     <div class="container container-restaurant">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 rounded-lg">
                 <a href="{{route('admin.restaurants.dishes.index', $restaurant->id)}}">
                     <div class="d-flex flex-column justify-content-around">
-                        <div class="img" style="background-image: url({{asset("storage/$restaurant->immagine")}})">
+                        <div class="img rounded-lg" style="background-image: url({{asset("storage/$restaurant->immagine")}})">
                          {{-- <img class="img" src="{{asset("storage/$restaurant->immagine")}}"> --}}
                         </div>
                         <div class="name mt-3">
-                            <span class="white">
+                            <h3 class="white">
                                 {{ $restaurant->nome_attivita }}
-                            </span>
+                            </h3>
                         </div>
                         <div class="mt-3 white">
                             <span>
                                 {{ $restaurant->indirizzo }}
                             </span>
                         </div>
-                        <div>
+                        <div class="mt-3">
                             @include('includes.deleteRestaurant')
                         </div>
                     </div>

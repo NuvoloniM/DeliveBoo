@@ -3,9 +3,9 @@
 @section('content')
     <div class="container mt-5">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 rounded-lg">
                 <div class="d-flex flex-column justify-content-around">
-                    <div class="img" style="background-image: url({{asset("storage/$dish->immage")}})">
+                    <div class="img rounded-lg" style="background-image: url({{asset("storage/$dish->immage")}})">
                         {{-- <img class="img" src="{{asset("storage/$restaurant->immagine")}}"> --}}
                     </div>
                     <div class="name mt-3">

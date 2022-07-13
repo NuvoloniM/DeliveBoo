@@ -3159,47 +3159,51 @@ var render = function () {
     _c("div", { staticClass: "container mt-3" }, [
       _c(
         "div",
-        { staticClass: "row pt-3 pb-5" },
+        { staticClass: "row pt-3" },
         _vm._l(_vm.restaurants, function (restaurant) {
-          return _c("div", { key: restaurant.id, staticClass: "col-6" }, [
-            _c(
-              "div",
-              { staticClass: "d-flex flex-column justify-content-around" },
-              [
-                _c(
-                  "div",
-                  {
-                    staticClass: "img",
-                    style:
-                      "background-image: url(storage/" +
-                      restaurant.immagine +
-                      ")",
-                  },
-                  [_c("img", { attrs: { src: "", alt: "" } })]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "name mt-3" }, [
-                  _c("span", { staticClass: "white" }, [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(restaurant.nome_attivita) +
-                        "\n                        "
-                    ),
+          return _c(
+            "div",
+            { key: restaurant.id, staticClass: "col-6 mt-2 rounded-lg" },
+            [
+              _c(
+                "div",
+                { staticClass: "d-flex flex-column justify-content-around" },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "img rounded-lg",
+                      style:
+                        "background-image: url(storage/" +
+                        restaurant.immagine +
+                        ")",
+                    },
+                    [_c("img", { attrs: { src: "", alt: "" } })]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "name mt-3" }, [
+                    _c("h2", { staticClass: "white" }, [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(restaurant.nome_attivita) +
+                          "\n                        "
+                      ),
+                    ]),
                   ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "mt-3 white" }, [
-                  _c("span", [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(restaurant.indirizzo) +
-                        "\n                        "
-                    ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "mt-3 mb-4 white" }, [
+                    _c("span", [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(restaurant.indirizzo) +
+                          "\n                        "
+                      ),
+                    ]),
                   ]),
-                ]),
-              ]
-            ),
-          ])
+                ]
+              ),
+            ]
+          )
         }),
         0
       ),

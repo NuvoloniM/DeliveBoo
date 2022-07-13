@@ -35,13 +35,13 @@
                     <div class="col-6 text-center rounded-lg mt-3">
                         <a href="{{route('admin.restaurants.show', $restaurant->id)}}">
                             <div class="d-flex flex-column justify-content-around">
-                                <div class="img" style="background-image: url({{asset("storage/$restaurant->immagine")}})">
+                                <div class="img rounded-lg" style="background-image: url({{asset("storage/$restaurant->immagine")}})">
                                     {{-- <img class="img" src="{{asset("storage/$restaurant->immagine")}}"> --}}
                                 </div>
                                 <div class="name mt-3">
-                                    <span class="white">
+                                    <h3 class="white">
                                         {{ $restaurant->nome_attivita }}
-                                    </span>
+                                    </h3>
                                 </div>
                                 <div class="mt-3 white">
                                     <span>

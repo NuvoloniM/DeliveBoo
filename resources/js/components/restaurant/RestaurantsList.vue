@@ -1,18 +1,18 @@
 <template>
     <div class="sfondo">
         <div class="container mt-3">
-            <div class="row pt-3 pb-5">
-                <div class="col-6" v-for="restaurant in restaurants" :key="restaurant.id">
+            <div class="row pt-3">
+                <div class="col-6 mt-2 rounded-lg" v-for="restaurant in restaurants" :key="restaurant.id">
                     <div class="d-flex flex-column justify-content-around">
-                        <div class="img" :style="`background-image: url(storage/${restaurant.immagine})`">
+                        <div class="img rounded-lg" :style="`background-image: url(storage/${restaurant.immagine})`">
                             <img src="" alt="">
                         </div>
                         <div class="name mt-3">
-                            <span class="white">
+                            <h2 class="white">
                                 {{ restaurant.nome_attivita }}
-                            </span>
+                            </h2>
                         </div>
-                        <div class="mt-3 white">
+                        <div class="mt-3 mb-4 white">
                             <span>
                                 {{ restaurant.indirizzo }}
                             </span>
