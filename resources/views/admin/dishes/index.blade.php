@@ -22,6 +22,9 @@
                             <a class="personal-a white" href="#">Il tuo profilo</a>
                         </li>
                         <li>
+                            <a class="personal-a white" href="/">Ordina anche tu</a>
+                        </li>
+                        <li>
                             <a class="personal-a white" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
