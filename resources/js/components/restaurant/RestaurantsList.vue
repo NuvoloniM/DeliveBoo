@@ -1,72 +1,77 @@
 <template>
     
-    <div>
-        <div class="container-fluid body">
-        <div class="container-fluid">
-            <div class="title container-fluid text-white">
-                <h2>
-                    Le categorie piu' amate
-                </h2>
-                <h3>
-                    Trova i ristoranti piu' apprezzati della bella Napoli!
-                </h3>      
-            </div>
-              
-        </div>
-        
-        <div class="d-flex categories container-fluid justify-content-center text-white" >
-            <h4 class="category" v-for="(type, index) in types" :key="index">
-                <a @click="idCheck(type)" :class="(type.active == true)? 'active': ''" class="rest_type">
-                    {{type.tipologia}}  
-                </a>     
-            </h4>
-            
-        </div>
-    </div>
-        <div class="row personal d-flex flex-wrap justify-content-start text-dark">
-            <!-- ciclo i dati dell'array posts !!ricordarsi :key -->
-            <div class="card " v-for="restaurant in filtraggio" :key="restaurant.id" >
-                <img :src="`/storage/${restaurant.immagine}`" class="card-img-top" :alt="`${restaurant.nome_attivita}`">
-                <div class="card-header ">
-                    <!-- essendomi passato anche i dati di categoria posso rihiamarli -->
-                    {{ restaurant.nome_attivita }}
-                </div>
-                <div class="card-body ">
-                    <p class="card-text">
-                        {{ restaurant.indirizzo}}                        
-                    </p>
-                    <div class="overflow-x">
-                        <ul class="list-group text-dark">
-                            <li class="list-group-item" v-for="categorie in restaurant.restaurant_type" :key="categorie.id">
-                                {{categorie.tipologia}}
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- <p>
-                        {{restaurant.restaurant_type[0].tipologia}}
-                    </p> -->
-                    <div class="link py-5">
-                        <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary blue">Vedi il Menù</router-link>
-                    </div>
-                </div>
-                <!-- <div class="d-flex img">
-                    <img :src="`/storage/${restaurant.immagine}`" class="card-img-top" :alt="`${restaurant.nome_attivita}`">    
+    <div class="homepage">
+        <div class="container body">
+            <div class="container-fluid">
+                <div class="title container text-dark">
+                    <h2>
+                        Le categorie piu' amate
+                    </h2>
+                    <h3>
+                        Trova i ristoranti piu' apprezzati della bella Napoli!
+                    </h3>      
                 </div>
                 
-                <div class="card-header name font-grande">
-                    
-                    {{ restaurant.nome_attivita }}
-                </div>
-                <div class="card-body address container-fluid">
-                    <p class="card-title font-piccolo">
-                        {{ restaurant.indirizzo}}                        
-                    </p>  
-                </div>
-                <div class="link margin">
-                    <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary blue">View</router-link>
-                </div> -->
-            </div>        
+            </div>
+        
+            <div class="d-flex categories container text-dark" >
+                <h4 class="category" v-for="(type, index) in types" :key="index">
+                    <a @click="idCheck(type)" :class="(type.active == true)? 'active': ''" class="rest_type">
+                        {{type.tipologia}}  
+                    </a>     
+                </h4>
+                
+            </div>
         </div>
+        <div class="container">
+        <div class="row personal text-center">
+            <!-- ciclo i dati dell'array posts !!ricordarsi :key -->
+            <div class="col-4 rest_card" v-for="restaurant in filtraggio" :key="restaurant.id">
+                <div class="border border-dark rounded">
+                    <img :src="`/storage/${restaurant.immagine}`" class="rest_card_img" :alt="`${restaurant.nome_attivita}`">
+                    <div class="rest_card-header px-2 py-2">
+                        <!-- essendomi passato anche i dati di categoria posso rihiamarli -->
+                        {{ restaurant.nome_attivita }}
+                    </div>
+                    <div class="rest_card-body ">
+                        <p class="card-text">
+                            {{ restaurant.indirizzo}}                        
+                        </p>
+                        <div class="overflow-x">
+                            <ul class="d-flex justify-content-center p-0">
+                                <li class="btn btn-light rounded-pill mx-2"  v-for="categorie in restaurant.restaurant_type" :key="categorie.id">
+                                    {{categorie.tipologia}}
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <p>
+                            {{restaurant.restaurant_type[0].tipologia}}
+                        </p> -->
+                        <div class="link py-3 d-flex justify-content-center">
+                            <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class=" btn btn-dark rounded-pill ">Vedi il Menù</router-link>
+                        </div>
+                    </div>
+                    <!-- <div class="d-flex img">
+                        <img :src="`/storage/${restaurant.immagine}`" class="card-img-top" :alt="`${restaurant.nome_attivita}`">    
+                    </div>
+                    
+                    <div class="card-header name font-grande">
+                        
+                        {{ restaurant.nome_attivita }}
+                    </div>
+                    <div class="card-body address container-fluid">
+                        <p class="card-title font-piccolo">
+                            {{ restaurant.indirizzo}}                        
+                        </p>  
+                    </div>
+                    <div class="link margin">
+                        <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary blue">View</router-link>
+                    </div> -->
+                </div>        
+            </div>
+        </div>
+        </div>
+        
     </div>
 
 
@@ -226,21 +231,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-   .personal{        
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
+//    .personal{        
+//     width: 80%;
+//     margin: 0 auto;
+//     text-align: center;
+//    }
+   .rest_card{
+    height: 400px;
+    margin: 40px 0;
+        .rest_card_img{
+            width: 100%;
+            height: 200px;
+        }
+        .rest_card-header{
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 10px #000;
+            background-color: transparent;
+        }
+        .rest_card-body{
+            font-size: 0.8em;
+            font-style: italic;
+            color:#fff ;
+            background-color: transparent;
+        }
    }
-   .card{
-    margin: 45px;
-    width: calc((100% / 4) - 25px);
-    margin: 2vh auto; 
-    // height: 40vh; 
-   }
-   .card:hover{
-    transform: scale(1.2);
-    transition-duration: 0.5s;
-   }
+//    .card:hover{
+//     transform: scale(1.2);
+//     transition-duration: 0.5s
+//    }
     .categories{
         width: 80%;
         margin: 0 auto;  
@@ -269,7 +289,7 @@ export default {
 
     .rest_type{
         text-decoration: none;
-        color:#fff;
+        color:#000;
          border: 1px solid ;
         border-radius: 50px;
         padding: 5px 10px;
@@ -277,6 +297,7 @@ export default {
     .active {
     background: #fff;
     color: rgb(25, 159, 214);
-    box-shadow: 5px 5px 10px rgb(9, 111, 151);;
+    box-shadow: 5px 5px 10px rgb(9, 111, 151);
     }
+    
 </style>
