@@ -48,11 +48,9 @@
             <div class="form-group">
                 <input type="hidden" name="data_ordine">
             </div>
-            <button class="btn btn-primary" @click="sendForm" type="button">
-            <router-link :to="{name:'payment', params: {cart: this.total}}">
-                Invia
+            <router-link :to="{name:'payment', params: {cart: this.total}}"> 
+                <button class="btn btn-primary" @click="sendForm" type="button">Invia</button>
             </router-link>
-            </button>
 
         </form>
 
