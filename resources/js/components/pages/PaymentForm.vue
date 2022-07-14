@@ -1,10 +1,9 @@
 <template>
-    <div>
+    <div class="pay_form container">
         <div class="alert alert-danger" v-if="error">
             {{ error }}
         </div>
-
-        <form>
+        <form >
             <div class="form-group">
                 <label for="amount">Amount</label>
                 <div class="input-group">
@@ -15,17 +14,17 @@
             <hr />
             <div class="form-group">
                 <label>Credit Card Number</label>
-                <div id="creditCardNumber" class="form-control"></div>
+                <div id="creditCardNumber" class="form-control" required></div>
             </div>
             <div class="form-group">
                 <div class="row">
                     <div class="col-6">
                         <label>Expire Date</label>
-                        <div id="expireDate" class="form-control"></div>
+                        <div id="expireDate" class="form-control" required></div>
                     </div>
                     <div class="col-6">
                         <label>CVV</label>
-                        <div id="cvv" class="form-control"></div>
+                        <div id="cvv" class="form-control" required></div>
                     </div>
                 </div>
             </div>
@@ -37,29 +36,42 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary btn-block" @click.prevent="payWithCreditCard">
-                <router-link :to="{name: 'bye'}">paga e Bella!</router-link>
+            <button v-if="!snitch" type="submit" class="btn btn-light btn-block" @click.prevent="payWithCreditCard">
+                Procedi al pagamento 
             </button>
+            <router-link v-if="snitch" class="link btn btn-success btn-block" :to="{name: 'bye'}">Concludi l'ordine</router-link>
         </form>
+        <Footer/>
     </div>
 </template>
 
-<style scoped>
-
+<style lang="scss" scoped>
+    .pay_form{
+        height: calc(100vh - 75px);
+    }
+    .link{
+        text-decoration: none;
+        color: #000;
+    }
 </style>
 
 
 <script>
 import braintree from 'braintree-web';
+import Footer from '../Footer.vue'
 //import axios from 'axios';
     export default {
         name: 'PaymentForm',
+        components:{
+            Footer,
+        },
         data() {
             return {
             hostedFieldInstance: false,
             nonce: '',
             error:'',
             totale: this.$route.params.cart,
+            snitch:false,
             }
         },
         methods: {
@@ -71,12 +83,14 @@ import braintree from 'braintree-web';
                     this.hostedFieldInstance.tokenize().then(payload => {
                             console.log(payload);
                             this.nonce = payload.nonce;
+                            this.snitch=true;
                         })
                         .catch(err => {
                             console.error(err);
                             this.error = err.message;
                         })
                 }
+                
             },
 
         },
@@ -115,7 +129,8 @@ import braintree from 'braintree-web';
                     // @TODO - Use hostedFieldInstance to send data to Braintree
                     this.hostedFieldInstance = hostedFieldInstance;
                 })
-                .catch(err => {});
+                .catch(err => {
+                });
         }
     }
 
