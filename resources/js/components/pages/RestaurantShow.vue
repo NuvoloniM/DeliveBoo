@@ -283,7 +283,7 @@ export default {
 
     .carrello {
         position: fixed;
-        right: 10px;
+        right: 50px;
         overflow-y: auto;
         border: 2px solid black;
         padding: 50px;
