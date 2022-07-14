@@ -26,7 +26,7 @@
         <div class="container">
         <div class="row personal text-center">
             <!-- ciclo i dati dell'array posts !!ricordarsi :key -->
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 rest_card" v-for="restaurant in filtraggio" :key="restaurant.id">
+            <div class="col-xs-12 col-sm-6 col-md-4  rest_card" v-for="restaurant in filtraggio" :key="restaurant.id">
                 <div class="border border-dark rounded">
                     <img :src="`/storage/${restaurant.immagine}`" class="rest_card_img" :alt="`${restaurant.nome_attivita}`">
                     <div class="rest_card-header px-2 py-2">
@@ -73,37 +73,10 @@
         </div>
         
     </div>
-
-
-    <!-- <div class="container1 d-flex">
-            
-            <div class="row container d-flex flex-wrap">
-                    
-                    <div class="col container" v-for="restaurant in filtraggio" :key="restaurant.id" >
-                     
-                        <div class="locandina d-flex flex-column justify-content-between" >
-                        
-                            <div class="img">
-                                <img class="img-fluid"  :src="`/storage/${restaurant.immagine}`">
-                            </div>
-                      
-                            <div class="name">
-                                {{restaurant.nome_attivita}}
-                            </div>
-                        
-                            <div class="address">
-                                {{ restaurant.indirizzo}}
-                            </div>
-                            <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary">View</router-link>
-                        </div>
-                    </div>
-            </div>
-        </div> -->
     
 </template>
 
 <script>
-// importo axios per poter gestire i dati che gli passo tramite controller come se fosse una chiamata ad un api
 import axios from 'axios';
 export default {
    name: 'RestaurantsList' ,
@@ -123,7 +96,6 @@ export default {
         getRestaurants(){
             axios.get('http://127.0.0.1:8000/api/restaurants')
                 .then((res)=>{
-                // riempio l'array vuoto in data con gli elementi presi con axios
                  this.restaurants = res.data.restaurants
                  this.allRestaurants = res.data.restaurants
                  this.types = res.data.restaurants_types;
@@ -156,7 +128,6 @@ export default {
                 this.restaurants = this.allRestaurants;
             } else {
                 this.allRestaurants.forEach((element) => {
-                    // let index = this.allRestaurants.indexOf(element);
                     console.log(element);
                     let restId = [];
                     element.restaurant_type.forEach(obj=>{
@@ -171,43 +142,13 @@ export default {
                     })
                     console.log(`array tipi ordinat ${this.selectedType}`)
                     this.found = this.selectedType.every(v => restId.includes(v));
-                    // this.found = this.selectedType.some(r=> restId.includes(r))
                     console.log(this.found);
                     if(this.found) this.prova.push(element);
-                    
-                    // if(!element.restaurant_type.){
-                    //     return this.restaurants.splice(index,1);
-                    // }
                 })
                 this.restaurants=[];
                 this.prova.forEach((element)=>
                 this.restaurants.push(element));
             }
-                      // this.prova = [];
-            // let res = [];
-            // this.restaurants.forEach((elm, index) => {
-            //     elm.restaurant_type.forEach(obj => {
-            //         console.log(obj);
-            //         let typeId = []
-            //         typeId = obj.id
-            //         console.log(typeId)
-            //          if(this.array.includes(typeId)){
-            //             //  count = count + 1
-            //             //  console.log("e incluso")
-            //             this.prova.push(elm)
-            //          } else{
-            //              console.log("NOOOOOOOOOOOO")
-            //          }
-            //     });
-                
-            // });
-            // console.log(this.prova)
-            //  res = this.restaurants.filter(item => this.prova.includes(item));
-            //     console.log(res)
-            //     this.restaurants = [];
-            //     res.forEach(elem =>
-            //     this.restaurants.push(elem));
-            //     console.log(this.restaurants);
         }
    },
    mounted(){
@@ -244,7 +185,7 @@ export default {
             height: 200px;
         }
         .rest_card-header{
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: bold;
             color: #fff;
             text-shadow: 1px 1px 10px #000;
@@ -265,7 +206,6 @@ export default {
         overflow-x: auto;            
     }
     .category{
-        /* width: auto; */
         margin: 4vh 3vh;
         cursor: pointer;  
     }
