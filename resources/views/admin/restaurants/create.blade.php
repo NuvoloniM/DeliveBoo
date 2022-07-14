@@ -15,6 +15,9 @@
                     <a class="personal-a white" href="#">I tuoi ordini</a>
                 </li>
                 <li>
+                    <a class="personal-a white" href="/">Ordina anche tu</a>
+                </li>
+                <li>
                     <a class="personal-a white" href="#">Il tuo profilo</a>
                 </li>
                 <li>
