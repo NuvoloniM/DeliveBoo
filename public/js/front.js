@@ -26279,10 +26279,14 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 <<<<<<< HEAD
+exports.push([module.i, ".rest_card[data-v-09ccf5a6] {\n  height: 400px;\n  margin: 40px 0;\n}\n.rest_card .rest_card_img[data-v-09ccf5a6] {\n  width: 100%;\n  height: 200px;\n}\n.rest_card .rest_card-header[data-v-09ccf5a6] {\n  font-size: 1.3em;\n  font-weight: bold;\n  color: #fff;\n  text-shadow: 1px 1px 10px #000;\n  background-color: transparent;\n}\n.rest_card .rest_card-body[data-v-09ccf5a6] {\n  font-size: 0.8em;\n  font-style: italic;\n  color: #fff;\n  background-color: transparent;\n}\n.categories[data-v-09ccf5a6] {\n  overflow-x: auto;\n}\n.category[data-v-09ccf5a6] {\n  /* width: auto; */\n  margin: 4vh 3vh;\n  cursor: pointer;\n}\n.link[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: white;\n}\nh4[data-v-09ccf5a6]:hover {\n  transform: scale(1.3);\n  transition-duration: 0.5s;\n}\n.title[data-v-09ccf5a6] {\n  width: 50%;\n  margin: 5vh auto;\n  text-align: center;\n}\n.rest_type[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: #000;\n  border: 1px solid;\n  border-radius: 50px;\n  padding: 5px 10px;\n}\n.active[data-v-09ccf5a6] {\n  background: #fff;\n  color: rgb(25, 159, 214);\n  box-shadow: 5px 5px 10px rgb(9, 111, 151);\n}", ""]);
+=======
+<<<<<<< HEAD
 exports.push([module.i, ".personal[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  text-align: center;\n}\n.card[data-v-09ccf5a6] {\n  margin: 45px;\n  width: calc(25% - 25px);\n  margin: 2vh auto;\n}\n.card[data-v-09ccf5a6]:hover {\n  transform: scale(1.2);\n  transition-duration: 0.5s;\n}\n.categories[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  padding-left: 10px;\n  overflow-x: auto;\n}\n.category[data-v-09ccf5a6] {\n  margin: 4vh 3vh;\n  cursor: pointer;\n}\n.link[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: white;\n}\nh4[data-v-09ccf5a6]:hover {\n  transform: scale(1.3);\n  transition-duration: 0.5s;\n}\n.title[data-v-09ccf5a6] {\n  width: 50%;\n  margin: 5vh auto;\n  text-align: center;\n}\n.rest_type[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: #fff;\n  border: 1px solid;\n  border-radius: 50px;\n  padding: 5px 10px;\n}\n.active[data-v-09ccf5a6] {\n  background: #fff;\n  color: rgb(25, 159, 214);\n  box-shadow: 5px 5px 10px rgb(9, 111, 151);\n}", ""]);
 =======
 exports.push([module.i, ".rest_card[data-v-09ccf5a6] {\n  height: 400px;\n  margin: 40px 0;\n}\n.rest_card .rest_card_img[data-v-09ccf5a6] {\n  width: 100%;\n  height: 200px;\n}\n.rest_card .rest_card-header[data-v-09ccf5a6] {\n  font-size: 1.5em;\n  font-weight: bold;\n  color: #fff;\n  text-shadow: 1px 1px 10px #000;\n  background-color: transparent;\n}\n.rest_card .rest_card-body[data-v-09ccf5a6] {\n  font-size: 0.8em;\n  font-style: italic;\n  color: #fff;\n  background-color: transparent;\n}\n.categories[data-v-09ccf5a6] {\n  overflow-x: auto;\n}\n.category[data-v-09ccf5a6] {\n  /* width: auto; */\n  margin: 4vh 3vh;\n  cursor: pointer;\n}\n.link[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: white;\n}\nh4[data-v-09ccf5a6]:hover {\n  transform: scale(1.3);\n  transition-duration: 0.5s;\n}\n.title[data-v-09ccf5a6] {\n  width: 50%;\n  margin: 5vh auto;\n  text-align: center;\n}\n.rest_type[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: #000;\n  border: 1px solid;\n  border-radius: 50px;\n  padding: 5px 10px;\n}\n.active[data-v-09ccf5a6] {\n  background: #fff;\n  color: rgb(25, 159, 214);\n  box-shadow: 5px 5px 10px rgb(9, 111, 151);\n}", ""]);
 >>>>>>> d3e7b02a6f5a2bebb9bdc6a502edce0708fa6d5e
+>>>>>>> 78118b00220502aa34cbbabff3a5359a58c820f9
 
 // exports
 
@@ -27957,9 +27961,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "nav-item" }, [
-      _c("a", { staticClass: "nav-link", attrs: { href: "/admin" } }, [
-        _vm._v("Admin"),
-      ]),
+      _c(
+        "a",
+        { staticClass: "nav-link", attrs: { href: "/admin/restaurants" } },
+        [_vm._v("Admin")]
+      ),
     ])
   },
   function () {
@@ -28859,7 +28865,7 @@ var render = function () {
             "div",
             {
               key: restaurant.id,
-              staticClass: "col-xs-12 col-sm-6 col-md-4 col-lg-3 rest_card",
+              staticClass: "col-xs-12 col-sm-6 col-md-4  rest_card",
             },
             [
               _c("div", { staticClass: "border border-dark rounded" }, [
