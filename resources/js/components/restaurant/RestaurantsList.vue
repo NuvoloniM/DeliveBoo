@@ -26,7 +26,7 @@
         <div class="container">
         <div class="row personal text-center">
             <!-- ciclo i dati dell'array posts !!ricordarsi :key -->
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 rest_card" v-for="restaurant in filtraggio" :key="restaurant.id">
+            <div class="col-xs-12 col-sm-6 col-md-4  rest_card" v-for="restaurant in filtraggio" :key="restaurant.id">
                 <div class="border border-dark rounded">
                     <img :src="`/storage/${restaurant.immagine}`" class="rest_card_img" :alt="`${restaurant.nome_attivita}`">
                     <div class="rest_card-header px-2 py-2">
@@ -244,7 +244,7 @@ export default {
             height: 200px;
         }
         .rest_card-header{
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: bold;
             color: #fff;
             text-shadow: 1px 1px 10px #000;

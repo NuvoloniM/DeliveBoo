@@ -43,7 +43,7 @@
                                 >
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/admin">Admin</a>
+                                <a class="nav-link" href="/admin/restaurants">Admin</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/login" class="nav-link">Login</a>
