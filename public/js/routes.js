@@ -44589,7 +44589,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\andre\Desktop\final-proj\DeliveBoo\resources\js\routes.js */"./resources/js/routes.js");
+=======
+module.exports = __webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\js\routes.js */"./resources/js/routes.js");
+>>>>>>> 3a5e125d19b99ba063f44f28b671b58efb1d996c
 
 
 /***/ })
