@@ -26271,7 +26271,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".rest_card[data-v-09ccf5a6] {\n  height: 400px;\n  margin: 40px 0;\n}\n.rest_card .rest_card_img[data-v-09ccf5a6] {\n  width: 100%;\n  height: 200px;\n}\n.rest_card .rest_card-header[data-v-09ccf5a6] {\n  font-size: 1.5em;\n  font-weight: bold;\n  color: #fff;\n  text-shadow: 1px 1px 10px #000;\n  background-color: transparent;\n}\n.rest_card .rest_card-body[data-v-09ccf5a6] {\n  font-size: 0.8em;\n  font-style: italic;\n  color: #fff;\n  background-color: transparent;\n}\n.categories[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  padding-left: 10px;\n  overflow-x: auto;\n}\n.category[data-v-09ccf5a6] {\n  /* width: auto; */\n  margin: 4vh 3vh;\n  cursor: pointer;\n}\n.link[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: white;\n}\nh4[data-v-09ccf5a6]:hover {\n  transform: scale(1.3);\n  transition-duration: 0.5s;\n}\n.title[data-v-09ccf5a6] {\n  width: 50%;\n  margin: 5vh auto;\n  text-align: center;\n}\n.rest_type[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: #000;\n  border: 1px solid;\n  border-radius: 50px;\n  padding: 5px 10px;\n}\n.active[data-v-09ccf5a6] {\n  background: #fff;\n  color: rgb(25, 159, 214);\n  box-shadow: 5px 5px 10px rgb(9, 111, 151);\n}", ""]);
+exports.push([module.i, ".rest_card[data-v-09ccf5a6] {\n  height: 400px;\n  margin: 40px 0;\n}\n.rest_card .rest_card_img[data-v-09ccf5a6] {\n  width: 100%;\n  height: 200px;\n}\n.rest_card .rest_card-header[data-v-09ccf5a6] {\n  font-size: 1.5em;\n  font-weight: bold;\n  color: #fff;\n  text-shadow: 1px 1px 10px #000;\n  background-color: transparent;\n}\n.rest_card .rest_card-body[data-v-09ccf5a6] {\n  font-size: 0.8em;\n  font-style: italic;\n  color: #fff;\n  background-color: transparent;\n}\n.categories[data-v-09ccf5a6] {\n  overflow-x: auto;\n}\n.category[data-v-09ccf5a6] {\n  /* width: auto; */\n  margin: 4vh 3vh;\n  cursor: pointer;\n}\n.link[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: white;\n}\nh4[data-v-09ccf5a6]:hover {\n  transform: scale(1.3);\n  transition-duration: 0.5s;\n}\n.title[data-v-09ccf5a6] {\n  width: 50%;\n  margin: 5vh auto;\n  text-align: center;\n}\n.rest_type[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: #000;\n  border: 1px solid;\n  border-radius: 50px;\n  padding: 5px 10px;\n}\n.active[data-v-09ccf5a6] {\n  background: #fff;\n  color: rgb(25, 159, 214);\n  box-shadow: 5px 5px 10px rgb(9, 111, 151);\n}", ""]);
 
 // exports
 
@@ -28745,12 +28745,12 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "homepage" }, [
-    _c("div", { staticClass: "container body" }, [
+    _c("div", { staticClass: "container body text-center" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "d-flex categories container text-dark" },
+        { staticClass: "d-flex categories text-dark justify-content-between" },
         _vm._l(_vm.types, function (type, index) {
           return _c("h4", { key: index, staticClass: "category" }, [
             _c(
@@ -28785,7 +28785,10 @@ var render = function () {
         _vm._l(_vm.filtraggio, function (restaurant) {
           return _c(
             "div",
-            { key: restaurant.id, staticClass: "col-4 rest_card" },
+            {
+              key: restaurant.id,
+              staticClass: "col-xs-12 col-sm-6 col-md-4 col-lg-3 rest_card",
+            },
             [
               _c("div", { staticClass: "border border-dark rounded" }, [
                 _c("img", {
@@ -45272,7 +45275,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

@@ -1,7 +1,7 @@
 <template>
     
     <div class="homepage">
-        <div class="container body">
+        <div class="container body text-center">
             <div class="container-fluid">
                 <div class="title container text-dark">
                     <h2>
@@ -14,7 +14,7 @@
                 
             </div>
         
-            <div class="d-flex categories container text-dark" >
+            <div class="d-flex categories text-dark justify-content-between" >
                 <h4 class="category" v-for="(type, index) in types" :key="index">
                     <a @click="idCheck(type)" :class="(type.active == true)? 'active': ''" class="rest_type">
                         {{type.tipologia}}  
@@ -26,7 +26,7 @@
         <div class="container">
         <div class="row personal text-center">
             <!-- ciclo i dati dell'array posts !!ricordarsi :key -->
-            <div class="col-4 rest_card" v-for="restaurant in filtraggio" :key="restaurant.id">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 rest_card" v-for="restaurant in filtraggio" :key="restaurant.id">
                 <div class="border border-dark rounded">
                     <img :src="`/storage/${restaurant.immagine}`" class="rest_card_img" :alt="`${restaurant.nome_attivita}`">
                     <div class="rest_card-header px-2 py-2">
@@ -262,9 +262,6 @@ export default {
 //     transition-duration: 0.5s
 //    }
     .categories{
-        width: 80%;
-        margin: 0 auto;  
-        padding-left: 10px;
         overflow-x: auto;            
     }
     .category{
