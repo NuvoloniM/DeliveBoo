@@ -2421,6 +2421,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantShow',
@@ -2685,54 +2688,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// importo axios per poter gestire i dati che gli passo tramite controller come se fosse una chiamata ad un api
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantsList',
@@ -2753,7 +2708,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://127.0.0.1:8000/api/restaurants').then(function (res) {
-        // riempio l'array vuoto in data con gli elementi presi con axios
         _this.restaurants = res.data.restaurants;
         _this.allRestaurants = res.data.restaurants;
         _this.types = res.data.restaurants_types;
@@ -2791,7 +2745,6 @@ __webpack_require__.r(__webpack_exports__);
         this.restaurants = this.allRestaurants;
       } else {
         this.allRestaurants.forEach(function (element) {
-          // let index = this.allRestaurants.indexOf(element);
           console.log(element);
           var restId = [];
           element.restaurant_type.forEach(function (obj) {
@@ -2809,42 +2762,15 @@ __webpack_require__.r(__webpack_exports__);
           console.log("array tipi ordinat ".concat(_this2.selectedType));
           _this2.found = _this2.selectedType.every(function (v) {
             return restId.includes(v);
-          }); // this.found = this.selectedType.some(r=> restId.includes(r))
-
+          });
           console.log(_this2.found);
-          if (_this2.found) _this2.prova.push(element); // if(!element.restaurant_type.){
-          //     return this.restaurants.splice(index,1);
-          // }
+          if (_this2.found) _this2.prova.push(element);
         });
         this.restaurants = [];
         this.prova.forEach(function (element) {
           return _this2.restaurants.push(element);
         });
-      } // this.prova = [];
-      // let res = [];
-      // this.restaurants.forEach((elm, index) => {
-      //     elm.restaurant_type.forEach(obj => {
-      //         console.log(obj);
-      //         let typeId = []
-      //         typeId = obj.id
-      //         console.log(typeId)
-      //          if(this.array.includes(typeId)){
-      //             //  count = count + 1
-      //             //  console.log("e incluso")
-      //             this.prova.push(elm)
-      //          } else{
-      //              console.log("NOOOOOOOOOOOO")
-      //          }
-      //     });
-      // });
-      // console.log(this.prova)
-      //  res = this.restaurants.filter(item => this.prova.includes(item));
-      //     console.log(res)
-      //     this.restaurants = [];
-      //     res.forEach(elem =>
-      //     this.restaurants.push(elem));
-      //     console.log(this.restaurants);
-
+      }
     }
   },
   mounted: function mounted() {
@@ -26131,7 +26057,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".col-3[data-v-cddbf820] {\n  border: 1px solid cyan;\n}\n.border-p[data-v-cddbf820] {\n  border-bottom: 1px solid blue;\n}\n@media (max-width: 900px) {\n.contenitore-generale[data-v-cddbf820] {\n    flex-direction: column;\n}\n.container-piatti[data-v-cddbf820] {\n    width: 100%;\n}\n}\n@media (max-width: 1000px) {\n.col-3[data-v-cddbf820] {\n    min-width: 200px;\n}\n}\n*[data-v-cddbf820] {\n  background-color: rgb(25, 159, 214);\n  color: white;\n}\n.contenitore-generale[data-v-cddbf820] {\n  margin-top: 5vh;\n}\n.contenitore-generale .piatti[data-v-cddbf820] {\n  width: 65%;\n}\n.contenitore-generale .piatti .container-piatti .row-piatti .col-3[data-v-cddbf820] {\n  margin: 10px;\n  text-align: center;\n}\n.contenitore-generale .piatti .container-piatti .row-piatti .col-3 a[data-v-cddbf820] {\n  text-decoration: none;\n}\n.contenitore-generale .carrello[data-v-cddbf820] {\n  width: 35%;\n}\n.contenitore-generale .carrello .container-carrello .row .col-12[data-v-cddbf820] {\n  text-align: center;\n}\n.contenitore-generale .carrello .container-carrello .row .col-12 .white[data-v-cddbf820] {\n  color: white;\n}\n.pointer[data-v-cddbf820]:hover {\n  cursor: pointer;\n  color: blue;\n}\n.blue[data-v-cddbf820] {\n  color: rgb(25, 159, 214);\n}", ""]);
+exports.push([module.i, ".main_container[data-v-cddbf820] {\n  min-height: calc(100vh - 75px);\n}\n.dish_img[data-v-cddbf820] {\n  height: 200px;\n}\n.dish_img img[data-v-cddbf820] {\n  height: 100%;\n  width: 100%;\n}\n.col-3[data-v-cddbf820] {\n  border: 1px solid cyan;\n}\n@media (max-width: 900px) {\n.contenitore-generale[data-v-cddbf820] {\n    flex-direction: column;\n}\n.container-piatti[data-v-cddbf820] {\n    width: 100%;\n}\n}\n@media (max-width: 1000px) {\n.col-3[data-v-cddbf820] {\n    min-width: 200px;\n}\n}\n*[data-v-cddbf820] {\n  background-color: rgb(25, 159, 214);\n  color: white;\n}\n.contenitore-generale[data-v-cddbf820] {\n  margin-top: 5vh;\n}\n.contenitore-generale .piatti[data-v-cddbf820] {\n  width: 65%;\n}\n.contenitore-generale .piatti .container-piatti .row-piatti .col-3[data-v-cddbf820] {\n  margin: 10px;\n  text-align: center;\n}\n.contenitore-generale .piatti .container-piatti .row-piatti .col-3 a[data-v-cddbf820] {\n  text-decoration: none;\n}\n.contenitore-generale .carrello[data-v-cddbf820] {\n  position: fixed;\n  right: 10px;\n  overflow-y: auto;\n  border: 2px solid black;\n  padding: 50px;\n  border-radius: 20px;\n  max-height: 500px;\n  width: 35%;\n}\n.contenitore-generale .carrello .container-carrello .row .col-12[data-v-cddbf820] {\n  text-align: center;\n}\n.contenitore-generale .carrello .container-carrello .row .col-12 .white[data-v-cddbf820] {\n  color: white;\n}\n.contenitore-generale .cart_item[data-v-cddbf820] {\n  border-bottom: 2px solid black;\n  padding: 15px;\n}\n.contenitore-generale .item_quantita[data-v-cddbf820] {\n  padding: 0 8px;\n  background-color: lightsalmon;\n  border-radius: 20px;\n}\n.prezzo_salmon[data-v-cddbf820] {\n  color: lightsalmon;\n}\n.pointer[data-v-cddbf820]:hover {\n  cursor: pointer;\n  color: blue;\n}\n.blue[data-v-cddbf820] {\n  color: rgb(25, 159, 214);\n}", ""]);
 
 // exports
 
@@ -26150,7 +26076,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".personal[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  text-align: center;\n}\n.card[data-v-09ccf5a6] {\n  margin: 45px;\n  width: calc(25% - 25px);\n  margin: 2vh auto;\n}\n.card[data-v-09ccf5a6]:hover {\n  transform: scale(1.2);\n  transition-duration: 0.5s;\n}\n.categories[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  padding-left: 10px;\n  overflow-x: auto;\n}\n.category[data-v-09ccf5a6] {\n  /* width: auto; */\n  margin: 4vh 3vh;\n  cursor: pointer;\n}\n.link[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: white;\n}\nh4[data-v-09ccf5a6]:hover {\n  transform: scale(1.3);\n  transition-duration: 0.5s;\n}\n.title[data-v-09ccf5a6] {\n  width: 50%;\n  margin: 5vh auto;\n  text-align: center;\n}\n.rest_type[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: #fff;\n  border: 1px solid;\n  border-radius: 50px;\n  padding: 5px 10px;\n}\n.active[data-v-09ccf5a6] {\n  background: #fff;\n  color: rgb(25, 159, 214);\n  box-shadow: 5px 5px 10px rgb(9, 111, 151);\n}", ""]);
+exports.push([module.i, ".personal[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  text-align: center;\n}\n.card[data-v-09ccf5a6] {\n  margin: 45px;\n  width: calc(25% - 25px);\n  margin: 2vh auto;\n}\n.card[data-v-09ccf5a6]:hover {\n  transform: scale(1.2);\n  transition-duration: 0.5s;\n}\n.categories[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  padding-left: 10px;\n  overflow-x: auto;\n}\n.category[data-v-09ccf5a6] {\n  margin: 4vh 3vh;\n  cursor: pointer;\n}\n.link[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: white;\n}\nh4[data-v-09ccf5a6]:hover {\n  transform: scale(1.3);\n  transition-duration: 0.5s;\n}\n.title[data-v-09ccf5a6] {\n  width: 50%;\n  margin: 5vh auto;\n  text-align: center;\n}\n.rest_type[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: #fff;\n  border: 1px solid;\n  border-radius: 50px;\n  padding: 5px 10px;\n}\n.active[data-v-09ccf5a6] {\n  background: #fff;\n  color: rgb(25, 159, 214);\n  box-shadow: 5px 5px 10px rgb(9, 111, 151);\n}", ""]);
 
 // exports
 
@@ -28025,7 +27951,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "p-3" }, [
+  return _c("div", { staticClass: "p-3 main_container" }, [
     _c(
       "div",
       {
@@ -28046,13 +27972,13 @@ var render = function () {
                   "div",
                   {
                     key: dish.id,
-                    staticClass: "col-3 d-flex flex-column rounded-lg",
+                    staticClass: "col-3 d-flex flex-column rounded-lg p-2",
                   },
                   [
-                    _c("div", { staticClass: "img" }, [
+                    _c("div", { staticClass: "dish_img" }, [
                       _c("img", {
-                        staticClass: "img-fluid rounded-lg",
-                        attrs: { src: "" + dish.immage, alt: "" },
+                        staticClass: "img-fluid rounded",
+                        attrs: { src: "/storage/" + dish.immage, alt: "" },
                       }),
                     ]),
                     _vm._v(" "),
@@ -28065,11 +27991,13 @@ var render = function () {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "mt-3" }, [
-                      _vm._v(
-                        "\n                            " +
-                          _vm._s(dish.prezzo) +
-                          "\n                        "
-                      ),
+                      _c("div", { staticClass: "prezzo_salmon" }, [
+                        _vm._v(
+                          "\n                                €  " +
+                            _vm._s(dish.prezzo) +
+                            "\n                            "
+                        ),
+                      ]),
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "mt-3" }, [
@@ -28103,7 +28031,7 @@ var render = function () {
                 [
                   _c("h3", [
                     _vm._v(
-                      "\n                            CARRELLO\n                        "
+                      "\n                            Il Tuo Ordine\n                        "
                     ),
                   ]),
                   _vm._v(" "),
@@ -28117,58 +28045,64 @@ var render = function () {
                   _vm._v(" "),
                   _vm._l(_vm.carrello, function (dish, index) {
                     return _c("div", { key: index }, [
-                      _c("div", { staticClass: "mt-3 row" }, [
-                        _c("div", { staticClass: "col-12 " }, [
-                          _c(
-                            "span",
-                            {
-                              staticClass: "text-danger pointer blue mr-3",
-                              on: {
-                                click: function ($event) {
-                                  _vm.removeAllFromCart(index),
-                                    _vm.getPrice(dish)
+                      _c("div", { staticClass: "cart_item mb-2" }, [
+                        _c("div", { staticClass: "mt-3 row" }, [
+                          _c("div", { staticClass: "col-12 " }, [
+                            _c(
+                              "span",
+                              {
+                                staticClass: "text-danger pointer blue mr-3",
+                                on: {
+                                  click: function ($event) {
+                                    _vm.removeAllFromCart(index),
+                                      _vm.getPrice(dish)
+                                  },
                                 },
                               },
-                            },
-                            [_vm._v("X")]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v(_vm._s(dish.data.nome_prodotto))]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v(" " + _vm._s(dish.data.prezzo))]),
+                              [_vm._v("X")]
+                            ),
+                            _vm._v(" "),
+                            _c("span", [
+                              _vm._v(_vm._s(dish.data.nome_prodotto)),
+                            ]),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "mx-1 item_quantita" }, [
+                              _vm._v(" " + _vm._s(dish.data.prezzo)),
+                            ]),
+                          ]),
                         ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-3 row" }, [
-                        _c("div", { staticClass: "col-12 border-p" }, [
-                          _c(
-                            "span",
-                            {
-                              staticClass: " pointer white mr-3",
-                              on: {
-                                click: function ($event) {
-                                  _vm.removeFromCart(dish, index),
-                                    _vm.getPrice(dish)
+                        _vm._v(" "),
+                        _c("div", { staticClass: "mt-3 row" }, [
+                          _c("div", { staticClass: "col-12" }, [
+                            _c(
+                              "span",
+                              {
+                                staticClass: " pointer white mr-3",
+                                on: {
+                                  click: function ($event) {
+                                    _vm.removeFromCart(dish, index),
+                                      _vm.getPrice(dish)
+                                  },
                                 },
                               },
-                            },
-                            [_vm._v("-")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            {
-                              staticClass: "pointer white mr-3",
-                              on: {
-                                click: function ($event) {
-                                  _vm.addInCart(dish), _vm.getPrice(dish)
+                              [_vm._v("-")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "pointer white mr-3",
+                                on: {
+                                  click: function ($event) {
+                                    _vm.addInCart(dish), _vm.getPrice(dish)
+                                  },
                                 },
                               },
-                            },
-                            [_vm._v("+")]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v(_vm._s(dish.quantità))]),
+                              [_vm._v("+")]
+                            ),
+                            _vm._v(" "),
+                            _c("span", [_vm._v(_vm._s(dish.quantità))]),
+                          ]),
                         ]),
                       ]),
                     ])
@@ -28200,29 +28134,30 @@ var render = function () {
                       )
                     : _vm._e(),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    { staticClass: "btn btn-primary" },
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "btn btn-info",
-                          attrs: {
-                            to: {
-                              name: "form",
-                              params: {
-                                cart: this.totalPrice,
-                                id: this.restaurant_id,
+                  _vm.carrello.length != 0
+                    ? _c(
+                        "button",
+                        { staticClass: "btn btn-info" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              attrs: {
+                                to: {
+                                  name: "form",
+                                  params: {
+                                    cart: this.totalPrice,
+                                    id: this.restaurant_id,
+                                  },
+                                },
                               },
                             },
-                          },
-                        },
-                        [_vm._v("Completa il tuo ordine")]
-                      ),
-                    ],
-                    1
-                  ),
+                            [_vm._v("Completa il tuo ordine")]
+                          ),
+                        ],
+                        1
+                      )
+                    : _vm._e(),
                 ],
                 2
               ),
@@ -44654,7 +44589,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/routes.js */"./resources/js/routes.js");
+module.exports = __webpack_require__(/*! C:\Users\andre\Desktop\final-proj\DeliveBoo\resources\js\routes.js */"./resources/js/routes.js");
 
 
 /***/ })

@@ -24,11 +24,9 @@
         </div>
     </div>
         <div class="row personal d-flex flex-wrap justify-content-start text-dark">
-            <!-- ciclo i dati dell'array posts !!ricordarsi :key -->
             <div class="card " v-for="restaurant in filtraggio" :key="restaurant.id" >
                 <img :src="`/storage/${restaurant.immagine}`" class="card-img-top" :alt="`${restaurant.nome_attivita}`">
                 <div class="card-header ">
-                    <!-- essendomi passato anche i dati di categoria posso rihiamarli -->
                     {{ restaurant.nome_attivita }}
                 </div>
                 <div class="card-body ">
@@ -42,63 +40,17 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- <p>
-                        {{restaurant.restaurant_type[0].tipologia}}
-                    </p> -->
                     <div class="link py-5">
                         <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary blue">Vedi il Menù</router-link>
                     </div>
                 </div>
-                <!-- <div class="d-flex img">
-                    <img :src="`/storage/${restaurant.immagine}`" class="card-img-top" :alt="`${restaurant.nome_attivita}`">    
-                </div>
-                
-                <div class="card-header name font-grande">
-                    
-                    {{ restaurant.nome_attivita }}
-                </div>
-                <div class="card-body address container-fluid">
-                    <p class="card-title font-piccolo">
-                        {{ restaurant.indirizzo}}                        
-                    </p>  
-                </div>
-                <div class="link margin">
-                    <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary blue">View</router-link>
-                </div> -->
             </div>        
         </div>
     </div>
-
-
-    <!-- <div class="container1 d-flex">
-            
-            <div class="row container d-flex flex-wrap">
-                    
-                    <div class="col container" v-for="restaurant in filtraggio" :key="restaurant.id" >
-                     
-                        <div class="locandina d-flex flex-column justify-content-between" >
-                        
-                            <div class="img">
-                                <img class="img-fluid"  :src="`/storage/${restaurant.immagine}`">
-                            </div>
-                      
-                            <div class="name">
-                                {{restaurant.nome_attivita}}
-                            </div>
-                        
-                            <div class="address">
-                                {{ restaurant.indirizzo}}
-                            </div>
-                            <router-link :to="{ name: 'menu', params: { id: restaurant.id } }" class="btn btn-primary">View</router-link>
-                        </div>
-                    </div>
-            </div>
-        </div> -->
     
 </template>
 
 <script>
-// importo axios per poter gestire i dati che gli passo tramite controller come se fosse una chiamata ad un api
 import axios from 'axios';
 export default {
    name: 'RestaurantsList' ,
@@ -118,7 +70,6 @@ export default {
         getRestaurants(){
             axios.get('http://127.0.0.1:8000/api/restaurants')
                 .then((res)=>{
-                // riempio l'array vuoto in data con gli elementi presi con axios
                  this.restaurants = res.data.restaurants
                  this.allRestaurants = res.data.restaurants
                  this.types = res.data.restaurants_types;
@@ -151,7 +102,6 @@ export default {
                 this.restaurants = this.allRestaurants;
             } else {
                 this.allRestaurants.forEach((element) => {
-                    // let index = this.allRestaurants.indexOf(element);
                     console.log(element);
                     let restId = [];
                     element.restaurant_type.forEach(obj=>{
@@ -166,43 +116,13 @@ export default {
                     })
                     console.log(`array tipi ordinat ${this.selectedType}`)
                     this.found = this.selectedType.every(v => restId.includes(v));
-                    // this.found = this.selectedType.some(r=> restId.includes(r))
                     console.log(this.found);
                     if(this.found) this.prova.push(element);
-                    
-                    // if(!element.restaurant_type.){
-                    //     return this.restaurants.splice(index,1);
-                    // }
                 })
                 this.restaurants=[];
                 this.prova.forEach((element)=>
                 this.restaurants.push(element));
             }
-                      // this.prova = [];
-            // let res = [];
-            // this.restaurants.forEach((elm, index) => {
-            //     elm.restaurant_type.forEach(obj => {
-            //         console.log(obj);
-            //         let typeId = []
-            //         typeId = obj.id
-            //         console.log(typeId)
-            //          if(this.array.includes(typeId)){
-            //             //  count = count + 1
-            //             //  console.log("e incluso")
-            //             this.prova.push(elm)
-            //          } else{
-            //              console.log("NOOOOOOOOOOOO")
-            //          }
-            //     });
-                
-            // });
-            // console.log(this.prova)
-            //  res = this.restaurants.filter(item => this.prova.includes(item));
-            //     console.log(res)
-            //     this.restaurants = [];
-            //     res.forEach(elem =>
-            //     this.restaurants.push(elem));
-            //     console.log(this.restaurants);
         }
    },
    mounted(){
@@ -248,7 +168,6 @@ export default {
         overflow-x: auto;            
     }
     .category{
-        /* width: auto; */
         margin: 4vh 3vh;
         cursor: pointer;  
     }
