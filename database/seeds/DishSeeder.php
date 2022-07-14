@@ -126,7 +126,7 @@ class DishSeeder extends Seeder
         $new_dish12->glutine = 1;
         $new_dish12->kitchen_types_id = 5;
         $new_dish12->restaurants_id = 16;
-        $new_dish12->immage = 'dishes/12-pizza diavola.jpg';
+        $new_dish12->immage = 'dishes/12-pizza-diavola.jpg';
         $new_dish12->description = 'Fiordilatte con aggiunta di Latte di Bufala, Pomodoro Bio, Salame Piccante, Olio Evo Italiano e Basilico fresco.';
         $new_dish12->view = 0;
         $new_dish12->save();
