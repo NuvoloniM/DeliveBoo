@@ -1,18 +1,20 @@
 <template>
-    <div class="p-3">
+    <div class="p-3 main_container">
         <div class="d-flex contenitore-generale text-align-center text-center">
             <div class="piatti d-flex">
                 <div class="container container-piatti">
                     <div class="row row-piatti d-flex flex-wrap justify-content-center">
-                        <div class="col-3 d-flex flex-column rounded-lg" v-for="dish in menu" :key="dish.id">
-                            <div class="img">
-                                <img class="img-fluid rounded-lg" :src="`${dish.immage}`" alt="">
+                        <div class="col-3 d-flex flex-column rounded-lg p-2" v-for="dish in menu" :key="dish.id">
+                            <div class="dish_img">
+                                <img class="img-fluid rounded" :src="`/storage/${dish.immage}`" alt="">
                             </div>
                             <div class="nome mt-3">
                                 {{dish.nome_prodotto}}
                             </div>    
                             <div class="mt-3">
-                                {{dish.prezzo}}
+                                <div class="prezzo_salmon">
+                                    &euro;  {{dish.prezzo}}
+                                </div>
                             </div>
                             <div class="mt-3">
                                 <a @click="addToCart(dish), getPrice(dish)" class="pointer">Aggiungi al carrello</a>
@@ -26,27 +28,28 @@
                     <div class="row justify-content-center">
                         <div class="col-12">
                             <h3>
-                                CARRELLO
+                                Il Tuo Ordine
                             </h3>
                             <p v-if="carrello.length == 0">
                                 Il carrello e' vuoto
                             </p>
                             <div v-for="(dish, index) in carrello" :key="index">
+                              <div class="cart_item mb-2">
                                 <div class="mt-3 row">
                                     <div class="col-12 ">
                                         <span class="text-danger pointer blue mr-3" @click="removeAllFromCart(index),getPrice(dish)">X</span>
                                         <span>{{dish.data.nome_prodotto}}</span>  
-                                        <span> {{dish.data.prezzo}}</span>  
+                                        <span class="mx-1 item_quantita"> {{dish.data.prezzo}}</span>  
                                     </div>
                                 </div>
                                 <div class="mt-3 row"> 
-                                    <div class="col-12 border-p">
+                                    <div class="col-12">
                                         <span class=" pointer white mr-3" @click="removeFromCart(dish,index), getPrice(dish)">-</span>
                                         <span class="pointer white mr-3" @click="addInCart(dish), getPrice(dish)">+</span>
                                         <span>{{dish.quantità}}</span>
                                     </div>
                                 </div>                                
-                                
+                              </div>
                             </div>
                             <p class="mt-4" v-if="carrello.length > 0">
                                 TOTALE: <span>{{totalPrice}}</span>
@@ -54,8 +57,8 @@
                             <p @click="deleteCart()" v-if="carrello.length > 0" class="pointer text-danger">
                                 Svuota carrello
                             </p>
-                            <button class="btn btn-primary">
-                                <router-link :to="{name:'form' ,params: {cart: this.totalPrice, id: this.restaurant_id}}" class="btn btn-info">Completa il tuo ordine</router-link>
+                            <button class="btn btn-info" v-if="carrello.length != 0">
+                                <router-link :to="{name:'form' ,params: {cart: this.totalPrice, id: this.restaurant_id}}">Completa il tuo ordine</router-link>
                             </button>
                         </div>
                     </div>
@@ -174,11 +177,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .main_container{
+        min-height: calc(100vh - 75px);
+    }
+    .dish_img{
+        height: 200px;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
     .col-3{
         border: 1px solid cyan;
-    }
-    .border-p{
-        border-bottom: 1px solid blue;
     }
     @media(max-width: 900px){
         .contenitore-generale{
@@ -188,42 +198,23 @@ export default {
             width: 100%;
         }              
     }
-    // @media(max-width: 800px){
-    //     .col-3{
-    //         min-width: 200px;
-    //     }
-    // }
     @media(max-width: 1000px){
         .col-3{
             min-width: 200px;
         }
     }
-    
-    // @media(max-width: 800px){
-    //     .col-3{
-    //         min-width: 150px;
-    //     }
-    // }
     *{
         background-color: rgb(25, 159, 214);
         color: white;
     }
     .contenitore-generale{
-        // background-color: red;
-        // height: 300px;
         margin-top: 5vh;
 
         .piatti{
-            // background-color: yellow;
             width: 65%;
             .container-piatti{
-                // background-color: orange;
-                // height: 300px;
                 .row-piatti{
-                    // border: 1px solid red;
-                    // height: 300px;
                     .col-3{
-                        // border: 1px solid black;
                         margin: 10px;                        
                         text-align: center;
                         a{
@@ -235,16 +226,17 @@ export default {
         }
    
         .carrello{
-            // background-color: blue;
+            position: fixed;
+            right: 10px;
+            overflow-y: auto;
+            border: 2px solid black;
+            padding: 50px;
+            border-radius: 20px;
+            max-height: 500px;
             width: 35%;
             .container-carrello{
-                // background-color: blue;
-                // height: 300px;
                 .row{
-                    // background-color: purple;
-                    // height: 40vh;
                     .col-12{
-                        // background-color: red;
                         text-align: center;
                         .white{
                             color: white;
@@ -253,43 +245,19 @@ export default {
                 }
             }
         }
+        .cart_item{
+            border-bottom: 2px solid black;
+            padding: 15px;
+        }
+        .item_quantita{
+            padding:0 8px;
+            background-color: lightsalmon ;
+            border-radius: 20px;
+        }
     }
-    
-    
-    
-    // .card {
-    //     text-align: center;
-    // }
-
-    // .box {
-    //     // height: 200px;
-
-    //     .col1 {
-    //         background-color: yellow;
-    //         // height: 200px;
-    //         width: 70%;
-    //     }
-
-    //     .col2 {
-    //         background-color: purple;
-    //         // height: 200px;
-    //         width: 30%;
-    //     }
-    // }
-
-    // .col {
-    //     width: calc(100% / 3);
-    // }
-
-
-
-
-
-
-
-
-
-
+    .prezzo_salmon{
+        color: lightsalmon;
+    }
     .pointer:hover {
         cursor: pointer;
         color: blue;

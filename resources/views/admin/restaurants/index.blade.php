@@ -11,11 +11,7 @@
                     <a class="personal-a white" href="{{route('admin.restaurants.create')}}">Aggiungi attività</a>
                 </li>
                 <li>
-<<<<<<< HEAD
-                    <a class="personal-a" href="{{route('admin.order')}}">I tuoi ordini</a>
-=======
-                    <a class="personal-a white" href="#">I tuoi ordini</a>
->>>>>>> 526c0bb64a4ab6f6f48e13a0e8b13185c86f3f87
+                    <a class="personal-a white" href="{{route('admin.order')}}">I tuoi ordini</a>
                 </li>
                 <li>
                     <a class="personal-a white" href="#">Il tuo profilo</a>
