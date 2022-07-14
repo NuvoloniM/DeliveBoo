@@ -8,7 +8,17 @@
                 <div class="personal dashboard">
                     <ul class="personal-ul mt-5">
                         <li>
-                            <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Home</a>
+                            <img
+                            src="{{ asset('img/magnapp-logo.png') }}"
+                            width="100"
+                            alt="moto"
+                            />
+                        </li>
+                        <li>
+                            <a class="personal-a white" href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Le tue attività</a>
                         </li>
                         <li>
                             <a class="personal-a white"
@@ -20,9 +30,6 @@
                         </li>
                         <li>
                             <a class="personal-a white" href="#">Il tuo profilo</a>
-                        </li>
-                        <li>
-                            <a class="personal-a white" href="/">Ordina anche tu</a>
                         </li>
                         <li>
                             <a class="personal-a white" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -47,33 +54,35 @@
                 <div class="row">
                     @forelse ($dishes as $dish)
                     <div class="col-6 mt-3 rounded-lg mt-2">
-                        <div class="d-flex flex-column justify-content-around">
+                        <div class="d-flex flex-column justify-content-around mb-5">
                             <div class="img rounded-lg d-flex justify-content-between align-items-end pb-3"
-                                style="background-image: url({{asset("storage/$dish->immage")}})">
-                                {{-- <img class="img" src="{{asset("storage/$restaurant->immagine")}}"> --}}
-                                <span>
+                                 style="background-image: url({{asset("storage/$dish->immage")}})"
+                            >
+                                <div>
                                     <a href="{{route('admin.restaurants.dishes.show',['restaurant'=> $data, $dish->id])}}"
-                                        class="btn btn-primary">
+                                        class="btn btn-primary mb-3 ml-3">
                                         View
                                     </a>
-                                </span>
-                                <span>
+                                </div>
+                                <div>
                                     <a href="{{route('admin.restaurants.dishes.edit',['restaurant'=> $data, $dish->id])}}"
-                                        class="btn btn-primary">
+                                        class="btn btn-primary mb-3">
                                         Edit
                                     </a>
-                                </span>
-                                <span>
-                                    <form
+                                </div>
+                                <div>
+                                    <a>
+                                        <form
                                         action="{{route('admin.restaurants.dishes.destroy', ['restaurant'=> $data, $dish->id])}}"
                                         method="POST" class="delete-form">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button type="submit" class="btn btn-danger">
-                                            Delete
-                                        </button>
-                                    </form>
-                                </span>
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger mr-3">
+                                                Delete
+                                            </button>
+                                        </form>                                        
+                                    </a>
+                                </div>
                             </div>
                             <div class="name mt-3">
                                 <h4 class="white">
