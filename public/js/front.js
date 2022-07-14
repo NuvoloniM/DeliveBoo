@@ -2858,6 +2858,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 // importo axios per poter gestire i dati che gli passo tramite controller come se fosse una chiamata ad un api
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -26296,7 +26301,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".personal[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  text-align: center;\n}\n.card[data-v-09ccf5a6] {\n  margin: 45px;\n  width: calc(25% - 25px);\n  margin: 2vh auto;\n}\n.card[data-v-09ccf5a6]:hover {\n  transform: scale(1.2);\n  transition-duration: 0.5s;\n}\n.categories[data-v-09ccf5a6] {\n  width: 80%;\n  margin: 0 auto;\n  padding-left: 10px;\n  overflow-x: auto;\n}\n.category[data-v-09ccf5a6] {\n  /* width: auto; */\n  margin: 4vh 3vh;\n  cursor: pointer;\n}\n.link[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: white;\n}\nh4[data-v-09ccf5a6]:hover {\n  transform: scale(1.3);\n  transition-duration: 0.5s;\n}\n.title[data-v-09ccf5a6] {\n  width: 50%;\n  margin: 5vh auto;\n  text-align: center;\n}\n.rest_type[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: #fff;\n  border: 1px solid;\n  border-radius: 50px;\n  padding: 5px 10px;\n}\n.active[data-v-09ccf5a6] {\n  background: #fff;\n  color: rgb(25, 159, 214);\n  box-shadow: 5px 5px 10px rgb(9, 111, 151);\n}", ""]);
+exports.push([module.i, ".rest_card[data-v-09ccf5a6] {\n  height: 400px;\n  margin: 40px 0;\n}\n.rest_card .rest_card_img[data-v-09ccf5a6] {\n  width: 100%;\n  height: 200px;\n}\n.rest_card .rest_card-header[data-v-09ccf5a6] {\n  font-size: 1.5em;\n  font-weight: bold;\n  color: #fff;\n  text-shadow: 1px 1px 10px #000;\n  background-color: transparent;\n}\n.rest_card .rest_card-body[data-v-09ccf5a6] {\n  font-size: 0.8em;\n  font-style: italic;\n  color: #fff;\n  background-color: transparent;\n}\n.categories[data-v-09ccf5a6] {\n  overflow-x: auto;\n}\n.category[data-v-09ccf5a6] {\n  /* width: auto; */\n  margin: 4vh 3vh;\n  cursor: pointer;\n}\n.link[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: white;\n}\nh4[data-v-09ccf5a6]:hover {\n  transform: scale(1.3);\n  transition-duration: 0.5s;\n}\n.title[data-v-09ccf5a6] {\n  width: 50%;\n  margin: 5vh auto;\n  text-align: center;\n}\n.rest_type[data-v-09ccf5a6] {\n  text-decoration: none;\n  color: #000;\n  border: 1px solid;\n  border-radius: 50px;\n  padding: 5px 10px;\n}\n.active[data-v-09ccf5a6] {\n  background: #fff;\n  color: rgb(25, 159, 214);\n  box-shadow: 5px 5px 10px rgb(9, 111, 151);\n}", ""]);
 
 // exports
 
@@ -26315,7 +26320,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n*[data-v-332fccf4]{\n    background-color: rgb(25, 159, 214)\n}\n", ""]);
+exports.push([module.i, "\n*[data-v-332fccf4]{\n    background: rgb(11,99,184);\n    background: linear-gradient(0deg, rgba(11,99,184,1) 18%, rgba(75,138,191,1) 45%, rgba(255,255,255,1) 100%);\n}\n", ""]);
 
 // exports
 
@@ -26334,7 +26339,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nheader[data-v-1f42fb90] {\n    height: 75px;\n}\na[data-v-1f42fb90]{\n    color: white;\n}\n/* scritte nere quando ci passo sopra */\na[data-v-1f42fb90]:hover{\n    color: black;\n}\n.stick_nav[data-v-1f42fb90]{\n    background-color: black;\n    opacity: 0.2;\n    height: 75px;\n}\n", ""]);
+exports.push([module.i, "\nheader[data-v-1f42fb90] {\n    height: 75px;\n}\na[data-v-1f42fb90]{\n    color: white;\n}\n/* scritte nere quando ci passo sopra */\n/* a:hover{\n    color: black;\n} */\n.stick_nav[data-v-1f42fb90]{\n    background-color: black;\n    opacity: 0.2;\n    height: 75px;\n}\n", ""]);
 
 // exports
 
@@ -26354,7 +26359,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nsection[data-v-37c76d18] {\n        /* background-color: brown; */\n        background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/jumbo-boo.jpg */ "./public/img/jumbo-boo.jpg")) + ");\n        background-repeat: no-repeat;\n        background-position: center;\n        background-size: cover;\n        height: 500px;\n        width: 100%;\n}\nbutton[data-v-37c76d18]{\n        background-color: rgb(25, 159, 214);\n        color: #fff;\n        padding: 5px 10px;\n        font-size: 1.2em;\n}\n\n    /* section::before {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.3);\n} */\nh2[data-v-37c76d18] {\n        color: white;\n}\n\n", ""]);
+exports.push([module.i, "\nsection[data-v-37c76d18] {\n        /* background-color: brown; */\n        background-image: url(" + escape(__webpack_require__(/*! ../../../public/img/jumbo-boo.jpg */ "./public/img/jumbo-boo.jpg")) + ");\n        background-repeat: no-repeat;\n        background-position: center;\n        background-size: cover;\n        height: 500px;\n        width: 100%;\n}\nbutton[data-v-37c76d18]{\n        padding: 5px 10px;\n        font-size: 1.2em;\n}\n\n    /* section::before {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.3);\n} */\nh2[data-v-37c76d18] {\n        color: white;\n}\n\n", ""]);
 
 // exports
 
@@ -28057,7 +28062,7 @@ var render = function () {
           _c(
             "button",
             {
-              staticClass: "btn rounded-pill",
+              staticClass: "btn btn-light rounded-pill",
               attrs: { type: "submit" },
               on: {
                 click: function ($event) {
@@ -28821,16 +28826,13 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container-fluid body" }, [
+  return _c("div", { staticClass: "homepage" }, [
+    _c("div", { staticClass: "container body text-center" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(
         "div",
-        {
-          staticClass:
-            "d-flex categories container-fluid justify-content-center text-white",
-        },
+        { staticClass: "d-flex categories text-dark justify-content-between" },
         _vm._l(_vm.types, function (type, index) {
           return _c("h4", { key: index, staticClass: "category" }, [
             _c(
@@ -28846,9 +28848,9 @@ var render = function () {
               },
               [
                 _vm._v(
-                  "\n                " +
+                  "\n                    " +
                     _vm._s(type.tipologia) +
-                    "  \n            "
+                    "  \n                "
                 ),
               ]
             ),
@@ -28858,82 +28860,93 @@ var render = function () {
       ),
     ]),
     _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass:
-          "row personal d-flex flex-wrap justify-content-start text-dark",
-      },
-      _vm._l(_vm.filtraggio, function (restaurant) {
-        return _c("div", { key: restaurant.id, staticClass: "card " }, [
-          _c("img", {
-            staticClass: "card-img-top",
-            attrs: {
-              src: "/storage/" + restaurant.immagine,
-              alt: "" + restaurant.nome_attivita,
+    _c("div", { staticClass: "container" }, [
+      _c(
+        "div",
+        { staticClass: "row personal text-center" },
+        _vm._l(_vm.filtraggio, function (restaurant) {
+          return _c(
+            "div",
+            {
+              key: restaurant.id,
+              staticClass: "col-xs-12 col-sm-6 col-md-4 col-lg-3 rest_card",
             },
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-header " }, [
-            _vm._v(
-              "\n                " +
-                _vm._s(restaurant.nome_attivita) +
-                "\n            "
-            ),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body " }, [
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(
-                "\n                    " +
-                  _vm._s(restaurant.indirizzo) +
-                  "                        \n                "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "overflow-x" }, [
-              _c(
-                "ul",
-                { staticClass: "list-group text-dark" },
-                _vm._l(restaurant.restaurant_type, function (categorie) {
-                  return _c(
-                    "li",
-                    { key: categorie.id, staticClass: "list-group-item" },
-                    [
-                      _vm._v(
-                        "\n                            " +
-                          _vm._s(categorie.tipologia) +
-                          "\n                        "
-                      ),
-                    ]
-                  )
-                }),
-                0
-              ),
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "link py-5" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "btn btn-primary blue",
-                    attrs: {
-                      to: { name: "menu", params: { id: restaurant.id } },
-                    },
+            [
+              _c("div", { staticClass: "border border-dark rounded" }, [
+                _c("img", {
+                  staticClass: "rest_card_img",
+                  attrs: {
+                    src: "/storage/" + restaurant.immagine,
+                    alt: "" + restaurant.nome_attivita,
                   },
-                  [_vm._v("Vedi il Menù")]
-                ),
-              ],
-              1
-            ),
-          ]),
-        ])
-      }),
-      0
-    ),
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "rest_card-header px-2 py-2" }, [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(restaurant.nome_attivita) +
+                      "\n                "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "rest_card-body " }, [
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(restaurant.indirizzo) +
+                        "                        \n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "overflow-x" }, [
+                    _c(
+                      "ul",
+                      { staticClass: "d-flex justify-content-center p-0" },
+                      _vm._l(restaurant.restaurant_type, function (categorie) {
+                        return _c(
+                          "li",
+                          {
+                            key: categorie.id,
+                            staticClass: "btn btn-light rounded-pill mx-2",
+                          },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(categorie.tipologia) +
+                                "\n                            "
+                            ),
+                          ]
+                        )
+                      }),
+                      0
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "link py-3 d-flex justify-content-center" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: " btn btn-dark rounded-pill ",
+                          attrs: {
+                            to: { name: "menu", params: { id: restaurant.id } },
+                          },
+                        },
+                        [_vm._v("Vedi il Menù")]
+                      ),
+                    ],
+                    1
+                  ),
+                ]),
+              ]),
+            ]
+          )
+        }),
+        0
+      ),
+    ]),
   ])
 }
 var staticRenderFns = [
@@ -28942,14 +28955,16 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "title container-fluid text-white" }, [
+      _c("div", { staticClass: "title container text-dark" }, [
         _c("h2", [
-          _vm._v("\n                Le categorie piu' amate\n            "),
+          _vm._v(
+            "\n                    Le categorie piu' amate\n                "
+          ),
         ]),
         _vm._v(" "),
         _c("h3", [
           _vm._v(
-            "\n                Trova i ristoranti piu' apprezzati della bella Napoli!\n            "
+            "\n                    Trova i ristoranti piu' apprezzati della bella Napoli!\n                "
           ),
         ]),
       ]),

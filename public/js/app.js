@@ -37351,9 +37351,15 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\Vincenzo\Desktop\6 - Mega Esercizio\DeliveBoo\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\Users\Vincenzo\Desktop\6 - Mega Esercizio\DeliveBoo\resources\sass\app.scss */"./resources/sass/app.scss");
 module.exports = __webpack_require__(/*! C:\Users\Vincenzo\Desktop\6 - Mega Esercizio\DeliveBoo\resources\sass\backStyle.scss */"./resources/sass/backStyle.scss");
+=======
+__webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\sass\backStyle.scss */"./resources/sass/backStyle.scss");
+>>>>>>> 613baddc90632e39a72559d2538aa4bca642c8cc
 
 
 /***/ })
