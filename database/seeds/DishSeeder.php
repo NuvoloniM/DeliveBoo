@@ -39,7 +39,7 @@ class DishSeeder extends Seeder
         $new_dish4->glutine = 1;
         $new_dish4->kitchen_types_id = 1;
         $new_dish4->restaurants_id = 16;
-        $new_dish4->immage = 'dishes/4-prosciutto-mozzarella.jpg';
+        $new_dish4->immage = 'dishes/4-prosciutto-mozzarella.jpeg';
         $new_dish4->description = 'Prosciutto crudo di Parma Dop e mozzarella di bufala campana Dop.';
         $new_dish4->view = 0;
         $new_dish4->save();
@@ -126,7 +126,7 @@ class DishSeeder extends Seeder
         $new_dish12->glutine = 1;
         $new_dish12->kitchen_types_id = 5;
         $new_dish12->restaurants_id = 16;
-        $new_dish12->immage = 'dishes/12-pizza diavola.jpg';
+        $new_dish12->immage = 'dishes/12-pizza-diavola.jpg';
         $new_dish12->description = 'Fiordilatte con aggiunta di Latte di Bufala, Pomodoro Bio, Salame Piccante, Olio Evo Italiano e Basilico fresco.';
         $new_dish12->view = 0;
         $new_dish12->save();
@@ -336,7 +336,7 @@ class DishSeeder extends Seeder
         $new_dish29->glutine = 1;
         $new_dish29->kitchen_types_id = 8;
         $new_dish29->restaurants_id = 16;
-        $new_dish29->immage = 'dishes/29-coca-cola.jpg';
+        $new_dish29->immage = 'dishes/29-coca-cola.jpeg';
         $new_dish29->description = '33 cl.';
         $new_dish29->view = 0;
         $new_dish29->save();
@@ -384,7 +384,7 @@ class DishSeeder extends Seeder
         $new_dish33->glutine = 1;
         $new_dish33->kitchen_types_id = 8;
         $new_dish33->restaurants_id = 16;
-        $new_dish33->immage = 'dishes/33-the-limone.jpg';
+        $new_dish33->immage = 'dishes/33-the-limone.jpeg';
         $new_dish33->description = '33 cl.';
         $new_dish33->view = 0;
         $new_dish33->save();
@@ -408,7 +408,7 @@ class DishSeeder extends Seeder
         $new_dish35->glutine = 1;
         $new_dish35->kitchen_types_id = 8;
         $new_dish35->restaurants_id = 16;
-        $new_dish35->immage = 'dishes/35-chinotto-lurisia.jpg';
+        $new_dish35->immage = 'dishes/35-chinotto-lurisia.jpeg';
         $new_dish35->description = '33 cl.';
         $new_dish35->view = 0;
         $new_dish35->save();
@@ -423,7 +423,7 @@ class DishSeeder extends Seeder
         $new_dish36->glutine = 1;
         $new_dish36->kitchen_types_id = 8;
         $new_dish36->restaurants_id = 16;
-        $new_dish36->immage = 'dishes/36-nastro-azzurro.jpg';
+        $new_dish36->immage = 'dishes/36-nastro-azzurro.jpeg';
         $new_dish36->description = '(Italia Lager di Qualità Superiore con esclusivo Mais Nostrano)50 cl.';
         $new_dish36->view = 0;
         $new_dish36->save();
@@ -435,7 +435,7 @@ class DishSeeder extends Seeder
         $new_dish37->glutine = 1;
         $new_dish37->kitchen_types_id = 8;
         $new_dish37->restaurants_id = 16;
-        $new_dish37->immage = 'dishes/37-birra-peroni-doppio-malto.jpg';
+        $new_dish37->immage = 'dishes/37-birra-peroni-doppio-malto.png';
         $new_dish37->description = '50 cl.';
         $new_dish37->view = 0;
         $new_dish37->save();

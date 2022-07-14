@@ -82,7 +82,17 @@
                 <div class="personal dashboard">
                     <ul class="personal-ul">
                         <li>
-                            <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Home</a>
+                            <img
+                            src="{{ asset('img/magnapp-logo.png') }}"
+                            width="100"
+                            alt="moto"
+                            />
+                        </li>
+                        <li>
+                            <a class="personal-a white" href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Le tue attività</a>
                         </li>
                         <li>
                             <a class="personal-a white" href="{{route('admin.restaurants.create')}}">Aggiungi attività</a>
@@ -92,9 +102,6 @@
                         </li>
                         <li>
                             <a class="personal-a white" href="#">Il tuo profilo</a>
-                        </li>
-                        <li>
-                            <a class="personal-a white" href="/">Ordina anche tu</a>
                         </li>
                         <li>
                             <a class="personal-a white" href="{{ route('logout') }}" onclick="event.preventDefault();

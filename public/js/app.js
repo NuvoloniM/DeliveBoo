@@ -37351,25 +37351,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-__webpack_require__(/*! C:\Users\Vincenzo\Desktop\6 - Mega Esercizio\DeliveBoo\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\Vincenzo\Desktop\6 - Mega Esercizio\DeliveBoo\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\Vincenzo\Desktop\6 - Mega Esercizio\DeliveBoo\resources\sass\backStyle.scss */"./resources/sass/backStyle.scss");
-=======
-__webpack_require__(/*! C:\Users\andre\Desktop\final-proj\DeliveBoo\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\andre\Desktop\final-proj\DeliveBoo\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\andre\Desktop\final-proj\DeliveBoo\resources\sass\backStyle.scss */"./resources/sass/backStyle.scss");
->>>>>>> be0231e006938b15a87c4141d5e901985fb1115e
-=======
-__webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\sass\backStyle.scss */"./resources/sass/backStyle.scss");
-<<<<<<< HEAD
->>>>>>> 613baddc90632e39a72559d2538aa4bca642c8cc
-=======
->>>>>>> 3a5e125d19b99ba063f44f28b671b58efb1d996c
->>>>>>> be0231e006938b15a87c4141d5e901985fb1115e
+__webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/sass/backStyle.scss */"./resources/sass/backStyle.scss");
 
 
 /***/ })

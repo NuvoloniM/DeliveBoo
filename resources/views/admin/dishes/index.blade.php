@@ -2,28 +2,37 @@
 
 @section('content')
 
-<div class=" container-generale over d-flex">
-    <div class="personal dashboard">
-        <ul class="personal-ul mt-5">
-            <li>
-                <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Home</a>
-            </li>
-            <li>
-                <a class="personal-a white"
-                    href="{{route('admin.restaurants.dishes.create',['restaurant'=> $data])}}">Aggiungi
-                    piatto</a>
-            </li>
-            <li>
-                <a class="personal-a white" href="#">I tuoi ordini</a>
-            </li>
-            <li>
-                <a class="personal-a white" href="#">Il tuo profilo</a>
-            </li>
-            <li>
-                <a class="personal-a white" href="/">Ordina anche tu</a>
-            </li>
-            <li>
-                <a class="personal-a white" href="{{ route('logout') }}" onclick="event.preventDefault();
+    <div class="container over">
+        <div class="row">
+            <div class="col-4">
+                <div class="personal dashboard">
+                    <ul class="personal-ul mt-5">
+                        <li>
+                            <img
+                            src="{{ asset('img/magnapp-logo.png') }}"
+                            width="100"
+                            alt="moto"
+                            />
+                        </li>
+                        <li>
+                            <a class="personal-a white" href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Le tue attività</a>
+                        </li>
+                        <li>
+                            <a class="personal-a white"
+                                href="{{route('admin.restaurants.dishes.create',['restaurant'=> $data])}}">Aggiungi
+                                piatto</a>
+                        </li>
+                        <li>
+                            <a class="personal-a white" href="#">I tuoi ordini</a>
+                        </li>
+                        <li>
+                            <a class="personal-a white" href="#">Il tuo profilo</a>
+                        </li>
+                        <li>
+                            <a class="personal-a white" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
                 </a>
