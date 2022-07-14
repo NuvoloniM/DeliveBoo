@@ -38,8 +38,6 @@
 
 <style>
     .col-12 {
-        /* background-color: rgb(25, 159, 214); */
-        border: 1px solid cyan;
         text-align: center;
     }
     .img{

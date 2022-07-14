@@ -72,9 +72,9 @@
         color: white;
     }
     /* scritte nere quando ci passo sopra */
-    a:hover{
+    /* a:hover{
         color: black;
-    }
+    } */
     .stick_nav{
         background-color: black;
         opacity: 0.2;
