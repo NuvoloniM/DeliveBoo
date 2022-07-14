@@ -112,10 +112,17 @@ deleteForms.forEach(function (form) {
 /***/ (function(module, exports, __webpack_require__) {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\Vincenzo\Desktop\6 - Mega Esercizio\DeliveBoo\resources\js\delete-msg.js */"./resources/js/delete-msg.js");
 =======
 module.exports = __webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\js\delete-msg.js */"./resources/js/delete-msg.js");
 >>>>>>> 613baddc90632e39a72559d2538aa4bca642c8cc
+=======
+module.exports = __webpack_require__(/*! C:\Users\andre\Desktop\final-proj\DeliveBoo\resources\js\delete-msg.js */"./resources/js/delete-msg.js");
+=======
+module.exports = __webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\js\delete-msg.js */"./resources/js/delete-msg.js");
+>>>>>>> 3a5e125d19b99ba063f44f28b671b58efb1d996c
+>>>>>>> be0231e006938b15a87c4141d5e901985fb1115e
 
 
 /***/ })
