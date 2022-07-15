@@ -2131,7 +2131,6 @@ __webpack_require__.r(__webpack_exports__);
         _this.form.prezzo_totale = '';
         _this.form.recapito = '';
         console.log(res);
-      })["catch"](function (err) {// Handle error
       });
     },
     checkData: function checkData() {
@@ -2398,6 +2397,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
+//
 //
 //
 //
@@ -26236,7 +26236,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".main_container[data-v-cddbf820] {\n  min-height: calc(100vh - 75px);\n}\n.dish_img[data-v-cddbf820] {\n  height: 200px;\n}\n.dish_img img[data-v-cddbf820] {\n  height: 100%;\n  width: 100%;\n}\n.col-3[data-v-cddbf820] {\n  border: 1px solid cyan;\n}\n@media (max-width: 900px) {\n.contenitore-generale[data-v-cddbf820] {\n    flex-direction: column;\n}\n.container-piatti[data-v-cddbf820] {\n    width: 100%;\n}\n}\n@media (max-width: 1000px) {\n.col-3[data-v-cddbf820] {\n    min-width: 200px;\n}\n}\n.contenitore-generale[data-v-cddbf820] {\n  margin-top: 5vh;\n}\n.contenitore-generale .piatti[data-v-cddbf820] {\n  width: 65%;\n}\n.contenitore-generale .piatti .container-piatti .row-piatti .col-3[data-v-cddbf820] {\n  margin: 10px;\n  text-align: center;\n}\n.contenitore-generale .piatti .container-piatti .row-piatti .col-3 a[data-v-cddbf820] {\n  text-decoration: none;\n}\n.contenitore-generale .carrello[data-v-cddbf820] {\n  position: fixed;\n  right: 50px;\n  overflow-y: auto;\n  border: 2px solid black;\n  padding: 50px;\n  border-radius: 20px;\n  max-height: 500px;\n  width: 35%;\n}\n.contenitore-generale .carrello .container-carrello .row .col-12[data-v-cddbf820] {\n  text-align: center;\n}\n.contenitore-generale .carrello .container-carrello .row .col-12 .white[data-v-cddbf820] {\n  color: white;\n}\n.contenitore-generale .cart_item[data-v-cddbf820] {\n  border-bottom: 2px solid black;\n  padding: 15px;\n}\n.contenitore-generale .item_quantita[data-v-cddbf820] {\n  padding: 0 8px;\n  background-color: lightsalmon;\n  border-radius: 20px;\n}\n.prezzo_salmon[data-v-cddbf820] {\n  color: lightsalmon;\n}\n.pointer[data-v-cddbf820]:hover {\n  cursor: pointer;\n  color: blue;\n}\n.blue[data-v-cddbf820] {\n  color: rgb(25, 159, 214);\n}", ""]);
+exports.push([module.i, ".link[data-v-cddbf820] {\n  text-decoration: none;\n  color: #fff;\n}\n.main_container[data-v-cddbf820] {\n  min-height: calc(100vh - 75px);\n}\n.dish_img[data-v-cddbf820] {\n  height: 200px;\n}\n.dish_img img[data-v-cddbf820] {\n  height: 100%;\n  width: 100%;\n}\n.col-3[data-v-cddbf820] {\n  border: 1px solid cyan;\n}\n@media (max-width: 900px) {\n.contenitore-generale[data-v-cddbf820] {\n    flex-direction: column;\n}\n.container-piatti[data-v-cddbf820] {\n    width: 100%;\n}\n}\n@media (max-width: 1000px) {\n.col-3[data-v-cddbf820] {\n    min-width: 200px;\n}\n}\n.contenitore-generale[data-v-cddbf820] {\n  margin-top: 5vh;\n}\n.contenitore-generale .piatti[data-v-cddbf820] {\n  width: 65%;\n}\n.contenitore-generale .piatti .container-piatti .row-piatti .col-3[data-v-cddbf820] {\n  margin: 10px;\n  text-align: center;\n}\n.contenitore-generale .piatti .container-piatti .row-piatti .col-3 a[data-v-cddbf820] {\n  text-decoration: none;\n}\n.contenitore-generale .carrello[data-v-cddbf820] {\n  position: fixed;\n  right: 50px;\n  overflow-y: auto;\n  border: 2px solid black;\n  padding: 50px;\n  border-radius: 20px;\n  max-height: 500px;\n  width: 35%;\n}\n.contenitore-generale .carrello .container-carrello .row .col-12[data-v-cddbf820] {\n  text-align: center;\n}\n.contenitore-generale .carrello .container-carrello .row .col-12 .white[data-v-cddbf820] {\n  color: white;\n}\n.contenitore-generale .cart_item[data-v-cddbf820] {\n  border-bottom: 2px solid black;\n  padding: 15px;\n}\n.contenitore-generale .item_quantita[data-v-cddbf820] {\n  padding: 0 8px;\n  background-color: lightsalmon;\n  border-radius: 20px;\n}\n.prezzo_salmon[data-v-cddbf820] {\n  color: lightsalmon;\n}\n.pointer[data-v-cddbf820]:hover {\n  cursor: pointer;\n  color: blue;\n}\n.blue[data-v-cddbf820] {\n  color: rgb(25, 159, 214);\n}", ""]);
 
 // exports
 
@@ -27997,7 +27997,7 @@ var render = function () {
             ? _c(
                 "button",
                 {
-                  staticClass: "btn btn-info px-3 rounded",
+                  staticClass: "btn btn-info px-3 rounded text-white",
                   on: { click: _vm.checkData },
                 },
                 [_vm._v("\n                Inserisci i dati \n            ")]
@@ -28015,12 +28015,16 @@ var render = function () {
                       params: { cart: this.total, id: this.restaurant_id },
                     },
                   },
-                  on: { click: _vm.sendForm },
                 },
                 [
-                  _c("h5", { staticClass: "text-white text-center" }, [
-                    _vm._v("Procedi al pagamento"),
-                  ]),
+                  _c(
+                    "h5",
+                    {
+                      staticClass: "text-white text-center button",
+                      on: { click: _vm.sendForm },
+                    },
+                    [_vm._v("Procedi al pagamento")]
+                  ),
                 ]
               )
             : _vm._e(),
@@ -28428,7 +28432,8 @@ var render = function () {
                             _c("span", { staticClass: "mx-1 item_quantita" }, [
                               _vm._v(
                                 "\n                                            " +
-                                  _vm._s(dish.data.prezzo)
+                                  _vm._s(dish.data.prezzo) +
+                                  " €"
                               ),
                             ]),
                           ]),
@@ -28473,7 +28478,9 @@ var render = function () {
                   _vm.carrello.length > 0
                     ? _c("p", { staticClass: "mt-4" }, [
                         _vm._v("\n                            TOTALE: "),
-                        _c("span", [_vm._v(_vm._s(_vm.totalPrice))]),
+                        _c("span", { staticClass: "item_quantita " }, [
+                          _vm._v(_vm._s(_vm.totalPrice) + " €"),
+                        ]),
                       ])
                     : _vm._e(),
                   _vm._v(" "),
@@ -28504,6 +28511,7 @@ var render = function () {
                           _c(
                             "router-link",
                             {
+                              staticClass: "link",
                               attrs: {
                                 to: {
                                   name: "form",
