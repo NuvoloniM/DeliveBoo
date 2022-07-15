@@ -6,7 +6,7 @@
 
         <div class="container my-5">
             <div class="row">
-                <div class="col-4">
+                <div class="col-md-4 col-sm-6">
                     <div class="personal dashboard sticky-top">
                         <ul class="personal-ul mt-5">
                             <li>
@@ -56,12 +56,11 @@
                     <h1 class="text-center blue">I tuoi piatti:</h1>
                     <div class="row">
                         @forelse ($dishes as $dish)
-                        <div class="col-6 mt-3 rounded-lg mt-2">
-                            <div class="d-flex flex-column justify-content-around mb-5 ">
+                        <div class="col-xl-6 col-lg-9 mt-3 rounded-lg mt-2">
+                            <div class="d-flex flex-column justify-content-end mb-5 ">
                                 <div>
                                     <div class="img rounded-lg d-flex justify-content-between align-items-end pb-3 {{($dish->view)? '' : 'cover'}}"
-                                    style="background-image: url({{asset("storage/$dish->immage")}})"
-                                    >
+                                        style="background-image: url({{asset("storage/$dish->immage")}})">
                                         <div>
                                             <a href="{{route('admin.restaurants.dishes.show',['restaurant'=> $data, $dish->id])}}"
                                                 class="btn btn-primary mb-3 ml-3">
