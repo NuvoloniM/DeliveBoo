@@ -20,9 +20,9 @@
                 <li>
                     <a class="personal-a white" href="{{route('admin.restaurants.create')}}">Aggiungi attività</a>
                 </li>
-                <li>
+                {{-- <li>
                     <a class="personal-a white" href="{{route('admin.order')}}">I tuoi ordini</a>
-                </li>
+                </li> --}}
                 <li>
                     <a class="personal-a white" href="#">Il tuo profilo</a>
                 </li>
