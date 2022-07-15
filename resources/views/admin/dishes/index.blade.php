@@ -34,15 +34,20 @@
                         <li>
                             <a class="personal-a white" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
+                    {{ __('Logout') }}
+                </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </li>
-                    </ul>
-                </div>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </li>
+        </ul>
+    </div>
+    <div class="row dish">
+        <div class="col-12">
+            @if ( session('message') )
+            <div class="alert alert-info">
+                {{ session('message') }}
             </div>
             <div class="col-8">
                 @if ( session('message') )
@@ -99,52 +104,55 @@
                             {{-- <div class="mt-3 white">
                                                     <span>
                                                         {{ $dish->vegetariano }}
-                            </span>
-                        </div>
-                        <div class="mt-3 white">
-                            <span>
-                                {{ $dish->glutine }}
-                            </span>
-                        </div> --}}
-                        <div class="mt-3 white">
-                            <span>
-                                {{ $dish->description }}
-                            </span>
-                        </div>
-
+                        </span>
                     </div>
+                    <div class="mt-3 white">
+                        <span>
+                            {{ $dish->glutine }}
+                        </span>
+                    </div> --}}
+                    <div class="mt-3 white">
+                        <span>
+                            {{ $dish->description }}
+                        </span>
+                    </div>
+
                 </div>
-                @empty
-                <div>
-                    non ci sono piatti
-                </div>
-                @endforelse
             </div>
+            @empty
+            <div>
+                non ci sono piatti
+            </div>
+            @endforelse
         </div>
     </div>
+</div>
 
 
 
 
 </div>
 @endsection
-<style>
-    .personal-ul{
+<style scoped>
+    .personal-ul {
         list-style-type: none;
-        position: fixed;
+        /* position: fixed; */
         padding-top: 200px;
     }
+
     .blue {
         color: rgba(11, 99, 184, 1);
     }
-
+    .personal {
+        width: 220px;
+    }
     .over {
         height: 100vh;
         overflow-y: auto;
     }
 
     .over::-webkit-scrollbar {
-    display: none;
+        display: none;
     }
 
     .col-6 {
@@ -163,9 +171,11 @@
     .white {
         color: white;
     }
-    .personal-a:hover{
+
+    .personal-a:hover {
         color: white;
     }
+<<<<<<< HEAD
 
     .cover{
         opacity: 0.5;
@@ -173,6 +183,10 @@
 
     .but{
         z-index: 23;
+=======
+    .dish{
+        width: calc(100% - 220px);
+>>>>>>> e7df5d98fe1a530e8e544929805ce72cf2f0086c
     }
 
 </style>

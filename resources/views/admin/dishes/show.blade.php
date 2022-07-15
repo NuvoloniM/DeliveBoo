@@ -1,55 +1,97 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-12 rounded-lg">
-                <div class="d-flex flex-column justify-content-around">
-                    <div class="img rounded-lg" style="background-image: url({{asset("storage/$dish->immage")}})">
-                        {{-- <img class="img" src="{{asset("storage/$restaurant->immagine")}}"> --}}
-                    </div>
-                    <div class="name mt-3">
-                        <h3 class="white">
-                            {{ $dish->nome_prodotto }}
-                        </h3>
-                    </div>
-                    <div class="mt-3 white">
-                        <span>
-                            {{ $dish->prezzo }}&euro;
-                        </span>
-                    </div>
-                    <div class="mt-3 mb-3 white">
-                        {{$dish->description}}
-                    </div>
+<div class=" d-flex mt-5">
+    <div class="personal ">
+        <ul class="personal-ul mt-5">
+            <li>
+                <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Home</a>
+            </li>
+            <li>
+                <a class="personal-a white" href="#">I tuoi ordini</a>
+            </li>
+            <li>
+                <a class="personal-a white" href="#">Il tuo profilo</a>
+            </li>
+            <li>
+                <a class="personal-a white" href="/">Ordina anche tu</a>
+            </li>
+            <li>
+                <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Torna indietro</a>
+            </li>
+            <li>
+                <a class="personal-a white" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </li>
+
+        </ul>
+    </div>
+    <div class="row dish d-flex justify-content-center">
+        <div class="col-8 text-center rounded-lg mt-5">
+            <div class="d-flex flex-column justify-content-around">
+                <div class="img rounded-lg" style="background-image: url({{asset("storage/$dish->immage")}})">
+                    {{-- <img class="img" src="{{asset("storage/$restaurant->immagine")}}"> --}}
+                </div>
+                <div class="name mt-3">
+                    <h3 class="white">
+                        {{ $dish->nome_prodotto }}
+                    </h3>
+                </div>
+                <div class="mt-3 white">
+                    <span>
+                        {{ $dish->prezzo }}&euro;
+                    </span>
+                </div>
+                <div class="mt-3 mb-3 white">
+                    {{$dish->description}}
                 </div>
             </div>
         </div>
-        {{-- <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{asset("storage/$dish->immage")}}" alt="{{ $dish->nome_prodotto }}" width="50">
-            <div class="card-body">
-                <h5 class="card-title"> {{ $dish->nome_prodotto }} </h5>
-                <p class="card-text"> {{ $dish->prezzo }} </p>
-                <p class="card-text"> {{ $dish->description }} </p>
-            </div>
-
-        </div> --}}
     </div>
+</div>
 @endsection
 
-<style>
-    .col-12 {
+<style scoped>
+    .col-8 {
         text-align: center;
     }
-    .img{
+
+    .img {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         height: 400px;
     }
-    .white{
+
+    .white {
         color: white;
     }
-    .container-restaurant{
+
+    .container-restaurant {
         margin-top: 12vh;
     }
+
+    .personal-ul {
+        list-style-type: none;
+
+        padding-top: 200px;
+    }
+
+    .personal {
+        width: 220px
+    }
+
+    .personal-a:hover {
+        color: white;
+    }
+
+    .dish {
+        width: calc(100% - 220px);
+    }
+
 </style>
