@@ -107,7 +107,7 @@
 
     .personal-ul {
         list-style-type: none;
-        padding-top: 25vh
+        /* padding-top: 25vh */
         /* margin-top: 8vh; */
     }
     .personal-a:hover{
