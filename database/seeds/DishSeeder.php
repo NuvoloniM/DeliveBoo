@@ -451,6 +451,197 @@ class DishSeeder extends Seeder
         $new_dish38->description = '(100% Italiana ottenuta da materie prime nazionali)33 cl.';
         $new_dish38->view = 0;
         $new_dish38->save();
+            //ristorante id 1
+        $new_dish_id1 = new Dish();
+        $new_dish_id1->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
+        $new_dish_id1->prezzo = 9;
+        $new_dish_id1->vegetariano = 0;
+        $new_dish_id1->glutine = 1;
+        $new_dish_id1->kitchen_types_id = 2;
+        $new_dish_id1->restaurants_id = 1;
+        $new_dish_id1->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
+        $new_dish_id1->description = 'Spaghetti Ai Frutti Di Mare Freschi';
+        $new_dish_id1-> view = 0;
+        $new_dish_id1->save();
+            //ristorante id 2
+        $new_dish_id2 = new Dish();
+        $new_dish_id2->nome_prodotto = 'Pizza Diavola';
+        $new_dish_id2->prezzo = 9;
+        $new_dish_id2->vegetariano = 0;
+        $new_dish_id2->glutine = 1;
+        $new_dish_id2->kitchen_types_id = 5;
+        $new_dish_id2->restaurants_id = 2;
+        $new_dish_id2->immage = 'dishes/12-pizza-diavola.jpg';
+        $new_dish_id2->description = 'Fior di latte, salame piccante pomodori e peperoncino';
+        $new_dish_id2-> view = 0;
+        $new_dish_id2->save();
+            //ristorante id 3
+        $new_dish_id3 = new Dish();
+        $new_dish_id3->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
+        $new_dish_id3->prezzo = 9;
+        $new_dish_id3->vegetariano = 0;
+        $new_dish_id3->glutine = 1;
+        $new_dish_id3->kitchen_types_id = 2;
+        $new_dish_id3->restaurants_id = 3;
+        $new_dish_id3->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
+        $new_dish_id3->description = 'Spaghetti Ai Frutti Di Mare Freschi';
+        $new_dish_id3-> view = 0;
+        $new_dish_id3->save();
+        // ristorante id 4
+        $new_dish_id4 = new Dish();
+        $new_dish_id4->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
+        $new_dish_id4->prezzo = 9;
+        $new_dish_id4->vegetariano = 0;
+        $new_dish_id4->glutine = 1;
+        $new_dish_id4->kitchen_types_id = 2;
+        $new_dish_id4->restaurants_id = 4;
+        $new_dish_id4->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
+        $new_dish_id4->description = 'Spaghetti Ai Frutti Di Mare Freschi';
+        $new_dish_id4-> view = 0;
+        $new_dish_id4->save();
+                // ristorante id 5
+        $new_dish_id5 = new Dish();
+        $new_dish_id5->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
+        $new_dish_id5->prezzo = 9;
+        $new_dish_id5->vegetariano = 0;
+        $new_dish_id5->glutine = 1;
+        $new_dish_id5->kitchen_types_id = 2;
+        $new_dish_id5->restaurants_id = 5;
+        $new_dish_id5->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
+        $new_dish_id5->description = 'Spaghetti Ai Frutti Di Mare Freschi';
+        $new_dish_id5-> view = 0;
+        $new_dish_id5->save();
+        //ristorante id 6
+        $new_dish_id6 = new Dish();
+        $new_dish_id6->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
+        $new_dish_id6->prezzo = 9;
+        $new_dish_id6->vegetariano = 0;
+        $new_dish_id6->glutine = 1;
+        $new_dish_id6->kitchen_types_id = 2;
+        $new_dish_id6->restaurants_id = 6;
+        $new_dish_id6->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
+        $new_dish_id6->description = 'Spaghetti Ai Frutti Di Mare Freschi';
+        $new_dish_id6-> view = 0;
+        $new_dish_id6->save();
 
+        $new_dish_id6_2 = new Dish();
+        $new_dish_id6_2->nome_prodotto = 'Pizza Diavola';
+        $new_dish_id6_2->prezzo = 9;
+        $new_dish_id6_2->vegetariano = 0;
+        $new_dish_id6_2->glutine = 1;
+        $new_dish_id6_2->kitchen_types_id = 5;
+        $new_dish_id6_2->restaurants_id = 6;
+        $new_dish_id6_2->immage = 'dishes/12-pizza-diavola.jpg';
+        $new_dish_id6_2->description = 'Fior di latte, salame piccante pomodori e peperoncino';
+        $new_dish_id6_2-> view = 0;
+        $new_dish_id6_2->save();
+        //ristorante id 7
+        $new_dish_id7 = new Dish();
+        $new_dish_id7->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
+        $new_dish_id7->prezzo = 9;
+        $new_dish_id7->vegetariano = 0;
+        $new_dish_id7->glutine = 1;
+        $new_dish_id7->kitchen_types_id = 2;
+        $new_dish_id7->restaurants_id = 7;
+        $new_dish_id7->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
+        $new_dish_id7->description = 'Spaghetti Ai Frutti Di Mare Freschi';
+        $new_dish_id7-> view = 0;
+        $new_dish_id7->save();
+        //ristorante id 8
+        $new_dish_id8 = new Dish();
+        $new_dish_id8->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
+        $new_dish_id8->prezzo = 9;
+        $new_dish_id8->vegetariano = 0;
+        $new_dish_id8->glutine = 1;
+        $new_dish_id8->kitchen_types_id = 2;
+        $new_dish_id8->restaurants_id = 8;
+        $new_dish_id8->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
+        $new_dish_id8->description = 'Spaghetti Ai Frutti Di Mare Freschi';
+        $new_dish_id8-> view = 0;
+        $new_dish_id8->save();
+        //ristorante id 9
+        $new_dish_id9 = new Dish();
+        $new_dish_id9->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
+        $new_dish_id9->prezzo = 9;
+        $new_dish_id9->vegetariano = 0;
+        $new_dish_id9->glutine = 1;
+        $new_dish_id9->kitchen_types_id = 2;
+        $new_dish_id9->restaurants_id = 9;
+        $new_dish_id9->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
+        $new_dish_id9->description = 'Spaghetti Ai Frutti Di Mare Freschi';
+        $new_dish_id9-> view = 0;
+        $new_dish_id9->save();
+        //ristorante id 10
+        $new_dish_id10 = new Dish();
+        $new_dish_id10->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
+        $new_dish_id10->prezzo = 9;
+        $new_dish_id10->vegetariano = 0;
+        $new_dish_id10->glutine = 1;
+        $new_dish_id10->kitchen_types_id = 2;
+        $new_dish_id10->restaurants_id = 10;
+        $new_dish_id10->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
+        $new_dish_id10->description = 'Spaghetti Ai Frutti Di Mare Freschi';
+        $new_dish_id10-> view = 0;
+        $new_dish_id10->save();
+
+        $new_dish_id10_2 = new Dish();
+        $new_dish_id10_2->nome_prodotto = 'Pizza Diavola';
+        $new_dish_id10_2->prezzo = 9;
+        $new_dish_id10_2->vegetariano = 0;
+        $new_dish_id10_2->glutine = 1;
+        $new_dish_id10_2->kitchen_types_id = 5;
+        $new_dish_id10_2->restaurants_id = 10;
+        $new_dish_id10_2->immage = 'dishes/12-pizza-diavola.jpg';
+        $new_dish_id10_2->description = 'Fior di latte, salame piccante pomodori e peperoncino';
+        $new_dish_id10_2-> view = 0;
+        $new_dish_id10_2->save();
+        //ristorante id 11
+        $new_dish_id11 = new Dish();
+        $new_dish_id11->nome_prodotto = 'Pizza Diavola';
+        $new_dish_id11->prezzo = 9;
+        $new_dish_id11->vegetariano = 0;
+        $new_dish_id11->glutine = 1;
+        $new_dish_id11->kitchen_types_id = 5;
+        $new_dish_id11->restaurants_id = 11;
+        $new_dish_id11->immage = 'dishes/12-pizza-diavola.jpg';
+        $new_dish_id11->description = 'Fior di latte, salame piccante pomodori e peperoncino';
+        $new_dish_id11-> view = 0;
+        $new_dish_id11->save();
+        //ristorante id 12
+        $new_dish_id12 = new Dish();
+        $new_dish_id12->nome_prodotto = 'Pizza Diavola';
+        $new_dish_id12->prezzo = 9;
+        $new_dish_id12->vegetariano = 0;
+        $new_dish_id12->glutine = 1;
+        $new_dish_id12->kitchen_types_id = 5;
+        $new_dish_id12->restaurants_id = 12;
+        $new_dish_id12->immage = 'dishes/12-pizza-diavola.jpg';
+        $new_dish_id12->description = 'Fior di latte, salame piccante pomodori e peperoncino';
+        $new_dish_id12-> view = 0;
+        $new_dish_id12->save();
+        //ristorante id 13
+        $new_dish_id13 = new Dish();
+        $new_dish_id13->nome_prodotto = 'Pizza Diavola';
+        $new_dish_id13->prezzo = 9;
+        $new_dish_id13->vegetariano = 0;
+        $new_dish_id13->glutine = 1;
+        $new_dish_id13->kitchen_types_id = 5;
+        $new_dish_id13->restaurants_id = 13;
+        $new_dish_id13->immage = 'dishes/12-pizza-diavola.jpg';
+        $new_dish_id13->description = 'Fior di latte, salame piccante pomodori e peperoncino';
+        $new_dish_id13-> view = 0;
+        $new_dish_id13->save();
+        //ristorante id 14
+        $new_dish_id14 = new Dish();
+        $new_dish_id14->nome_prodotto = 'Pizza Diavola';
+        $new_dish_id14->prezzo = 9;
+        $new_dish_id14->vegetariano = 0;
+        $new_dish_id14->glutine = 1;
+        $new_dish_id14->kitchen_types_id = 5;
+        $new_dish_id14->restaurants_id = 14;
+        $new_dish_id14->immage = 'dishes/12-pizza-diavola.jpg';
+        $new_dish_id14->description = 'Fior di latte, salame piccante pomodori e peperoncino';
+        $new_dish_id14-> view = 0;
+        $new_dish_id14->save();
     }
 }

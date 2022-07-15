@@ -26,7 +26,7 @@
                                     &euro; {{ dish.prezzo }}
                                 </div>
                             </div>
-                            <div class="mt-3">
+                            <div class="mt-3 btn btn-light">
                                 <a
                                     @click="addToCart(dish), getPrice(dish)"
                                     class="pointer"
@@ -249,7 +249,8 @@ export default {
     }
 }
 .col-3 {
-    border: 1px solid cyan;
+    border: 1px solid #000;
+    box-shadow: 1px 1px 20px #000;
 }
 @media (max-width: 900px) {
     .contenitore-generale {
