@@ -189,13 +189,13 @@ export default {
             font-weight: bold;
             color: #fff;
             text-shadow: 1px 1px 10px #000;
-            background-color: transparent;
+            background-color: #D6E4F0;
         }
         .rest_card-body{
             font-size: 0.8em;
             font-style: italic;
             color:#fff ;
-            background-color: transparent;
+            background-color: #fff;
         }
    }
 //    .card:hover{
@@ -235,6 +235,10 @@ export default {
     background: #fff;
     color: rgb(25, 159, 214);
     box-shadow: 5px 5px 10px rgb(9, 111, 151);
+    }
+
+    .btn-light{
+        background-color: #D6E4F0;
     }
     
 </style>
