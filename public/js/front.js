@@ -26294,7 +26294,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#header[data-v-1f42fb90] {\n  height: 75px;\n  background: rgb(11, 99, 184);\n}\na[data-v-1f42fb90] {\n  color: white;\n}\n\n/* scritte nere quando ci passo sopra */\n/* a:hover{\n    color: black;\n} */\n.stick_nav[data-v-1f42fb90] {\n  background-color: black;\n  opacity: 0.2;\n  height: 75px;\n}", ""]);
+exports.push([module.i, "#header[data-v-1f42fb90] {\n  height: 75px;\n  background: rgb(11, 99, 184);\n}\na[data-v-1f42fb90] {\n  color: white;\n}\n\n/* scritte nere quando ci passo sopra */\n/* a:hover{\n    color: black;\n} */\n.stick_nav[data-v-1f42fb90] {\n  background-color: black;\n  opacity: 0.2;\n  height: 75px;\n}\n.navbar-toggler-icon[data-v-1f42fb90] {\n  color: #fff;\n}", ""]);
 
 // exports
 
@@ -28009,7 +28009,7 @@ var render = function () {
       "nav",
       {
         staticClass:
-          "navbar navbar-expand-lg navbar justify-content-between fixed-top",
+          "navbar navbar-expand-lg navbar-dark justify-content-between fixed-top",
       },
       [
         _c(
