@@ -28795,14 +28795,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "title container text-dark" }, [
+      _c("div", { staticClass: "title text-dark" }, [
         _c("h2", [
           _vm._v(
             "\n                    Le categorie piu' amate\n                "
           ),
         ]),
         _vm._v(" "),
-        _c("h3", [
+        _c("h4", { staticClass: "py-2" }, [
           _vm._v(
             "\n                    Trova i ristoranti piu' apprezzati della bella Napoli!\n                "
           ),

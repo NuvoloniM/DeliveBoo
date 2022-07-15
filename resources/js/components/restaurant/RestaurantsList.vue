@@ -3,13 +3,13 @@
     <div class="homepage">
         <div class="container body text-center">
             <div class="container-fluid">
-                <div class="title container text-dark">
+                <div class="title text-dark">
                     <h2>
                         Le categorie piu' amate
                     </h2>
-                    <h3>
+                    <h4 class="py-2">
                         Trova i ristoranti piu' apprezzati della bella Napoli!
-                    </h3>      
+                    </h4>      
                 </div>
                 
             </div>
@@ -182,6 +182,7 @@ export default {
         .rest_card_img{
             width: 100%;
             height: 200px;
+
         }
         .rest_card-header{
             font-size: 1.3em;
