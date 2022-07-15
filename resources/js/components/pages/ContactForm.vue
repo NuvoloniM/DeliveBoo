@@ -22,9 +22,8 @@
                 name="cognome"
                 required
             >
-            <label for="prezzo_totale" class="mt-2">Totale ordine</label>
             <input
-                type="text"
+                type="hidden"
                 class="form-control"
                 id="prezzo_totale"
                 name="prezzo_totale"
@@ -58,6 +57,9 @@
             <div class="form-group">
                 <input type="hidden" name="data_ordine">
             </div>
+            <h2 class="my-3">
+                Totale <span class="text-warning">&euro; {{total}}</span>
+            </h2>
     
             <button v-if="this.snitch == false" class="btn btn-info px-3 rounded text-white" @click="checkData">
                 Inserisci i dati 

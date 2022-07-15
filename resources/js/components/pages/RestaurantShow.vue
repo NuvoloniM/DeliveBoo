@@ -186,6 +186,7 @@ export default {
             elem.quantità += 1;
         },
         removeAllFromCart(elem, index) {
+            index = this.carrello.indexOf(elem);
             this.totalPrice -= elem.prezzo * elem.quantità;
             this.carrello.splice(index, 1);
         },
