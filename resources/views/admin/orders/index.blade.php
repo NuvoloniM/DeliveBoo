@@ -11,7 +11,7 @@
             {{ session('message') }}
         </div>
         @endif
- 
+
         <button class="btn btn-info border border-info ">
             <a class="personal-a text-white" href="{{route('admin.restaurants.index')}}"><i
                     class="fa-solid fa-arrow-left mr-2"></i>Torna alle tue attività</a>
@@ -20,44 +20,64 @@
         <h2 class="text-center text-white text-uppercase mt-5">riepilogo Ordini ricevuti</h2>
         <div class="d-flex justify-content-center">
             <table class="table text-center w-75">
-            <thead class="bg-white ">
-                <tr>
-                    <th scope="col">Data ordine</th>
-                    <th scope="col">Nome del ordinante</th>
-                    <th scope="col">Cognome del ordinante</th>
-                    <th scope="col">Totale ordine</th>
-                </tr>
-            </thead>
-            <tbody class="bg-white">
-                @forelse ($orders as $order)
-                <tr>
-                    <td>
-                        {{ $order->data_ordine}}
-                    </td>
-                    <td>
-                        {{  $order->nome }}
-                    </td>
-                    <td>
-                        {{  $order->cognome }}
-                    </td>
-                    <td>
-                        {{  $order->prezzo_totale }} €
-                    </td>
-                </tr>
-                @empty
-                <h2> Non ci sono ordini</h2>
-                @endforelse
+                <thead class="bg-white ">
+                    <tr>
+                        <th scope="col">Data ordine</th>
+                        <th scope="col">Nome del ordinante</th>
+                        <th scope="col">Cognome del ordinante</th>
+                        <th scope="col">Totale ordine</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white">
+                    @forelse ($orders as $order)
+                    <tr>
+                        <td>
+                            <span class="dataOrdine">{{ $order->data_ordine}}</span>
+                        </td>
+                        <td>
+                            {{  $order->nome }}
+                        </td>
+                        <td>
+                            {{  $order->cognome }}
+                        </td>
+                        <td>
+                            {{  $order->prezzo_totale }} €
+                        </td>
+                    </tr>
+                    @empty
+                    <h2> Non ci sono ordini</h2>
+                    @endforelse
 
-            </tbody>
-        </table>
+                </tbody>
+                <div class="container">
+                    <canvas id="myCanvas">
+
+                    </canvas>
+                </div>
+            </table>
         </div>
-        
+
 
         </table>
     </div>
 </div>
 
 @endsection
+
+{{-- @section('scripts')
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js">
+</script>
+<script>
+    let data = document.querySelectorAll('dataOrdine');
+    let test = Array.from(data)
+    let myCanvas = document.getElementById("myCanvas").getContext('2d');
+    let mesi = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre',
+        'Ottobre', 'Novembre', 'Dicembre'
+    ];
+    //let chart = new Chart();
+    console.log(test);
+</script>
+@endsection --}}
 <style>
     .bg-view {
         height: 100vh;
