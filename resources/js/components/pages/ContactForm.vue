@@ -62,8 +62,8 @@
             <button v-if="this.snitch == false" class="btn btn-info px-3 rounded" @click="checkData">
                 Inserisci i dati 
             </button>
-            <router-link v-if="this.snitch == true" :to="{name:'payment', params: {cart: this.total, id:this.restaurant_id}}" @click="sendForm" class="btn btn-success btn-block" >
-                <h5 class="text-white text-center">Procedi al pagamento</h5> 
+            <router-link v-if="this.snitch == true" :to="{name:'payment', params: {cart: this.total, id:this.restaurant_id}}"  class="btn btn-success btn-block" >
+                <h5 class="text-white text-center button" @click="sendForm">Procedi al pagamento</h5> 
             </router-link>
         </form>     
     </div> 
@@ -102,9 +102,7 @@ export default {
                     this.form.prezzo_totale = '';
                     this.form.recapito = '';
                     console.log(res)
-                }).catch(err => {
-                    // Handle error
-                });
+                })
         },
         checkData(){
             if(this.form.nome != '' && this.form.indirizzo != '' && this.form.cognome != '' && this.form.recapito != '' ){

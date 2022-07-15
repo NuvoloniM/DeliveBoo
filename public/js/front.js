@@ -2247,7 +2247,6 @@ __webpack_require__.r(__webpack_exports__);
         _this.form.prezzo_totale = '';
         _this.form.recapito = '';
         console.log(res);
-      })["catch"](function (err) {// Handle error
       });
     },
     checkData: function checkData() {
@@ -28410,12 +28409,16 @@ var render = function () {
                       params: { cart: this.total, id: this.restaurant_id },
                     },
                   },
-                  on: { click: _vm.sendForm },
                 },
                 [
-                  _c("h5", { staticClass: "text-white text-center" }, [
-                    _vm._v("Procedi al pagamento"),
-                  ]),
+                  _c(
+                    "h5",
+                    {
+                      staticClass: "text-white text-center button",
+                      on: { click: _vm.sendForm },
+                    },
+                    [_vm._v("Procedi al pagamento")]
+                  ),
                 ]
               )
             : _vm._e(),
@@ -28868,7 +28871,9 @@ var render = function () {
                   _vm.carrello.length > 0
                     ? _c("p", { staticClass: "mt-4" }, [
                         _vm._v("\n                            TOTALE: "),
-                        _c("span", [_vm._v(_vm._s(_vm.totalPrice))]),
+                        _c("span", { staticClass: "item_quantita " }, [
+                          _vm._v(_vm._s(_vm.totalPrice)),
+                        ]),
                       ])
                     : _vm._e(),
                   _vm._v(" "),

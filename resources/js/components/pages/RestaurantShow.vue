@@ -89,7 +89,7 @@
                                 </div>
                             </div>
                             <p class="mt-4" v-if="carrello.length > 0">
-                                TOTALE: <span>{{ totalPrice }}</span>
+                                TOTALE: <span class="item_quantita ">{{ totalPrice }}</span>
                             </p>
                             <p
                                 @click="deleteCart()"
