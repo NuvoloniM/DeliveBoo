@@ -22,7 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('nome');
             $table->string('cognome');
             $table->decimal('prezzo_totale', 5, 2);
-            $table->integer('recapito');
+            $table->string('recapito');
 
             $table->timestamps();
         });

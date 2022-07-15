@@ -17,6 +17,9 @@
                 <a class="personal-a white" href="/">Ordina anche tu</a>
             </li>
             <li>
+                <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Torna indietro</a>
+            </li>
+            <li>
                 <a class="personal-a white" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
@@ -25,6 +28,7 @@
                     @csrf
                 </form>
             </li>
+
         </ul>
     </div>
     <div class="row dish d-flex justify-content-center">
@@ -74,16 +78,19 @@
 
     .personal-ul {
         list-style-type: none;
-        
+
         padding-top: 200px;
     }
-    .personal{
+
+    .personal {
         width: 220px
     }
+
     .personal-a:hover {
         color: white;
     }
-    .dish{
+
+    .dish {
         width: calc(100% - 220px);
     }
 
