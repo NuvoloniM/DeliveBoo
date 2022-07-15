@@ -29,7 +29,7 @@ class DishSeeder extends Seeder
         $new_dish3->restaurants_id = 16;
         $new_dish3->immage = 'dishes/3-parmigiana.jpg';
         $new_dish3->description = 'Melanzane fritte e messe in teglia alla Parmigiana (sovrapposte incrociate). Aggiungiamo Pomodoro, Parmigiano Reggiano Dop, Fiordilatte, Olio Evo italiano e Basilico.';
-        $new_dish3->view = 0;
+        $new_dish3->view = 1;
         $new_dish3->save();
 
         $new_dish4 = new Dish();
@@ -41,7 +41,7 @@ class DishSeeder extends Seeder
         $new_dish4->restaurants_id = 16;
         $new_dish4->immage = 'dishes/4-prosciutto-mozzarella.jpeg';
         $new_dish4->description = 'Prosciutto crudo di Parma Dop e mozzarella di bufala campana Dop.';
-        $new_dish4->view = 0;
+        $new_dish4->view = 1;
         $new_dish4->save();
 
         $new_dish5 = new Dish();
@@ -53,7 +53,7 @@ class DishSeeder extends Seeder
         $new_dish5->restaurants_id = 16;
         $new_dish5->immage = 'dishes/5-fiori-zucca.jpg';
         $new_dish5->description = 'Ripieni con ricotta, provola, pepe, sale e serviti con salsa Sorbillo.';
-        $new_dish5->view = 0;
+        $new_dish5->view = 1;
         $new_dish5->save();
 
         $new_dish6 = new Dish();
@@ -65,7 +65,7 @@ class DishSeeder extends Seeder
         $new_dish6->restaurants_id = 16;
         $new_dish6->immage = 'dishes/6-frittura.jpg';
         $new_dish6->description = '2 crocchè (100% patate), 1 frittatina di pasta, verdure in tempura.';
-        $new_dish6->view = 0;
+        $new_dish6->view = 1;
         $new_dish6->save();
 
         $new_dish7 = new Dish();
@@ -77,7 +77,7 @@ class DishSeeder extends Seeder
         $new_dish7->restaurants_id = 16;
         $new_dish7->immage = 'dishes/7-calamari-fritti.jpg';
         $new_dish7->description = 'Un antipasto di mare semplicissimo e sfizioso, perfetto per iniziare in ogni occasione.';
-        $new_dish7->view = 0;
+        $new_dish7->view = 1;
         $new_dish7->save();
 
         $new_dish8 = new Dish();
@@ -89,7 +89,7 @@ class DishSeeder extends Seeder
         $new_dish8->restaurants_id = 16;
         $new_dish8->immage = 'dishes/8-polpo-patate.jpg';
         $new_dish8->description = ' Polpo con patate all insalata condito con una citronette al prezzemolo.';
-        $new_dish8->view = 0;
+        $new_dish8->view = 1;
         $new_dish8->save();
 
 
@@ -104,7 +104,7 @@ class DishSeeder extends Seeder
         $new_dish10->restaurants_id = 16;
         $new_dish10->immage = 'dishes/10-pizza-fritta.jpg';
         $new_dish10->description = 'Pizza fritta in olio Evo ripiena di ricotta e cicole.';
-        $new_dish10->view = 0;
+        $new_dish10->view = 1;
         $new_dish10->save();
 
         $new_dish11 = new Dish();
@@ -116,7 +116,7 @@ class DishSeeder extends Seeder
         $new_dish11->restaurants_id = 16;
         $new_dish11->immage = 'dishes/11-pizza-margherita.jpg';
         $new_dish11->description = 'Fiordilatte Latteria Sorrentina Pomodoro Bio, Olio Evo Italiano e Basilico fresco.';
-        $new_dish11->view = 0;
+        $new_dish11->view = 1;
         $new_dish11->save();
 
         $new_dish12 = new Dish();
@@ -128,7 +128,7 @@ class DishSeeder extends Seeder
         $new_dish12->restaurants_id = 16;
         $new_dish12->immage = 'dishes/12-pizza-diavola.jpg';
         $new_dish12->description = 'Fiordilatte con aggiunta di Latte di Bufala, Pomodoro Bio, Salame Piccante, Olio Evo Italiano e Basilico fresco.';
-        $new_dish12->view = 0;
+        $new_dish12->view = 1;
         $new_dish12->save();
 
         $new_dish13 = new Dish();
@@ -140,7 +140,7 @@ class DishSeeder extends Seeder
         $new_dish13->restaurants_id = 16;
         $new_dish13->immage = 'dishes/13-pizza-bufala.jpg';
         $new_dish13->description = 'Bufala Campana Dop, Pomodoro Bio, Parmigiano Reggiano Malandrone 1477 (36 mesi), Olio Evo Italiano e Basilico fresco.';
-        $new_dish13->view = 0;
+        $new_dish13->view = 1;
         $new_dish13->save();
 
         $new_dish14 = new Dish();
@@ -152,7 +152,7 @@ class DishSeeder extends Seeder
         $new_dish14->restaurants_id = 16;
         $new_dish14->immage = 'dishes/14-salsiccia-e-friarielli.jpg';
         $new_dish14->description = 'Salsiccia Fresca di Maiale, Friarielli saltati in padella con Peperoncino, Provola affumicata, Olio Evo Italiano e Basilico fresco.';
-        $new_dish14->view = 0;
+        $new_dish14->view = 1;
         $new_dish14->save();
 
         $new_dish15 = new Dish();
@@ -164,7 +164,7 @@ class DishSeeder extends Seeder
         $new_dish15->restaurants_id = 16;
         $new_dish15->immage = 'dishes/15-cotto-funghi.jpg';
         $new_dish15->description = 'Fiordilatte con aggiunta di Latte di Bufala, Prosciutto Cotto Nazionale Villani, Funghi, Olio EVO Italiano e Basilico fresco.';
-        $new_dish15->view = 0;
+        $new_dish15->view = 1;
         $new_dish15->save();
 
         $new_dish16 = new Dish();
@@ -176,7 +176,7 @@ class DishSeeder extends Seeder
         $new_dish16->restaurants_id = 16;
         $new_dish16->immage = 'dishes/16-margherita-gialla.jpg';
         $new_dish16->description = 'Pomodorini Gialli del Vesuvio, Provola, Conciato Romano (il formaggio più antico d’Italia), Olio EVO Italiano.';
-        $new_dish16->view = 0;
+        $new_dish16->view = 1;
         $new_dish16->save();
 
         $new_dish17 = new Dish();
@@ -188,7 +188,7 @@ class DishSeeder extends Seeder
         $new_dish17->restaurants_id = 16;
         $new_dish17->immage = 'dishes/17-mortadella.jpg';
         $new_dish17->description = 'Mortadella Bologna Igp Lo Santo Villani in vescica naturale legata a mano e cotta lentamente come da tradizione, Fiordilatte "Latteria Sorrentina", Pesto di Pistacchio, Olio Evo Italiano e Basilico.';
-        $new_dish17->view = 0;
+        $new_dish17->view = 1;
         $new_dish17->save();
 
         $new_dish18 = new Dish();
@@ -200,7 +200,7 @@ class DishSeeder extends Seeder
         $new_dish18->restaurants_id = 16;
         $new_dish18->immage = 'dishes/18-pizza-alleanza.jpg';
         $new_dish18->description = 'Pomodoro Bio, Fiordilatte Latteria Sorrentina, Salsiccia Rossa stagionata di Castelpoto (leggermente piccante), Cacioricotta di Capra Cilentana Az. Agricola I Filadelfi 1828, Olio EVO Italiano, Basilico fresco.';
-        $new_dish18->view = 0;
+        $new_dish18->view = 1;
         $new_dish18->save();
 
         $new_dish19 = new Dish();
@@ -212,7 +212,7 @@ class DishSeeder extends Seeder
         $new_dish19->restaurants_id = 16;
         $new_dish19->immage = 'dishes/19-pizza-prosciutto-crudo.jpg';
         $new_dish19->description = 'Prosciutto Crudo di Parma D.O.P. (Stagionato 18 mesi), Pomodorini Freschi, Provola Affumicata, Rucola Fresca, Scaglie di Parmigiano Reggiano Malandrone 1477 (36mesi), Olio EVO Italiano.';
-        $new_dish19->view = 0;
+        $new_dish19->view = 1;
         $new_dish19->save();
 
 
@@ -227,7 +227,7 @@ class DishSeeder extends Seeder
         $new_dish20->restaurants_id = 16;
         $new_dish20->immage = 'dishes/20-tiramisu.jpg';
         $new_dish20->description = 'Dessert al cucchiaio a base di savoiardi inzuppati nel caffè e ricoperti di crema mascarpone, spolverata di cacao fondente.';
-        $new_dish20->view = 0;
+        $new_dish20->view = 1;
         $new_dish20->save();
 
         $new_dish21 = new Dish();
@@ -239,7 +239,7 @@ class DishSeeder extends Seeder
         $new_dish21->restaurants_id = 16;
         $new_dish21->immage = 'dishes/21-torta-caprese.jpg';
         $new_dish21->description = 'Dolce partenopeo tipico dell’Isola di Capri a base di cioccolato fondente e mandorle.';
-        $new_dish21->view = 0;
+        $new_dish21->view = 1;
         $new_dish21->save();
 
         $new_dish22 = new Dish();
@@ -251,7 +251,7 @@ class DishSeeder extends Seeder
         $new_dish22->restaurants_id = 16;
         $new_dish22->immage = 'dishes/22-pastiera.jpg';
         $new_dish22->description = 'Torta di pasta frolla farcita con un impasto a base di ricotta, zucchero, uova e grano bollito nel latte, ricoperto di listarelle della stessa pasta frolla intrecciate a croce di sant Andrea.';
-        $new_dish22->view = 0;
+        $new_dish22->view = 1;
         $new_dish22->save();
 
         $new_dish23 = new Dish();
@@ -263,7 +263,7 @@ class DishSeeder extends Seeder
         $new_dish23->restaurants_id = 16;
         $new_dish23->immage = 'dishes/23-ricotta-e-pera.jpg';
         $new_dish23->description = 'Torta ideata da Sal De Riso, a base di nocciole di Giffoni, ricotta e pere pennate di Agerola.';
-        $new_dish23->view = 0;
+        $new_dish23->view = 1;
         $new_dish23->save();
 
         $new_dish24 = new Dish();
@@ -275,7 +275,7 @@ class DishSeeder extends Seeder
         $new_dish24->restaurants_id = 16;
         $new_dish24->immage = 'dishes/24-delizia.jpg';
         $new_dish24->description = 'Torta fatta con base di pan di Spagna bagnato con sciroppo di limoncello, farcita e ricoperta di crema a base di limone della costiera.';
-        $new_dish24->view = 0;
+        $new_dish24->view = 1;
         $new_dish24->save();
 
         $new_dish25 = new Dish();
@@ -287,7 +287,7 @@ class DishSeeder extends Seeder
         $new_dish25->restaurants_id = 16;
         $new_dish25->immage = 'dishes/25-nocciomandopista.jpg';
         $new_dish25->description = 'Dolce al bicchiere creato dalla Pasticceria Casa Infante, a base di nocciole vesuviane, pistacchi e mandorle di Bronte.';
-        $new_dish25->view = 0;
+        $new_dish25->view = 1;
         $new_dish25->save();
 
         $new_dish26 = new Dish();
@@ -299,7 +299,7 @@ class DishSeeder extends Seeder
         $new_dish26->restaurants_id = 16;
         $new_dish26->immage = 'dishes/26-baba.jpg';
         $new_dish26->description = 'Dolce al bicchiere creato dalla Pasticceria Casa Infante, a base di pan di spagna, bagnato con rum.';
-        $new_dish26->view = 0;
+        $new_dish26->view = 1;
         $new_dish26->save();
 
 
@@ -314,7 +314,7 @@ class DishSeeder extends Seeder
         $new_dish27->restaurants_id = 16;
         $new_dish27->immage = 'dishes/27-acqua-panna.jpg';
         $new_dish27->description = '45 cl.';
-        $new_dish27->view = 0;
+        $new_dish27->view = 1;
         $new_dish27->save();
 
         $new_dish28 = new Dish();
@@ -326,7 +326,7 @@ class DishSeeder extends Seeder
         $new_dish28->restaurants_id = 16;
         $new_dish28->immage = 'dishes/28-san-pellegrino.jpg';
         $new_dish28->description = '45 cl.';
-        $new_dish28->view = 0;
+        $new_dish28->view = 1;
         $new_dish28->save();
 
         $new_dish29 = new Dish();
@@ -338,7 +338,7 @@ class DishSeeder extends Seeder
         $new_dish29->restaurants_id = 16;
         $new_dish29->immage = 'dishes/29-coca-cola.jpeg';
         $new_dish29->description = '33 cl.';
-        $new_dish29->view = 0;
+        $new_dish29->view = 1;
         $new_dish29->save();
 
         $new_dish30 = new Dish();
@@ -350,7 +350,7 @@ class DishSeeder extends Seeder
         $new_dish30->restaurants_id = 16;
         $new_dish30->immage = 'dishes/30-fanta.jpg';
         $new_dish30->description = '33 cl.';
-        $new_dish30->view = 0;
+        $new_dish30->view = 1;
         $new_dish30->save();
 
         $new_dish31 = new Dish();
@@ -362,7 +362,7 @@ class DishSeeder extends Seeder
         $new_dish31->restaurants_id = 16;
         $new_dish31->immage = 'dishes/31-sprite.jpg';
         $new_dish31->description = '33 cl.';
-        $new_dish31->view = 0;
+        $new_dish31->view = 1;
         $new_dish31->save();
 
         $new_dish32 = new Dish();
@@ -374,7 +374,7 @@ class DishSeeder extends Seeder
         $new_dish32->restaurants_id = 16;
         $new_dish32->immage = 'dishes/32-coca-zero.jpg';
         $new_dish32->description = '33 cl.';
-        $new_dish32->view = 0;
+        $new_dish32->view = 1;
         $new_dish32->save();
 
         $new_dish33 = new Dish();
@@ -386,7 +386,7 @@ class DishSeeder extends Seeder
         $new_dish33->restaurants_id = 16;
         $new_dish33->immage = 'dishes/33-the-limone.jpeg';
         $new_dish33->description = '33 cl.';
-        $new_dish33->view = 0;
+        $new_dish33->view = 1;
         $new_dish33->save();
 
         $new_dish34 = new Dish();
@@ -398,7 +398,7 @@ class DishSeeder extends Seeder
         $new_dish34->restaurants_id = 16;
         $new_dish34->immage = 'dishes/34-the-pesca.jpg';
         $new_dish34->description = '33 cl.';
-        $new_dish34->view = 0;
+        $new_dish34->view = 1;
         $new_dish34->save();
 
         $new_dish35 = new Dish();
@@ -410,7 +410,7 @@ class DishSeeder extends Seeder
         $new_dish35->restaurants_id = 16;
         $new_dish35->immage = 'dishes/35-chinotto-lurisia.jpeg';
         $new_dish35->description = '33 cl.';
-        $new_dish35->view = 0;
+        $new_dish35->view = 1;
         $new_dish35->save();
 
 
@@ -425,7 +425,7 @@ class DishSeeder extends Seeder
         $new_dish36->restaurants_id = 16;
         $new_dish36->immage = 'dishes/36-nastro-azzurro.jpeg';
         $new_dish36->description = '(Italia Lager di Qualità Superiore con esclusivo Mais Nostrano)50 cl.';
-        $new_dish36->view = 0;
+        $new_dish36->view = 1;
         $new_dish36->save();
 
         $new_dish37 = new Dish();
@@ -437,7 +437,7 @@ class DishSeeder extends Seeder
         $new_dish37->restaurants_id = 16;
         $new_dish37->immage = 'dishes/37-birra-peroni-doppio-malto.png';
         $new_dish37->description = '50 cl.';
-        $new_dish37->view = 0;
+        $new_dish37->view = 1;
         $new_dish37->save();
 
         $new_dish38 = new Dish();
@@ -449,7 +449,7 @@ class DishSeeder extends Seeder
         $new_dish38->restaurants_id = 16;
         $new_dish38->immage = 'dishes/38-sorbillo-baladin.jpg';
         $new_dish38->description = '(100% Italiana ottenuta da materie prime nazionali)33 cl.';
-        $new_dish38->view = 0;
+        $new_dish38->view = 1;
         $new_dish38->save();
             //ristorante id 1
         $new_dish_id1 = new Dish();
@@ -461,7 +461,7 @@ class DishSeeder extends Seeder
         $new_dish_id1->restaurants_id = 1;
         $new_dish_id1->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
         $new_dish_id1->description = 'Spaghetti Ai Frutti Di Mare Freschi';
-        $new_dish_id1-> view = 0;
+        $new_dish_id1-> view = 1;
         $new_dish_id1->save();
             //ristorante id 2
         $new_dish_id2 = new Dish();
@@ -473,7 +473,7 @@ class DishSeeder extends Seeder
         $new_dish_id2->restaurants_id = 2;
         $new_dish_id2->immage = 'dishes/12-pizza-diavola.jpg';
         $new_dish_id2->description = 'Fior di latte, salame piccante pomodori e peperoncino';
-        $new_dish_id2-> view = 0;
+        $new_dish_id2-> view = 1;
         $new_dish_id2->save();
             //ristorante id 3
         $new_dish_id3 = new Dish();
@@ -485,7 +485,7 @@ class DishSeeder extends Seeder
         $new_dish_id3->restaurants_id = 3;
         $new_dish_id3->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
         $new_dish_id3->description = 'Spaghetti Ai Frutti Di Mare Freschi';
-        $new_dish_id3-> view = 0;
+        $new_dish_id3-> view = 1;
         $new_dish_id3->save();
         // ristorante id 4
         $new_dish_id4 = new Dish();
@@ -497,7 +497,7 @@ class DishSeeder extends Seeder
         $new_dish_id4->restaurants_id = 4;
         $new_dish_id4->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
         $new_dish_id4->description = 'Spaghetti Ai Frutti Di Mare Freschi';
-        $new_dish_id4-> view = 0;
+        $new_dish_id4-> view = 1;
         $new_dish_id4->save();
                 // ristorante id 5
         $new_dish_id5 = new Dish();
@@ -509,7 +509,7 @@ class DishSeeder extends Seeder
         $new_dish_id5->restaurants_id = 5;
         $new_dish_id5->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
         $new_dish_id5->description = 'Spaghetti Ai Frutti Di Mare Freschi';
-        $new_dish_id5-> view = 0;
+        $new_dish_id5-> view = 1;
         $new_dish_id5->save();
         //ristorante id 6
         $new_dish_id6 = new Dish();
@@ -521,7 +521,7 @@ class DishSeeder extends Seeder
         $new_dish_id6->restaurants_id = 6;
         $new_dish_id6->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
         $new_dish_id6->description = 'Spaghetti Ai Frutti Di Mare Freschi';
-        $new_dish_id6-> view = 0;
+        $new_dish_id6-> view = 1;
         $new_dish_id6->save();
 
         $new_dish_id6_2 = new Dish();
@@ -533,7 +533,7 @@ class DishSeeder extends Seeder
         $new_dish_id6_2->restaurants_id = 6;
         $new_dish_id6_2->immage = 'dishes/12-pizza-diavola.jpg';
         $new_dish_id6_2->description = 'Fior di latte, salame piccante pomodori e peperoncino';
-        $new_dish_id6_2-> view = 0;
+        $new_dish_id6_2-> view = 1;
         $new_dish_id6_2->save();
         //ristorante id 7
         $new_dish_id7 = new Dish();
@@ -545,7 +545,7 @@ class DishSeeder extends Seeder
         $new_dish_id7->restaurants_id = 7;
         $new_dish_id7->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
         $new_dish_id7->description = 'Spaghetti Ai Frutti Di Mare Freschi';
-        $new_dish_id7-> view = 0;
+        $new_dish_id7-> view = 1;
         $new_dish_id7->save();
         //ristorante id 8
         $new_dish_id8 = new Dish();
@@ -557,7 +557,7 @@ class DishSeeder extends Seeder
         $new_dish_id8->restaurants_id = 8;
         $new_dish_id8->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
         $new_dish_id8->description = 'Spaghetti Ai Frutti Di Mare Freschi';
-        $new_dish_id8-> view = 0;
+        $new_dish_id8-> view = 1;
         $new_dish_id8->save();
         //ristorante id 9
         $new_dish_id9 = new Dish();
@@ -569,7 +569,7 @@ class DishSeeder extends Seeder
         $new_dish_id9->restaurants_id = 9;
         $new_dish_id9->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
         $new_dish_id9->description = 'Spaghetti Ai Frutti Di Mare Freschi';
-        $new_dish_id9-> view = 0;
+        $new_dish_id9-> view = 1;
         $new_dish_id9->save();
         //ristorante id 10
         $new_dish_id10 = new Dish();
@@ -581,7 +581,7 @@ class DishSeeder extends Seeder
         $new_dish_id10->restaurants_id = 10;
         $new_dish_id10->immage = 'dishes/spaghetti-ai-frutti-di-mare.jpg';
         $new_dish_id10->description = 'Spaghetti Ai Frutti Di Mare Freschi';
-        $new_dish_id10-> view = 0;
+        $new_dish_id10-> view = 1;
         $new_dish_id10->save();
 
         $new_dish_id10_2 = new Dish();
@@ -593,7 +593,7 @@ class DishSeeder extends Seeder
         $new_dish_id10_2->restaurants_id = 10;
         $new_dish_id10_2->immage = 'dishes/12-pizza-diavola.jpg';
         $new_dish_id10_2->description = 'Fior di latte, salame piccante pomodori e peperoncino';
-        $new_dish_id10_2-> view = 0;
+        $new_dish_id10_2-> view = 1;
         $new_dish_id10_2->save();
         //ristorante id 11
         $new_dish_id11 = new Dish();
@@ -605,7 +605,7 @@ class DishSeeder extends Seeder
         $new_dish_id11->restaurants_id = 11;
         $new_dish_id11->immage = 'dishes/12-pizza-diavola.jpg';
         $new_dish_id11->description = 'Fior di latte, salame piccante pomodori e peperoncino';
-        $new_dish_id11-> view = 0;
+        $new_dish_id11-> view = 1;
         $new_dish_id11->save();
         //ristorante id 12
         $new_dish_id12 = new Dish();
@@ -617,7 +617,7 @@ class DishSeeder extends Seeder
         $new_dish_id12->restaurants_id = 12;
         $new_dish_id12->immage = 'dishes/12-pizza-diavola.jpg';
         $new_dish_id12->description = 'Fior di latte, salame piccante pomodori e peperoncino';
-        $new_dish_id12-> view = 0;
+        $new_dish_id12-> view = 1;
         $new_dish_id12->save();
         //ristorante id 13
         $new_dish_id13 = new Dish();
@@ -629,7 +629,7 @@ class DishSeeder extends Seeder
         $new_dish_id13->restaurants_id = 13;
         $new_dish_id13->immage = 'dishes/12-pizza-diavola.jpg';
         $new_dish_id13->description = 'Fior di latte, salame piccante pomodori e peperoncino';
-        $new_dish_id13-> view = 0;
+        $new_dish_id13-> view = 1;
         $new_dish_id13->save();
         //ristorante id 14
         $new_dish_id14 = new Dish();
@@ -641,7 +641,7 @@ class DishSeeder extends Seeder
         $new_dish_id14->restaurants_id = 14;
         $new_dish_id14->immage = 'dishes/12-pizza-diavola.jpg';
         $new_dish_id14->description = 'Fior di latte, salame piccante pomodori e peperoncino';
-        $new_dish_id14-> view = 0;
+        $new_dish_id14-> view = 1;
         $new_dish_id14->save();
     }
 }
