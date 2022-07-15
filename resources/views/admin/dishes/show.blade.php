@@ -1,38 +1,38 @@
 @extends('layouts.app')
 
 @section('content')
-<div class=" d-flex mt-5">
-    <div class="personal ">
-        <ul class="personal-ul mt-5">
-            <li>
-                <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Home</a>
-            </li>
-            <li>
-                <a class="personal-a white" href="#">I tuoi ordini</a>
-            </li>
-            <li>
-                <a class="personal-a white" href="#">Il tuo profilo</a>
-            </li>
-            <li>
-                <a class="personal-a white" href="/">Ordina anche tu</a>
-            </li>
-            <li>
-                <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Torna indietro</a>
-            </li>
-            <li>
-                <a class="personal-a white" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-            </li>
+<div class="container mt-5">
+    <div class="row">
+        <div class="personal col-sm-4 ">
+            <ul class="personal-ul mt-5">
+                <li>
+                    <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Home</a>
+                </li>
+                <li>
+                    <a class="personal-a white" href="#">I tuoi ordini</a>
+                </li>
+                <li>
+                    <a class="personal-a white" href="#">Il tuo profilo</a>
+                </li>
+                <li>
+                    <a class="personal-a white" href="/">Ordina anche tu</a>
+                </li>
+                <li>
+                    <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Torna indietro</a>
+                </li>
+                <li>
+                    <a class="personal-a white" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </li>
 
-        </ul>
-    </div>
-    <div class="row dish d-flex justify-content-center">
-        <div class="col-8 text-center rounded-lg mt-5">
+            </ul>
+        </div>
+        <div class="col-sm-8 text-center rounded-lg mt-5">
             <div class="d-flex flex-column justify-content-around">
                 <div class="img rounded-lg" style="background-image: url({{asset("storage/$dish->immage")}})">
                     {{-- <img class="img" src="{{asset("storage/$restaurant->immagine")}}"> --}}
@@ -82,16 +82,16 @@
         padding-top: 200px;
     }
 
-    .personal {
+    /* .personal {
         width: 220px
-    }
+    } */
 
     .personal-a:hover {
         color: white;
     }
 
-    .dish {
+    /* .dish {
         width: calc(100% - 220px);
-    }
+    } */
 
 </style>
