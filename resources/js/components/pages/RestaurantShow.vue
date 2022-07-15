@@ -249,7 +249,8 @@ export default {
     }
 }
 .col-3 {
-    border: 1px solid cyan;
+    border: 1px solid #000;
+    box-shadow: 1px 1px 20px #000;
 }
 @media (max-width: 900px) {
     .contenitore-generale {
