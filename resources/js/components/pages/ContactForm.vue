@@ -10,6 +10,7 @@
                 placeholder="Inserisci nome"
                 v-model="form.nome"
                 name="nome"
+                required
             >
             <label for="nome" class="mt-2">Cognome</label>
             <input
@@ -19,6 +20,7 @@
                 placeholder="Inserisci nome"
                 v-model="form.cognome"
                 name="cognome"
+                required
             >
             <label for="prezzo_totale" class="mt-2">Totale ordine</label>
             <input
@@ -38,6 +40,7 @@
                     name="indirizzo"
                     placeholder="Inserisci l'indirizzo di consegna"
                     v-model="form.indirizzo"
+                    required
                 >
             </div>
             <div class="form-group">
@@ -49,20 +52,21 @@
                     placeholder="Inserisci numero di telefono"
                     type="number"
                     v-model="form.recapito"
+                    required
                 >
             </div>
             <div class="form-group">
                 <input type="hidden" name="data_ordine">
             </div>
     
-            <button class="btn btn-info px-3 rounded" @click="sendForm" type="button">
-            <router-link :to="{name:'payment', params: {cart: this.total}}">
-               <h5 class="text-white text-center">Procedi al pagamento</h5> 
-            </router-link>
+            <button v-if="this.snitch == false" class="btn btn-info px-3 rounded text-white" @click="checkData">
+                Inserisci i dati 
             </button>
-        </form>
-        
-</div> 
+            <router-link v-if="this.snitch == true" :to="{name:'payment', params: {cart: this.total, id:this.restaurant_id}}"  class="btn btn-success btn-block" >
+                <h5 class="text-white text-center button" @click="sendForm">Procedi al pagamento</h5> 
+            </router-link>
+        </form>     
+    </div> 
 </div>
 </template>
 <script>
@@ -81,7 +85,9 @@ export default {
                 recapito: '',
 
             },
-            total: this.$route.params.cart 
+            total: this.$route.params.cart,
+            restaurant_id: this.$route.params.id, 
+            snitch: false,
             
         }
     },
@@ -98,6 +104,11 @@ export default {
                     console.log(res)
                 })
         },
+        checkData(){
+            if(this.form.nome != '' && this.form.indirizzo != '' && this.form.cognome != '' && this.form.recapito != '' ){
+                return this.snitch = true;
+            }
+        }
         // takeCart(){
         //      axios.post(`http://127.0.0.1:8000/api/restaurants`, this.carrello)
         //         .then((res)=>{

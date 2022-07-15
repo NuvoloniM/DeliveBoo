@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header id="header">
         <div class="stick_nav fixed-top"></div>
 
             <!-- importo una navbar di bootstrap -->
@@ -64,9 +64,10 @@
     };
 </script>
 
-<style scoped>
-    header {
-        height: 75px;    
+<style  lang="scss" scoped>
+    #header {
+        height: 75px;   
+        background: rgb(11,99,184);; 
     }
     a{
         color: white;

@@ -3,7 +3,7 @@
         <div class="container a1">
             <div class="row d-flex flex-wrap justify-content-center">
                 <div class="col col1">
-                    <a href="">
+                    <a href="#">
                         <!-- <img class="img-fluid" width="100" src="../../../public/img/magnapp-logo.png" alt=""> -->
                     </a>
                 </div>
