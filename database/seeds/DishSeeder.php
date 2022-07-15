@@ -455,7 +455,7 @@ class DishSeeder extends Seeder
         $new_dish_id1 = new Dish();
         $new_dish_id1->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
         $new_dish_id1->prezzo = 9;
-        $new_dish_1d1->vegetariano = 0;
+        $new_dish_id1->vegetariano = 0;
         $new_dish_id1->glutine = 1;
         $new_dish_id1->kitchen_types_id = 2;
         $new_dish_id1->restaurants_id = 1;
@@ -467,7 +467,7 @@ class DishSeeder extends Seeder
         $new_dish_id2 = new Dish();
         $new_dish_id2->nome_prodotto = 'Pizza Diavola';
         $new_dish_id2->prezzo = 9;
-        $new_dish_1d2->vegetariano = 0;
+        $new_dish_id2->vegetariano = 0;
         $new_dish_id2->glutine = 1;
         $new_dish_id2->kitchen_types_id = 5;
         $new_dish_id2->restaurants_id = 2;
@@ -479,7 +479,7 @@ class DishSeeder extends Seeder
         $new_dish_id3 = new Dish();
         $new_dish_id3->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
         $new_dish_id3->prezzo = 9;
-        $new_dish_1d3->vegetariano = 0;
+        $new_dish_id3->vegetariano = 0;
         $new_dish_id3->glutine = 1;
         $new_dish_id3->kitchen_types_id = 2;
         $new_dish_id3->restaurants_id = 3;
@@ -491,7 +491,7 @@ class DishSeeder extends Seeder
         $new_dish_id4 = new Dish();
         $new_dish_id4->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
         $new_dish_id4->prezzo = 9;
-        $new_dish_1d4->vegetariano = 0;
+        $new_dish_id4->vegetariano = 0;
         $new_dish_id4->glutine = 1;
         $new_dish_id4->kitchen_types_id = 2;
         $new_dish_id4->restaurants_id = 4;
@@ -503,7 +503,7 @@ class DishSeeder extends Seeder
         $new_dish_id5 = new Dish();
         $new_dish_id5->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
         $new_dish_id5->prezzo = 9;
-        $new_dish_1d5->vegetariano = 0;
+        $new_dish_id5->vegetariano = 0;
         $new_dish_id5->glutine = 1;
         $new_dish_id5->kitchen_types_id = 2;
         $new_dish_id5->restaurants_id = 5;
@@ -515,7 +515,7 @@ class DishSeeder extends Seeder
         $new_dish_id6 = new Dish();
         $new_dish_id6->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
         $new_dish_id6->prezzo = 9;
-        $new_dish_1d6->vegetariano = 0;
+        $new_dish_id6->vegetariano = 0;
         $new_dish_id6->glutine = 1;
         $new_dish_id6->kitchen_types_id = 2;
         $new_dish_id6->restaurants_id = 6;
@@ -539,7 +539,7 @@ class DishSeeder extends Seeder
         $new_dish_id7 = new Dish();
         $new_dish_id7->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
         $new_dish_id7->prezzo = 9;
-        $new_dish_1d7->vegetariano = 0;
+        $new_dish_id7->vegetariano = 0;
         $new_dish_id7->glutine = 1;
         $new_dish_id7->kitchen_types_id = 2;
         $new_dish_id7->restaurants_id = 7;
@@ -551,7 +551,7 @@ class DishSeeder extends Seeder
         $new_dish_id8 = new Dish();
         $new_dish_id8->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
         $new_dish_id8->prezzo = 9;
-        $new_dish_1d8->vegetariano = 0;
+        $new_dish_id8->vegetariano = 0;
         $new_dish_id8->glutine = 1;
         $new_dish_id8->kitchen_types_id = 2;
         $new_dish_id8->restaurants_id = 8;
@@ -563,7 +563,7 @@ class DishSeeder extends Seeder
         $new_dish_id9 = new Dish();
         $new_dish_id9->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
         $new_dish_id9->prezzo = 9;
-        $new_dish_1d9->vegetariano = 0;
+        $new_dish_id9->vegetariano = 0;
         $new_dish_id9->glutine = 1;
         $new_dish_id9->kitchen_types_id = 2;
         $new_dish_id9->restaurants_id = 9;
@@ -575,7 +575,7 @@ class DishSeeder extends Seeder
         $new_dish_id10 = new Dish();
         $new_dish_id10->nome_prodotto = 'Spaghetti Ai Frutti Di Mare';
         $new_dish_id10->prezzo = 9;
-        $new_dish_1d10->vegetariano = 0;
+        $new_dish_id10->vegetariano = 0;
         $new_dish_id10->glutine = 1;
         $new_dish_id10->kitchen_types_id = 2;
         $new_dish_id10->restaurants_id = 10;
