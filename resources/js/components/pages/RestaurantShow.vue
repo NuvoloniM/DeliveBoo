@@ -61,7 +61,7 @@
                                                 dish.data.nome_prodotto
                                             }}</span>
                                             <span class="mx-1 item_quantita">
-                                                {{ dish.data.prezzo }}</span
+                                                {{ dish.data.prezzo }} &euro;</span
                                             >
                                         </div>
                                     </div>
@@ -89,7 +89,7 @@
                                 </div>
                             </div>
                             <p class="mt-4" v-if="carrello.length > 0">
-                                TOTALE: <span class="item_quantita ">{{ totalPrice }}</span>
+                                TOTALE: <span class="item_quantita ">{{ totalPrice }} &euro;</span>
                             </p>
                             <p
                                 @click="deleteCart()"
@@ -110,6 +110,7 @@
                                             id: this.restaurant_id,
                                         },
                                     }"
+                                    class="link"
                                     >Completa il tuo ordine</router-link
                                 >
                             </button>
@@ -233,6 +234,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.link{
+    text-decoration: none;
+    color: #fff;
+}
 .main_container {
     min-height: calc(100vh - 75px);
 }
