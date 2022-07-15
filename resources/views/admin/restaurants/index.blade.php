@@ -1,60 +1,60 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-generale d-flex">
-        <div class="personal dashboard">
-            <ul class="personal-ul mt-5">
-                <li>
-                    <img
-                    src="{{ asset('img/magnapp-logo.png') }}"
-                    width="100"
-                    alt="moto"
-                    />
-                </li>
-                <li>
-                    <a class="personal-a white" href="/">Home</a>
-                </li>
-                <li>
-                    <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Le tue attività</a>
-                </li>
-                <li>
-                    <a class="personal-a white" href="{{route('admin.restaurants.create')}}">Aggiungi attività</a>
-                </li>
-                {{-- <li>
-                    <a class="personal-a white" href="{{route('admin.order')}}">I tuoi ordini</a>
-                </li> --}}
-                <li>
-                    <a class="personal-a white" href="#">Il tuo profilo</a>
-                </li>
-                <li>
-                    <a class="personal-a white" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-    
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </li>
-            </ul>
-        </div>
-        <div class="activities">
-            @if ( session('message') )
-            <div class="alert alert-info">
-                {{ session('message') }}
+    <div class="container-generale d-flex container">
+        <div class="row">
+            <div class="personal dashboard col-md-6 col-sm-8">
+                <ul class="personal-ul mt-5">
+                    <li>
+                        <img
+                        src="{{ asset('img/magnapp-logo.png') }}"
+                        width="100"
+                        alt="moto"
+                        />
+                    </li>
+                    <li>
+                        <a class="personal-a white" href="/">Home</a>
+                    </li>
+                    <li>
+                        <a class="personal-a white" href="{{route('admin.restaurants.index')}}">Le tue attività</a>
+                    </li>
+                    <li>
+                        <a class="personal-a white" href="{{route('admin.restaurants.create')}}">Aggiungi attività</a>
+                    </li>
+                    {{-- <li>
+                        <a class="personal-a white" href="{{route('admin.order')}}">I tuoi ordini</a>
+                    </li> --}}
+                    <li>
+                        <a class="personal-a white" href="#">Il tuo profilo</a>
+                    </li>
+                    <li>
+                        <a class="personal-a white" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+        
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+                </ul>
             </div>
-            @endif
-            
-            <div class="over">
-                <div class="text-center blue title">
-                    <h1>
-                        Le tue attivita'
-                    </h1>
+            <div class="activities col-6">
+                @if ( session('message') )
+                <div class="alert alert-info">
+                    {{ session('message') }}
                 </div>
-                <div class="container">
-                    <div class="row d-flex justify-content-center">
+                @endif
+                
+                <div class="over">
+                    <div class="text-center blue title">
+                        <h1>
+                            Le tue attivita'
+                        </h1>
+                    </div>
+                    <div class="row">
                         @forelse ($restaurants as $restaurant)
-                        <div class="col-6 text-center rounded-lg mt-3 p-3">
+                        <div class="col-lg-6 col-md-12 text-center rounded-lg mt-3 p-3">
                             <a href="{{route('admin.restaurants.show', $restaurant->id)}}">
                                 <div class="d-flex flex-column justify-content-around">
                                     <div class="img rounded-lg" style="background-image: url({{asset("storage/$restaurant->immagine")}})">
@@ -76,11 +76,10 @@
                         @empty
                         @endforelse
                     </div>
-                </div>    
+                </div>
             </div>
-            
-
         </div>
+        
     </div>
 
 
@@ -100,10 +99,10 @@
     display: none;
     }
 
-    .activities {
-        /* background-color: purple; */
+    /* .activities {
+       
         width: calc(100% - 220px);
-    }
+    } */
 
     .personal-ul {
         list-style-type: none;
@@ -113,9 +112,9 @@
     .personal-a:hover{
         color: white;
     }
-    .personal {
+    /* .personal {
         width: 220px;
-    }
+    } */
     .container-generale{
         margin-top: 2vh;
     }

@@ -114,13 +114,7 @@
     .personal-a:hover{
         color: white;
     }
-    /* .personal {
-        width: 220px;
-    } */
-    /* .activities {
-        
-        width: calc(100% - 220px);
-    } */
+    
     .blue {
         color: rgba(11, 99, 184, 1);
     }
