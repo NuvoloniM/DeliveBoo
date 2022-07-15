@@ -159,7 +159,7 @@ export default {
    computed:{
     filtraggio(){        
         return this.restaurants.filter(element=>{
-            return element.nome_attivita.includes(this.filtro)
+            return element.nome_attivita.toLowerCase().includes(this.filtro)
         })
     },
    },
