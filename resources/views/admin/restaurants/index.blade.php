@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-generale d-flex">
         <div class="personal dashboard">
-            <ul class="personal-ul">
+            <ul class="personal-ul mt-5">
                 <li>
                     <img
                     src="{{ asset('img/magnapp-logo.png') }}"
@@ -52,7 +52,7 @@
                     </h1>
                 </div>
                 <div class="container">
-                    <div class="row d-flex jusify-content-center">
+                    <div class="row d-flex justify-content-center">
                         @forelse ($restaurants as $restaurant)
                         <div class="col-6 text-center rounded-lg mt-3 p-3">
                             <a href="{{route('admin.restaurants.show', $restaurant->id)}}">

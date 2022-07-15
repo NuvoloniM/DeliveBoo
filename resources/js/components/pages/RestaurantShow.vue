@@ -26,7 +26,7 @@
                                     &euro; {{ dish.prezzo }}
                                 </div>
                             </div>
-                            <div class="mt-3">
+                            <div class="mt-3 btn btn-light">
                                 <a
                                     @click="addToCart(dish), getPrice(dish)"
                                     class="pointer"

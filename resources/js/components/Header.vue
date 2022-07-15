@@ -3,7 +3,7 @@
         <div class="stick_nav fixed-top"></div>
 
             <!-- importo una navbar di bootstrap -->
-            <nav class="navbar navbar-expand-lg navbar justify-content-between fixed-top" >
+            <nav class="navbar navbar-expand-lg navbar-dark justify-content-between fixed-top" >
                 <!-- non uso più il tag a per i link della navbar ma direttamente router-link -->
                 <!-- => per gestire rotte front end uso :to="{name: ' nome dato in routes.vue'}" -->
                 <!-- => per gestire rotte backend continuo ad usare il tag a e l'href" -->
@@ -80,5 +80,8 @@
         background-color: black;
         opacity: 0.2;
         height: 75px;
+    }
+    .navbar-toggler-icon{
+        color: #fff;
     }
 </style>

@@ -28367,7 +28367,7 @@ var render = function () {
                       ]),
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "mt-3" }, [
+                    _c("div", { staticClass: "mt-3 btn btn-light" }, [
                       _c(
                         "a",
                         {
