@@ -7,7 +7,7 @@
                         class="row row-piatti d-flex flex-wrap justify-content-center"
                     >
                         <div
-                            class="col-3 d-flex flex-column rounded-lg p-2"
+                            class="col-3 d-flex flex-column rounded-lg p-2 dish"
                             v-for="dish in menu"
                             :key="dish.id"
                         >
@@ -26,13 +26,14 @@
                                     &euro; {{ dish.prezzo }}
                                 </div>
                             </div>
-                            <div class="mt-3 btn btn-light">
+                            <div v-if="dish.view == 1" class="mt-3 btn btn-light" 
+                                @click="addToCart(dish), getPrice(dish)">
                                 <a
-                                    @click="addToCart(dish), getPrice(dish)"
                                     class="pointer"
                                     >Aggiungi al carrello</a
                                 >
                             </div>
+                            <div v-else class="fs-3 btn btn-danger mt-3">Non Disponibile</div>
                         </div>
                     </div>
                 </div>
@@ -50,7 +51,7 @@
                                     <div class="mt-3 row">
                                         <div class="col-12">
                                             <span
-                                                class="text-danger pointer blue mr-3"
+                                                class=" btn btn-danger border-pill text-white pointer blue mr-3"
                                                 @click="
                                                     removeAllFromCart(index),
                                                         getPrice(dish)
@@ -68,7 +69,7 @@
                                     <div class="mt-3 row">
                                         <div class="col-12">
                                             <span
-                                                class="pointer white mr-3"
+                                                class="pointer pointer-cart text-dark mr-3"
                                                 @click="
                                                     removeFromCart(dish, index),
                                                         getPrice(dish)
@@ -76,7 +77,7 @@
                                                 >-</span
                                             >
                                             <span
-                                                class="pointer white mr-3"
+                                                class="pointer pointer-cart text-dark mr-3"
                                                 @click="
                                                     addInCart(dish),
                                                         getPrice(dish)
@@ -91,13 +92,13 @@
                             <p class="mt-4" v-if="carrello.length > 0">
                                 TOTALE: <span class="item_quantita ">{{ totalPrice }} &euro;</span>
                             </p>
-                            <p
+                            <button
                                 @click="deleteCart()"
                                 v-if="carrello.length > 0"
-                                class="pointer text-danger"
+                                class="pointer rounded btn btn-danger text-white mx-auto py-1 d-block my-3"
                             >
                                 Svuota carrello
-                            </p>
+                            </button>
                             <button
                                 class="btn btn-info"
                                 v-if="carrello.length != 0"
@@ -234,12 +235,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.pointer-cart{
+    font-size: 1.5em;
+    font-weight: bold;
+}
 .link{
     text-decoration: none;
     color: #fff;
 }
 .main_container {
     min-height: calc(100vh - 75px);
+}
+
+.dish{
+    background: #fff;
 }
 .dish_img {
     height: 200px;
@@ -296,6 +306,7 @@ export default {
         border-radius: 20px;
         max-height: 500px;
         width: 35%;
+        background: #fff;
         .container-carrello {
             .row {
                 .col-12 {

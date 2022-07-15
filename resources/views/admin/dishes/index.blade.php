@@ -54,34 +54,36 @@
                 <div class="row">
                     @forelse ($dishes as $dish)
                     <div class="col-6 mt-3 rounded-lg mt-2">
-                        <div class="d-flex flex-column justify-content-around mb-5">
-                            <div class="img rounded-lg d-flex justify-content-between align-items-end pb-3"
-                                 style="background-image: url({{asset("storage/$dish->immage")}})"
-                            >
-                                <div>
-                                    <a href="{{route('admin.restaurants.dishes.show',['restaurant'=> $data, $dish->id])}}"
-                                        class="btn btn-primary mb-3 ml-3">
-                                        View
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="{{route('admin.restaurants.dishes.edit',['restaurant'=> $data, $dish->id])}}"
-                                        class="btn btn-primary mb-3">
-                                        Edit
-                                    </a>
-                                </div>
-                                <div>
-                                    <a>
-                                        <form
-                                        action="{{route('admin.restaurants.dishes.destroy', ['restaurant'=> $data, $dish->id])}}"
-                                        method="POST" class="delete-form">
-                                            @method('DELETE')
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger mr-3">
-                                                Delete
-                                            </button>
-                                        </form>                                        
-                                    </a>
+                        <div class="d-flex flex-column justify-content-around mb-5 ">
+                            <div class="">
+                                <div class="img rounded-lg d-flex justify-content-between align-items-end pb-3 {{($dish->view)? '' : 'cover'}}"
+                                style="background-image: url({{asset("storage/$dish->immage")}})"
+                                >
+                                    <div class="but">
+                                        <a href="{{route('admin.restaurants.dishes.show',['restaurant'=> $data, $dish->id])}}"
+                                            class="btn btn-primary mb-3 ml-3">
+                                            View
+                                        </a>
+                                    </div>
+                                    <div class="but">
+                                        <a href="{{route('admin.restaurants.dishes.edit',['restaurant'=> $data, $dish->id])}}"
+                                            class="btn btn-primary mb-3">
+                                            Edit
+                                        </a>
+                                    </div>
+                                    <div class="but">
+                                        <a>
+                                            <form
+                                            action="{{route('admin.restaurants.dishes.destroy', ['restaurant'=> $data, $dish->id])}}"
+                                            method="POST" class="delete-form">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger mr-3">
+                                                    Delete
+                                                </button>
+                                            </form>                                        
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="name mt-3">
@@ -165,6 +167,12 @@
         color: white;
     }
 
-    
+    .cover{
+        opacity: 0.5;
+    }
+
+    .but{
+        z-index: 23;
+    }
 
 </style>

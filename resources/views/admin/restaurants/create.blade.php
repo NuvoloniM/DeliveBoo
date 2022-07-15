@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="d-flex mt-4">
+<div class="d-flex mt-4 view">
     <div class="dashboard mt-3">
         <div class="personal">
             <ul class="personal-ul">
@@ -122,5 +122,8 @@
     }
     .ombra{
         text-shadow: 1px 1px 7px black;
+    }
+    .view{
+        height: 100vh
     }
 </style>

@@ -2521,6 +2521,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantShow",
@@ -26236,7 +26237,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".link[data-v-cddbf820] {\n  text-decoration: none;\n  color: #fff;\n}\n.main_container[data-v-cddbf820] {\n  min-height: calc(100vh - 75px);\n}\n.dish_img[data-v-cddbf820] {\n  height: 200px;\n}\n.dish_img img[data-v-cddbf820] {\n  height: 100%;\n  width: 100%;\n}\n.col-3[data-v-cddbf820] {\n  border: 1px solid #000;\n  box-shadow: 1px 1px 20px #000;\n}\n@media (max-width: 900px) {\n.contenitore-generale[data-v-cddbf820] {\n    flex-direction: column;\n}\n.container-piatti[data-v-cddbf820] {\n    width: 100%;\n}\n}\n@media (max-width: 1000px) {\n.col-3[data-v-cddbf820] {\n    min-width: 200px;\n}\n}\n.contenitore-generale[data-v-cddbf820] {\n  margin-top: 5vh;\n}\n.contenitore-generale .piatti[data-v-cddbf820] {\n  width: 65%;\n}\n.contenitore-generale .piatti .container-piatti .row-piatti .col-3[data-v-cddbf820] {\n  margin: 10px;\n  text-align: center;\n}\n.contenitore-generale .piatti .container-piatti .row-piatti .col-3 a[data-v-cddbf820] {\n  text-decoration: none;\n}\n.contenitore-generale .carrello[data-v-cddbf820] {\n  position: fixed;\n  right: 50px;\n  overflow-y: auto;\n  border: 2px solid black;\n  padding: 50px;\n  border-radius: 20px;\n  max-height: 500px;\n  width: 35%;\n}\n.contenitore-generale .carrello .container-carrello .row .col-12[data-v-cddbf820] {\n  text-align: center;\n}\n.contenitore-generale .carrello .container-carrello .row .col-12 .white[data-v-cddbf820] {\n  color: white;\n}\n.contenitore-generale .cart_item[data-v-cddbf820] {\n  border-bottom: 2px solid black;\n  padding: 15px;\n}\n.contenitore-generale .item_quantita[data-v-cddbf820] {\n  padding: 0 8px;\n  background-color: lightsalmon;\n  border-radius: 20px;\n}\n.prezzo_salmon[data-v-cddbf820] {\n  color: lightsalmon;\n}\n.pointer[data-v-cddbf820]:hover {\n  cursor: pointer;\n  color: blue;\n}\n.blue[data-v-cddbf820] {\n  color: rgb(25, 159, 214);\n}", ""]);
+exports.push([module.i, ".pointer-cart[data-v-cddbf820] {\n  font-size: 1.5em;\n  font-weight: bold;\n}\n.link[data-v-cddbf820] {\n  text-decoration: none;\n  color: #fff;\n}\n.main_container[data-v-cddbf820] {\n  min-height: calc(100vh - 75px);\n}\n.dish[data-v-cddbf820] {\n  background: #fff;\n}\n.dish_img[data-v-cddbf820] {\n  height: 200px;\n}\n.dish_img img[data-v-cddbf820] {\n  height: 100%;\n  width: 100%;\n}\n.col-3[data-v-cddbf820] {\n  border: 1px solid #000;\n  box-shadow: 1px 1px 20px #000;\n}\n@media (max-width: 900px) {\n.contenitore-generale[data-v-cddbf820] {\n    flex-direction: column;\n}\n.container-piatti[data-v-cddbf820] {\n    width: 100%;\n}\n}\n@media (max-width: 1000px) {\n.col-3[data-v-cddbf820] {\n    min-width: 200px;\n}\n}\n.contenitore-generale[data-v-cddbf820] {\n  margin-top: 5vh;\n}\n.contenitore-generale .piatti[data-v-cddbf820] {\n  width: 65%;\n}\n.contenitore-generale .piatti .container-piatti .row-piatti .col-3[data-v-cddbf820] {\n  margin: 10px;\n  text-align: center;\n}\n.contenitore-generale .piatti .container-piatti .row-piatti .col-3 a[data-v-cddbf820] {\n  text-decoration: none;\n}\n.contenitore-generale .carrello[data-v-cddbf820] {\n  position: fixed;\n  right: 50px;\n  overflow-y: auto;\n  border: 2px solid black;\n  padding: 50px;\n  border-radius: 20px;\n  max-height: 500px;\n  width: 35%;\n  background: #fff;\n}\n.contenitore-generale .carrello .container-carrello .row .col-12[data-v-cddbf820] {\n  text-align: center;\n}\n.contenitore-generale .carrello .container-carrello .row .col-12 .white[data-v-cddbf820] {\n  color: white;\n}\n.contenitore-generale .cart_item[data-v-cddbf820] {\n  border-bottom: 2px solid black;\n  padding: 15px;\n}\n.contenitore-generale .item_quantita[data-v-cddbf820] {\n  padding: 0 8px;\n  background-color: lightsalmon;\n  border-radius: 20px;\n}\n.prezzo_salmon[data-v-cddbf820] {\n  color: lightsalmon;\n}\n.pointer[data-v-cddbf820]:hover {\n  cursor: pointer;\n  color: blue;\n}\n.blue[data-v-cddbf820] {\n  color: rgb(25, 159, 214);\n}", ""]);
 
 // exports
 
@@ -28339,7 +28340,7 @@ var render = function () {
                   "div",
                   {
                     key: dish.id,
-                    staticClass: "col-3 d-flex flex-column rounded-lg p-2",
+                    staticClass: "col-3 d-flex flex-column rounded-lg p-2 dish",
                   },
                   [
                     _c("div", { staticClass: "dish_img" }, [
@@ -28367,20 +28368,26 @@ var render = function () {
                       ]),
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "mt-3 btn btn-light" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "pointer",
-                          on: {
-                            click: function ($event) {
-                              _vm.addToCart(dish), _vm.getPrice(dish)
+                    dish.view == 1
+                      ? _c(
+                          "div",
+                          {
+                            staticClass: "mt-3 btn btn-light",
+                            on: {
+                              click: function ($event) {
+                                _vm.addToCart(dish), _vm.getPrice(dish)
+                              },
                             },
                           },
-                        },
-                        [_vm._v("Aggiungi al carrello")]
-                      ),
-                    ]),
+                          [
+                            _c("a", { staticClass: "pointer" }, [
+                              _vm._v("Aggiungi al carrello"),
+                            ]),
+                          ]
+                        )
+                      : _c("div", { staticClass: "fs-3 btn btn-danger mt-3" }, [
+                          _vm._v("Non Disponibile"),
+                        ]),
                   ]
                 )
               }),
@@ -28414,7 +28421,8 @@ var render = function () {
                             _c(
                               "span",
                               {
-                                staticClass: "text-danger pointer blue mr-3",
+                                staticClass:
+                                  " btn btn-danger border-pill text-white pointer blue mr-3",
                                 on: {
                                   click: function ($event) {
                                     _vm.removeAllFromCart(index),
@@ -28444,7 +28452,8 @@ var render = function () {
                             _c(
                               "span",
                               {
-                                staticClass: "pointer white mr-3",
+                                staticClass:
+                                  "pointer pointer-cart text-dark mr-3",
                                 on: {
                                   click: function ($event) {
                                     _vm.removeFromCart(dish, index),
@@ -28458,7 +28467,8 @@ var render = function () {
                             _c(
                               "span",
                               {
-                                staticClass: "pointer white mr-3",
+                                staticClass:
+                                  "pointer pointer-cart text-dark mr-3",
                                 on: {
                                   click: function ($event) {
                                     _vm.addInCart(dish), _vm.getPrice(dish)
@@ -28486,9 +28496,10 @@ var render = function () {
                   _vm._v(" "),
                   _vm.carrello.length > 0
                     ? _c(
-                        "p",
+                        "button",
                         {
-                          staticClass: "pointer text-danger",
+                          staticClass:
+                            "pointer rounded btn btn-danger text-white mx-auto py-1 d-block my-3",
                           on: {
                             click: function ($event) {
                               return _vm.deleteCart()
