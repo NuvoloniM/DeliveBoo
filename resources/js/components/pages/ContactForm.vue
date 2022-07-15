@@ -2,6 +2,7 @@
 <div class="bg-form">
    <div class="container">
      <form class="form-group pt-5">
+        <h3 class="text-center">Inserisci i dati per completare l'ordine</h3>
             <label for="nome" class="mt-2">Nome</label>
             <input
                 type="text"
