@@ -2100,6 +2100,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ContactForm',
@@ -2589,6 +2591,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       elem.quantità += 1;
     },
     removeAllFromCart: function removeAllFromCart(elem, index) {
+      index = this.carrello.indexOf(elem);
       this.totalPrice -= elem.prezzo * elem.quantità;
       this.carrello.splice(index, 1);
     },
@@ -27908,16 +27911,10 @@ var render = function () {
             },
           }),
           _vm._v(" "),
-          _c(
-            "label",
-            { staticClass: "mt-2", attrs: { for: "prezzo_totale" } },
-            [_vm._v("Totale ordine")]
-          ),
-          _vm._v(" "),
           _c("input", {
             staticClass: "form-control",
             attrs: {
-              type: "text",
+              type: "hidden",
               id: "prezzo_totale",
               name: "prezzo_totale",
               disabled: "",
@@ -27993,6 +27990,13 @@ var render = function () {
           ]),
           _vm._v(" "),
           _vm._m(0),
+          _vm._v(" "),
+          _c("h2", { staticClass: "my-3" }, [
+            _vm._v("\n                Totale "),
+            _c("span", { staticClass: "text-warning" }, [
+              _vm._v("€ " + _vm._s(_vm.total)),
+            ]),
+          ]),
           _vm._v(" "),
           this.snitch == false
             ? _c(
