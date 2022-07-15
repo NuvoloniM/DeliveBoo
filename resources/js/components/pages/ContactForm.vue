@@ -59,7 +59,7 @@
                 <input type="hidden" name="data_ordine">
             </div>
     
-            <button v-if="this.snitch == false" class="btn btn-info px-3 rounded" @click="checkData">
+            <button v-if="this.snitch == false" class="btn btn-info px-3 rounded text-white" @click="checkData">
                 Inserisci i dati 
             </button>
             <router-link v-if="this.snitch == true" :to="{name:'payment', params: {cart: this.total, id:this.restaurant_id}}"  class="btn btn-success btn-block" >

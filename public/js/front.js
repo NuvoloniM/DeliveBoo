@@ -28392,7 +28392,7 @@ var render = function () {
             ? _c(
                 "button",
                 {
-                  staticClass: "btn btn-info px-3 rounded",
+                  staticClass: "btn btn-info px-3 rounded text-white",
                   on: { click: _vm.checkData },
                 },
                 [_vm._v("\n                Inserisci i dati \n            ")]
