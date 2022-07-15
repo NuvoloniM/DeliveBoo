@@ -67,7 +67,7 @@
 <style  lang="scss" scoped>
     #header {
         height: 75px;   
-        background: rgb(11,99,184);; 
+        background: rgb(11,99,184);
     }
     a{
         color: white;
@@ -77,8 +77,7 @@
         color: black;
     } */
     .stick_nav{
-        background-color: black;
-        opacity: 0.2;
+        background-color: #387FBD;
         height: 75px;
     }
     .navbar-toggler-icon{
