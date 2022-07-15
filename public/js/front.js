@@ -2218,6 +2218,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ContactForm',
@@ -28242,6 +28243,10 @@ var render = function () {
         "form",
         { staticClass: "form-group pt-5" },
         [
+          _c("h3", { staticClass: "text-center" }, [
+            _vm._v("Inserisci i dati per completare l'ordine"),
+          ]),
+          _vm._v(" "),
           _c("label", { staticClass: "mt-2", attrs: { for: "nome" } }, [
             _vm._v("Nome"),
           ]),
