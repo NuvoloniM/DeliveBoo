@@ -30,6 +30,8 @@ section {
     height: 90vh;
     width: 100%;
     position: relative;
+    max-width: 100%;
+    overflow-x: hidden;
 
     .box {
         position: absolute;
@@ -43,16 +45,48 @@ section {
 
         @keyframes verso-dx {
             0% {
-                left: 0%;
+                left: -20%;
+                opacity: 1;
+            }
+            10% {
+                left: -6%;
+                opacity: 1;
+            }
+            20% {
+                left: 8%;
+                opacity: 1;
+            }
+            30% {
+                left: 22%;
+                opacity: 1;
+            }
+            40% {
+                left: 36%;
                 opacity: 1;
             }
             50% {
                 left: 50%;
                 opacity: 1;
             }
+            60% {
+                left: 64%;
+                opacity: 1;
+            }
+            70% {
+                left: 78%;
+                opacity: 1;
+            }
+            80% {
+                left: 92%;
+                opacity: 1;
+            }
+            90% {
+                left: 106%;
+                opacity: 1;
+            }
             100% {
-                left: 65%;
-                opacity: 0;
+                left: 120%;
+                opacity: 1;
             }
         }
 
