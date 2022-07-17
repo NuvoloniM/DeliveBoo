@@ -3026,7 +3026,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       return this.restaurants.filter(function (element) {
-        return element.nome_attivita.includes(_this3.filtro);
+        return element.nome_attivita.toLowerCase().includes(_this3.filtro);
       });
     }
   },
@@ -26299,7 +26299,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#header[data-v-1f42fb90] {\n  height: 75px;\n  background: rgb(11, 99, 184);\n}\na[data-v-1f42fb90] {\n  color: white;\n}\n\n/* scritte nere quando ci passo sopra */\n/* a:hover{\n    color: black;\n} */\n.stick_nav[data-v-1f42fb90] {\n  background-color: #387FBD;\n  height: 75px;\n}\n.navbar-toggler-icon[data-v-1f42fb90] {\n  color: #fff;\n}", ""]);
+exports.push([module.i, "#header[data-v-1f42fb90] {\n  height: 75px;\n  background: rgb(11, 99, 184);\n}\na[data-v-1f42fb90] {\n  color: white;\n}\n\n/* scritte nere quando ci passo sopra */\n/* a:hover{\n    color: black;\n} */\n.stick_nav[data-v-1f42fb90] {\n  background-color: #387FBD;\n  height: 75px;\n}\n.navbar-toggler-icon[data-v-1f42fb90] {\n  color: #fff;\n}\n.navbar[data-v-1f42fb90] {\n  background-color: #387FBD;\n}", ""]);
 
 // exports
 

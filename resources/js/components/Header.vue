@@ -83,4 +83,8 @@
     .navbar-toggler-icon{
         color: #fff;
     }
+    .navbar{
+        background-color: #387FBD;
+    }
+
 </style>
