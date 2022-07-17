@@ -13,7 +13,8 @@
                         <a class="personal-a white" href="{{route('admin.restaurants.create')}}">Aggiungi attività</a>
                     </li>
                     <li>
-                        <a class="personal-a white" a href="{{route('admin.restaurants.orders.index', $restaurant->id)}}">I tuoi ordini</a>
+                        <a class="personal-a white" a
+                            href="{{route('admin.restaurants.orders.index', $restaurant->id)}}">I tuoi ordini</a>
                     </li>
                     <li>
                         <a class="personal-a white" href="#">Il tuo profilo</a>
@@ -26,7 +27,7 @@
                                                 document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
-        
+
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
@@ -39,7 +40,7 @@
                     {{ session('message') }}
                 </div>
                 @endif
-                
+
                 <div class="over activities">
                     <div class="text-center blue title">
                         <h1>
@@ -51,8 +52,9 @@
                             <div class="col-12 text-center rounded-lg mt-3 p-3">
                                 <a href="{{route('admin.restaurants.dishes.index', $restaurant->id)}}">
                                     <div class="d-flex flex-column justify-content-around">
-                                        <div class="img rounded-lg" style="background-image: url({{asset("storage/$restaurant->immagine")}})">
-    
+                                        <div class="img rounded-lg"
+                                            style="background-image: url({{asset("storage/$restaurant->immagine")}})">
+
                                         </div>
                                         <div class="name mt-3">
                                             <h3 class="white">
@@ -64,14 +66,20 @@
                                                 {{ $restaurant->indirizzo }}
                                             </span>
                                         </div>
-                                        <div class="mt-3">
+
+                                        <div class="mt-3 d-flex justify-content-center">
+                                            <div>
+                                                <a class="btn btn-warning mx-3"
+                                                    href="{{route('admin.restaurants.edit', $restaurant->id)}}">Edit</a>
+                                            </div>
+
                                             @include('includes.deleteRestaurant')
                                         </div>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                    </div>    
+                    </div>
                 </div>
             </div>
         </div>
@@ -79,43 +87,48 @@
 </div>
 
 
-    
+
 @endsection
 @section('scripts')
-    <script src="{{asset('js/delete-msg.js')}}"></script>
+<script src="{{asset('js/delete-msg.js')}}"></script>
 @endsection
 
 <style lang="scss" scoped>
-
-    .view{
+    .view {
         heigth: 100vh;
     }
-    .row{
+
+    .row {
         width: 100%;
     }
-    
-    .img{
+
+    .img {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         height: 400px;
     }
-    .white{
+
+    .white {
         color: white;
     }
-    .container-generale{
+
+    .container-generale {
         margin-top: 2vh;
     }
+
     .personal-ul {
         list-style-type: none;
         padding-top: 25vh
-        /* margin-top: 8vh; */
+            /* margin-top: 8vh; */
     }
-    .personal-a:hover{
+
+    .personal-a:hover {
         color: white;
     }
-    
+
     .blue {
         color: rgba(11, 99, 184, 1);
     }
+
 </style>
