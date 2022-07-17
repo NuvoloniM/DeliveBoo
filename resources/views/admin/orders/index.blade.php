@@ -16,45 +16,47 @@
             <a class="personal-a text-white" href="{{route('admin.restaurants.index')}}"><i
                     class="fa-solid fa-arrow-left mr-2"></i>Torna alle tue attività</a>
         </button>
-
-        <h2 class="text-center text-white text-uppercase mt-5">riepilogo Ordini ricevuti</h2>
         <div class="d-flex justify-content-center">
-            <table class="table text-center w-75">
-                <thead class="bg-white ">
-                    <tr>
-                        <th scope="col">Data ordine</th>
-                        <th scope="col">Nome del ordinante</th>
-                        <th scope="col">Cognome del ordinante</th>
-                        <th scope="col">Totale ordine</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white">
-                    @forelse ($orders as $order)
-                    <tr>
-                        <td>
-                            <span class="dataOrdine">{{ $order->data_ordine}}</span>
-                        </td>
-                        <td>
-                            {{  $order->nome }}
-                        </td>
-                        <td>
-                            {{  $order->cognome }}
-                        </td>
-                        <td>
-                            {{  $order->prezzo_totale }} €
-                        </td>
-                    </tr>
-                    @empty
-                    <h2> Non ci sono ordini</h2>
-                    @endforelse
+            <div>
+                <h2 class="text-center text-uppercase mt-5 text-blue">riepilogo Ordini ricevuti</h2> 
+                <table class="table text-center">
+                    <thead class="bg-white ">
+                        <tr>
+                            <th scope="col">Data ordine</th>
+                            <th scope="col">Nome del ordinante</th>
+                            <th scope="col">Cognome del ordinante</th>
+                            <th scope="col">Totale ordine</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white">
+                        @forelse ($orders as $order)
+                        <tr>
+                            <td>
+                                <span class="dataOrdine">{{ $order->data_ordine}}</span>
+                            </td>
+                            <td>
+                                {{  $order->nome }}
+                            </td>
+                            <td>
+                                {{  $order->cognome }}
+                            </td>
+                            <td>
+                                {{  $order->prezzo_totale }} €
+                            </td>
+                        </tr>
+                        @empty
+                        <h2> Non ci sono ordini</h2>
+                        @endforelse
 
-                </tbody>
-                <div class="container">
-                    <canvas id="myCanvas">
+                    </tbody>
+                    <div class="container">
+                        <canvas id="myCanvas">
 
-                    </canvas>
-                </div>
-            </table>
+                        </canvas>
+                    </div>
+                </table>
+            </div>
+
         </div>
 
 
@@ -91,6 +93,9 @@
         background-color: #FFF;
         color: #000;
         opacity: 0.7;
+    }
+    .text-blue{
+        color: #1C377E;
     }
 
 </style>
