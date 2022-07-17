@@ -6,13 +6,13 @@
         <div class="row justify-content-center mt-5">
             <div class="col-md-8">
                 <div class="p1">
-                    <div class="p white p-2 text-center">
+                    <div class="p text-black p-2 text-center">
                         <h2>
                             {{ __('Register') }}
                         </h2>
                     </div>
     
-                    <div class="card-body white">
+                    <div class="card-body text-black">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
     

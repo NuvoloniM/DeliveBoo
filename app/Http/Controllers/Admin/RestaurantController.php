@@ -63,7 +63,7 @@ class RestaurantController extends Controller
 
         $restaurant = new Restaurant();
         if(array_key_exists('immagine', $data)){
-            $image_url = Storage::put('restaurant_immagine', $data['immagine'] );
+            $image_url = Storage::put('restaurants', $data['immagine'] );
             $data['immagine'] = $image_url;
         }
         $restaurant->fill($data);
@@ -127,7 +127,7 @@ class RestaurantController extends Controller
         if(array_key_exists('immagine', $data)){
             if( $restaurant->immagine) Storage::delete($restaurant->immagine);
         
-            $image_url = Storage::put('immagine', $data['immagine'] );
+            $image_url = Storage::put('restaurants', $data['immagine'] );
             $data['immagine'] = $image_url;
         }
 

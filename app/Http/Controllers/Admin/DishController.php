@@ -73,7 +73,7 @@ class DishController extends Controller
 
         $dish=new Dish();
         if(array_key_exists('immage', $data)){
-             $image_url = Storage::put('dish_immage', $data['immage'] );
+             $image_url = Storage::put('dishes', $data['immage'] );
              $data['immage'] = $image_url;
          }
 
@@ -134,7 +134,7 @@ class DishController extends Controller
         if(array_key_exists('image', $data)){
             if( $dish->immage ) Storage::delete($dish->immage);
         
-            $image_url = Storage::put('dish_image', $data['image'] );
+            $image_url = Storage::put('dishes', $data['image'] );
             $data['immage'] = $image_url;
         }
          $dish->update($data);
