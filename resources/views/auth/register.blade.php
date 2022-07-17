@@ -47,7 +47,7 @@
                                 <label for="p_iva" class="col-md-4 col-form-label text-md-right">Inserisci partita iva</label>
     
                                 <div class="col-md-6">
-                                    <input id="p_iva" type="text" class="form-control" name="p_iva" required>
+                                    <input id="p_iva" type="text" class="form-control" name="p_iva" minlength="20" maxlength="20" required>
                                 </div>
                             </div>
     
