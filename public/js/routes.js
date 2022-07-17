@@ -27997,7 +27997,7 @@ var render = function () {
           _vm._m(0),
           _vm._v(" "),
           _c("h2", { staticClass: "my-3" }, [
-            _vm._v("\n                Totale "),
+            _vm._v("\r\n                Totale "),
             _c("span", { staticClass: "text-warning" }, [
               _vm._v("€ " + _vm._s(_vm.total)),
             ]),
@@ -28010,7 +28010,11 @@ var render = function () {
                   staticClass: "btn btn-info px-3 rounded text-white",
                   on: { click: _vm.checkData },
                 },
-                [_vm._v("\n                Inserisci i dati \n            ")]
+                [
+                  _vm._v(
+                    "\r\n                Inserisci i dati \r\n            "
+                  ),
+                ]
               )
             : _vm._e(),
           _vm._v(" "),
@@ -45065,7 +45069,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/matteonuvoloni/Desktop/Boolean/DeliveBoo/resources/js/routes.js */"./resources/js/routes.js");
+module.exports = __webpack_require__(/*! C:\Users\alber\Desktop\progetto-finale\DeliveBoo\resources\js\routes.js */"./resources/js/routes.js");
 
 
 /***/ })

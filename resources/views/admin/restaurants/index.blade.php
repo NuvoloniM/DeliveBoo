@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-generale d-flex container">
-        <div class="row">
+        <div class="row si">
             <div class="personal dashboard col-md-6 col-sm-8">
                 <ul class="personal-ul mt-5">
                     <li>
@@ -39,7 +39,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="activities col-6">
+            <div class="activities col-md-6 col-sm-8">
                 @if ( session('message') )
                 <div class="alert alert-info">
                     {{ session('message') }}
@@ -97,6 +97,9 @@
    }
    .over::-webkit-scrollbar {
     display: none;
+    }
+    .si{
+        width: 100%
     }
 
     /* .activities {
