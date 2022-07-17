@@ -35,17 +35,18 @@
                 </ul>
             </div>
             <div class="activities col-md-8 col-sm-6">
-                @if ( session('message') )
-                <div class="alert alert-info">
-                    {{ session('message') }}
-                </div>
-                @endif
+
 
                 <div class="over activities">
                     <div class="text-center blue title">
                         <h1>
                             Le tue attivita'
                         </h1>
+                        @if ( session('message') )
+                        <div class="alert alert-info">
+                            {{ session('message') }}
+                        </div>
+                        @endif
                     </div>
                     <div class="container">
                         <div class="row d-flex jusify-content-end">
@@ -130,5 +131,5 @@
     .blue {
         color: rgba(11, 99, 184, 1);
     }
-
+ 
 </style>
