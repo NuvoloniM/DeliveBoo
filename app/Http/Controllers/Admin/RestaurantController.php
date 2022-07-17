@@ -67,7 +67,8 @@ class RestaurantController extends Controller
             $data['immagine'] = $image_url;
         }
         $restaurant->fill($data);
-        $restaurant->user_id = Auth::user()->pluck('id')->first();
+        $user_id = User::where("id", Auth::user()->id)->get();
+        $restaurant->user_id = $user_id[0]->id;
         $restaurant->save();
 
         

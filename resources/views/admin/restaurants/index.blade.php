@@ -57,7 +57,7 @@
                         <div class="col-lg-6 col-md-12 text-center rounded-lg mt-3 p-3">
                             <a href="{{route('admin.restaurants.show', $restaurant->id)}}">
                                 <div class="d-flex flex-column justify-content-around">
-                                    <div class="img rounded-lg" style="background-image: url({{asset("storage/$restaurant->immagine")}})">
+                                    <div class="img rounded-lg" style="background-image: url({{asset("/storage/$restaurant->immagine")}})">
                                         {{-- <img class="img" src="{{asset("storage/$restaurant->immagine")}}"> --}}
                                     </div>
                                     <div class="name mt-3 white">
