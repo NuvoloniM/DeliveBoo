@@ -53,7 +53,7 @@
                                             <span
                                                 class=" btn btn-danger border-pill text-white pointer blue mr-3"
                                                 @click="
-                                                    removeAllFromCart(index),
+                                                    removeAllFromCart(dish, index),
                                                         getPrice(dish)
                                                 "
                                                 >X</span

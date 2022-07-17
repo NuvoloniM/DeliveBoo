@@ -28833,7 +28833,7 @@ var render = function () {
                                   " btn btn-danger border-pill text-white pointer blue mr-3",
                                 on: {
                                   click: function ($event) {
-                                    _vm.removeAllFromCart(index),
+                                    _vm.removeAllFromCart(dish, index),
                                       _vm.getPrice(dish)
                                   },
                                 },
