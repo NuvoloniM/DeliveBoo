@@ -74,6 +74,10 @@
                             </a>
                         </div>
                         @empty
+                        <div class="text-center mt-5 ml-5 pl-5 blue">
+                            <h2 class="text-center ml-5 pl-2">Benvenuto nell'app!</h2>
+                            <a class="text-center ml-5 pl-2 font-italic h4 blue" href="{{route('admin.restaurants.create')}}">Crea la tua prima attività! </a>
+                        </div>
                         @endforelse
                     </div>
                 </div>
