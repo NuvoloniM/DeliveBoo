@@ -44,7 +44,7 @@
                     {{ session('message') }}
                 </div>
                 @endif
-                <h1 class="text-center blue">I tuoi piatti:</h1>
+                <h1 class="text-center blue">I tuoi piatti</h1>
                 <div class="row">
                     @forelse ($dishes as $dish)
                     <div class="col-xl-6 col-lg-9 mt-3 rounded-lg mt-2">
@@ -89,19 +89,17 @@
                                     Prezzo: {{ $dish->prezzo }}&euro;
                                 </span>
                             </div>
-
                             <div class="mt-3 white">
                                 <span>
                                     {{ $dish->description }}
                                 </span>
                             </div>
-
                         </div>
                     </div>
-                    @empty
-                    <div>
-                        non ci sono piatti
-                    </div>
+                        @empty
+                        <div class=" d-flex justify-content-center text-center ml-5 pl-5 mt-5">
+                            <h2 class="text-center ml-5 pl-5 blue font-italic">Non ci sono ancora piatti ...</h2>
+                        </div>
                     @endforelse
                 </div>
             </div>
